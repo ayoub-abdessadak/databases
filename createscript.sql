@@ -352,7 +352,7 @@ CREATE TABLE Behandeling(
 	locatie VARCHAR(100) NULL,
 	opmerkingen TINYTEXT NULL,
 	Medischedossier_md_nummer INT NOT NULL,
-	PRIMARY KEY (behandeling_nummer)
+	PRIMARY KEY (behandeling_nummer),
 	INDEX fk_Behandeling_Medischedossier1_idx (Medischedossier_md_nummer ASC) VISIBLE,
 	CONSTRAINT fk_Behandeling_Medischedossier
 		FOREIGN KEY (Medsichedossier_md_nummer)
@@ -388,7 +388,7 @@ CREATE TABLE Vaccinatie_heeft_Bijwerking(
 		FOREIGN KEY (Bijwerking_bijwerking_id)
 		REFERENCES Bijwerking(bijwerking_id)
 		ON DELETE RESTRICT 
-		ON UPDATE NO ACTION
+		ON UPDATE NO ACTION,
 	CONSTRAINT fk_Vaccinatie_heeft_Bijwerking_Vaccinatie
 		FOREIGN KEY (Vaccinatie_batch_nummer)
 		REFERENCES Vaccinatie(batch_nummer)
@@ -405,13 +405,13 @@ CREATE TABLE Diagnose(
 	diagnose_status ENUM("in afwachting", "voorlopig", "bevestigd", "uitgesloten", "chronisch", "herstellend", "onbekend") NULL,
 	Medischedossier_md_nummer INT NOT NULL,
 	Arts_arts_code INT NOT NULL,
-	INDEX fk_Diagnose_Medischedossier1_idx (Medischedossier_md_nummer ASC) NULL,
-	INDEX fk_Diagnose_Arts1_idx (Arts_arts_code ASC) NULL,
+	INDEX fk_Diagnose_Medischedossier1_idx (Medischedossier_md_nummer ASC) VISIBLE,
+	INDEX fk_Diagnose_Arts1_idx (Arts_arts_code ASC) VISIBLE,
 	CONSTRAINT fk_Diagnose_Medischedossier
 		FOREIGN KEY (Medischedossier_md_nummer)
 		REFERENCES Medischedossier(md_nummer)
 		ON DELETE RESTRICT
-		ON UPDATE NO ACTION
+		ON UPDATE NO ACTION,
 	CONSTRAINT fk_Diagnose_Arts
 		FOREIGN KEY (Arts_arts_code)
 		REFERENCES Arts(arts_code)
