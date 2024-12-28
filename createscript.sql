@@ -113,7 +113,7 @@ CREATE TABLE Bewoner_bezoekt_Activiteit(
 	Activiteit_datum DATE NOT NULL,
 	Activiteit_locatie VARCHAR(150) NOT NULL,
 	PRIMARY KEY (Bewoner_code, Activiteit_activiteit_naam, Activiteit_datum, Activiteit_locatie),
-	INDEX fk_Bewoner_bezoekt_Activiteit_Activiteit1_idx (Activiteit_activiteit_naam ASC, Activiteit_datum, ASC, Activiteit_locatie ASC) VISIBLE,
+	INDEX fk_Bewoner_bezoekt_Activiteit_Activiteit1_idx (Activiteit_activiteit_naam ASC, Activiteit_datum ASC, Activiteit_locatie ASC) VISIBLE,
 	INDEX fk_Bewoner_bezoekt_Activiteit_Bewoner1_idx (Bewoner_code ASC) VISIBLE,
 	CONSTRAINT fk_Bewoner_bezoekt_Activiteit_Bewoner
 		FOREIGN KEY (Bewoner_code)
@@ -218,14 +218,15 @@ CREATE TABLE Specialisatie(
 CREATE TABLE Team(
 	team_naam VARCHAR(20) NOT NULL,
 	omschrijving TINYTEXT NULL,
-	aantal_leden INT NULL
+	aantal_leden INT NULL,
+    PRIMARY KEY(team_naam)
 );
 
 CREATE TABLE Zorgverlener_heeft_Specialisatie(
 	Zorgverlener_big_code VARCHAR(20) NOT NULL,
 	Specialisatie_specialisatie_code INT NOT NULL,
 	PRIMARY KEY (Zorgverlener_big_code, Specialisatie_specialisatie_code),
-	INDEX fk_Zorgverlener_heeft_Specialisatie_Zorverlener1_idx (Zorverlener_big_code ASC) VISIBLE,
+	INDEX fk_Zorgverlener_heeft_Specialisatie_Zorverlener1_idx (Zorgverlener_big_code ASC) VISIBLE,
 	INDEX fk_Zorgverlener_heeft_Specialisatie_Specialisatie1_idx (Specialisatie_specialisatie_code ASC) VISIBLE,
 	CONSTRAINT fk_Zorgverlener_heeft_Specialisatie_Zorgverlener
 		FOREIGN KEY (Zorgverlener_big_code)
@@ -355,7 +356,7 @@ CREATE TABLE Behandeling(
 	PRIMARY KEY (behandeling_nummer),
 	INDEX fk_Behandeling_Medischedossier1_idx (Medischedossier_md_nummer ASC) VISIBLE,
 	CONSTRAINT fk_Behandeling_Medischedossier
-		FOREIGN KEY (Medsichedossier_md_nummer)
+		FOREIGN KEY (Medischedossier_md_nummer)
 		REFERENCES Medischedossier(md_nummer)
 		ON DELETE RESTRICT
 		ON UPDATE NO ACTION
@@ -370,7 +371,8 @@ CREATE TABLE Vaccinatie(
 	herhaling_datum DATE NULL,
 	opmerkingen TINYTEXT NULL,
 	vaccinatie_status ENUM("Niet toegediend", "Toegediend") NULL,
-	Medischedossier_md_nummer INT NULL,
+	Medischedossier_md_nummer INT NOT NULL,
+    PRIMARY KEY (batch_nummer, Medischedossier_md_nummer),
 	INDEX fk_Vaccinatie_Medischedossier1_idx (Medischedossier_md_nummer ASC) VISIBLE,
 	CONSTRAINT fk_Vaccinatie_Medischedossier
 		FOREIGN KEY (Medischedossier_md_nummer)
@@ -382,6 +384,7 @@ CREATE TABLE Vaccinatie(
 CREATE TABLE Vaccinatie_heeft_Bijwerking(
 	Bijwerking_bijwerking_id INT NOT NULL,
 	Vaccinatie_batch_nummer VARCHAR(45) NOT NULL,
+    PRIMARY KEY (Bijwerking_bijwerking_id, Vaccinatie_batch_nummer),
 	INDEX fk_Vaccinatie_heeft_Bijwerking_Bijwerking1_idx (Bijwerking_bijwerking_id ASC) VISIBLE,
 	INDEX fk_Vaccinatie_heeft_Bijwerking_Vaccinatie1_idx (Vaccinatie_batch_nummer ASC) VISIBLE,
 	CONSTRAINT fk_Vaccinatie_heeft_Bijwerking_Bijwerking
@@ -405,6 +408,7 @@ CREATE TABLE Diagnose(
 	diagnose_status ENUM("in afwachting", "voorlopig", "bevestigd", "uitgesloten", "chronisch", "herstellend", "onbekend") NULL,
 	Medischedossier_md_nummer INT NOT NULL,
 	Arts_arts_code INT NOT NULL,
+    PRIMARY KEY (diagnose_code, Medischedossier_md_nummer, Arts_arts_code),
 	INDEX fk_Diagnose_Medischedossier1_idx (Medischedossier_md_nummer ASC) VISIBLE,
 	INDEX fk_Diagnose_Arts1_idx (Arts_arts_code ASC) VISIBLE,
 	CONSTRAINT fk_Diagnose_Medischedossier
