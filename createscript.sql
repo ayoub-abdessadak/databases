@@ -307,7 +307,7 @@ CREATE TABLE Medicijngebruik(
 		ON UPDATE NO ACTION
 );
 
-CREATE TABLE Medicijn_heeft_bijwerking(
+CREATE TABLE Medicijn_heeft_Bijwerking(
 	Bijwerking_bijwerking_id INT NOT NULL,
 	Medicijn_medicijn_nummer INT NOT NULL,
 	PRIMARY KEY (Bijwerking_bijwerking_id, Medicijn_medicijn_nummer),
