@@ -4,7 +4,6 @@ SHOW INDEX FROM Aanmelding;
 -- Showing indexes for Artsen
 SHOW INDEX FROM Arts;
 
+SHOW TABLES;
 
--- QUERIES voor bewoners die geen zorgverleners hebben
-
--- Queries voor zorgverleners die geen team hebben
+SELECT voornaam, achternaam, geslacht FROM Persoon WHERE geslacht='Man';

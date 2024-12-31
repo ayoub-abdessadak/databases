@@ -60,7 +60,6 @@ CREATE TABLE Bewoner(
 CREATE TABLE Medischedossier(
 	md_nummer INT NOT NULL,
 	aandachtspunten TINYTEXT NULL,
-	specialist_id VARCHAR(50) NULL,
 	bloedgroep VARCHAR(25) NULL,
 	rookgedrag TINYTEXT NULL,
 	alcoholgedrag TINYTEXT NULL,
@@ -216,7 +215,7 @@ CREATE TABLE Specialisatie(
 );
 
 CREATE TABLE Team(
-	team_naam VARCHAR(20) NOT NULL,
+	team_naam VARCHAR(50) NOT NULL,
 	omschrijving TINYTEXT NULL,
 	aantal_leden INT NULL,
     PRIMARY KEY(team_naam)
@@ -259,10 +258,11 @@ CREATE TABLE Zorgverlener_heeft_Team(
 );	
 
 CREATE TABLE Bijwerking(
-	bijwerking_id INT NOT NULL,
-	soort VARCHAR(120) NULL,
-	beschrijving_bijwerking LONGTEXT,
-	PRIMARY KEY (bijwerking_id)
+	bijwerking_id INT NOT NULL AUTO_INCREMENT,
+	soort VARCHAR(120) NOT NULL UNIQUE,
+	beschrijving_bijwerking LONGTEXT NULL,
+	PRIMARY KEY (bijwerking_id),
+	INDEX soort_UNIQUE (soort ASC) VISIBLE
 );
 
 CREATE TABLE Medicijn(
@@ -372,7 +372,7 @@ CREATE TABLE Vaccinatie(
 	opmerkingen TINYTEXT NULL,
 	vaccinatie_status ENUM("Niet toegediend", "Toegediend") NULL,
 	Medischedossier_md_nummer INT NOT NULL,
-    PRIMARY KEY (batch_nummer, Medischedossier_md_nummer),
+    PRIMARY KEY (batch_nummer),
 	INDEX fk_Vaccinatie_Medischedossier1_idx (Medischedossier_md_nummer ASC) VISIBLE,
 	CONSTRAINT fk_Vaccinatie_Medischedossier
 		FOREIGN KEY (Medischedossier_md_nummer)
