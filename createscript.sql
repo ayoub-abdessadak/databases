@@ -126,6 +126,26 @@ CREATE TABLE Bewoner_bezoekt_Activiteit(
 		ON UPDATE NO ACTION
 );
 
+CREATE TABLE Bewoner_bezocht_Activiteit(
+    Bewoner_code INT NOT NULL,
+	Activiteit_activiteit_naam VARCHAR(100) NOT NULL,
+	Activiteit_datum DATE NOT NULL,
+	Activiteit_locatie VARCHAR(150) NOT NULL,
+	PRIMARY KEY (Bewoner_code, Activiteit_activiteit_naam, Activiteit_datum, Activiteit_locatie),
+	INDEX fk_Bewoner_bezocht_Activiteit_Activiteit1_idx (Activiteit_activiteit_naam ASC, Activiteit_datum ASC, Activiteit_locatie ASC) VISIBLE,
+	INDEX fk_Bewoner_bezocht_Activiteit_Bewoner1_idx (Bewoner_code ASC) VISIBLE,
+	CONSTRAINT fk_Bewoner_bezocht_Activiteit_Activiteit
+		FOREIGN KEY (Activiteit_activiteit_naam, Activiteit_datum, Activiteit_locatie)
+		REFERENCES Activiteit(activiteit_naam, datum, locatie)
+		ON DELETE CASCADE
+		ON UPDATE NO ACTION,
+	CONSTRAINT fk_Bewoner_bezochtActiviteit_Bewoner
+		FOREIGN KEY (Bewoner_code)
+		REFERENCES Bewoner(code)
+		ON DELETE CASCADE
+		ON UPDATE NO ACTION
+);
+
 CREATE TABLE Zorgplan(
 	referentie_nummer INT NOT NULL,
 	opstelling_datum DATE NULL,
@@ -367,8 +387,8 @@ CREATE TABLE Behandeling(
 CREATE TABLE Vaccin(
 	vaccin_naam VARCHAR(100) NOT NULL,
 	vaccin_code VARCHAR(50) NOT NULL,
-	opmerkingen TINYTEXT NULL,
-	PRIMARY KEY (vaccin_naam, vaccin_code)
+	opmerkingen VARCHAR(150) NOT NULL,
+	PRIMARY KEY (vaccin_naam, vaccin_code, opmerkingen)
 );
 
 CREATE TABLE Vaccinatie(
@@ -376,7 +396,6 @@ CREATE TABLE Vaccinatie(
 	toediening_datum DATE NULL,
 	toediening_plaats VARCHAR(50) NULL,
 	herhaling_datum DATE NULL,
-	opmerkingen TINYTEXT NULL,
 	vaccinatie_status ENUM("Niet toegediend", "Toegediend") NULL,
 	Medischedossier_md_nummer INT NOT NULL,
 	Vaccin_vaccin_naam VARCHAR(100) NOT NULL,
@@ -394,6 +413,12 @@ CREATE TABLE Vaccinatie(
 		REFERENCES Vaccin(vaccin_naam, vaccin_code)
 		ON DELETE RESTRICT
 		ON UPDATE NO ACTION
+);
+
+CREATE TABLE Geneeswijze(
+	naam VARCHAR(150) NOT NULL,
+	beschrijving LONGTEXT NULL,
+	PRIMARY KEY (naam)
 );
 
 CREATE TABLE Vaccin_heeft_Bijwerking(
@@ -414,6 +439,91 @@ CREATE TABLE Vaccin_heeft_Bijwerking(
 		ON DELETE RESTRICT
 		ON UPDATE NO ACTION
 );
+
+CREATE TABLE Ziekte(
+	naam VARCHAR(200) NOT NULL,
+	beschrijving LONGTEXT NULL,
+	type_aandoening ENUM("Ziekte", "Letsel") NULL,
+	PRIMARY KEY (naam)
+);
+
+CREATE TABLE Ziekte_heeft_Geneeswijze(
+	Geneeswijze_naam VARCHAR(150) NOT NULL,
+	Ziekte_naam VARCHAR(200) NOT NULL,
+	PRIMARY KEY (Geneeswijze_naam, Ziekte_naam),
+	INDEX fk_Geneeswijze_heeft_Ziekte_Ziekte1_idx (Ziekte_naam ASC) VISIBLE,
+	INDEX fk_Geneeswijze_heeft_Ziekte_Geneeswijze1_idx (Geneeswijze_naam ASC) VISIBLE,
+	CONSTRAINT fk_Ziekte_heeft_Geneeswijze_Ziekte
+		FOREIGN KEY (Ziekte_naam)
+		REFERENCES Ziekte(naam)
+		ON DELETE RESTRICT
+		ON UPDATE NO ACTION,
+	CONSTRAINT fk_Ziekte_heeft_Geneeswijze_Geneeswijze
+		FOREIGN KEY (Geneeswijze_naam)
+		REFERENCES Geneeswijze(naam)
+		ON DELETE RESTRICT
+		ON UPDATE NO ACTION
+);
+
+CREATE TABLE Behandeling_heeft_Geneeswijze(
+	Behandeling_behandeling_nummer VARCHAR(100) NOT NULL,
+	Geneeswijze_naam VARCHAR(150) NOT NULL,
+	PRIMARY KEY (Behandeling_behandeling_nummer, Geneeswijze_naam),
+	INDEX fk_Behandeling_heeft_Geneeswijze_Geneeswijze1_idx (Geneeswijze_naam ASC) VISIBLE,
+	INDEX fk_Behandeling_heeft_Geneeswijze_Behandeling1_idx (Behandeling_behandeling_nummer ASC) VISIBLE,
+	CONSTRAINT fk_Behandeling_heeft_Geneeswijze_Geneeswijze
+		FOREIGN KEY (Behandeling_behandeling_nummer)
+		REFERENCES Behandeling(behandeling_nummer)
+		ON DELETE RESTRICT
+		ON UPDATE NO ACTION,
+	CONSTRAINT fk_Behandeling_heeft_Geneeswijze_Behandeling
+		FOREIGN KEY (Geneeswijze_naam)
+		REFERENCES Geneeswijze(naam)
+		ON DELETE RESTRICT
+		ON UPDATE NO ACTION
+);
+
+CREATE TABLE Geneeswijze_heeft_Medicijn(
+	Geneeswijze_naam VARCHAR(150) NOT NULL,
+	Medicijn_medicijn_nummer INT NOT NULL,
+	PRIMARY KEY (Geneeswijze_naam, Medicijn_medicijn_nummer),
+	INDEX fk_Geneeswijze_heeft_Medicijn_Medicijn1_idx (Medicijn_medicijn_nummer ASC) VISIBLE,
+	INDEX fk_Geneeswijze_heeft_Medicijn_Geneeswijze1_idx (Geneeswijze_naam ASC) VISIBLE,
+	CONSTRAINT fk_Geneeswijze_heeft_Medicijn_Medicijn
+		FOREIGN KEY (Medicijn_medicijn_nummer)
+		REFERENCES Medicijn(medicijn_nummer)
+		ON DELETE RESTRICT
+		ON UPDATE NO ACTION,
+	CONSTRAINT fk_Geneeswijze_heeft_Medicijn_Geneeswijze
+		FOREIGN KEY (Geneeswijze_naam)
+		REFERENCES Geneeswijze(naam)
+		ON DELETE RESTRICT
+		ON UPDATE NO ACTION
+);
+
+CREATE TABLE Onderzoek(
+	onderzoek_id INT NOT NULL,
+	titel VARCHAR(150) NULL,
+	beschrijving LONGTEXT NULL,
+	type ENUM("Diagnostisch onderzoek", "Controle") NULL,
+	status ENUM("In onderzoek", "Afgerond") NULL,
+	Medischedossier_md_nummer INT NOT NULL,
+	Arts_arts_code INT NOT NULL,
+	PRIMARY KEY (onderzoek_id),
+	INDEX fk_Onderzoek_Medischedossier1_id (Medischedossier_md_nummer ASC) VISIBLE,
+	INDEX fk_Onderzoek_Arts1_idx (Arts_arts_code ASC) VISIBLE,
+	CONSTRAINT fk_Onderzoek_Medischedossier
+		FOREIGN KEY (Medischedossier_md_nummer)
+		REFERENCES Medischedossier(md_Nummer)
+		ON DELETE RESTRICT
+		ON UPDATE NO ACTION,
+	CONSTRAINT fk_Onderzoek_Arts
+		FOREIGN KEY (Arts_arts_code)
+		REFERENCES Arts(arts_code)
+		ON DELETE RESTRICT
+		ON UPDATE NO ACTION
+);
+
 
 CREATE TABLE Diagnose(
 	diagnose_code INT NOT NULL,
@@ -438,3 +548,41 @@ CREATE TABLE Diagnose(
 		ON DELETE RESTRICT
 		ON UPDATE NO ACTION
 );
+
+CREATE TABLE Onderzoek_heeft_Diagnose(
+	Onderzoek_onderzoek_id INT NOT NULL,
+	Diagnose_diagnose_code INT NOT NULL,
+	PRIMARY KEY (Onderzoek_onderzoek_id, Diagnose_diagnose_code),
+	INDEX fk_Onderzoek_heeft_Diagnose_Onderzoek1_idx (Onderzoek_onderzoek_id ASC) VISIBLE,
+	INDEX fk_Onderzoek_heeft_Diagnose_Diagnose1_idx (Diagnose_diagnose_code ASC) VISIBLE,
+	CONSTRAINT fk_Onderzoek_heeft_Diagnose_Onderzoek
+		FOREIGN KEY (Onderzoek_onderzoek_id)
+		REFERENCES Onderzoek(onderzoek_id)
+		ON DELETE RESTRICT
+		ON UPDATE NO ACTION,
+	CONSTRAINT fk_Onderzoek_heeft_Diagnose_Diagnose
+		FOREIGN KEY (Diagnose_diagnose_code)
+		REFERENCES Diagnose(diagnose_code)
+		ON DELETE RESTRICT
+		ON UPDATE NO ACTION
+);
+
+CREATE TABLE Diagnose_heeft_Ziekte(
+	Ziekte_naam VARCHAR(200) NOT NULL,
+	Diagnose_diagnose_code INT NOT NULL,
+	PRIMARY KEY (Ziekte_naam, Diagnose_diagnose_code),
+	INDEX fk_Diagnose_heeft_Ziekte_Ziekte1_idx (Ziekte_naam ASC) VISIBLE,
+	INDEX fk_Diagnose_heeft_Ziekte_Diagnose1_idx (Diagnose_diagnose_code ASC) VISIBLE,
+	CONSTRAINT fk_Diagnose_heeft_Ziekte_Ziekte
+		FOREIGN KEY (Ziekte_naam)
+		REFERENCES Ziekte(naam)
+		ON DELETE RESTRICT
+		ON UPDATE NO ACTION,
+	CONSTRAINT fk_Diagnose_heeft_Ziekte_Diagnose
+		FOREIGN KEY (Diagnose_diagnose_code)
+		REFERENCES Diagnose(diagnose_code)
+		ON DELETE RESTRICT
+		ON UPDATE NO ACTION
+);
+
+
