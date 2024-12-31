@@ -122,6 +122,8 @@ CREATE TABLE Bewoner_bezoekt_Activiteit(
 	CONSTRAINT fk_Bewoner_bezoekt_Activiteit_Activiteit
 		FOREIGN KEY (Activiteit_activiteit_naam, Activiteit_datum, Activiteit_locatie)
 		REFERENCES Activiteit(activiteit_naam, datum, locatie)
+		ON DELETE RESTRICT
+		ON UPDATE NO ACTION
 );
 
 CREATE TABLE Zorgplan(
@@ -362,39 +364,53 @@ CREATE TABLE Behandeling(
 		ON UPDATE NO ACTION
 );
 
+CREATE TABLE Vaccin(
+	vaccin_naam VARCHAR(100) NOT NULL,
+	vaccin_code VARCHAR(50) NOT NULL,
+	opmerkingen TINYTEXT NULL,
+	PRIMARY KEY (vaccin_naam, vaccin_code)
+);
+
 CREATE TABLE Vaccinatie(
 	batch_nummer VARCHAR(120) NOT NULL,
-	vaccin_naam VARCHAR(100) NULL,
-	vaccinatie_code VARCHAR(50) NULL,
 	toediening_datum DATE NULL,
 	toediening_plaats VARCHAR(50) NULL,
 	herhaling_datum DATE NULL,
 	opmerkingen TINYTEXT NULL,
 	vaccinatie_status ENUM("Niet toegediend", "Toegediend") NULL,
 	Medischedossier_md_nummer INT NOT NULL,
-    PRIMARY KEY (batch_nummer),
+	Vaccin_vaccin_naam VARCHAR(100) NOT NULL,
+    Vaccin_vaccin_code VARCHAR(50) NOT NULL,
+	PRIMARY KEY (batch_nummer),
 	INDEX fk_Vaccinatie_Medischedossier1_idx (Medischedossier_md_nummer ASC) VISIBLE,
+	INDEX fk_Vaccinatie_Vaccin1_idx (Vaccin_vaccin_naam ASC, Vaccin_vaccin_code ASC) VISIBLE,
 	CONSTRAINT fk_Vaccinatie_Medischedossier
 		FOREIGN KEY (Medischedossier_md_nummer)
 		REFERENCES Medischedossier(md_nummer)
 		ON DELETE RESTRICT
+		ON UPDATE NO ACTION,
+	CONSTRAINT fk_Vaccinatie_Vaccin
+		FOREIGN KEY (Vaccin_vaccin_naam, Vaccin_vaccin_code)
+		REFERENCES Vaccin(vaccin_naam, vaccin_code)
+		ON DELETE RESTRICT
 		ON UPDATE NO ACTION
 );
 
-CREATE TABLE Vaccinatie_heeft_Bijwerking(
+CREATE TABLE Vaccin_heeft_Bijwerking(
+	Vaccin_vaccin_naam VARCHAR(100) NOT NULL,
+	Vaccin_vaccin_code VARCHAR(50) NOT NULL,
 	Bijwerking_bijwerking_id INT NOT NULL,
-	Vaccinatie_batch_nummer VARCHAR(45) NOT NULL,
-    PRIMARY KEY (Bijwerking_bijwerking_id, Vaccinatie_batch_nummer),
-	INDEX fk_Vaccinatie_heeft_Bijwerking_Bijwerking1_idx (Bijwerking_bijwerking_id ASC) VISIBLE,
-	INDEX fk_Vaccinatie_heeft_Bijwerking_Vaccinatie1_idx (Vaccinatie_batch_nummer ASC) VISIBLE,
-	CONSTRAINT fk_Vaccinatie_heeft_Bijwerking_Bijwerking
+	PRIMARY KEY (Vaccin_vaccin_naam, Vaccin_vaccin_code, Bijwerking_bijwerking_id),
+	INDEX fk_Vaccin_heeft_Bijwerking_Bijwerking1_idx (Bijwerking_bijwerking_id ASC) VISIBLE,
+	INDEX fk_Vaccin_heeft_Bijwerking_Vaccin1_idx (Vaccin_vaccin_naam ASC, Vaccin_vaccin_code ASC) VISIBLE,
+	CONSTRAINT fk_Vaccin_heeft_Bijwerking_Bijwerking
 		FOREIGN KEY (Bijwerking_bijwerking_id)
 		REFERENCES Bijwerking(bijwerking_id)
-		ON DELETE RESTRICT 
+		ON DELETE RESTRICT
 		ON UPDATE NO ACTION,
-	CONSTRAINT fk_Vaccinatie_heeft_Bijwerking_Vaccinatie
-		FOREIGN KEY (Vaccinatie_batch_nummer)
-		REFERENCES Vaccinatie(batch_nummer)
+	CONSTRAINT fk_Vaccin_heeft_Bijwerking_Vaccin
+		FOREIGN	KEY (Vaccin_vaccin_naam, Vaccin_vaccin_code)
+		REFERENCES Vaccin(vaccin_naam, vaccin_code)
 		ON DELETE RESTRICT
 		ON UPDATE NO ACTION
 );
