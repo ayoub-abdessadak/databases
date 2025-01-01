@@ -344,13 +344,15 @@ onderzoeken_in_memory = []
 random.shuffle(md_nummers)
 for index, onderzoek in zip(range(len(onderzoeken)), onderzoeken):
     onderzoek_status = random.choice(["In onderzoek", "Afgerond"])
-    line = f"""({index}, "{onderzoek['titel']}", "{onderzoek['beschrijving']}", "{random.choice(["Diagnostisch onderzoek", "Controle"])}", "{onderzoek_status}", {random.choice(md_nummers)}, {random.choice(artsen_in_memory)})"""
+    md_nummer = random.choice(md_nummers)
+    line = f"""({index}, "{onderzoek['titel']}", "{onderzoek['beschrijving']}", "{random.choice(["Diagnostisch onderzoek", "Controle"])}", "{onderzoek_status}", {md_nummer}, {random.choice(artsen_in_memory)})"""
     write_line([insertion, onderzoek_file], value=True, line=line, current_index=index, ending_index=len(onderzoeken))
-    onderzoeken_in_memory.append((index, onderzoek_status))
+    onderzoeken_in_memory.append((index, onderzoek_status, md_nummer))
 onderzoek_file.close()
 files.append("onderzoek.sql")
 
 diagnose_file = open("diagnose.sql", "w")
+diagnose_in_memory = []
 diagnose_heeft_ziekte_file = open("diagnose_heeft_ziekte.sql", "w")
 write_line([insertion, diagnose_file], value=False, line="INSERT INTO Diagnose(diagnose_code, diagnose_naam, diagnose_datum, diagnose_beschrijving, diagnose_status, Arts_arts_code)\nVALUES")
 write_line([insertion, diagnose_heeft_ziekte_file], value=False, line="INSERT INTO Diagnose_heeft_Ziekte(Ziekte_ziekte_id, Diagnose_diagnose_code)\nVALUES")
@@ -361,6 +363,7 @@ for index, diagnose in zip(range(len(diagnoses)), diagnoses):
     write_line([insertion, diagnose_file], value=True, line=line, current_index=index, ending_index=len(diagnoses))
     _ziektes = list({random.choice(ziektes_in_memory) for __ in range(10)})
     xziektes = random.randint(1, 3)
+    diagnose_in_memory.append(index)
     for _ in range(xziektes):
         line = f"""({_ziektes[_]}, {index})"""
         write_line([insertion, diagnose_heeft_ziekte_file], value=True, line=line, current_index=index, ending_index=len(diagnoses), nested_index=True)
@@ -368,6 +371,15 @@ diagnose_file.close()
 diagnose_heeft_ziekte_file.close()
 files.append("diagnose.sql")
 files.append("diagnose_heeft_ziekte.sql")
+
+onderzoek_heeft_diagnose_file = open("onderzoek_heeft_diagnose.sql", "w")
+write_line([insertion, onderzoek_heeft_diagnose_file], value=False, line="INSERT INTO Onderzoek_heeft_Diagnose(Onderzoek_onderzoek_id, Diagnose_diagnose_code)\nVALUES")
+for index, onderzoek in zip(range(len(onderzoeken_in_memory)), onderzoeken_in_memory):
+    if onderzoek[1] == "Afgerond":
+        line = f"""({onderzoek[0]}, {diagnose_in_memory[index]})"""
+        write_line([insertion, onderzoek_heeft_diagnose_file], value=True, line=line, current_index=index, ending_index=len(onderzoeken_in_memory))
+onderzoek_heeft_diagnose_file.close()
+files.append("onderzoek_heeft_diagnose.sql")
 
 geneeswijze_file = open("geneeswijze.sql", "w")
 geneeswijze_in_memory = []
@@ -402,6 +414,60 @@ for index, genees_wijze in zip(range(len(geneeswijze_in_memory)), geneeswijze_in
 geneeswijze_heeft_medicijn_file.close()
 files.append("geneeswijze_heeft_medicijn.sql")
 
+behandeling_file = open("behandeling.sql", "w")
+behandeling_heeft_geneeswijze_file = open("behandeling_heeft_geneeswijze.sql", "w")
+write_line([insertion, behandeling_file], value=False, line="INSERT INTO Behandeling(behandeling_nummer, behandeling_datum, behandelaar, locatie, Medischedossier_md_nummer)\nVALUES")
+write_line([insertion, behandeling_heeft_geneeswijze_file], value=False, line="INSERT INTO Behandeling_heeft_Geneeswijze(Behandeling_behandeling_nummer, Geneeswijze_naam)\nVALUES")
+for index, onderzoek in zip(range(len(onderzoeken_in_memory)), onderzoeken_in_memory):
+    datum = datetime.now() + timedelta(days=random.randint(1, 10))
+    behandelaar = random.choice([worldnames.first_name, faker.first_name])()
+    line = f"""({index}, "{datum.strftime('%Y-%m-%d')}", "{behandelaar}", "{random.choice(ziekenhuizen)}", {onderzoek[2]})"""
+    write_line([insertion, behandeling_file], value=True, line=line, current_index=index, ending_index=len(onderzoeken_in_memory))
+    line = f"""({index}, "{random.choice(geneeswijze_in_memory)}")"""
+    write_line([insertion, behandeling_heeft_geneeswijze_file], value=True, line=line, current_index=index, ending_index=len(onderzoeken_in_memory))
+behandeling_file.close()
+behandeling_heeft_geneeswijze_file.close()
+files.append("behandeling.sql")
+files.append("behandeling_heeft_geneeswijze.sql")
+
+afspraak_file = open("afspraak.sql", "w")
+write_line([insertion, afspraak_file], value=False, line="INSERT INTO Afspraak(afspraak_referentie, datum, locatie, omschrijving, vervoer, afspraak_status, herhaling, tijdsduur, prioriteit, herinnering_ingesteld, afspraak_type, Medischedossier_md_nummer)\nVALUES")
+md_nummers = deepcopy(medischedossier_in_memory)
+random.shuffle(md_nummers)
+for index, medische_afspraak in zip(range(len(medische_afspraken)), medische_afspraken):
+    referentie = uuid4().__str__()
+    referentie = referentie.replace("-", "")
+    datum = datetime.now() + timedelta(days=random.randint(4, 14))
+    line = f"""("{referentie[0:10]}", "{datum.strftime('%Y-%m-%d')}", "{random.choice(ziekenhuizen)}", "{medische_afspraak['omschrijving']}", "{random.choice(vervoer_types)}", "{random.choice(["Gepland", "Verlopen"])}", {random.randint(0,1)}, "{random.choice(tijdsduur_medische_afspraken)}", "{random.choice(["Hoog", "Gemiddeld", "Laag"])}", {random.randint(0,1)}, "{medische_afspraak['afspraak_type']}", {random.choice(md_nummers)})"""
+    write_line([insertion, afspraak_file], value=True, line=line, current_index=index, ending_index=len(medische_afspraken))
+afspraak_file.close()
+files.append("afspraak.sql")
+
+activiteit_file = open("activiteit.sql", "w")
+bewoner_bezoekt_activiteit_file = open("bewoner_bezoekt_activiteit.sql", "w")
+write_line([insertion, activiteit_file], value=False, line="INSERT INTO Activiteit(activiteit_naam, datum, locatie, categorie, activiteit_beschrijving, duur, activiteit_status)\nVALUES")
+write_line([insertion, bewoner_bezoekt_activiteit_file], value=False, line="INSERT INTO Bewoner_bezoekt_Activiteit(Activiteit_activiteit_naam, Activiteit_datum, Activiteit_locatie, Bewoner_code)\nVALUES")
+for index, activiteit in zip(range(len(activiteiten_verzorgingcentrum)), activiteiten_verzorgingcentrum):
+    status = random.choice(["binnenkort", "bezig", "beëndigd"])
+    if status == "binnenkort":
+        datum = datetime.now() + timedelta(days=random.randint(1, 7))
+    else:
+       datum = datetime.now() - timedelta(days=random.randint(1, 7)) 
+    ac_naam = activiteit['activiteit_naam']
+    ac_locatie = activiteit['locatie']
+    line = f"""("{activiteit['activiteit_naam']}", "{datum.strftime('%Y-%m-%d')}", "{ac_locatie}", "{activiteit['categorie']}", "{activiteit['activiteit_beschrijving']}", "{activiteit['duur']}", "{status}")"""
+    write_line([insertion, activiteit_file], value=True, line=line, current_index=index, ending_index=len(activiteiten_verzorgingcentrum))
+    xbewoners = random.randint(2, 10)
+    _bewoners = deepcopy(bewoners_in_memory)
+    random.shuffle(_bewoners)
+    for _ in range(xbewoners):
+        line = f"""("{ac_naam}", "{datum.strftime('%Y-%m-%d')}", "{ac_locatie}", {_bewoners[_][0]})"""
+        write_line([insertion, bewoner_bezoekt_activiteit_file], value=True, line=line, current_index=index, ending_index=(len(activiteiten_verzorgingcentrum)), nested_index=True)
+activiteit_file.close()
+bewoner_bezoekt_activiteit_file.close()
+files.append("activiteit.sql")
+files.append("bewoner_bezoekt_activiteit.sql")
+    
 insertion.close()
 stored_files = open("files.json", "w")
 json.dump({"files":files}, stored_files)

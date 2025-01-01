@@ -2931,6 +2931,893 @@ ziektes = [
   }
 ]
 
+activiteiten_verzorgingcentrum = [
+    {
+        "activiteit_naam": "Ochtendstretch",
+        "locatie": "Gemeenschappelijke Zaal",
+        "categorie": "Fysiek",
+        "activiteit_beschrijving": "Lichte rekoefeningen om de spieren te activeren en de flexibiliteit te bevorderen.",
+        "duur": "30 minuten"
+    },
+    {
+        "activiteit_naam": "Gezelschapsspelletjes",
+        "locatie": "Spelkamer",
+        "categorie": "Sociaal",
+        "activiteit_beschrijving": "Spelen van kaarten, schaken, dammen en andere bordspellen met medebewoners.",
+        "duur": "60 minuten"
+    },
+    {
+        "activiteit_naam": "Kunsttherapie",
+        "locatie": "Creatieve Ruimte",
+        "categorie": "Therapeutisch",
+        "activiteit_beschrijving": "Creatief bezig zijn met schilderen, tekenen en andere kunstvormen om expressie en emotie te bevorderen.",
+        "duur": "90 minuten"
+    },
+    {
+        "activiteit_naam": "Muziektherapie",
+        "locatie": "Muziekzaal",
+        "categorie": "Therapeutisch",
+        "activiteit_beschrijving": "Luisteren naar muziek, zingen en eenvoudige instrumenten bespelen om het welzijn te verhogen.",
+        "duur": "60 minuten"
+    },
+    {
+        "activiteit_naam": "Lezingen en Discussies",
+        "locatie": "Bibliotheek",
+        "categorie": "Cognitief",
+        "activiteit_beschrijving": "Bijwonen van lezingen over diverse onderwerpen gevolgd door groepsdiscussies.",
+        "duur": "90 minuten"
+    },
+    {
+        "activiteit_naam": "Tuinieren",
+        "locatie": "Verzorgingstuin",
+        "categorie": "Fysiek",
+        "activiteit_beschrijving": "Samenwerken in de tuin om bloemen en planten te verzorgen, wat ontspanning en lichaamsbeweging bevordert.",
+        "duur": "60 minuten"
+    },
+    {
+        "activiteit_naam": "Filmavond",
+        "locatie": "Bioscoopruimte",
+        "categorie": "Recreatief",
+        "activiteit_beschrijving": "Kijken naar klassieke films of documentaires met popcorn en drankjes.",
+        "duur": "120 minuten"
+    },
+    {
+        "activiteit_naam": "Yoga voor Senioren",
+        "locatie": "Fitnessruimte",
+        "categorie": "Fysiek",
+        "activiteit_beschrijving": "Zachte yogasessies aangepast aan de mobiliteit van ouderen om flexibiliteit en balans te verbeteren.",
+        "duur": "45 minuten"
+    },
+    {
+        "activiteit_naam": "Gezonde Kookworkshop",
+        "locatie": "Keukenatelier",
+        "categorie": "Cognitief",
+        "activiteit_beschrijving": "Samen gezonde recepten bereiden en leren over voeding en gezondheid.",
+        "duur": "90 minuten"
+    },
+    {
+        "activiteit_naam": "Herinneringssessies",
+        "locatie": "Herinneringsruimte",
+        "categorie": "Cognitief",
+        "activiteit_beschrijving": "Delen van persoonlijke herinneringen en verhalen om cognitieve functies te stimuleren.",
+        "duur": "60 minuten"
+    },
+    {
+        "activiteit_naam": "Dansmiddag",
+        "locatie": "Danszaal",
+        "categorie": "Fysiek",
+        "activiteit_beschrijving": "Muzikale danssessies met klassiekers en volksmuziek om beweging en plezier te stimuleren.",
+        "duur": "60 minuten"
+    },
+    {
+        "activiteit_naam": "Boekclub",
+        "locatie": "Bibliotheek",
+        "categorie": "Cognitief",
+        "activiteit_beschrijving": "Lezen en bespreken van geselecteerde boeken met medebewoners.",
+        "duur": "60 minuten"
+    },
+    {
+        "activiteit_naam": "Handwerk en Breien",
+        "locatie": "Handwerkruimte",
+        "categorie": "Recreatief",
+        "activiteit_beschrijving": "Creëren van handgemaakte items zoals sjaals, dekens en kaarten.",
+        "duur": "90 minuten"
+    },
+    {
+        "activiteit_naam": "Meditatiesessie",
+        "locatie": "Rustruimte",
+        "categorie": "Therapeutisch",
+        "activiteit_beschrijving": "Geleide meditatie en ademhalingsoefeningen voor ontspanning en mentale rust.",
+        "duur": "30 minuten"
+    },
+    {
+        "activiteit_naam": "Fotografie Workshop",
+        "locatie": "Fotostudio",
+        "categorie": "Cognitief",
+        "activiteit_beschrijving": "Leren over fotografie en het maken van eigen foto's van het verzorgingcentrum en omgeving.",
+        "duur": "90 minuten"
+    },
+    {
+        "activiteit_naam": "Bewegingstherapie",
+        "locatie": "Fitnessruimte",
+        "categorie": "Fysiek",
+        "activiteit_beschrijving": "Speciaal ontworpen oefeningen om mobiliteit en spierkracht te verbeteren.",
+        "duur": "45 minuten"
+    },
+    {
+        "activiteit_naam": "Sieraden maken",
+        "locatie": "Creatieve Ruimte",
+        "categorie": "Recreatief",
+        "activiteit_beschrijving": "Ontwerpen en maken van eenvoudige sieraden zoals armbanden en kettingen.",
+        "duur": "60 minuten"
+    },
+    {
+        "activiteit_naam": "Spelletjesmiddag",
+        "locatie": "Spelkamer",
+        "categorie": "Sociaal",
+        "activiteit_beschrijving": "Samen verschillende spellen spelen zoals bingo, domino en puzzels.",
+        "duur": "60 minuten"
+    },
+    {
+        "activiteit_naam": "Theaterworkshop",
+        "locatie": "Theatersaal",
+        "categorie": "Recreatief",
+        "activiteit_beschrijving": "Acteeractiviteiten en improvisatiespelletjes om creativiteit en zelfexpressie te bevorderen.",
+        "duur": "90 minuten"
+    },
+    {
+        "activiteit_naam": "Kruideninfusie maken",
+        "locatie": "Keukenatelier",
+        "categorie": "Cognitief",
+        "activiteit_beschrijving": "Leren over verschillende kruiden en samen infusies maken voor thee en andere toepassingen.",
+        "duur": "60 minuten"
+    },
+    {
+        "activiteit_naam": "Bezoek aan de lokale markt",
+        "locatie": "Buitenterrein",
+        "categorie": "Sociaal",
+        "activiteit_beschrijving": "Gezamenlijk een uitstapje maken naar de lokale markt voor een wandeling en inkopen.",
+        "duur": "120 minuten"
+    },
+    {
+        "activiteit_naam": "Geschiedeniscircuit",
+        "locatie": "Bibliotheek",
+        "categorie": "Cognitief",
+        "activiteit_beschrijving": "Bespreken van historische gebeurtenissen en persoonlijke ervaringen van bewoners.",
+        "duur": "90 minuten"
+    },
+    {
+        "activiteit_naam": "Memory Spel",
+        "locatie": "Spelkamer",
+        "categorie": "Cognitief",
+        "activiteit_beschrijving": "Spellen gericht op het verbeteren van het geheugen en de concentratie.",
+        "duur": "45 minuten"
+    },
+    {
+        "activiteit_naam": "Zanggroep",
+        "locatie": "Muziekzaal",
+        "categorie": "Sociaal",
+        "activiteit_beschrijving": "Samen zingen van favoriete liedjes en koormuziek.",
+        "duur": "60 minuten"
+    },
+    {
+        "activiteit_naam": "Theeceremonie",
+        "locatie": "Gemeenschappelijke Zaal",
+        "categorie": "Recreatief",
+        "activiteit_beschrijving": "Een rustige theeceremonie met verschillende soorten thee en bijbehorende snacks.",
+        "duur": "45 minuten"
+    },
+    {
+        "activiteit_naam": "Herstellende Massage",
+        "locatie": "Massageruimte",
+        "categorie": "Therapeutisch",
+        "activiteit_beschrijving": "Korte massagesessies om ontspanning en welzijn te bevorderen.",
+        "duur": "30 minuten"
+    },
+    {
+        "activiteit_naam": "Schrijfworkshop",
+        "locatie": "Schrijfruimte",
+        "categorie": "Cognitief",
+        "activiteit_beschrijving": "Schrijven van korte verhalen, gedichten of herinneringen.",
+        "duur": "90 minuten"
+    },
+    {
+        "activiteit_naam": "Kookdemonstratie",
+        "locatie": "Keukenatelier",
+        "categorie": "Recreatief",
+        "activiteit_beschrijving": "Live kookdemonstraties door een chef-kok met proefmonsters.",
+        "duur": "60 minuten"
+    },
+    {
+        "activiteit_naam": "Pilates voor Senioren",
+        "locatie": "Fitnessruimte",
+        "categorie": "Fysiek",
+        "activiteit_beschrijving": "Zachte pilatesoefeningen gericht op kracht en flexibiliteit.",
+        "duur": "45 minuten"
+    },
+    {
+        "activiteit_naam": "Digitale Fotobewerking",
+        "locatie": "Computerruimte",
+        "categorie": "Cognitief",
+        "activiteit_beschrijving": "Leren basisvaardigheden in fotobewerking met computers.",
+        "duur": "60 minuten"
+    },
+    {
+        "activiteit_naam": "Bezoek van Huisdieren",
+        "locatie": "Gemeenschappelijke Zaal",
+        "categorie": "Sociaal",
+        "activiteit_beschrijving": "Interacties met therapiehonden of andere huisdieren voor emotionele ondersteuning.",
+        "duur": "30 minuten"
+    },
+    {
+        "activiteit_naam": "Breien en Haken",
+        "locatie": "Handwerkruimte",
+        "categorie": "Recreatief",
+        "activiteit_beschrijving": "Leren en beoefenen van brei- en haaktechnieken voor ontspanning en creativiteit.",
+        "duur": "90 minuten"
+    },
+    {
+        "activiteit_naam": "Wijnproeverij",
+        "locatie": "Gemeenschappelijke Zaal",
+        "categorie": "Recreatief",
+        "activiteit_beschrijving": "Proeven van verschillende wijnen met uitleg over hun herkomst en smaakprofielen.",
+        "duur": "60 minuten"
+    },
+    {
+        "activiteit_naam": "Dans en Beweging",
+        "locatie": "Danszaal",
+        "categorie": "Fysiek",
+        "activiteit_beschrijving": "Bewegingsactiviteiten met muziek om de bloedcirculatie te stimuleren.",
+        "duur": "45 minuten"
+    },
+    {
+        "activiteit_naam": "Theatervoorstelling",
+        "locatie": "Theatersaal",
+        "categorie": "Recreatief",
+        "activiteit_beschrijving": "Kijk een theaterstuk of toneelvoorstelling samen met medebewoners.",
+        "duur": "120 minuten"
+    },
+    {
+        "activiteit_naam": "Meditatieve Wandeling",
+        "locatie": "Verzorgingstuin",
+        "categorie": "Therapeutisch",
+        "activiteit_beschrijving": "Rustige wandeling in de tuin met focus op mindfulness en natuurobservatie.",
+        "duur": "60 minuten"
+    },
+    {
+        "activiteit_naam": "Creatief Schrijven",
+        "locatie": "Schrijfruimte",
+        "categorie": "Cognitief",
+        "activiteit_beschrijving": "Creatieve schrijfactiviteiten zoals poëzie en verhalen schrijven.",
+        "duur": "90 minuten"
+    },
+    {
+        "activiteit_naam": "Koffie en Gesprekken",
+        "locatie": "Koffiekamer",
+        "categorie": "Sociaal",
+        "activiteit_beschrijving": "Informele bijeenkomst om bij te praten en nieuwe mensen te ontmoeten.",
+        "duur": "60 minuten"
+    },
+    {
+        "activiteit_naam": "Gezonde Snack Bereiden",
+        "locatie": "Keukenatelier",
+        "categorie": "Cognitief",
+        "activiteit_beschrijving": "Samen gezonde snacks maken en leren over voedingswaarde.",
+        "duur": "60 minuten"
+    },
+    {
+        "activiteit_naam": "Brain Teasers en Puzzels",
+        "locatie": "Spelkamer",
+        "categorie": "Cognitief",
+        "activiteit_beschrijving": "Oplossen van kruiswoordraadsels, sudoku en andere hersenkrakers.",
+        "duur": "45 minuten"
+    },
+    {
+        "activiteit_naam": "Bezoek van Familieleden",
+        "locatie": "Gemeenschappelijke Zaal",
+        "categorie": "Sociaal",
+        "activiteit_beschrijving": "Geleidelijke interacties met familieleden voor sociale verbinding en ondersteuning.",
+        "duur": "120 minuten"
+    },
+    {
+        "activiteit_naam": "Handmassage Workshop",
+        "locatie": "Massageruimte",
+        "categorie": "Therapeutisch",
+        "activiteit_beschrijving": "Leren eenvoudige handmassagetechnieken voor zelfzorg en ontspanning.",
+        "duur": "60 minuten"
+    },
+    {
+        "activiteit_naam": "Bezoek van Gastspreker",
+        "locatie": "Vergaderzaal",
+        "categorie": "Cognitief",
+        "activiteit_beschrijving": "Luisteren naar een gastspreker over interessante onderwerpen zoals gezondheid of geschiedenis.",
+        "duur": "90 minuten"
+    },
+    {
+        "activiteit_naam": "Zelfportret Maken",
+        "locatie": "Creatieve Ruimte",
+        "categorie": "Recreatief",
+        "activiteit_beschrijving": "Teken of schilder een zelfportret als expressieve kunstvorm.",
+        "duur": "90 minuten"
+    },
+    {
+        "activiteit_naam": "Bezoek van Dokter of Verpleegkundige",
+        "locatie": "Gemeenschappelijke Zaal",
+        "categorie": "Sociaal",
+        "activiteit_beschrijving": "Informele gesprekken en check-ins met medische professionals.",
+        "duur": "60 minuten"
+    },
+    {
+        "activiteit_naam": "Fotolijstje Versieren",
+        "locatie": "Handwerkruimte",
+        "categorie": "Recreatief",
+        "activiteit_beschrijving": "Persoonlijke fotolijstjes versieren met knutselmaterialen.",
+        "duur": "45 minuten"
+    },
+    {
+        "activiteit_naam": "Storytelling Sessies",
+        "locatie": "Bibliotheek",
+        "categorie": "Cognitief",
+        "activiteit_beschrijving": "Vertellen en luisteren naar verhalen uit het verleden van bewoners.",
+        "duur": "60 minuten"
+    },
+    {
+        "activiteit_naam": "Schoonmaakdag",
+        "locatie": "Gemeenschappelijke Zaal",
+        "categorie": "Fysiek",
+        "activiteit_beschrijving": "Samen schoonmaken en opruimen van gemeenschappelijke ruimtes.",
+        "duur": "60 minuten"
+    },
+    {
+        "activiteit_naam": "Bezoek van een Theatergezelschap",
+        "locatie": "Theatersaal",
+        "categorie": "Recreatief",
+        "activiteit_beschrijving": "Live optredens van lokale theatergezelschappen met interactie.",
+        "duur": "120 minuten"
+    },
+    {
+        "activiteit_naam": "Mindfulness Sessies",
+        "locatie": "Rustruimte",
+        "categorie": "Therapeutisch",
+        "activiteit_beschrijving": "Geleide mindfulness oefeningen voor mentale rust en focus.",
+        "duur": "30 minuten"
+    },
+    {
+        "activiteit_naam": "Gezonde Leefstijl Workshop",
+        "locatie": "Vergaderzaal",
+        "categorie": "Cognitief",
+        "activiteit_beschrijving": "Educatieve sessies over gezonde voeding, beweging en levensstijl.",
+        "duur": "60 minuten"
+    },
+    {
+        "activiteit_naam": "Memory Lane Wandeling",
+        "locatie": "Verzorgingstuin",
+        "categorie": "Cognitief",
+        "activiteit_beschrijving": "Wandeling met herinneringen en gesprekken over het verleden.",
+        "duur": "60 minuten"
+    },
+    {
+        "activiteit_naam": "Breien en Vlechten",
+        "locatie": "Handwerkruimte",
+        "categorie": "Recreatief",
+        "activiteit_beschrijving": "Samen breien en vlechten van eenvoudige projecten zoals sjaals of armbanden.",
+        "duur": "90 minuten"
+    },
+    {
+        "activiteit_naam": "Karaoke Avond",
+        "locatie": "Gemeenschappelijke Zaal",
+        "categorie": "Sociaal",
+        "activiteit_beschrijving": "Zingen van favoriete liedjes met karaoke apparatuur voor plezier en sociale interactie.",
+        "duur": "60 minuten"
+    },
+    {
+        "activiteit_naam": "Pilates Mat Sessies",
+        "locatie": "Fitnessruimte",
+        "categorie": "Fysiek",
+        "activiteit_beschrijving": "Zachte pilates oefeningen op matten gericht op kernkracht en flexibiliteit.",
+        "duur": "45 minuten"
+    },
+    {
+        "activiteit_naam": "Geheugen Spelletjes",
+        "locatie": "Spelkamer",
+        "categorie": "Cognitief",
+        "activiteit_beschrijving": "Spelletjes gericht op het trainen en verbeteren van het geheugen.",
+        "duur": "30 minuten"
+    },
+    {
+        "activiteit_naam": "Handmassage Workshops",
+        "locatie": "Massageruimte",
+        "categorie": "Therapeutisch",
+        "activiteit_beschrijving": "Leren en oefenen van eenvoudige handmassagetechnieken voor zelfzorg.",
+        "duur": "30 minuten"
+    },
+    {
+        "activiteit_naam": "Bezoek van Gastartiest",
+        "locatie": "Muziekzaal",
+        "categorie": "Recreatief",
+        "activiteit_beschrijving": "Live muziekoptredens of voordrachten van gastartiesten.",
+        "duur": "60 minuten"
+    },
+    {
+        "activiteit_naam": "Schrijfopdrachten",
+        "locatie": "Schrijfruimte",
+        "categorie": "Cognitief",
+        "activiteit_beschrijving": "Oefeningen in creatief schrijven en dagboek bijhouden.",
+        "duur": "60 minuten"
+    },
+    {
+        "activiteit_naam": "Fotografie Wandeling",
+        "locatie": "Verzorgingstuin",
+        "categorie": "Cognitief",
+        "activiteit_beschrijving": "Wandeling met camera's om mooie momenten vast te leggen.",
+        "duur": "90 minuten"
+    },
+    {
+        "activiteit_naam": "Kleuren en Puzzels",
+        "locatie": "Spelkamer",
+        "categorie": "Cognitief",
+        "activiteit_beschrijving": "Kleurenboeken en puzzels om creativiteit en concentratie te stimuleren.",
+        "duur": "60 minuten"
+    },
+    {
+        "activiteit_naam": "Gezelschap Dans",
+        "locatie": "Danszaal",
+        "categorie": "Fysiek",
+        "activiteit_beschrijving": "Dansen met partners op rustige muziek voor plezier en beweging.",
+        "duur": "60 minuten"
+    },
+    {
+        "activiteit_naam": "Bezoek van een Historicus",
+        "locatie": "Vergaderzaal",
+        "categorie": "Cognitief",
+        "activiteit_beschrijving": "Lezingen over historische onderwerpen met Q&A sessies.",
+        "duur": "90 minuten"
+    },
+    {
+        "activiteit_naam": "Samen Koken",
+        "locatie": "Keukenatelier",
+        "categorie": "Cognitief",
+        "activiteit_beschrijving": "Samen eenvoudige gerechten bereiden en leren over kooktechnieken.",
+        "duur": "90 minuten"
+    },
+    {
+        "activiteit_naam": "Bezoek van Therapeuten",
+        "locatie": "Gemeenschappelijke Zaal",
+        "categorie": "Therapeutisch",
+        "activiteit_beschrijving": "Interactieve sessies met fysiotherapeuten, ergotherapeuten en andere zorgprofessionals.",
+        "duur": "60 minuten"
+    },
+    {
+        "activiteit_naam": "Bingo Spelavond",
+        "locatie": "Spelkamer",
+        "categorie": "Sociaal",
+        "activiteit_beschrijving": "Speelse bingoavond met prijzen en gezelligheid.",
+        "duur": "60 minuten"
+    },
+    {
+        "activiteit_naam": "Gezondheidsvoorlichting",
+        "locatie": "Vergaderzaal",
+        "categorie": "Cognitief",
+        "activiteit_beschrijving": "Educatieve sessies over gezondheidsthema's zoals voeding, beweging en mentale gezondheid.",
+        "duur": "60 minuten"
+    },
+    {
+        "activiteit_naam": "Bezoek aan het Museum",
+        "locatie": "Lokale Museum",
+        "categorie": "Recreatief",
+        "activiteit_beschrijving": "Geleid bezoek aan een lokaal museum met rondleidingen en tentoonstellingen.",
+        "duur": "120 minuten"
+    },
+    {
+        "activiteit_naam": "Themafeest",
+        "locatie": "Gemeenschappelijke Zaal",
+        "categorie": "Sociaal",
+        "activiteit_beschrijving": "Feestelijke bijeenkomsten rond een specifiek thema, zoals Halloween of Kerst.",
+        "duur": "120 minuten"
+    },
+    {
+        "activiteit_naam": "Bezoek van Familie",
+        "locatie": "Gemeenschappelijke Zaal",
+        "categorie": "Sociaal",
+        "activiteit_beschrijving": "Informele bijeenkomsten met familieleden voor sociale interactie en ondersteuning.",
+        "duur": "90 minuten"
+    },
+    {
+        "activiteit_naam": "Bezoek van een Dokter",
+        "locatie": "Medische Ruimte",
+        "categorie": "Therapeutisch",
+        "activiteit_beschrijving": "Regelmatige check-ups en gezondheidsadvies van medische professionals.",
+        "duur": "60 minuten"
+    },
+    {
+        "activiteit_naam": "Bezoek van een Vriend",
+        "locatie": "Gemeenschappelijke Zaal",
+        "categorie": "Sociaal",
+        "activiteit_beschrijving": "Gezellige ontmoetingen met vrienden voor sociale interactie.",
+        "duur": "60 minuten"
+    }
+]
+
+vervoer_types = [
+    "Auto",
+    "Taxi",
+    "Ambulance",
+    "Openbaar vervoer (Bus, Tram, Metro)",
+    "Fiets",
+]
+tijdsduur_medische_afspraken = [
+    "10 minuten",
+    "15 minuten",
+    "20 minuten",
+    "30 minuten",
+    "45 minuten",
+    "60 minuten",
+    "90 minuten",
+    "120 minuten",
+    "150 minuten",
+    "180 minuten"
+]
+
+medische_afspraken = [
+    {"omschrijving": "Consult huisarts voor algemene check-up", "afspraak_type": "Consult"},
+    {"omschrijving": "Controle bloeddruk bij cardioloog", "afspraak_type": "Controle"},
+    {"omschrijving": "Orthopedisch onderzoek voor knieklachten", "afspraak_type": "Consult"},
+    {"omschrijving": "Diabetes management afspraak", "afspraak_type": "Therapie"},
+    {"omschrijving": "Vaccinatie tegen influenza", "afspraak_type": "Vaccinatie"},
+    {"omschrijving": "Psychologische counseling sessie", "afspraak_type": "Therapie"},
+    {"omschrijving": "Dermatologisch onderzoek huiduitslag", "afspraak_type": "Consult"},
+    {"omschrijving": "Audiologisch gehoortest", "afspraak_type": "Diagnose"},
+    {"omschrijving": "Oogonderzoek bij optometrist", "afspraak_type": "Controle"},
+    {"omschrijving": "Prenatale controle zwangerschapsonderzoek", "afspraak_type": "Controle"},
+    {"omschrijving": "Radiologisch onderzoek röntgenfoto enkel", "afspraak_type": "Diagnose"},
+    {"omschrijving": "Endoscopie afspraak gastro-enteroloog", "afspraak_type": "Procedure"},
+    {"omschrijving": "Fysiotherapie sessie voor rugpijn", "afspraak_type": "Therapie"},
+    {"omschrijving": "Neuroloog consult voor hoofdpijn", "afspraak_type": "Consult"},
+    {"omschrijving": "Chirurgische consultatie voor appendectomie", "afspraak_type": "Consult"},
+    {"omschrijving": "Verloskundige afspraak postnatale controle", "afspraak_type": "Controle"},
+    {"omschrijving": "Gynaecologisch onderzoek", "afspraak_type": "Consult"},
+    {"omschrijving": "Laboratoriumafspraak voor bloedonderzoek", "afspraak_type": "Diagnose"},
+    {"omschrijving": "Immunisatie afspraak kinderen", "afspraak_type": "Vaccinatie"},
+    {"omschrijving": "Psychiater afspraak medicatiebeoordeling", "afspraak_type": "Consult"},
+    {"omschrijving": "Urologie consult voor nierstenen", "afspraak_type": "Consult"},
+    {"omschrijving": "Reumatologisch onderzoek voor artritis", "afspraak_type": "Diagnose"},
+    {"omschrijving": "Oncologisch consult voor kankerscreening", "afspraak_type": "Consult"},
+    {"omschrijving": "Fertilisatie afspraak bij vruchtbaarheidskliniek", "afspraak_type": "Procedure"},
+    {"omschrijving": "Spastische therapie sessie neurologie", "afspraak_type": "Therapie"},
+    {"omschrijving": "Podologisch voetonderzoek", "afspraak_type": "Controle"},
+    {"omschrijving": "Immunoloog afspraak allergietest", "afspraak_type": "Diagnose"},
+    {"omschrijving": "Cardiovasculaire screening", "afspraak_type": "Controle"},
+    {"omschrijving": "Gastro-enterologisch consult voor maagklachten", "afspraak_type": "Consult"},
+    {"omschrijving": "Endocrinologisch onderzoek schildklierfunctie", "afspraak_type": "Diagnose"},
+    {"omschrijving": "Pulmonologisch longfunctieonderzoek", "afspraak_type": "Diagnose"},
+    {"omschrijving": "Anesthesiologisch consult voor operatieplanning", "afspraak_type": "Consult"},
+    {"omschrijving": "Revalidatie afspraak na knieoperatie", "afspraak_type": "Therapie"},
+    {"omschrijving": "KNO-arts consult voor oorinfectie", "afspraak_type": "Consult"},
+    {"omschrijving": "Geriatrisch onderzoek ouderen zorg", "afspraak_type": "Controle"},
+    {"omschrijving": "Orthodontisch consult voor beugelbehandeling", "afspraak_type": "Consult"},
+    {"omschrijving": "Neuropathologisch onderzoek zenuwgeleiding", "afspraak_type": "Diagnose"},
+    {"omschrijving": "Dietist afspraak voor voedingsadvies", "afspraak_type": "Therapie"},
+    {"omschrijving": "Radiotherapie sessie oncologie", "afspraak_type": "Therapie"},
+    {"omschrijving": "Kinesitherapie afspraak sportblessure", "afspraak_type": "Therapie"},
+    {"omschrijving": "Tandartscontrole en reiniging", "afspraak_type": "Controle"},
+    {"omschrijving": "Logopedie sessie spraaktherapie", "afspraak_type": "Therapie"},
+    {"omschrijving": "Neonatologisch controle pasgeborene", "afspraak_type": "Controle"},
+    {"omschrijving": "Immunisatie afspraak reismedicatie", "afspraak_type": "Vaccinatie"},
+    {"omschrijving": "Psychosociale ondersteuning afspraak", "afspraak_type": "Therapie"},
+    {"omschrijving": "Radiologisch onderzoek MRI hersenen", "afspraak_type": "Diagnose"},
+    {"omschrijving": "Chirurgische ingreep voor galblaasverwijdering", "afspraak_type": "Operatie"},
+    {"omschrijving": "Slaaponderzoek slaapapneu", "afspraak_type": "Diagnose"},
+    {"omschrijving": "Leefstijl consult voor gewichtsverlies", "afspraak_type": "Therapie"},
+    {"omschrijving": "Orthopedische operatie voor heupvervanging", "afspraak_type": "Operatie"},
+    {"omschrijving": "Gynaecologisch consult prenatale echografie", "afspraak_type": "Controle"},
+    {"omschrijving": "Reumatologisch therapie voor lupus", "afspraak_type": "Therapie"},
+    {"omschrijving": "Endocrinologisch consult diabetesbeheer", "afspraak_type": "Therapie"},
+    {"omschrijving": "Psychotherapeutische sessie cognitieve gedragstherapie", "afspraak_type": "Therapie"},
+    {"omschrijving": "Cardiologisch echocardiogram", "afspraak_type": "Diagnose"},
+    {"omschrijving": "Chirurgisch consult voor borstamputatie", "afspraak_type": "Consult"},
+    {"omschrijving": "Fysiotherapie voor hernia herstel", "afspraak_type": "Therapie"},
+    {"omschrijving": "Audiometrie gehoortest voor tinnitus", "afspraak_type": "Diagnose"},
+    {"omschrijving": "Endoscopie afspraak voor colonoscopy", "afspraak_type": "Procedure"},
+    {"omschrijving": "Radiologisch onderzoek CT-scan thorax", "afspraak_type": "Diagnose"},
+    {"omschrijving": "Kinesitherapie voor schouderontsteking", "afspraak_type": "Therapie"},
+    {"omschrijving": "Psychologische evaluatie voor ADHD", "afspraak_type": "Diagnose"},
+    {"omschrijving": "Dermatologisch consult voor eczeem", "afspraak_type": "Consult"},
+    {"omschrijving": "Immunisatie tegen hepatitis B", "afspraak_type": "Vaccinatie"},
+    {"omschrijving": "Urologische behandeling voor prostaatproblemen", "afspraak_type": "Therapie"},
+    {"omschrijving": "Gastro-enterologisch endoscopie voor maagzweer", "afspraak_type": "Procedure"},
+    {"omschrijving": "Neurologisch onderzoek epilepsie", "afspraak_type": "Diagnose"},
+    {"omschrijving": "Orthopedisch consult voor botbreuk", "afspraak_type": "Consult"},
+    {"omschrijving": "Oncologisch therapieprogramma chemotherapie", "afspraak_type": "Therapie"},
+    {"omschrijving": "Revalidatie na beroerte", "afspraak_type": "Therapie"},
+    {"omschrijving": "Neonatologisch follow-up pasgeborene", "afspraak_type": "Controle"},
+    {"omschrijving": "Psychiatrisch consult voor depressie", "afspraak_type": "Consult"},
+    {"omschrijving": "Pulmonologisch behandeling astma", "afspraak_type": "Therapie"},
+    {"omschrijving": "Reumatologisch consult voor artritis reumatoïde", "afspraak_type": "Consult"},
+    {"omschrijving": "Diëtist sessie voor glutenintolerantie", "afspraak_type": "Therapie"},
+    {"omschrijving": "KNO-arts behandeling voor sinusitis", "afspraak_type": "Therapie"},
+    {"omschrijving": "Chirurgische ingreep voor hernia reparatie", "afspraak_type": "Operatie"},
+    {"omschrijving": "Psychologische test voor persoonlijkheidsstoornis", "afspraak_type": "Diagnose"},
+    {"omschrijving": "Cardiologische behandeling hartfalen", "afspraak_type": "Therapie"},
+    {"omschrijving": "Dermatologisch behandeling acne", "afspraak_type": "Therapie"},
+    {"omschrijving": "Endocrinologisch consult schildklierverstoringen", "afspraak_type": "Consult"},
+    {"omschrijving": "Gynaecologisch behandeling endometriose", "afspraak_type": "Therapie"},
+    {"omschrijving": "Orthopedische fysiotherapie voor sportblessure", "afspraak_type": "Therapie"},
+    {"omschrijving": "Audiologisch behandeling voor gehoorverlies", "afspraak_type": "Therapie"},
+    {"omschrijving": "Psychotherapeutische sessie voor angststoornis", "afspraak_type": "Therapie"},
+    {"omschrijving": "Radiologisch onderzoek PET-scan kanker", "afspraak_type": "Diagnose"},
+    {"omschrijving": "Immunoloog behandeling allergieën", "afspraak_type": "Therapie"},
+    {"omschrijving": "Neurochirurgisch consult voor hersentumor", "afspraak_type": "Consult"},
+    {"omschrijving": "Fysiotherapeutische sessie voor postoperatief herstel", "afspraak_type": "Therapie"},
+    {"omschrijving": "Gastro-enterologisch behandeling prikkelbare darmsyndroom", "afspraak_type": "Therapie"},
+    {"omschrijving": "Cardiologisch behandeling hartritmestoornissen", "afspraak_type": "Therapie"},
+    {"omschrijving": "Psychologisch consult voor relatieproblemen", "afspraak_type": "Consult"},
+    {"omschrijving": "Orthopedisch onderzoek voor scoliose", "afspraak_type": "Diagnose"},
+    {"omschrijving": "Radiologisch onderzoek ultrasone buikscan", "afspraak_type": "Diagnose"},
+    {"omschrijving": "Chirurgische ingreep voor galstenen", "afspraak_type": "Operatie"},
+    {"omschrijving": "Reumatologisch behandeling spondylitis", "afspraak_type": "Therapie"},
+    {"omschrijving": "Endocrinologisch therapie hormoonbalans", "afspraak_type": "Therapie"},
+    {"omschrijving": "Pulmonologisch longrevalidatie programma", "afspraak_type": "Therapie"},
+    {"omschrijving": "Oncologisch consult voor nieuwe kankerdiagnose", "afspraak_type": "Consult"},
+    {"omschrijving": "Neuroloog behandeling multiple sclerose", "afspraak_type": "Therapie"},
+    {"omschrijving": "Gynaecologisch follow-up na bevalling", "afspraak_type": "Controle"},
+    {"omschrijving": "Fysiotherapie voor herstellende botbreuk", "afspraak_type": "Therapie"},
+    {"omschrijving": "Psychiater evaluatie voor bipolaire stoornis", "afspraak_type": "Diagnose"},
+    {"omschrijving": "Kinesitherapie sessie voor herstel na operatie", "afspraak_type": "Therapie"},
+    {"omschrijving": "Orthopedisch consult voor heuppijn", "afspraak_type": "Consult"},
+    {"omschrijving": "Dermatologisch onderzoek voor huidkanker", "afspraak_type": "Diagnose"},
+    {"omschrijving": "Cardiologisch echocardiografie voor hartfunctie", "afspraak_type": "Diagnose"},
+    {"omschrijving": "Psychotherapeutische behandeling trauma", "afspraak_type": "Therapie"},
+    {"omschrijving": "Urologisch onderzoek prostaatgezondheid", "afspraak_type": "Controle"},
+    {"omschrijving": "Gastro-enterologisch behandeling maagontsteking", "afspraak_type": "Therapie"},
+    {"omschrijving": "Endocrinologisch consult voor diabetes type 2", "afspraak_type": "Consult"},
+    {"omschrijving": "Pulmonologisch consult voor COPD", "afspraak_type": "Consult"},
+    {"omschrijving": "Orthopedisch revalidatieprogramma na botbreuk", "afspraak_type": "Therapie"},
+    {"omschrijving": "Psychologisch evaluatie voor leerstoornissen", "afspraak_type": "Diagnose"},
+    {"omschrijving": "Radiologisch onderzoek mammografie", "afspraak_type": "Diagnose"},
+    {"omschrijving": "Immunisatie afspraak voor reizigersvaccinatie", "afspraak_type": "Vaccinatie"},
+    {"omschrijving": "Chirurgisch consult voor borstprothese", "afspraak_type": "Consult"},
+    {"omschrijving": "Reumatologisch therapieprogramma voor artrose", "afspraak_type": "Therapie"},
+    {"omschrijving": "Endoscopie afspraak voor leverbiopsie", "afspraak_type": "Procedure"},
+    {"omschrijving": "Neurologisch consult voor zenuwbeschadiging", "afspraak_type": "Consult"},
+    {"omschrijving": "Fysiotherapie sessie voor postoperatief herstel knie", "afspraak_type": "Therapie"},
+    {"omschrijving": "Gynaecologisch behandeling vruchtbaarheidsproblemen", "afspraak_type": "Therapie"},
+    {"omschrijving": "Cardiologisch behandeling voor hypertensie", "afspraak_type": "Therapie"},
+    {"omschrijving": "Psychotherapeutische sessie voor rouwverwerking", "afspraak_type": "Therapie"},
+    {"omschrijving": "Orthopedisch onderzoek voor enkelverstuiking", "afspraak_type": "Diagnose"},
+    {"omschrijving": "Radiologisch onderzoek DX-scan botdichtheid", "afspraak_type": "Diagnose"},
+    {"omschrijving": "Chirurgische ingreep voor reumatoïde artritis", "afspraak_type": "Operatie"},
+    {"omschrijving": "Reumatologisch consult voor lupus management", "afspraak_type": "Consult"},
+    {"omschrijving": "Endocrinologisch therapie voor hormonale disbalans", "afspraak_type": "Therapie"},
+    {"omschrijving": "Pulmonologisch longfunctieonderzoek voor astma", "afspraak_type": "Diagnose"},
+    {"omschrijving": "Oncologisch consult voor immunotherapie", "afspraak_type": "Consult"},
+    {"omschrijving": "Neurochirurgische ingreep voor hersentumor", "afspraak_type": "Operatie"},
+    {"omschrijving": "Gynaecologisch follow-up controle zwangerschap", "afspraak_type": "Controle"},
+    {"omschrijving": "Fysiotherapie voor herstel na beroerte", "afspraak_type": "Therapie"},
+    {"omschrijving": "Psychiater consult voor angststoornis", "afspraak_type": "Consult"},
+    {"omschrijving": "Kinesitherapie sessie voor spierherstel", "afspraak_type": "Therapie"},
+    {"omschrijving": "Orthopedisch consult voor hernia", "afspraak_type": "Consult"},
+    {"omschrijving": "Dermatologisch behandeling eczeem", "afspraak_type": "Therapie"},
+    {"omschrijving": "Cardiologisch consult voor hartstilstand", "afspraak_type": "Consult"},
+    {"omschrijving": "Psychotherapeutische behandeling voor depressie", "afspraak_type": "Therapie"},
+    {"omschrijving": "Urologisch behandeling voor urine-incontinentie", "afspraak_type": "Therapie"},
+    {"omschrijving": "Gastro-enterologisch diagnose voor ulceratie", "afspraak_type": "Diagnose"},
+    {"omschrijving": "Endocrinologisch onderzoek voor bijnierfunctie", "afspraak_type": "Diagnose"},
+    {"omschrijving": "Pulmonologisch behandeling voor longfibrose", "afspraak_type": "Therapie"},
+    {"omschrijving": "Oncologisch follow-up na kankerbehandeling", "afspraak_type": "Controle"},
+    {"omschrijving": "Neuroloog behandeling voor multiple sclerose", "afspraak_type": "Therapie"},
+    {"omschrijving": "Gynaecologisch consult voor menopauze symptomen", "afspraak_type": "Consult"},
+    {"omschrijving": "Fysiotherapie sessie voor schouderherstel", "afspraak_type": "Therapie"},
+    {"omschrijving": "Psychiater evaluatie voor schizofrenie", "afspraak_type": "Diagnose"},
+    {"omschrijving": "Kinesitherapie voor revalidatie na heupoperatie", "afspraak_type": "Therapie"},
+    {"omschrijving": "Orthopedisch onderzoek voor schouderpijn", "afspraak_type": "Diagnose"},
+    {"omschrijving": "Dermatologisch consult voor psoriasis behandeling", "afspraak_type": "Therapie"},
+    {"omschrijving": "Cardiologisch onderzoek voor hartfalen", "afspraak_type": "Diagnose"},
+    {"omschrijving": "Psychotherapeutische sessie voor eetstoornis", "afspraak_type": "Therapie"},
+    {"omschrijving": "Urologisch onderzoek voor blaaskanker", "afspraak_type": "Diagnose"},
+    {"omschrijving": "Gastro-enterologisch behandeling voor hepatitis", "afspraak_type": "Therapie"},
+    {"omschrijving": "Endocrinologisch consult voor groeihormoonstoornis", "afspraak_type": "Consult"},
+    {"omschrijving": "Pulmonologisch behandeling voor longkanker", "afspraak_type": "Therapie"},
+    {"omschrijving": "Oncologisch therapieprogramma voor leukemie", "afspraak_type": "Therapie"},
+    {"omschrijving": "Neurochirurgisch consult voor ruggenmergletsel", "afspraak_type": "Consult"},
+    {"omschrijving": "Gynaecologisch behandeling baarmoeder fibromen", "afspraak_type": "Therapie"},
+    {"omschrijving": "Fysiotherapie voor verbeterde mobiliteit na operatie", "afspraak_type": "Therapie"},
+    {"omschrijving": "Psychiater consult voor bipolaire stoornis", "afspraak_type": "Consult"},
+    {"omschrijving": "Kinesitherapie sessie voor balanstraining", "afspraak_type": "Therapie"},
+    {"omschrijving": "Orthopedisch consult voor polsfractuur", "afspraak_type": "Consult"},
+    {"omschrijving": "Dermatologisch onderzoek huidkanker screening", "afspraak_type": "Diagnose"},
+    {"omschrijving": "Cardiologisch echocardiogram voor hartstructuren", "afspraak_type": "Diagnose"},
+    {"omschrijving": "Psychotherapeutische behandeling voor PTSS", "afspraak_type": "Therapie"},
+    {"omschrijving": "Urologisch behandeling voor nierinfectie", "afspraak_type": "Therapie"},
+    {"omschrijving": "Gastro-enterologisch diagnose voor darmobstructie", "afspraak_type": "Diagnose"},
+    {"omschrijving": "Endocrinologisch therapie voor diabetes management", "afspraak_type": "Therapie"},
+    {"omschrijving": "Pulmonologisch consult voor bronchitis", "afspraak_type": "Consult"},
+    {"omschrijving": "Oncologisch consult voor palliatieve zorg", "afspraak_type": "Consult"},
+    {"omschrijving": "Neuroloog behandeling voor zenuwpijn", "afspraak_type": "Therapie"},
+    {"omschrijving": "Gynaecologisch follow-up na hysterectomie", "afspraak_type": "Controle"},
+    {"omschrijving": "Fysiotherapie sessie voor spierversterking", "afspraak_type": "Therapie"},
+    {"omschrijving": "Psychiater evaluatie voor verslaving", "afspraak_type": "Diagnose"},
+    {"omschrijving": "Kinesitherapie voor verbetering van flexibiliteit", "afspraak_type": "Therapie"},
+    {"omschrijving": "Orthopedisch onderzoek voor rugpijn", "afspraak_type": "Diagnose"},
+    {"omschrijving": "Dermatologisch behandeling vitiligo", "afspraak_type": "Therapie"},
+    {"omschrijving": "Cardiologisch consult voor hartritmestoornissen", "afspraak_type": "Consult"},
+    {"omschrijving": "Psychotherapeutische sessie voor sociale angst", "afspraak_type": "Therapie"},
+    {"omschrijving": "Urologisch onderzoek voor prostaatvergroting", "afspraak_type": "Diagnose"},
+    {"omschrijving": "Gastro-enterologisch behandeling voor maagkanker", "afspraak_type": "Therapie"},
+    {"omschrijving": "Endocrinologisch consult voor osteoporose", "afspraak_type": "Consult"},
+    {"omschrijving": "Pulmonologisch behandeling voor longontsteking", "afspraak_type": "Therapie"},
+    {"omschrijving": "Oncologisch therapieprogramma voor borstkanker", "afspraak_type": "Therapie"},
+    {"omschrijving": "Neurochirurgische ingreep voor epilepsie", "afspraak_type": "Operatie"},
+    {"omschrijving": "Gynaecologisch consult voor vruchtbaarheidsbehandelingen", "afspraak_type": "Consult"},
+    {"omschrijving": "Fysiotherapie sessie voor chronische pijn", "afspraak_type": "Therapie"},
+    {"omschrijving": "Psychiater consult voor slaapstoornissen", "afspraak_type": "Consult"},
+    {"omschrijving": "Kinesitherapie voor herstel na beroerte", "afspraak_type": "Therapie"},
+    {"omschrijving": "Orthopedisch onderzoek voor sportblessure", "afspraak_type": "Diagnose"},
+    {"omschrijving": "Dermatologisch consult voor cosmetische ingreep", "afspraak_type": "Consult"},
+    {"omschrijving": "Cardiologisch onderzoek voor cholesterol niveaus", "afspraak_type": "Diagnose"},
+    {"omschrijving": "Psychotherapeutische behandeling voor verslaving", "afspraak_type": "Therapie"},
+    {"omschrijving": "Urologisch behandeling voor prostaatkanker", "afspraak_type": "Therapie"},
+    {"omschrijving": "Gastro-enterologisch diagnose voor coeliakie", "afspraak_type": "Diagnose"},
+    {"omschrijving": "Endocrinologisch therapie voor schildklierhormonen", "afspraak_type": "Therapie"},
+    {"omschrijving": "Pulmonologisch consult voor longkanker behandeling", "afspraak_type": "Consult"},
+    {"omschrijving": "Oncologisch follow-up na chemotherapie", "afspraak_type": "Controle"}
+]
+
+ziekenhuizen = [
+    "Amsterdam UMC - Amsterdam",
+    "Erasmus MC - Rotterdam",
+    "UMC Utrecht - Utrecht",
+    "Leiden University Medical Center - Leiden",
+    "Maastricht University Medical Center+ - Maastricht",
+    "Radboud University Medical Center - Nijmegen",
+    "University Medical Center Groningen - Groningen",
+    "St. Antonius Ziekenhuis - Nieuwegein",
+    "Isala Klinieken - Zwolle",
+    "St. Elisabeth Ziekenhuis - Tilburg",
+    "Jeroen Bosch Ziekenhuis - 's-Hertogenbosch",
+    "HagaZiekenhuis - Den Haag",
+    "Alrijne Ziekenhuizen - Leiden",
+    "OLVG - Amsterdam",
+    "Canisius-Wilhelmina Ziekenhuis - Nijmegen",
+    "St. Jansdal - Harderwijk",
+    "Tergooi Ziekenhuis - Hilversum",
+    "Meander Medisch Centrum - Amersfoort",
+    "Diakonessenhuis - Utrecht",
+    "Slotervaart Ziekenhuis - Amsterdam",
+    "Spaarne Gasthuis - Haarlem",
+    "Groene Hart Ziekenhuis - Gouda",
+    "Amstelland Ziekenhuizen - Amstelveen",
+    "Treant Zorggroep - Ouderkerk aan de Amstel",
+    "Deventer Ziekenhuis - Deventer",
+    "Flevoziekenhuis - Almere",
+    "Sint Franciscus Gasthuis - Rotterdam",
+    "Sint Maartenskliniek - Nijmegen",
+    "Reinier de Graaf Gasthuis - Delft",
+    "Purmerend Ziekenhuis - Purmerend",
+    "Zonnehuisgroep - Den Helder",
+    "Noordwest Ziekenhuisgroep - Alkmaar",
+    "Bavaria Ziekenhuizen - Valkenswaard",
+    "Flevoziekenhuizen - Almere",
+    "Zuyderland Medisch Centrum - Heerlen",
+    "AZ Rijn - Arnhem",
+    "Kennemer Ziekenhuizen - Beverwijk",
+    "Utrecht Ziekenhuis - Utrecht",
+    "St. Antonius Ziekenhuis - Breda",
+    "Bernhoven Ziekenhuis - Heusden",
+    "Isala Medisch Centrum - Zwolle",
+    "Vlietland Ziekenhuizen - Rotterdam",
+    "Bernhoven Ziekenhuis - Heusden",
+    "Ziekenhuisgroep Twente - Enschede",
+    "Gelre Ziekenhuizen - Apeldoorn",
+    "Tergooi Ziekenhuis - Hilversum",
+    "De Graafschap Ziekenhuis - Doetinchem",
+    "Medisch Spectrum Twente - Enschede",
+    "Canisius-Wilhelmina Ziekenhuis - Nijmegen",
+    "Maxima Medisch Centrum - Veldhoven",
+    "Sint Maartenskliniek - Nijmegen",
+    "Saxenburgh Medisch Centrum - Heerenveen",
+    "St. Jansdal - Harderwijk",
+    "Tilburg Ziekenhuisgroep - Tilburg",
+    "UMC St. Radboud - Nijmegen",
+    "Ziekenhuisgroep Twente - Almelo",
+    "Ziekenhuisgroep Limburg - Heerlen",
+    "Ziekenhuis Oost-Nederland - Almelo",
+    "Ziekenhuisgroep Rivierduinen - Katwijk",
+    "Ziekenhuisgroep Noordwest - Alkmaar",
+    "Ziekenhuisgroep Den Helder - Den Helder",
+    "Ziekenhuis Midden Nederland - Lelystad",
+    "Ziekenhuis Oost Nederland - Enschede",
+    "Ziekenhuis Westerkwartier - Groningen",
+    "Ziekenhuis Friesland - Leeuwarden",
+    "Ziekenhuis Beatrix - Dordrecht",
+    "Ziekenhuis Overijssel - Zwolle",
+    "Ziekenhuis Gelderland - Epe",
+    "Ziekenhuis Brabant - Tilburg",
+    "Ziekenhuis Gelderse Vallei - Ede",
+    "Ziekenhuis Rijnmond - Rotterdam",
+    "Ziekenhuis Hilversum - Hilversum",
+    "Ziekenhuis Hoogeland - Drachten",
+    "Ziekenhuis Kliangroep - Leeuwarden",
+    "Ziekenhuis Zuid Limburg - Heerlen",
+    "Ziekenhuis Zaanstad - Zaandam",
+    "Ziekenhuis Noord Nederland - Groningen",
+    "Ziekenhuis Amstelland - Amstelveen",
+    "Ziekenhuis Flevo - Almere",
+    "Ziekenhuis Zeeuws-Vlaanderen - Sluis",
+    "Ziekenhuis Uithoorn - Uithoorn",
+    "Ziekenhuis LVR - Leeuwarden",
+    "Ziekenhuis Elisabeth-TweeSteden - Tilburg",
+    "Ziekenhuis Deventer - Deventer",
+    "Ziekenhuis Rotterdam - Rotterdam",
+    "Ziekenhuis Den Haag - Den Haag",
+    "Ziekenhuis Utrecht - Utrecht",
+    "Ziekenhuis Groningen - Groningen",
+    "Ziekenhuis Maastricht - Maastricht",
+    "Ziekenhuis Leiden - Leiden",
+    "Ziekenhuis Nijmegen - Nijmegen",
+    "Ziekenhuis Arnhem - Arnhem",
+    "Ziekenhuis Tilburg - Tilburg",
+    "Ziekenhuis Breda - Breda",
+    "Ziekenhuis 's-Hertogenbosch - 's-Hertogenbosch",
+    "Ziekenhuis Eindhoven - Eindhoven",
+    "Ziekenhuis Haarlem - Haarlem",
+    "Ziekenhuis Rotterdam - Rotterdam",
+    "Ziekenhuis Zwolle - Zwolle",
+    "Ziekenhuis Apeldoorn - Apeldoorn",
+    "Ziekenhuis Almere - Almere",
+    "Ziekenhuis Amersfoort - Amersfoort",
+    "Ziekenhuis Hoorn - Hoorn",
+    "Ziekenhuis Veenendaal - Veenendaal",
+    "Ziekenhuis Hilversum - Hilversum",
+    "Ziekenhuis Venlo - Venlo",
+    "Ziekenhuis Heerlen - Heerlen",
+    "Ziekenhuis Dordrecht - Dordrecht",
+    "Ziekenhuis Zutphen - Zutphen",
+    "Ziekenhuis Breda - Breda",
+    "Ziekenhuis Emmen - Emmen",
+    "Ziekenhuis Hoogeveen - Hoogeveen",
+    "Ziekenhuis Middelburg - Middelburg",
+    "Ziekenhuis Sittard-Geleen - Sittard",
+    "Ziekenhuis Sliedrecht - Sliedrecht",
+    "Ziekenhuis Veldhoven - Veldhoven",
+    "Ziekenhuis Zeist - Zeist",
+    "Ziekenhuis Dordrecht - Dordrecht",
+    "Ziekenhuis Heerhugowaard - Heerhugowaard",
+    "Ziekenhuis Nieuwegein - Nieuwegein",
+    "Ziekenhuis Papendrecht - Papendrecht",
+    "Ziekenhuis Rijswijk - Rijswijk",
+    "Ziekenhuis Sneek - Sneek",
+    "Ziekenhuis Tiel - Tiel",
+    "Ziekenhuis Uden - Uden",
+    "Ziekenhuis Voorburg - Voorburg",
+    "Ziekenhuis Vlaardingen - Vlaardingen",
+    "Ziekenhuis Waalwijk - Waalwijk",
+    "Ziekenhuis Zwijndrecht - Zwijndrecht",
+    "Ziekenhuis Alkmaar - Alkmaar",
+    "Ziekenhuis Alphen aan den Rijn - Alphen aan den Rijn",
+    "Ziekenhuis Assen - Assen",
+    "Ziekenhuis Barendrecht - Barendrecht",
+    "Ziekenhuis Capelle aan den IJssel - Capelle aan den IJssel",
+    "Ziekenhuis Delft - Delft",
+    "Ziekenhuis Ede - Ede",
+    "Ziekenhuis Goes - Goes",
+    "Ziekenhuis Heerlen - Heerlen",
+    "Ziekenhuis IJsselstein - IJsselstein",
+    "Ziekenhuis Kampen - Kampen",
+    "Ziekenhuis Lisse - Lisse",
+    "Ziekenhuis Middelburg - Middelburg",
+    "Ziekenhuis Nijkerk - Nijkerk",
+    "Ziekenhuis Oss - Oss",
+    "Ziekenhuis Purmerend - Purmerend",
+    "Ziekenhuis Renkum - Renkum",
+    "Ziekenhuis Sassenheim - Sassenheim",
+    "Ziekenhuis Terneuzen - Terneuzen",
+    "Ziekenhuis Utrecht - Utrecht",
+    "Ziekenhuis Valkenswaard - Valkenswaard",
+    "Ziekenhuis Wageningen - Wageningen",
+    "Ziekenhuis Zaandam - Zaandam",
+    "Ziekenhuis Zwolle - Zwolle"
+]
+
 geneeswijzen = [
     {
         "naam": "Cognitieve Gedragstherapie (CGT)",
@@ -5685,7 +6572,6 @@ diagnoses = [
     }
 ]
 
-
 # Definieer de lijsten
 frequenties = [
     "één keer per dag",
@@ -5747,7 +6633,6 @@ type_voorschriften = [
     "tijdelijk voorschrift"
 ]
 
-
 zorgverzekeraars = [
     "Zilveren Kruis",
     "VGZ",
@@ -5770,6 +6655,7 @@ zorgverzekeraars = [
     "Zorg en Zekerheid",
     "DSW Zorgverzekering"
 ]
+
 mentale_gezondheidsstoornissen = [
     "Geen bijzonderheden",
     # Stemmingsstoornissen
@@ -8422,7 +9308,6 @@ vaccinaties = [
     },
     # Tot nu toe zijn er 100 vaccinaties. Indien nodig, kunt u extra vaccinaties toevoegen op dezelfde manier.
 ]
-
 
 vaccinatie_bijwerkingen = [
     {
@@ -12422,7 +13307,6 @@ medicijnen = [
     # Resterende 10 medicijnen kunnen op dezelfde manier worden toegevoegd
 ]
 
-
 lichamelijke_beperkingen = [
     "Geen bijzonderheden",
     # Bewegingsbeperkingen
@@ -12525,6 +13409,7 @@ bloedgroepen = [
     "O+",
     "O-"
 ]
+
 werkervaringen = [
     {
         "Functie": "Startende Verzorgende",
