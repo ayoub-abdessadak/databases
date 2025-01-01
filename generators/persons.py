@@ -39,7 +39,7 @@ def write_line(files: list, value: bool, line: str, current_index: int=None, end
         file.writelines(line)
 
 files = []
-aantal_personen = 100
+aantal_personen = 1000
 aantal_artsen = int((aantal_personen/100) * 15)
 aantal_aanmeldingen = int((aantal_personen/100) * 10)
 aantal_bewoners = int((aantal_personen/100) * 50)
@@ -154,11 +154,11 @@ files.append("team.sql")
 zorgverlener_heeft_team_file = open("zorgverlener_heeft_team.sql", "w")
 write_line([insertion, zorgverlener_heeft_team_file], value=False, line="INSERT INTO Zorgverlener_heeft_Team(Zorgverlener_big_code, Team_team_naam)\nVALUES")
 index = 0
-for team, index in zip(teams_in_memory, range(len(team))):
+czorgverleners_in_memory = deepcopy(zorgverleners_in_memory)
+for team, index in zip(teams_in_memory, range(len(teams_in_memory))):
     for _ in range(team_length):
-        line = f"""("{zorgverleners_in_memory[index][0]}", "{team}")"""
-        write_line([insertion, zorgverlener_heeft_team_file], value=True, line=line, current_index=index, ending_index=len(team), nested_index=not (_ == team_length))
-        index += 1
+        line = f"""("{czorgverleners_in_memory[index][0]}", "{team}")"""
+        write_line([insertion, zorgverlener_heeft_team_file], value=True, line=line, current_index=index, ending_index=len(teams_in_memory), nested_index=not (_ == team_length-1))
 zorgverlener_heeft_team_file.close()
 files.append("zorgverlener_heeft_team.sql")
 tz = [zorgverlener[0] for zorgverlener in zorgverleners_in_memory]
