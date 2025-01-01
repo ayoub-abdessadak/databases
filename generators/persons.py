@@ -39,7 +39,7 @@ def write_line(files: list, value: bool, line: str, current_index: int=None, end
         file.writelines(line)
 
 files = []
-aantal_personen = 250
+aantal_personen = 9_147
 aantal_artsen = int((aantal_personen/100) * 15)
 aantal_aanmeldingen = int((aantal_personen/100) * 10)
 aantal_bewoners = int((aantal_personen/100) * 50)
@@ -130,10 +130,7 @@ for index, _zorgverlener in zip(range(len(prep_zorgverleners)), prep_zorgverlene
     if _ >= aantal_zorgverleners:
         break
     persoon = _zorgverlener
-    big_code = gen_big_code()
-    while big_code in big_codes:
-        big_code = gen_big_code()
-    big_codes.append(big_codes)
+    big_code = uuid4().__str__()[0:20]
     werkervaring = random.choice(werkervaringen)
     line = f"""("{big_code}",  "{werkervaring['Jaren Ervaring']}", "Overal", "{random.choice(["Fulltime", "Part-time", "Nul uren"])}", "2000-10-16", {persoon[0]})"""
     write_line([insertion, zorgverleners], value=True, line=line, current_index=_, ending_index=aantal_zorgverleners)
