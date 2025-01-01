@@ -2930,6 +2930,143 @@ ziektes = [
     "type_aandoening": "Cardiovasculaire aandoening"
   }
 ]
+zorgbehoeftes_ouderen = [
+    {
+        "zb_categorie": "Medische zorg",
+        "zb_naam": "Beheer van chronische ziekten",
+        "zb_beschrijving": "Regelmatige monitoring en behandeling van aandoeningen zoals diabetes, hypertensie en hartziekten."
+    },
+    {
+        "zb_categorie": "Persoonlijke verzorging",
+        "zb_naam": "Hulp bij dagelijkse activiteiten",
+        "zb_beschrijving": "Ondersteuning bij wassen, aankleden, eten en andere dagelijkse routines."
+    },
+    {
+        "zb_categorie": "Mobiliteit",
+        "zb_naam": "Fysiotherapie",
+        "zb_beschrijving": "Begeleide oefeningen om mobiliteit, kracht en balans te verbeteren."
+    },
+    {
+        "zb_categorie": "Voeding",
+        "zb_naam": "Dieetbeheer",
+        "zb_beschrijving": "Aanpassing van maaltijden aan specifieke voedingsbehoeften en dieetbeperkingen."
+    },
+    {
+        "zb_categorie": "Psychosociale ondersteuning",
+        "zb_naam": "Gezelschap en sociale interactie",
+        "zb_beschrijving": "Faciliteren van sociale activiteiten en ontmoetingen om eenzaamheid te verminderen."
+    },
+    {
+        "zb_categorie": "Veiligheid",
+        "zb_naam": "Valpreventie",
+        "zb_beschrijving": "Implementatie van maatregelen om vallen te voorkomen, zoals antislipvloeren en handgrepen."
+    },
+    {
+        "zb_categorie": "Recreatie en welzijn",
+        "zb_naam": "Kunst- en knutselactiviteiten",
+        "zb_beschrijving": "Creatieve activiteiten om expressie en plezier te bevorderen."
+    },
+    {
+        "zb_categorie": "Cognitieve ondersteuning",
+        "zb_naam": "Geheugentraining",
+        "zb_beschrijving": "Oefeningen en activiteiten gericht op het verbeteren van geheugen en cognitieve functies."
+    },
+    {
+        "zb_categorie": "Pijnbeheer",
+        "zb_naam": "Pijnbestrijding",
+        "zb_beschrijving": "Beheer van chronische pijn door medicatie en niet-medicamenteuze therapieën."
+    },
+    {
+        "zb_categorie": "Hulpmiddelen en adaptieve technologie",
+        "zb_naam": "Gebruik van rolstoelen",
+        "zb_beschrijving": "Aanpassing en training in het gebruik van rolstoelen voor mobiliteit."
+    },
+    {
+        "zb_categorie": "Sociale interactie",
+        "zb_naam": "Groepsbijeenkomsten",
+        "zb_beschrijving": "Regelmatige bijeenkomsten voor sociale interactie en gemeenschap."
+    },
+    {
+        "zb_categorie": "Geestelijke gezondheid",
+        "zb_naam": "Counseling",
+        "zb_beschrijving": "Psychologische ondersteuning voor het omgaan met verdriet, angst en depressie."
+    },
+    {
+        "zb_categorie": "Spiritualiteit",
+        "zb_naam": "Spirituele begeleiding",
+        "zb_beschrijving": "Ondersteuning bij spirituele en religieuze behoeften."
+    },
+    {
+        "zb_categorie": "Slaap en rust",
+        "zb_naam": "Slaapmanagement",
+        "zb_beschrijving": "Beheer van slaappatronen en behandeling van slaapstoornissen."
+    },
+    {
+        "zb_categorie": "Revalidatie",
+        "zb_naam": "Ergotherapie",
+        "zb_beschrijving": "Begeleiding bij dagelijkse activiteiten en heradaptatie na letsel."
+    },
+    {
+        "zb_categorie": "Huisvesting en omgeving",
+        "zb_naam": "Aanpassing van leefruimte",
+        "zb_beschrijving": "Aanpassingen aan de woonomgeving om veiligheid en comfort te vergroten."
+    },
+    {
+        "zb_categorie": "Financieel beheer",
+        "zb_naam": "Financiële planning",
+        "zb_beschrijving": "Ondersteuning bij het beheren van financiële zaken en budgettering."
+    },
+    {
+        "zb_categorie": "Juridische ondersteuning",
+        "zb_naam": "Advocaatstijd",
+        "zb_beschrijving": "Toegang tot juridische hulp voor het opstellen van testamenten en andere juridische documenten."
+    },
+    {
+        "zb_categorie": "Zorgplanning en coördinatie",
+        "zb_naam": "Zorgcoördinator",
+        "zb_beschrijving": "Een specialist die de algehele zorg en diensten coördineert voor elke bewoner."
+    },
+    {
+        "zb_categorie": "Familie en mantelzorg",
+        "zb_naam": "Familiebezoeken en ondersteuning",
+        "zb_beschrijving": "Faciliteren van bezoeken en bieden van ondersteuning aan familieleden."
+    },
+    {
+        "zb_categorie": "Medische zorg",
+        "zb_naam": "Medicatiebeheer",
+        "zb_beschrijving": "Correct toedienen en beheren van medicijnen volgens voorschriften."
+    },
+    {
+        "zb_categorie": "Persoonlijke verzorging",
+        "zb_naam": "Huidverzorging",
+        "zb_beschrijving": "Regelmatige verzorging en controle van de huid om huidproblemen te voorkomen."
+    },
+    {
+        "zb_categorie": "Mobiliteit",
+        "zb_naam": "Looptraining",
+        "zb_beschrijving": "Oefeningen en begeleiding om veilig te leren lopen en balans te verbeteren."
+    },
+    {
+        "zb_categorie": "Sociale ondersteuning",
+        "zb_naam": "Ondersteuning mantelzorgers",
+        "zb_beschrijving": "Hulp en advies voor familieleden en mantelzorgers die voor de bewoners zorgen."
+    },
+    {
+        "zb_categorie": "Voeding",
+        "zb_naam": "Maaltijdondersteuning",
+        "zb_beschrijving": "Assistentie bij het eten en drinken voor bewoners die hulp nodig hebben tijdens de maaltijden."
+    },
+    {
+        "zb_categorie": "Medische zorg",
+        "zb_naam": "Wondverzorging",
+        "zb_beschrijving": "Professionele verzorging en behandeling van wonden om infecties te voorkomen en genezing te bevorderen."
+    },
+    {
+        "zb_categorie": "Mobiliteit",
+        "zb_naam": "Transferondersteuning",
+        "zb_beschrijving": "Hulp bij het verplaatsen van bed naar rolstoel of ander meubilair om veiligheid te garanderen."
+    }
+]
 
 activiteiten_verzorgingcentrum = [
     {
