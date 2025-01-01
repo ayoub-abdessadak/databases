@@ -23,11 +23,11 @@ except:
     pass
 
 
-def write_line(files: list, value: bool, line: str, current_index: int=None, ending_index: int=None):
+def write_line(files: list, value: bool, line: str, current_index: int=None, ending_index: int=None, nested_index=False):
 
     if not value:
         line = f"{line}\n"
-    elif value and current_index == ending_index-1:
+    elif value and current_index == ending_index-1 and not nested_index:
         line = f"{line};\n"
     else:
         line = f"{line},\n"
@@ -284,7 +284,7 @@ for vaccin, index in zip(vaccin_in_memory, range(len(vaccin_in_memory))):
     bijwerkingen = set(random.randint(1, 90) for _ in range(random.randint(10, 40)))
     for bijwerking in bijwerkingen:
         line = f"""("{vaccin[0]}", "{vaccin[1]}", {bijwerking})"""
-        write_line([insertion, vaccin_heeft_bijwerking_file], value=True, line=line, current_index=index, ending_index=len(vaccinaties_in_memory))
+        write_line([insertion, vaccin_heeft_bijwerking_file], value=True, line=line, current_index=index, ending_index=len(vaccinaties_in_memory), nested_index=True)
 vaccin_heeft_bijwerking_file.close()
 bijwerkingen_file.close()
 files.append("vaccin_heeft_bijwerking.sql")
@@ -301,7 +301,7 @@ for medicijn, index in zip(medicijn_in_memory, range(len(medicijn_in_memory))):
     end_date = start_date + timedelta(days=random.randint(10, 250))
     for md_nummer in md_nummers[0:aantal_gebruikers]:
         line = f"""("{ref[0:10]}", "{random.choice(frequenties)}", "{random.choice(doseringen)}", "{random.choice(toedieningswijzen)}", "{start_date.strftime('%Y-%m-%d')}", "{end_date.strftime('%Y-%m-%d')}", "{random.choice(type_voorschriften)}", {medicijn_in_memory[medicijn]}, {md_nummer}, {random.choices(artsen_in_memory)[0]})"""
-        write_line([insertion, medicijn_gebruik_file], value=True, line=line, current_index=index, ending_index=len(medicijn_in_memory))
+        write_line([insertion, medicijn_gebruik_file], value=True, line=line, current_index=index, ending_index=len(medicijn_in_memory), nested_index=True)
 medicijn_gebruik_file.close()
 files.append("medicijn_gebruik.sql")
 
@@ -363,7 +363,7 @@ for index, diagnose in zip(range(len(diagnoses)), diagnoses):
     xziektes = random.randint(1, 3)
     for _ in range(xziektes):
         line = f"""({_ziektes[_]}, {index})"""
-        write_line([insertion, diagnose_heeft_ziekte_file], value=True, line=line, current_index=index, ending_index=len(diagnoses))
+        write_line([insertion, diagnose_heeft_ziekte_file], value=True, line=line, current_index=index, ending_index=len(diagnoses), nested_index=True)
 diagnose_file.close()
 diagnose_heeft_ziekte_file.close()
 files.append("diagnose.sql")
@@ -387,7 +387,7 @@ for index, ziekte in zip(range(len(ziektes_in_memory)), ziektes_in_memory):
     _geneeswijzen = list({random.choice(geneeswijze_in_memory) for _ in range(100)})
     for _ in range(xgeneeswijzen):
         line = f"""("{_geneeswijzen[_]}", {ziekte})"""
-        write_line([insertion, ziekte_heeft_geneeswijze_file], value=True, line=line, current_index=index, ending_index=len(ziektes_in_memory))
+        write_line([insertion, ziekte_heeft_geneeswijze_file], value=True, line=line, current_index=index, ending_index=len(ziektes_in_memory), nested_index=True)
 ziekte_heeft_geneeswijze_file.close()
 files.append("ziekte_heeft_geneeswijze.sql")
 
@@ -398,7 +398,7 @@ for index, genees_wijze in zip(range(len(geneeswijze_in_memory)), geneeswijze_in
     _medicijnen = list({medicijn_in_memory[random.choice(list(medicijn_in_memory.keys()))] for __ in range(10)})
     for _ in range(xmedicijnen):
         line = f"""("{genees_wijze}", {_medicijnen[_]})"""
-        write_line([insertion, geneeswijze_heeft_medicijn_file], value=True, line=line, current_index=index, ending_index=len(geneeswijze_in_memory))
+        write_line([insertion, geneeswijze_heeft_medicijn_file], value=True, line=line, current_index=index, ending_index=len(geneeswijze_in_memory), nested_index=True)
 geneeswijze_heeft_medicijn_file.close()
 files.append("geneeswijze_heeft_medicijn.sql")
 
