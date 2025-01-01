@@ -27,18 +27,19 @@ except:
 
 def write_line(files: list, value: bool, line: str, current_index: int=None, ending_index: int=None, nested_index=False):
 
+    print(current_index, ending_index, nested_index, value)
     if not value:
         line = f"{line}\n"
     elif value and current_index == ending_index-1 and not nested_index:
         line = f"{line};\n"
     else:
         line = f"{line},\n"
-    
+    print(line)
     for file in files:
         file.writelines(line)
 
 files = []
-aantal_personen = 150
+aantal_personen = 100
 aantal_artsen = int((aantal_personen/100) * 15)
 aantal_aanmeldingen = int((aantal_personen/100) * 10)
 aantal_bewoners = int((aantal_personen/100) * 50)
@@ -54,7 +55,7 @@ insertion = open("insertion.sql", "w")
 
 personen = open("personen.sql", "w")
 personen_in_memory = []
-write_line([insertion, personen], value=False, line="INSERT INTO Persoon (persoon_nummer, voornaam, achternaam, geboortedatum, geslacht)\nVALUES")
+write_line([insertion, personen], value=False, line="INSERT INTO Persoon(persoon_nummer, voornaam, achternaam, geboortedatum, geslacht)\nVALUES")
 for _ in range(aantal_personen):
     dob = datetime.now() - timedelta(days=((worldnames.age()*365)+(random.randint(1, 30))))
     persoon = _, random.choice([worldnames.first_name, faker.first_name])(), faker.last_name(), dob.strftime("%Y-%m-%d"), random.choice(["Man", "Vrouw"]), worldnames.phone_number(), 
@@ -105,7 +106,7 @@ for index, _bewoner in zip(range(len(prep_bewoners)), prep_bewoners):
     random.shuffle(bsn)
     bsn = bsn[0:8]
     line = f'({index}, "{random.choice(geboorteplaatsen)}", "{random.choice(migratie_achtergronden_nederland)}", "{''.join(bsn)}", "Nederlandse", 0, 1, {persoon[0]})'
-    write_line([insertion, bewoners], value=True, line=line, current_index=_, ending_index=len(prep_bewoners))
+    write_line([insertion, bewoners], value=True, line=line, current_index=_, ending_index=aantal_bewoners)
     bewoners_in_memory.append(index)
     _ += 1
 bewoners.close()    
@@ -125,7 +126,7 @@ for index, _zorgverlener in zip(range(len(prep_zorgverleners)), prep_zorgverlene
     big_code = ''.join(big_code)
     werkervaring = random.choice(werkervaringen)
     line = f"""("{big_code}",  "{werkervaring['Jaren Ervaring']}", "Overal", "{random.choice(["Fulltime", "Part-time", "Nul uren"])}", "2000-10-16", {persoon[0]})"""
-    write_line([insertion, zorgverleners], value=True, line=line, current_index=_, ending_index=aantal_bewoners)
+    write_line([insertion, zorgverleners], value=True, line=line, current_index=_, ending_index=aantal_zorgverleners)
     zorgverleners_in_memory.append((big_code, persoon[0]))
     _ += 1 
 zorgverleners.close()
@@ -156,7 +157,7 @@ index = 0
 for team, index in zip(teams_in_memory, range(len(team))):
     for _ in range(team_length):
         line = f"""("{zorgverleners_in_memory[index][0]}", "{team}")"""
-        write_line([insertion, zorgverlener_heeft_team_file], value=True, line=line, current_index=index, ending_index=len(team))
+        write_line([insertion, zorgverlener_heeft_team_file], value=True, line=line, current_index=index, ending_index=len(team), nested_index=not (_ == team_length))
         index += 1
 zorgverlener_heeft_team_file.close()
 files.append("zorgverlener_heeft_team.sql")
@@ -167,10 +168,10 @@ zorgverlener_heeft_specialisatie_file = open("zorgverlener_heeft_specialisatie.s
 write_line([insertion, zorgverlener_heeft_specialisatie_file], value=False, line="INSERT INTO Zorgverlener_heeft_Specialisatie(Zorgverlener_big_code, Specialisatie_specialisatie_code)\nVALUES")
 for zorgverlener, index in zip(zorgverleners_in_memory, range(len(zorgverleners_in_memory))):
     specialisaties = [random.randint(0, len(specialisaties)) for _ in range(random.randint(2, 12))]
-    specialisaties = set(specialisaties)
+    specialisaties = list(set(specialisaties))
     for specialisatie in specialisaties:
         line = f"""("{zorgverlener[0]}", {specialisatie})"""
-        write_line([insertion, zorgverlener_heeft_specialisatie_file], value=True, line=line, current_index=index, ending_index=len(zorgverleners_in_memory))
+        write_line([insertion, zorgverlener_heeft_specialisatie_file], value=True, line=line, current_index=index, ending_index=len(zorgverleners_in_memory), nested_index=not (specialisatie == specialisaties[-1]))
 files.append("zorgverlener_heeft_specialisatie.sql")
 zorgverlener_heeft_specialisatie_file.close()
 
@@ -227,8 +228,16 @@ bijwerkingen_in_memory = []
 write_line([insertion, bijwerkingen_file], value=False, line="INSERT INTO Bijwerking(soort, beschrijving_bijwerking)\nVALUES")
 for bijwerking, index in zip(bijwerkingen, range(len(bijwerkingen))):
     line = f"""("{bijwerking}", "{bijwerkingen[bijwerking]['beschrijving']}")"""
-    write_line([insertion, bijwerkingen_file], value=True, line=line, current_index=index, ending_index=(len(bijwerkingen)))
+    write_line([insertion, bijwerkingen_file], value=True, line=line, current_index=index, ending_index=len(bijwerkingen), nested_index=True)
     bijwerkingen_in_memory.append((index, bijwerking))
+    
+bijwerking_bestaat_al = [bijwerking for bijwerking in bijwerkingen]
+for bijwerking, index in zip(vaccinatie_bijwerkingen, range(len(vaccinatie_bijwerkingen))):
+    if bijwerking['naam'] in bijwerking_bestaat_al:
+        continue
+    line = f"""("{bijwerking['naam']}", "{bijwerking['beschrijving_bijwerking']}")"""
+    write_line([insertion, bijwerkingen_file], value=True, line=line, current_index=index, ending_index=50)
+    bijwerking_bestaat_al.append(bijwerking['naam'])
 bijwerkingen_file.close()
 files.append("bijwerkingen.sql")
 
@@ -238,7 +247,7 @@ for index, bijwerking in bijwerkingen_in_memory:
     for medicijn in medicijn_in_memory:
         if medicijn in bijwerkingen[bijwerking]['medicijnen']:
             line = f"""({index}, {medicijn_in_memory[medicijn]})"""
-            write_line([insertion, medicijn_heeft_bijwerking_file], value=True, line=line, current_index=index, ending_index=len(bijwerkingen_in_memory))
+            write_line([insertion, medicijn_heeft_bijwerking_file], value=True, line=line, current_index=index, ending_index=len(bijwerkingen_in_memory), nested_index=not (medicijn == bijwerkingen[bijwerking]['medicijnen'][-1]))
 medicijn_heeft_bijwerking_file.close()
 files.append("medicijn_heeft_bijwerking.sql")
 
@@ -249,7 +258,7 @@ write_line([insertion, vaccin_file], value=False, line="INSERT INTO Vaccin(vacci
 for vaccin, index in zip(vaccinaties, range(len(vaccinaties))):
     if vaccin['vaccin_naam'] not in vaccin_bestaat_al:
         line = f"""("{vaccin['vaccin_naam']}", "{vaccin['vaccinatie_code']}", "{vaccin['opmerkingen']}")"""
-        write_line([insertion, vaccin_file], value=True, line=line, current_index=index, ending_index=len(vaccinaties))
+        write_line([insertion, vaccin_file], value=True, line=line, current_index=index, ending_index=45)
         vaccin_in_memory.append((vaccin['vaccin_naam'], vaccin['vaccinatie_code']))
         vaccin_bestaat_al.append(vaccin['vaccin_naam'])
 vaccin_file.close()
@@ -263,38 +272,25 @@ for vaccin, index in zip(vaccin_in_memory, range(len(vaccin_in_memory))):
     md_in_memory = deepcopy(medischedossier_in_memory)
     bewoners_length = int((aantal_bewoners/100)*30)
     random.shuffle(md_in_memory)
-    for md_nummer in md_in_memory[0:bewoners_length]:
+    __ = md_in_memory[0:bewoners_length]
+    for md_nummer in __:
         batch_nummer = uuid4().__str__().replace("-", "")
         line = f"""("{batch_nummer}", "{date.strftime('%Y-%m%d')}", "{random.choice(geboorteplaatsen)}", "{(date + timedelta(days=60)).strftime('%Y-%m-%d')}", "{random.choice(["Niet toegediend", "Toegediend"])}", {md_nummer}, "{vaccin[0]}", "{vaccin[1]}")"""
         vaccinaties_in_memory.append(batch_nummer)
-        write_line([insertion, vaccinaties_file], value=True, line=line, current_index=index, ending_index=len(vaccinaties))
+        write_line([insertion, vaccinaties_file], value=True, line=line, current_index=index, ending_index=len(vaccin_in_memory), nested_index=not (md_nummer == __[-1]))
 vaccinaties_file.close()
 files.append("vaccinaties.sql")
 
 
 vaccin_heeft_bijwerking_file = open("vaccin_heeft_bijwerking.sql", "w")
-bijwerkingen_file = open("bijwerkingen.sql", "r")
-blines = bijwerkingen_file.readlines()
-bijwerkingen_file.close()
-bijwerkingen_file = open("bijwerkingen.sql", "w")
-bijwerkingen_file.writelines(blines)
 vaccinatie_heeft_bijwerking_in_memory = []
-bijwerking_bestaat_al = [bijwerking for bijwerking in bijwerkingen]
-for bijwerking, index in zip(vaccinatie_bijwerkingen, range(len(vaccinatie_bijwerkingen))):
-    if bijwerking['naam'] in bijwerking_bestaat_al:
-        continue
-    line = f"""("{bijwerking['naam']}", "{bijwerking['beschrijving_bijwerking']}")"""
-    write_line([insertion, bijwerkingen_file], value=True, line=line, current_index=index, ending_index=len(vaccinatie_bijwerkingen))
-    bijwerking_bestaat_al.append(bijwerking['naam'])
-
 write_line([insertion, vaccin_heeft_bijwerking_file], value=False, line="INSERT INTO Vaccin_heeft_Bijwerking(Vaccin_vaccin_naam, Vaccin_vaccin_code, Bijwerking_bijwerking_id)\nVALUES")
 for vaccin, index in zip(vaccin_in_memory, range(len(vaccin_in_memory))):    
-    bijwerkingen = set(random.randint(1, 90) for _ in range(random.randint(10, 40)))
+    bijwerkingen = list(set(random.randint(1, 90) for _ in range(random.randint(10, 40))))
     for bijwerking in bijwerkingen:
         line = f"""("{vaccin[0]}", "{vaccin[1]}", {bijwerking})"""
-        write_line([insertion, vaccin_heeft_bijwerking_file], value=True, line=line, current_index=index, ending_index=len(vaccinaties_in_memory), nested_index=True)
+        write_line([insertion, vaccin_heeft_bijwerking_file], value=True, line=line, current_index=index, ending_index=43, nested_index=not (bijwerking == bijwerkingen[-1]))
 vaccin_heeft_bijwerking_file.close()
-bijwerkingen_file.close()
 files.append("vaccin_heeft_bijwerking.sql")
 
 medicijn_gebruik_file = open("medicijn_gebruik.sql", "w")
@@ -307,9 +303,10 @@ for medicijn, index in zip(medicijn_in_memory, range(len(medicijn_in_memory))):
     random.shuffle(md_nummers)
     start_date = datetime.now()
     end_date = start_date + timedelta(days=random.randint(10, 250))
-    for md_nummer in md_nummers[0:aantal_gebruikers]:
+    __ = md_nummers[0:aantal_gebruikers]
+    for md_nummer in __:
         line = f"""("{ref[0:10]}", "{random.choice(frequenties)}", "{random.choice(doseringen)}", "{random.choice(toedieningswijzen)}", "{start_date.strftime('%Y-%m-%d')}", "{end_date.strftime('%Y-%m-%d')}", "{random.choice(type_voorschriften)}", {medicijn_in_memory[medicijn]}, {md_nummer}, {random.choices(artsen_in_memory)[0]})"""
-        write_line([insertion, medicijn_gebruik_file], value=True, line=line, current_index=index, ending_index=len(medicijn_in_memory), nested_index=True)
+        write_line([insertion, medicijn_gebruik_file], value=True, line=line, current_index=index, ending_index=len(medicijn_in_memory), nested_index=not (md_nummer == __[-1]))
 medicijn_gebruik_file.close()
 files.append("medicijn_gebruik.sql")
 
@@ -327,18 +324,20 @@ ziekte_bestaat_al = []
 ziektes_in_memory = []
 ziekte_per_type_aandoening = {type_aandoening:[] for type_aandoening in type_aandoeningen}
 write_line([insertion, ziekte_file], value=False, line="INSERT INTO Ziekte(ziekte_id, naam, beschrijving)\nVALUES")
+_ = 0
 for index, ziekte in zip(range(len(ziektes)), ziektes):
     if ziekte['naam'] not in ziekte_bestaat_al:
-        line = f"""({index}, "{ziekte['naam']}", "{ziekte['beschrijving']}")"""
-        write_line([insertion, ziekte_file], value=True, line=line, current_index=index, ending_index=len(ziektes))
+        line = f"""({_}, "{ziekte['naam']}", "{ziekte['beschrijving']}")"""
+        write_line([insertion, ziekte_file], value=True, line=line, current_index=_, ending_index=57)
         ziekte_bestaat_al.append(ziekte['naam'])
-        ziekte_per_type_aandoening[ziekte['type_aandoening']].append(index)
+        ziekte_per_type_aandoening[ziekte['type_aandoening']].append(_)
         ziektes_in_memory.append(index)
+        _+=1
 write_line([insertion, ziekte_heeft_type_aandoening_file], value=False, line="INSERT INTO Ziekte_heeft_Type_aandoening(Ziekte_ziekte_id, Type_aandoening_type_id)\nVALUES")
 for type_aandoening, index in zip(ziekte_per_type_aandoening, range(len(ziekte_per_type_aandoening))):
     for ziekte in ziekte_per_type_aandoening[type_aandoening]:
         line = f"""({ziekte}, {index})"""
-        write_line([insertion, ziekte_heeft_type_aandoening_file], value=True, line=line, current_index=index, ending_index=len(ziekte_per_type_aandoening), nested_index=True)
+        write_line([insertion, ziekte_heeft_type_aandoening_file], value=True, line=line, current_index=index, ending_index=len(ziekte_per_type_aandoening), nested_index=not (ziekte == ziekte_per_type_aandoening[type_aandoening][-1]))
 
 ziekte_file.close()
 ziekte_heeft_type_aandoening_file.close()
@@ -370,14 +369,13 @@ for index, diagnose in zip(range(len(diagnoses)), diagnoses):
     line = f"""({index}, "{diagnose['naam']}", "{datum.strftime('%Y-%m-%d')}", "{diagnose['beschrijving']}", "{status}", {random.choice(artsen_in_memory)})"""
     write_line([insertion, diagnose_file], value=True, line=line, current_index=index, ending_index=len(diagnoses))
     diagnose_in_memory.append(index)
-
 write_line([insertion, diagnose_heeft_ziekte_file], value=False, line="INSERT INTO Diagnose_heeft_Ziekte(Ziekte_ziekte_id, Diagnose_diagnose_code)\nVALUES")
 for index, diagnose in zip(range(len(diagnose_in_memory)), diagnose_in_memory):
     _ziektes = list({random.choice(ziektes_in_memory) for __ in range(10)})
     xziektes = random.randint(1, 3)
     for _ in range(xziektes):
         line = f"""({_ziektes[_]}, {index})"""
-        write_line([insertion, diagnose_heeft_ziekte_file], value=True, line=line, current_index=index, ending_index=len(diagnose_in_memory), nested_index=True)
+        write_line([insertion, diagnose_heeft_ziekte_file], value=True, line=line, current_index=index, ending_index=len(diagnose_in_memory), nested_index=not (_ == xziektes-1))
 diagnose_file.close()
 diagnose_heeft_ziekte_file.close()
 files.append("diagnose.sql")
@@ -398,7 +396,7 @@ write_line([insertion, geneeswijze_file], value=False, line="INSERT INTO Geneesw
 for index, genees_wijze in zip(range(len(geneeswijzen)), geneeswijzen):
     if genees_wijze['naam'] not in geneeswijze_in_memory:
         line = f"""("{genees_wijze['naam']}", "{genees_wijze['beschrijving']}")"""
-        write_line([insertion, geneeswijze_file], value=True, line=line, current_index=index, ending_index=len(geneeswijzen))
+        write_line([insertion, geneeswijze_file], value=True, line=line, current_index=index, ending_index=131)
         geneeswijze_in_memory.append(genees_wijze['naam'])
 geneeswijze_file.close()
 files.append("geneeswijze.sql")
@@ -410,7 +408,7 @@ for index, ziekte in zip(range(len(ziektes_in_memory)), ziektes_in_memory):
     _geneeswijzen = list({random.choice(geneeswijze_in_memory) for _ in range(100)})
     for _ in range(xgeneeswijzen):
         line = f"""("{_geneeswijzen[_]}", {ziekte})"""
-        write_line([insertion, ziekte_heeft_geneeswijze_file], value=True, line=line, current_index=index, ending_index=len(ziektes_in_memory), nested_index=True)
+        write_line([insertion, ziekte_heeft_geneeswijze_file], value=True, line=line, current_index=index, ending_index=len(ziektes_in_memory), nested_index=not (_ == xgeneeswijzen-1))
 ziekte_heeft_geneeswijze_file.close()
 files.append("ziekte_heeft_geneeswijze.sql")
 
@@ -421,7 +419,7 @@ for index, genees_wijze in zip(range(len(geneeswijze_in_memory)), geneeswijze_in
     _medicijnen = list({medicijn_in_memory[random.choice(list(medicijn_in_memory.keys()))] for __ in range(10)})
     for _ in range(xmedicijnen):
         line = f"""("{genees_wijze}", {_medicijnen[_]})"""
-        write_line([insertion, geneeswijze_heeft_medicijn_file], value=True, line=line, current_index=index, ending_index=len(geneeswijze_in_memory), nested_index=True)
+        write_line([insertion, geneeswijze_heeft_medicijn_file], value=True, line=line, current_index=index, ending_index=len(geneeswijze_in_memory), nested_index=not (_ == xmedicijnen-1))
 geneeswijze_heeft_medicijn_file.close()
 files.append("geneeswijze_heeft_medicijn.sql")
 
@@ -484,7 +482,7 @@ for index, activiteit in zip(range(len(activiteit_in_memory)), activiteit_in_mem
     random.shuffle(_bewoners)
     for _ in range(xbewoners):
         line = f"""("{ac_naam}", "{datum.strftime('%Y-%m-%d')}", "{ac_locatie}", {_bewoners[_]})"""
-        write_line([insertion, bewoner_bezoekt_activiteit_file], value=True, line=line, current_index=index, ending_index=(len(activiteiten_verzorgingcentrum)), nested_index=True)
+        write_line([insertion, bewoner_bezoekt_activiteit_file], value=True, line=line, current_index=index, ending_index=(len(activiteiten_verzorgingcentrum)), nested_index=not (_ == xbewoners-1))
 bewoner_bezoekt_activiteit_file.close()
 files.append("bewoner_bezoekt_activiteit.sql")
 
@@ -507,7 +505,7 @@ for index, bewoner in zip(range(len(_bewoners)), _bewoners):
     xbehoeftes = random.randint(1, 10)
     for _ in range(xbewoners):
         line = f"""({zorgbehoefte_in_memory[_]}, {bewoner})"""
-        write_line([insertion, bewoner_heeft_zorgbehoefte_file], value=True, line=line, current_index=index, ending_index=len(_bewoners), nested_index=True)
+        write_line([insertion, bewoner_heeft_zorgbehoefte_file], value=True, line=line, current_index=index, ending_index=len(_bewoners), nested_index=not (_ == xbewoners-1))
 bewoner_heeft_zorgbehoefte_file.close()
 files.append("bewoner_heeft_zorgbehoefte.sql")
 
@@ -531,7 +529,7 @@ for index, bewoner in zip(range(len(_bewoners)), _bewoners):
     for _ in range(xzorgverleners):
         zorgverlener = _dzorgverleners[_]
         line = f"""("{zorgverlener[0]}", "{bewoner}")"""
-        write_line([insertion, bewoner_heeft_zorgverlener_file], value=True, line=line, current_index=index, ending_index=len(_bewoners), nested_index=True)
+        write_line([insertion, bewoner_heeft_zorgverlener_file], value=True, line=line, current_index=index, ending_index=len(_bewoners), nested_index=not (_ == xzorgverleners-1))
 bewoner_heeft_zorgverlener_file.close()
 files.append("bewoner_heeft_zorgverlener.sql")
 
