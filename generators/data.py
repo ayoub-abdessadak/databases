@@ -1,3 +1,5752 @@
+onderzoeken = [
+  {
+    "titel": "Volledig bloedbeeld (CBC)",
+    "beschrijving": "Een onderzoek dat verschillende componenten van het bloed meet, zoals rode bloedcellen, witte bloedcellen en bloedplaatjes."
+  },
+  {
+    "titel": "Elektrolytenpanel",
+    "beschrijving": "Meet de niveaus van elektrolyten zoals natrium, kalium en chloride in het bloed, essentieel voor de werking van spieren en zenuwen."
+  },
+  {
+    "titel": "Leverfunctieonderzoek",
+    "beschrijving": "Beoordeelt de gezondheid van de lever door enzymen en andere stoffen in het bloed te meten."
+  },
+  {
+    "titel": "Nierfunctieonderzoek (BUN, creatinine)",
+    "beschrijving": "Evalueert de nierfunctie door de concentraties van bloedureumstikstof en creatinine te meten."
+  },
+  {
+    "titel": "Lipidenprofiel",
+    "beschrijving": "Meet vetten in het bloed, inclusief cholesterol en triglyceriden, om het risico op hartziekten te beoordelen."
+  },
+  {
+    "titel": "Bloedsuiker (glucose)",
+    "beschrijving": "Meet het suikergehalte in het bloed om diabetes of hypoglykemie te diagnosticeren."
+  },
+  {
+    "titel": "HbA1c (Langetermijnbloedsuiker)",
+    "beschrijving": "Evalueert de gemiddelde bloedsuikerspiegel over de afgelopen twee tot drie maanden."
+  },
+  {
+    "titel": "Elektrocardiogram (ECG)",
+    "beschrijving": "Meet de elektrische activiteit van het hart om hartritmestoornissen en andere hartproblemen te detecteren."
+  },
+  {
+    "titel": "C-reactief proteïne (CRP)",
+    "beschrijving": "Meet ontstekingsniveaus in het lichaam en kan wijzen op infecties of chronische ontstekingsziekten."
+  },
+  {
+    "titel": "Sedimentatiesnelheid (BSE)",
+    "beschrijving": "Meet hoe snel rode bloedcellen bezinken in een buis, wat een indicatie kan zijn van ontsteking."
+  },
+  {
+    "titel": "Urineanalyse",
+    "beschrijving": "Beoordeelt de samenstelling van urine om nierziekten, infecties of andere aandoeningen te detecteren."
+  },
+  {
+    "titel": "24-uurs urine-eiwit",
+    "beschrijving": "Meet de hoeveelheid eiwit die in urine wordt uitgescheiden over een periode van 24 uur, belangrijk voor nierfunctie."
+  },
+  {
+    "titel": "Urine-cultuur",
+    "beschrijving": "Detecteert en identificeert bacteriën in de urine om urineweginfecties te diagnosticeren."
+  },
+  {
+    "titel": "Microscopische urinesecretie",
+    "beschrijving": "Onderzoekt urine onder de microscoop op de aanwezigheid van cellen, kristallen en andere elementen."
+  },
+  {
+    "titel": "Urine-pH meting",
+    "beschrijving": "Bepaalt de zuurgraad van urine, wat kan helpen bij de diagnose van nierstenen en andere aandoeningen."
+  },
+  {
+    "titel": "Röntgenfoto",
+    "beschrijving": "Maakt afbeeldingen van interne structuren van het lichaam, zoals botten en longen, met behulp van röntgenstralen."
+  },
+  {
+    "titel": "Echografie (ultrasound)",
+    "beschrijving": "Gebruikt geluidsgolven om beelden van organen en structuren in het lichaam te maken."
+  },
+  {
+    "titel": "Magnetic Resonance Imaging (MRI)",
+    "beschrijving": "Maakt gedetailleerde beelden van weefsels en organen met behulp van magnetische velden en radiogolven."
+  },
+  {
+    "titel": "Computed Tomography (CT-scan)",
+    "beschrijving": "Combineert röntgenbeelden vanuit verschillende hoeken om dwarsdoorsneden van het lichaam te creëren."
+  },
+  {
+    "titel": "Positron Emissie Tomografie (PET-scan)",
+    "beschrijving": "Beeldvormingstechniek die de stofwisseling van cellen in het lichaam meet, vaak gebruikt bij kankerdiagnose."
+  },
+  {
+    "titel": "Mammografie",
+    "beschrijving": "Röntgenonderzoek van de borsten om borstkanker vroegtijdig te detecteren."
+  },
+  {
+    "titel": "Dichtheidsmeting botten (DEXA-scan)",
+    "beschrijving": "Meet de botdichtheid om osteoporose en het risico op botbreuken te beoordelen."
+  },
+  {
+    "titel": "Nucleaire geneeskunde scans (zoals schildklier scan)",
+    "beschrijving": "Gebruik radioactieve stoffen om de functie en structuur van organen te onderzoeken."
+  },
+  {
+    "titel": "Fluoroscopie",
+    "beschrijving": "Real-time bewegende röntgenbeelden gebruikt om functies van interne organen te bestuderen."
+  },
+  {
+    "titel": "Angiografie",
+    "beschrijving": "Beeldvorming van bloedvaten met contrastmiddelen om bloedvatafwijkingen te detecteren."
+  },
+  {
+    "titel": "Holter-monitoring",
+    "beschrijving": "Continue ECG-monitoring gedurende 24-48 uur om hartritmestoornissen te detecteren."
+  },
+  {
+    "titel": "Stress-test (inspanningstest)",
+    "beschrijving": "Beoordeelt de hartfunctie tijdens fysieke inspanning om cardiovasculaire gezondheid te beoordelen."
+  },
+  {
+    "titel": "Echocardiogram",
+    "beschrijving": "Ultrasoundonderzoek van het hart om de structuur en functie van het hart te evalueren."
+  },
+  {
+    "titel": "Bloeddrukmeting",
+    "beschrijving": "Meet de druk van het bloed tegen de wanden van de bloedvaten, essentieel voor het diagnosticeren van hypertensie."
+  },
+  {
+    "titel": "Ankle-Brachial Index (ABI)",
+    "beschrijving": "Vergelijkt de bloeddruk in enkels met die in armen om perifere arteriële aandoeningen te detecteren."
+  },
+  {
+    "titel": "Cardiale MRI",
+    "beschrijving": "Gedetailleerde beeldvorming van het hart en de grote bloedvaten met behulp van MRI-technologie."
+  },
+  {
+    "titel": "Cardiale CT-scan",
+    "beschrijving": "Beeldvorming van het hart en de bloedvaten met een CT-scan voor het detecteren van aderverkalking en andere hartproblemen."
+  },
+  {
+    "titel": "Elektrofysiologisch onderzoek",
+    "beschrijving": "Onderzoekt de elektrische activiteiten van het hart om hartritmestoornissen te diagnosticeren."
+  },
+  {
+    "titel": "Spiroergometrie",
+    "beschrijving": "Beoordeelt de longfunctie en het zuurstofgebruik tijdens inspanning."
+  },
+  {
+    "titel": "Spirometrie",
+    "beschrijving": "Meet de longfunctie door de hoeveelheid en snelheid van uitgeademde lucht te bepalen."
+  },
+  {
+    "titel": "Longvolume-metingen",
+    "beschrijving": "Bepaalt de verschillende longvolumes en capaciteit om longziekten te diagnosticeren."
+  },
+  {
+    "titel": "Peak flow meting",
+    "beschrijving": "Meet de maximale snelheid van uitgeademde lucht, vaak gebruikt bij astma management."
+  },
+  {
+    "titel": "Bronchoscopy",
+    "beschrijving": "Visueel onderzoek van de luchtwegen met een bronchoscoop om afwijkingen te identificeren."
+  },
+  {
+    "titel": "Pulmonaire functionele tests",
+    "beschrijving": "Evalueert de ademhalingsfunctie en efficiëntie van de longen."
+  },
+  {
+    "titel": "Allergietests",
+    "beschrijving": "Identificeert allergenen die allergische reacties veroorzaken."
+  },
+  {
+    "titel": "Hepatitis panel",
+    "beschrijving": "Test op verschillende hepatitisvirussen om leverinfecties te diagnosticeren."
+  },
+  {
+    "titel": "HIV-test",
+    "beschrijving": "Detecteert de aanwezigheid van het HIV-virus in het lichaam."
+  },
+  {
+    "titel": "Thyroïd functieonderzoek",
+    "beschrijving": "Meet hormonen zoals TSH, T3 en T4 om schildklierproblemen te diagnosticeren."
+  },
+  {
+    "titel": "Vitamin D-test",
+    "beschrijving": "Bepaalt het niveau van vitamine D in het bloed, belangrijk voor botgezondheid en immuunfunctie."
+  },
+  {
+    "titel": "Prostaat-specifiek antigeen (PSA) test",
+    "beschrijving": "Meet het PSA-niveau om prostaatkanker en andere prostaatproblemen te screenen."
+  },
+  {
+    "titel": "Pap-test",
+    "beschrijving": "Beoordeelt celveranderingen in de baarmoederhals om baarmoederhalskanker te detecteren."
+  },
+  {
+    "titel": "Coloscopie",
+    "beschrijving": "Visueel onderzoek van de dikke darm en endeldarm met een coloscope om afwijkingen te identificeren."
+  },
+  {
+    "titel": "Gastroscopie",
+    "beschrijving": "Onderzoek van de maag en de eerste delen van de dunne darm met een gastroscoop."
+  },
+  {
+    "titel": "Biopsie",
+    "beschrijving": "Verzamelen van weefselmonsters voor microscopisch onderzoek om ziekten zoals kanker te diagnosticeren."
+  },
+  {
+    "titel": "Cytologie",
+    "beschrijving": "Analyseert cellen om afwijkingen of kankercellen te identificeren."
+  },
+  {
+    "titel": "Genetische testen",
+    "beschrijving": "Onderzoekt DNA om genetische afwijkingen en erfelijke ziekten te detecteren."
+  },
+  {
+    "titel": "Urine-cytologie",
+    "beschrijving": "Analyseert urine op abnormale cellen, vaak gebruikt bij de detectie van blaaskanker."
+  },
+  {
+    "titel": "Slaaponderzoek (Polysomnografie)",
+    "beschrijving": "Evalueert slaapkwaliteit en diagnoseert slaapstoornissen zoals slaapapneu."
+  },
+  {
+    "titel": "Neuropsychologisch onderzoek",
+    "beschrijving": "Beoordeelt cognitieve functies zoals geheugen, aandacht en probleemoplossend vermogen."
+  },
+  {
+    "titel": "EEG (Elektro-encefalogram)",
+    "beschrijving": "Meet de elektrische activiteit van de hersenen om epilepsie en andere neurologische aandoeningen te diagnosticeren."
+  },
+  {
+    "titel": "EMG (Elektromyografie)",
+    "beschrijving": "Evalueert de elektrische activiteit van spieren om neuromusculaire aandoeningen te diagnosticeren."
+  },
+  {
+    "titel": "Lumbar puncture (ruggenprik)",
+    "beschrijving": "Verzamelt cerebrospinale vloeistof voor onderzoek naar infecties, ontstekingen en andere neurologische aandoeningen."
+  },
+  {
+    "titel": "MRI van de hersenen",
+    "beschrijving": "Gedetailleerde beeldvorming van de hersenen om afwijkingen zoals tumoren, beroertes of multiple sclerose te detecteren."
+  },
+  {
+    "titel": "CT-scan van de hersenen",
+    "beschrijving": "Beeldvorming van de hersenen met een CT-scan voor het opsporen van bloedingen, tumoren en andere hersenaandoeningen."
+  },
+  {
+    "titel": "PET-scan van de hersenen",
+    "beschrijving": "Beeldvorming die de stofwisseling van hersencellen meet, vaak gebruikt bij de diagnose van kanker en neurologische aandoeningen."
+  },
+  {
+    "titel": "Arteriografie",
+    "beschrijving": "Beeldvorming van slagaders met contrastmiddel om vaatziekten te diagnosticeren."
+  },
+  {
+    "titel": "Venografie",
+    "beschrijving": "Beeldvorming van aders met contrastmiddel om veneuze aandoeningen te identificeren."
+  },
+  {
+    "titel": "Spirometrie met diffusiecapaciteit",
+    "beschrijving": "Meet de longfunctie en de capaciteit van de longen om gasuitwisseling te faciliteren."
+  },
+  {
+    "titel": "Krachtmetingen spierkracht",
+    "beschrijving": "Evalueert de spierkracht om spierziekten en zenuwstoornissen te diagnosticeren."
+  },
+  {
+    "titel": "Bewegingstesten (bijv. gait analysis)",
+    "beschrijving": "Analyseert het looppatroon om bewegingsstoornissen en musculoskeletale problemen te identificeren."
+  },
+  {
+    "titel": "Hormonale panelen",
+    "beschrijving": "Meet verschillende hormonen om endocriene stoornissen te diagnosticeren."
+  },
+  {
+    "titel": "Antilichamen testen",
+    "beschrijving": "Detecteert antilichamen in het bloed om auto-immuunziekten en infecties te diagnosticeren."
+  },
+  {
+    "titel": "Tumormarkers",
+    "beschrijving": "Meet specifieke stoffen in het bloed die kunnen wijzen op kanker."
+  },
+  {
+    "titel": "Lactaat dehydrogenase (LDH) test",
+    "beschrijving": "Meet het LDH-niveau, wat kan wijzen op weefselschade of bepaalde vormen van kanker."
+  },
+  {
+    "titel": "Amylase en lipase testen",
+    "beschrijving": "Evalueert enzymen die lever- en alvleesklieraandoeningen kunnen signaleren."
+  },
+  {
+    "titel": "Procalcitonine test",
+    "beschrijving": "Meet het niveau van procalcitonine als marker voor bacteriële infecties en sepsis."
+  },
+  {
+    "titel": "Immunoglobuline testen",
+    "beschrijving": "Meet de niveaus van verschillende immunoglobulinen om immuunstoornissen te diagnosticeren."
+  },
+  {
+    "titel": "Ferritine test",
+    "beschrijving": "Meet het ferritinegehalte om ijzertekorten of -overlading te diagnosticeren."
+  },
+  {
+    "titel": "B12 en foliumzuur testen",
+    "beschrijving": "Evalueert niveaus van vitamine B12 en foliumzuur, belangrijk voor bloedvorming en zenuwfunctie."
+  },
+  {
+    "titel": "Serologische testen",
+    "beschrijving": "Detecteert antilichamen of antigenen in het bloed voor de diagnose van infectieziekten."
+  },
+  {
+    "titel": "PCR (Polymerase Chain Reaction)",
+    "beschrijving": "Versterkt DNA-segmenten voor het detecteren van genetische afwijkingen en infecties."
+  },
+  {
+    "titel": "Western blot",
+    "beschrijving": "Detecteert specifieke eiwitten in een monster, vaak gebruikt voor HIV-diagnostiek."
+  },
+  {
+    "titel": "ELISA (Enzyme-Linked Immunosorbent Assay)",
+    "beschrijving": "Detecteert en kwantificeert antilichamen of antigenen in biologische monsters."
+  },
+  {
+    "titel": "Flowcytometrie",
+    "beschrijving": "Analyseert fysieke en chemische eigenschappen van cellen of deeltjes in een vloeistof."
+  },
+  {
+    "titel": "Microbiologische kweek",
+    "beschrijving": "Groeit micro-organismen uit klinische monsters voor identificatie en gevoeligheidstesten."
+  },
+  {
+    "titel": "Klinische beeldvorming met contrastmiddelen",
+    "beschrijving": "Gebruikt contrastmiddelen om de zichtbaarheid van structuren tijdens beeldvorming te verbeteren."
+  },
+  {
+    "titel": "Intracraniale drukmeting",
+    "beschrijving": "Meet de druk binnen de schedel om aandoeningen zoals hydrocephalus of hersenletsel te diagnosticeren."
+  },
+  {
+    "titel": "Arteriële bloedgasanalyse",
+    "beschrijving": "Evalueert zuurstof- en kooldioxidegehaltes in het bloed om de longfunctie en metabolische status te beoordelen."
+  },
+  {
+    "titel": "Capnografie",
+    "beschrijving": "Meet de concentratie kooldioxide in de uitgeademde lucht, vaak gebruikt tijdens anesthesie."
+  },
+  {
+    "titel": "Glomerulaire filtratiesnelheid (GFR)",
+    "beschrijving": "Bepaalt de nierfiltratiefunctie om nierziekten te diagnosticeren."
+  },
+  {
+    "titel": "Bilirubinetest",
+    "beschrijving": "Meet het bilirubinegehalte om lever- en galwegproblemen te identificeren."
+  },
+  {
+    "titel": "Albumine-test",
+    "beschrijving": "Meet het albuminegehalte in het bloed om lever- en nierfuncties te beoordelen."
+  },
+  {
+    "titel": "Transaminasen (AST, ALT) testen",
+    "beschrijving": "Evalueert leverenzymen om leverbeschadiging te detecteren."
+  },
+  {
+    "titel": "Gamma-glutamyltransferase (GGT) test",
+    "beschrijving": "Meet GGT-niveaus om leverziekten en galwegobstructies te diagnosticeren."
+  },
+  {
+    "titel": "Alkalische fosfatase (ALP) test",
+    "beschrijving": "Evalueert ALP-niveaus voor de diagnose van lever-, galweg- en botziekten."
+  },
+  {
+    "titel": "Lactaattest",
+    "beschrijving": "Meet lactaatniveaus om weefsellacetaatproductie en zuurstoftekort te beoordelen."
+  },
+  {
+    "titel": "Troponine test",
+    "beschrijving": "Detecteert hartspierbeschadiging, vaak gebruikt bij de diagnose van hartinfarct."
+  },
+  {
+    "titel": "BNP (B-type natriuretisch peptide) test",
+    "beschrijving": "Meet BNP-niveaus om hartfalen te diagnosticeren."
+  },
+  {
+    "titel": "D-dimeer test",
+    "beschrijving": "Detecteert fibrine-afbraakproducten om de aanwezigheid van bloedstolsels te beoordelen."
+  },
+  {
+    "titel": "Serum proteïne electrophorese",
+    "beschrijving": "Scheidt eiwitten in het bloed om afwijkingen zoals multiple myeloom te diagnosticeren."
+  },
+  {
+    "titel": "Electrolyten herzien",
+    "beschrijving": "Beoordeelt de balans van elektrolyten voor de diagnose van verschillende aandoeningen."
+  },
+  {
+    "titel": "Celiac disease panel",
+    "beschrijving": "Detecteert antilichamen geassocieerd met coeliakie om de diagnose te bevestigen."
+  },
+  {
+    "titel": "HIV-viral load test",
+    "beschrijving": "Meet de hoeveelheid HIV-virus in het bloed om de progressie van de infectie te volgen."
+  },
+  {
+    "titel": "Hepatitis C RNA test",
+    "beschrijving": "Detecteert het RNA van hepatitis C virus voor bevestiging van een actieve infectie."
+  },
+  {
+    "titel": "Antistreptolysine O (ASO) test",
+    "beschrijving": "Meet ASO-antilichamen om recente streptokokkeninfecties te identificeren."
+  },
+  {
+    "titel": "Rheumatoid factor (RF) test",
+    "beschrijving": "Detecteert RF-antilichamen die geassocieerd zijn met reumatoïde artritis."
+  },
+  {
+    "titel": "Anti-CCP test",
+    "beschrijving": "Detecteert anti-cyclic citrullinated peptide-antilichamen voor de diagnose van reumatoïde artritis."
+  },
+  {
+    "titel": "SLE panel (Systemische Lupus Erythematosus)",
+    "beschrijving": "Bevat tests zoals ANA om lupus en andere auto-immuunziekten te diagnosticeren."
+  },
+  {
+    "titel": "Complement niveaus (C3, C4)",
+    "beschrijving": "Meet complement-eiwit niveaus om immuunreacties en ontstekingen te evalueren."
+  },
+  {
+    "titel": "HBA1c varianten",
+    "beschrijving": "Evalueert specifieke varianten van HbA1c voor nauwkeurige diabetesmonitoring."
+  },
+  {
+    "titel": "Auto-antistoffen testen",
+    "beschrijving": "Detecteert auto-antistoffen die betrokken zijn bij auto-immuunziekten."
+  },
+  {
+    "titel": "Metabolisch panel",
+    "beschrijving": "Beoordeelt verschillende metabolieten en elektrolyten om de algemene gezondheid te beoordelen."
+  },
+  {
+    "titel": "T3 en T4 testen",
+    "beschrijving": "Meet schildklierhormonen om hyperthyreoïdie of hypothyreoïdie te diagnosticeren."
+  },
+  {
+    "titel": "TSH (Thyroid Stimulating Hormone) test",
+    "beschrijving": "Evalueert de schildklierfunctie door het meten van TSH-niveaus."
+  },
+  {
+    "titel": "Serum calcium test",
+    "beschrijving": "Meet calciumspiegels in het bloed voor de diagnose van bot- en nierziekten."
+  },
+  {
+    "titel": "Serum magnesium test",
+    "beschrijving": "Evalueert magnesiumniveaus om elektrolytenbalans en spierfunctie te beoordelen."
+  },
+  {
+    "titel": "Serum fosfaat test",
+    "beschrijving": "Meet fosfaatspiegels in het bloed, belangrijk voor botgezondheid en energieproductie."
+  },
+  {
+    "titel": "Albumine-creatinine ratio",
+    "beschrijving": "Evalueert nierfunctie door de verhouding tussen albumine en creatinine in urine te meten."
+  },
+  {
+    "titel": "Serum osmolaliteit",
+    "beschrijving": "Meet de concentratie van opgeloste deeltjes in het bloed voor de beoordeling van vochtbalans."
+  },
+  {
+    "titel": "Serum anion gap",
+    "beschrijving": "Berekening die helpt bij de diagnose van acidose en andere elektrolytstoornissen."
+  },
+  {
+    "titel": "Serum lactate",
+    "beschrijving": "Meet lactaatniveaus om zuurstoftekort en weefselschade te detecteren."
+  },
+  {
+    "titel": "Urine osmolaliteit",
+    "beschrijving": "Evalueert de concentratie van urine om nierfunctie en hydratatiestatus te beoordelen."
+  },
+  {
+    "titel": "Arteriële bloedgassen",
+    "beschrijving": "Analyseert zuurstof- en kooldioxidegehaltes in het bloed voor ademhalings- en metabolische stoornissen."
+  },
+  {
+    "titel": "Serum amyloïde A (SAA)",
+    "beschrijving": "Meet SAA-niveaus als marker voor acute ontsteking."
+  },
+  {
+    "titel": "Plasmacells onderzoek",
+    "beschrijving": "Evalueert plasmacellen in het bloed of beenmerg voor aandoeningen zoals multiple myeloom."
+  },
+  {
+    "titel": "Cytomegalovirus (CMV) test",
+    "beschrijving": "Detecteert CMV-infecties, vooral belangrijk bij immuungecompromitteerde patiënten."
+  },
+  {
+    "titel": "Epstein-Barr Virus (EBV) test",
+    "beschrijving": "Detecteert EBV-infecties die geassocieerd zijn met ziekten zoals mononucleosis."
+  },
+  {
+    "titel": "Herpes simplex virus (HSV) test",
+    "beschrijving": "Detecteert HSV-infecties die huid- en slijmvliesinfecties veroorzaken."
+  },
+  {
+    "titel": "Varicella-Zoster Virus (VZV) test",
+    "beschrijving": "Detecteert VZV-infecties, waaronder waterpokken en gordelroos."
+  },
+  {
+    "titel": "Hepatitis B surface antigen (HBsAg) test",
+    "beschrijving": "Detecteert het oppervlakte-antigeen van hepatitis B virus voor actieve infectie."
+  },
+  {
+    "titel": "HIV-antilichaam en antigeen test",
+    "beschrijving": "Detecteert zowel antilichamen als antigenen voor vroege diagnose van HIV."
+  },
+  {
+    "titel": "Syfilis test (RPR, VDRL)",
+    "beschrijving": "Detecteert syfilis-infectie door middel van serologische testen."
+  },
+  {
+    "titel": "Tuberculose (TB) test (Mantoux)",
+    "beschrijving": "Beoordeelt blootstelling aan tuberculose door huidtesten."
+  },
+  {
+    "titel": "Interferon-gamma release assays (IGRAs)",
+    "beschrijving": "Detecteert tuberculose-infectie door het meten van immuunreacties op TB-antigenen."
+  },
+  {
+    "titel": "Lactose intolerantie test",
+    "beschrijving": "Evalueert de capaciteit van het lichaam om lactose te verteren."
+  },
+  {
+    "titel": "Coeliakie genetische testen",
+    "beschrijving": "Identificeert genetische markers geassocieerd met coeliakie."
+  },
+  {
+    "titel": "Fructose intolerantie test",
+    "beschrijving": "Evalueert de capaciteit van het lichaam om fructose te verteren."
+  },
+  {
+    "titel": "Zinkmeting",
+    "beschrijving": "Meet zinkniveaus in het bloed voor de diagnose van zinktekorten of -overdoses."
+  },
+  {
+    "titel": "Selenium test",
+    "beschrijving": "Evalueert seleniumniveaus voor de diagnose van tekorten of toxiciteit."
+  },
+  {
+    "titel": "Cholesterol subtypes",
+    "beschrijving": "Beoordeelt verschillende typen cholesterol, zoals HDL, LDL en VLDL."
+  },
+  {
+    "titel": "Triglyceriden test",
+    "beschrijving": "Meet de niveaus van triglyceriden in het bloed, belangrijk voor hartgezondheid."
+  },
+  {
+    "titel": "Apoproteïne testen",
+    "beschrijving": "Evalueert apoproteïnen zoals ApoA en ApoB voor hartziekte risico's."
+  },
+  {
+    "titel": "Homocysteïne test",
+    "beschrijving": "Meet homocysteïneniveaus als risicofactor voor hartziekten en beroertes."
+  },
+  {
+    "titel": "Genetisch screenen op BRCA1/BRCA2",
+    "beschrijving": "Detecteert genetische mutaties die het risico op borstkanker en eierstokkanker verhogen."
+  },
+  {
+    "titel": "HLA typing",
+    "beschrijving": "Identificeert menselijke leukocytenantigenen voor transplantatie- en auto-immuunziekte diagnoses."
+  },
+  {
+    "titel": "Natriuretische peptiden",
+    "beschrijving": "Meet niveaus van natriuretische peptiden voor de evaluatie van hartfalen."
+  },
+  {
+    "titel": "Beta-2 microglobuline test",
+    "beschrijving": "Evalueert het niveau van beta-2 microglobuline voor de diagnose van nierziekten en bepaalde kankers."
+  },
+  {
+    "titel": "Serum ferritine",
+    "beschrijving": "Meet ferritine voor de evaluatie van ijzeropslag in het lichaam."
+  },
+  {
+    "titel": "Karnosine test",
+    "beschrijving": "Evalueert karnosine niveaus, een antioxidant in het lichaam."
+  },
+  {
+    "titel": "Zink-ionen test",
+    "beschrijving": "Meet vrije zinkionen in het bloed, belangrijk voor immuunfunctie en enzymatische processen."
+  },
+  {
+    "titel": "Sideroferet test",
+    "beschrijving": "Beoordeelt ijzerbindend vermogen van het bloed voor diagnose van anemie."
+  },
+  {
+    "titel": "Methylmalonzuur test",
+    "beschrijving": "Meet methylmalonzuurniveaus voor de diagnose van vitamine B12 tekort."
+  },
+  {
+    "titel": "Homocysteïne en folaat panel",
+    "beschrijving": "Evalueert homocysteïne en folaat niveaus voor hart- en vaatziekten risicobeoordeling."
+  },
+  {
+    "titel": "Urine-cortisol test",
+    "beschrijving": "Meet cortisol niveaus in urine om bijnierfuncties te evalueren."
+  },
+  {
+    "titel": "ACTH test",
+    "beschrijving": "Meet adrenocorticotroop hormoon niveaus voor de diagnose van bijnieraandoeningen."
+  },
+  {
+    "titel": "Insulinetest",
+    "beschrijving": "Evalueert insulineniveaus om diabetes en insulineresistentie te diagnosticeren."
+  },
+  {
+    "titel": "C-peptide test",
+    "beschrijving": "Meet C-peptide niveaus als indicator van endogene insulineproductie."
+  },
+  {
+    "titel": "Glucagon test",
+    "beschrijving": "Evalueert de respons van de alvleesklier op glucagon voor diabetes diagnose."
+  },
+  {
+    "titel": "Serum ketonen",
+    "beschrijving": "Meet ketonen in het bloed voor de diagnose van ketoacidose en metabolische stoornissen."
+  },
+  {
+    "titel": "Prolactine test",
+    "beschrijving": "Meet prolactineniveaus om hormonale stoornissen en pituitary aandoeningen te diagnosticeren."
+  },
+  {
+    "titel": "Luteïniserend hormoon (LH) test",
+    "beschrijving": "Evalueert LH niveaus voor reproductieve gezondheidsdiagnoses."
+  },
+  {
+    "titel": "Follikelstimulerend hormoon (FSH) test",
+    "beschrijving": "Meet FSH niveaus voor de evaluatie van voortplantingsstoornissen."
+  },
+  {
+    "titel": "Estradiol test",
+    "beschrijving": "Meet estradiol niveaus voor de evaluatie van vrouwelijke reproductieve gezondheid."
+  },
+  {
+    "titel": "Testosteron test",
+    "beschrijving": "Evalueert testosteronniveaus voor de diagnose van hormonale stoornissen."
+  },
+  {
+    "titel": "Progesteron test",
+    "beschrijving": "Meet progesteronniveaus voor de evaluatie van de menstruatiecyclus en vruchtbaarheid."
+  },
+  {
+    "titel": "DHEA-S test",
+    "beschrijving": "Evalueert de niveaus van dehydroepiandrosteron-sulfaat voor de diagnose van bijnierstoornissen."
+  },
+  {
+    "titel": "Androstenedione test",
+    "beschrijving": "Meet androstenedioneniveaus voor de evaluatie van androgenen productie."
+  },
+  {
+    "titel": "Renine en aldosteron testen",
+    "beschrijving": "Evalueert renine en aldosteronniveaus voor de diagnose van hypertensie en bijnieraandoeningen."
+  },
+  {
+    "titel": "Metaanalyse van laboratoriumresultaten",
+    "beschrijving": "Integreert verschillende laboratoriumtestresultaten voor een holistische diagnostische evaluatie."
+  },
+  {
+    "titel": "Serum albumine test",
+    "beschrijving": "Meet albumine niveaus in het bloed voor de evaluatie van lever- en nierfuncties."
+  },
+  {
+    "titel": "Serum globuline test",
+    "beschrijving": "Evalueert globuline niveaus voor de diagnose van immuun- en leverziekten."
+  },
+  {
+    "titel": "Apolipoproteïne E (ApoE) test",
+    "beschrijving": "Beoordeelt ApoE genotypen voor risico op Alzheimer en cardiovasculaire ziekten."
+  },
+  {
+    "titel": "Serum uric acid test",
+    "beschrijving": "Meet uric acid niveaus voor de diagnose van jicht en nierstenen."
+  },
+  {
+    "titel": "Celiac serologie",
+    "beschrijving": "Bevat testen zoals tTG-IgA voor de diagnose van coeliakie."
+  },
+  {
+    "titel": "HLA-B27 test",
+    "beschrijving": "Detecteert het HLA-B27 antigen, geassocieerd met spondyloartritis en andere auto-immuunziekten."
+  },
+  {
+    "titel": "Rheuma panel",
+    "beschrijving": "Bevat verschillende tests voor de diagnose van reumatische aandoeningen."
+  },
+  {
+    "titel": "Serum viscosity",
+    "beschrijving": "Meet de stroperigheid van het bloed voor de diagnose van multiple myeloom en andere aandoeningen."
+  },
+  {
+    "titel": "Serum protein electrophoresis (SPEP)",
+    "beschrijving": "Scheidt en kwantificeert eiwitten in het bloed voor de diagnose van immunoglobulineziekten."
+  },
+  {
+    "titel": "Immunofixatie electrophoresis (IFE)",
+    "beschrijving": "Identificeert specifieke immunoglobulines voor de diagnose van multiple myeloom en andere aandoeningen."
+  },
+  {
+    "titel": "Serum amyloid A (SAA) test",
+    "beschrijving": "Meet SAA niveaus als een acute fase reactant voor ontstekingsdiagnostiek."
+  },
+  {
+    "titel": "Ferritine en transferrine saturatie",
+    "beschrijving": "Evalueert ijzeropslag en transport in het lichaam voor de diagnose van anemie."
+  },
+  {
+    "titel": "Haptoglobine test",
+    "beschrijving": "Meet haptoglobine niveaus voor de diagnose van hemolytische anemie."
+  },
+  {
+    "titel": "Serum ceruloplasmine test",
+    "beschrijving": "Meet ceruloplasmine niveaus voor de diagnose van de ziekte van Wilson."
+  },
+  {
+    "titel": "Alpha-1 antitrypsine test",
+    "beschrijving": "Evalueert niveaus van alpha-1 antitrypsine voor de diagnose van lever- en longziekten."
+  },
+  {
+    "titel": "Parathyroïde hormoon (PTH) test",
+    "beschrijving": "Meet PTH niveaus voor de diagnose van parathyroïd functionele stoornissen."
+  },
+  {
+    "titel": "Osteocalcine test",
+    "beschrijving": "Evalueert osteocalcine niveaus voor de diagnose van botmetabolisme en osteoporose."
+  },
+  {
+    "titel": "Serum alkaline phosphatase isoenzymen",
+    "beschrijving": "Scheidt ALP isoenzymen voor de diagnose van lever- en botziekten."
+  },
+  {
+    "titel": "Sideroblasten telling",
+    "beschrijving": "Beoordeelt de aanwezigheid van sideroblasten in het beenmerg voor de diagnose van sideroblastaire anemie."
+  },
+  {
+    "titel": "Serum proteinase 3 (PR3) en myeloperoxidase (MPO) antilichamen",
+    "beschrijving": "Detecteert ANCA (anti-neutrophil cytoplasmic antibodies) voor de diagnose van vasculitis."
+  },
+  {
+    "titel": "Neutrofiele functie testen",
+    "beschrijving": "Evalueert de functie van neutrofielen voor de diagnose van immuungecompromitteerde aandoeningen."
+  },
+  {
+    "titel": "Serum tryptase test",
+    "beschrijving": "Meet tryptase niveaus voor de diagnose van systemische anafylaxie en myeloïde proliferatieve aandoeningen."
+  },
+  {
+    "titel": "Kappa en lambda light chains",
+    "beschrijving": "Evalueert lichtketen niveaus voor de diagnose van multiple myeloom en andere plasmacelziekten."
+  },
+  {
+    "titel": "Serum β2-microglobuline test",
+    "beschrijving": "Meet β2-microglobuline niveaus voor de diagnose van nierziekten en bepaalde kankers."
+  },
+  {
+    "titel": "Serum uridine test",
+    "beschrijving": "Evalueert uridine niveaus voor de diagnose van metabole stoornissen."
+  },
+  {
+    "titel": "Thyroglobuline test",
+    "beschrijving": "Meet thyroglobuline niveaus voor de monitoring van schildklierkanker."
+  },
+  {
+    "titel": "Ammoniak test",
+    "beschrijving": "Meet ammoniak niveaus in het bloed voor de diagnose van leverfalen en metabole stoornissen."
+  },
+  {
+    "titel": "Serum ammonia",
+    "beschrijving": "Evalueert ammonia niveaus voor de diagnose van leverfunctiestoornissen en ureumcyclusdefecten."
+  },
+  {
+    "titel": "Vitaminen panel",
+    "beschrijving": "Beoordeelt verschillende vitaminen niveaus voor de diagnose van tekorten en toxiciteit."
+  },
+  {
+    "titel": "Mineralen panel",
+    "beschrijving": "Meet niveaus van essentiële mineralen zoals calcium, magnesium en kalium."
+  },
+  {
+    "titel": "Serum albumine/globuline ratio",
+    "beschrijving": "Evalueert de verhouding tussen albumine en globuline voor de diagnose van lever- en nierziekten."
+  },
+  {
+    "titel": "Insuline-like growth factor (IGF) test",
+    "beschrijving": "Meet IGF niveaus voor de diagnose van groeistoornissen en acromegalie."
+  },
+  {
+    "titel": "Serum iron binding capacity (TIBC)",
+    "beschrijving": "Evalueert de totale ijzerbindende capaciteit van het bloed voor de diagnose van anemie."
+  },
+  {
+    "titel": "Serum folate test",
+    "beschrijving": "Meet folaat niveaus voor de diagnose van vitamine B12 tekort en megaloblastische anemie."
+  },
+  {
+    "titel": "Serum homocysteïne",
+    "beschrijving": "Evalueert homocysteïneniveaus als risicofactor voor cardiovasculaire ziekten."
+  },
+  {
+    "titel": "Serum ceruloplasmine",
+    "beschrijving": "Meet ceruloplasmine niveaus voor de diagnose van de ziekte van Wilson."
+  },
+  {
+    "titel": "Serum aldolase test",
+    "beschrijving": "Evalueert aldolase niveaus voor de diagnose van spierziekten en leverziekten."
+  },
+  {
+    "titel": "Serum myoglobin test",
+    "beschrijving": "Meet myoglobine niveaus voor de diagnose van spierbeschadiging en myocardinfarct."
+  },
+  {
+    "titel": "Myositis panel",
+    "beschrijving": "Bevat verschillende tests voor de diagnose van inflammatoire spierziekten."
+  },
+  {
+    "titel": "Serum lactate dehydrogenase (LDH)",
+    "beschrijving": "Meet LDH niveaus als marker voor weefselschade en bepaalde vormen van kanker."
+  },
+  {
+    "titel": "Serum creatine kinase (CK)",
+    "beschrijving": "Evalueert CK niveaus voor de diagnose van spierbeschadiging en myocardinfarct."
+  },
+  {
+    "titel": "Serum sodium test",
+    "beschrijving": "Meet natriumspiegels voor de diagnose van elektrolytstoornissen en hydratatiestatus."
+  },
+  {
+    "titel": "Serum potassium test",
+    "beschrijving": "Evalueert kaliumspiegels voor de diagnose van elektrolytstoornissen en spierfunctie."
+  },
+  {
+    "titel": "Serum chloride test",
+    "beschrijving": "Meet chloride niveaus voor de diagnose van elektrolytstoornissen en acidose."
+  },
+  {
+    "titel": "Serum bicarbonate test",
+    "beschrijving": "Evalueert bicarbonaat niveaus voor de diagnose van acidose en alkalose."
+  },
+  {
+    "titel": "Serum phosphate test",
+    "beschrijving": "Meet fosfaatspiegels voor de diagnose van bot- en nierziekten."
+  },
+  {
+    "titel": "Serum magnesium test",
+    "beschrijving": "Evalueert magnesiumspiegels voor de diagnose van elektrolytstoornissen en spierfunctie."
+  },
+  {
+    "titel": "Serum calcium test",
+    "beschrijving": "Meet calciumspiegels voor de diagnose van bot- en nierziekten."
+  },
+  {
+    "titel": "Serum albumin test",
+    "beschrijving": "Evalueert albumine niveaus voor de diagnose van lever- en nierziekten."
+  },
+  {
+    "titel": "Serum total protein",
+    "beschrijving": "Meet totale eiwitniveaus voor de diagnose van diverse aandoeningen."
+  },
+  {
+    "titel": "Serum globulins",
+    "beschrijving": "Evalueert globuline niveaus voor de diagnose van immuun- en leverziekten."
+  },
+  {
+    "titel": "Serum bilirubine test",
+    "beschrijving": "Meet bilirubine niveaus voor de diagnose van lever- en galwegproblemen."
+  },
+  {
+    "titel": "Serum alkaline phosphatase (ALP)",
+    "beschrijving": "Evalueert ALP niveaus voor de diagnose van lever-, galweg- en botziekten."
+  },
+  {
+    "titel": "Serum gamma-glutamyltransferase (GGT)",
+    "beschrijving": "Meet GGT niveaus voor de diagnose van leverziekten en galwegobstructies."
+  },
+  {
+    "titel": "Serum aspartate aminotransferase (AST)",
+    "beschrijving": "Evalueert AST niveaus voor de diagnose van lever- en spierziekten."
+  },
+  {
+    "titel": "Serum alanine aminotransferase (ALT)",
+    "beschrijving": "Meet ALT niveaus voor de diagnose van leverbeschadiging."
+  },
+  {
+    "titel": "Serum lactate",
+    "beschrijving": "Evalueert lactaat niveaus voor de diagnose van zuurstoftekort en weefselschade."
+  }
+]
+
+type_aandoeningen = ["Psychiatrische aandoening", "Neurologische aandoening", 
+                     "Spijsverteringsziekte", "Infectieziekte", "Metabole aandoening", 
+                     "Huidziekte", "Cardiovasculaire aandoening", "Gynaecologische aandoening", 
+                     "Botziekte", "Auto-immuunziekte", "Chronische pijn aandoening", "Nierziekte", 
+                     "Endocriene aandoening", "Genetische aandoening", "Bloedziekte", 
+                     "Oncologische aandoening", "Longziekte"
+    ]
+
+ziektes = [
+  {
+    "naam": "Diabetes Mellitus",
+    "beschrijving": "Een chronische aandoening die de manier waarop het lichaam glucose gebruikt beïnvloedt.",
+    "type_aandoening": "Metabole aandoening"
+  },
+  {
+    "naam": "Hypertensie",
+    "beschrijving": "Een aandoening waarbij de bloeddruk in de slagaders chronisch verhoogd is.",
+    "type_aandoening": "Cardiovasculaire aandoening"
+  },
+  {
+    "naam": "Astma",
+    "beschrijving": "Een chronische ontstekingsziekte van de luchtwegen die ademhaling bemoeilijkt.",
+    "type_aandoening": "Longziekte"
+  },
+  {
+    "naam": "Reumatoïde Artritis",
+    "beschrijving": "Een auto-immuunziekte die gewrichten ontstoken en pijnlijk maakt.",
+    "type_aandoening": "Auto-immuunziekte"
+  },
+  {
+    "naam": "Kanker",
+    "beschrijving": "Een groep van ziekten gekenmerkt door oncontroleerbare celgroei en verspreiding.",
+    "type_aandoening": "Oncologische aandoening"
+  },
+  {
+    "naam": "Depressie",
+    "beschrijving": "Een mentale gezondheidsstoornis gekenmerkt door aanhoudende gevoelens van verdriet en verlies van interesse.",
+    "type_aandoening": "Psychiatrische aandoening"
+  },
+  {
+    "naam": "Multiple Sclerose",
+    "beschrijving": "Een auto-immuunziekte die de zenuwvezels in de hersenen en het ruggenmerg aantast.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Hepatitis B",
+    "beschrijving": "Een infectieziekte die de lever aantast, veroorzaakt door het hepatitis B-virus.",
+    "type_aandoening": "Infectieziekte"
+  },
+  {
+    "naam": "Osteoporose",
+    "beschrijving": "Een aandoening die de botdichtheid vermindert en het risico op breuken verhoogt.",
+    "type_aandoening": "Botziekte"
+  },
+  {
+    "naam": "Alzheimer",
+    "beschrijving": "Een progressieve neurologische aandoening die geheugenverlies en cognitieve achteruitgang veroorzaakt.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "COPD (Chronische Obstructieve Longziekte)",
+    "beschrijving": "Een groep longziekten die ademhaling bemoeilijkt, waaronder emfyseem en chronische bronchitis.",
+    "type_aandoening": "Longziekte"
+  },
+  {
+    "naam": "Parkinson",
+    "beschrijving": "Een neurodegeneratieve aandoening die beweging en coördinatie beïnvloedt.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Schizofrenie",
+    "beschrijving": "Een ernstige mentale stoornis die denken, voelen en gedrag verstoort.",
+    "type_aandoening": "Psychiatrische aandoening"
+  },
+  {
+    "naam": "Arteriële Atherosclerose",
+    "beschrijving": "Opbouw van vetachtige plaques in de slagaders, wat kan leiden tot hartaanvallen en beroertes.",
+    "type_aandoening": "Cardiovasculaire aandoening"
+  },
+  {
+    "naam": "Leukemie",
+    "beschrijving": "Een type kanker dat het bloed en het beenmerg aantast.",
+    "type_aandoening": "Oncologische aandoening"
+  },
+  {
+    "naam": "Tuberculose",
+    "beschrijving": "Een bacteriële infectie die meestal de longen aantast.",
+    "type_aandoening": "Infectieziekte"
+  },
+  {
+    "naam": "Cystic Fibrosis",
+    "beschrijving": "Een erfelijke aandoening die longen en het spijsverteringsstelsel aantast.",
+    "type_aandoening": "Genetische aandoening"
+  },
+  {
+    "naam": "HIV/AIDS",
+    "beschrijving": "Een virusinfectie die het immuunsysteem verzwakt en leidt tot AIDS.",
+    "type_aandoening": "Infectieziekte"
+  },
+  {
+    "naam": "Eczema",
+    "beschrijving": "Een ontstekingsaandoening van de huid die roodheid, jeuk en irritatie veroorzaakt.",
+    "type_aandoening": "Huidziekte"
+  },
+  {
+    "naam": "Migraine",
+    "beschrijving": "Een ernstige vorm van hoofdpijn die gepaard gaat met misselijkheid en gevoeligheid voor licht.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Fibromyalgie",
+    "beschrijving": "Een chronische aandoening gekenmerkt door wijdverspreide pijn en vermoeidheid.",
+    "type_aandoening": "Chronische pijn aandoening"
+  },
+  {
+    "naam": "Psoriasis",
+    "beschrijving": "Een auto-immuunziekte die snelle groei van huidcellen veroorzaakt, leidend tot schilferige plekken.",
+    "type_aandoening": "Huidziekte"
+  },
+  {
+    "naam": "Bipolaire Stoornis",
+    "beschrijving": "Een mentale aandoening gekenmerkt door extreme stemmingswisselingen tussen manie en depressie.",
+    "type_aandoening": "Psychiatrische aandoening"
+  },
+  {
+    "naam": "Endometriose",
+    "beschrijving": "Een aandoening waarbij weefsel dat lijkt op baarmoederslijmvlies buiten de baarmoeder groeit.",
+    "type_aandoening": "Gynaecologische aandoening"
+  },
+  {
+    "naam": "Gastritis",
+    "beschrijving": "Een ontsteking van het maagslijmvlies die maagpijn en spijsverteringsproblemen veroorzaakt.",
+    "type_aandoening": "Spijsverteringsziekte"
+  },
+  {
+    "naam": "Bronchitis",
+    "beschrijving": "Ontsteking van de bronchiën in de longen, wat leidt tot hoesten en ademhalingsproblemen.",
+    "type_aandoening": "Longziekte"
+  },
+  {
+    "naam": "Pneumonie",
+    "beschrijving": "Een infectie van de longen die koorts, hoesten en ademhalingsmoeilijkheden veroorzaakt.",
+    "type_aandoening": "Longziekte"
+  },
+  {
+    "naam": "Anemie",
+    "beschrijving": "Een aandoening waarbij er een tekort is aan rode bloedcellen of hemoglobine.",
+    "type_aandoening": "Bloedziekte"
+  },
+  {
+    "naam": "Thyreoïditis",
+    "beschrijving": "Ontsteking van de schildklier, wat leidt tot hormonale disbalans.",
+    "type_aandoening": "Endocriene aandoening"
+  },
+  {
+    "naam": "Nierstenen",
+    "beschrijving": "Hard mineralen en zoutafzettingen die zich in de nieren vormen en hevige pijn veroorzaken.",
+    "type_aandoening": "Nierziekte"
+  },
+  {
+    "naam": "Hartaandoeningen",
+    "beschrijving": "Verschillende aandoeningen die het hart aantasten, waaronder coronaire hartziekte en hartfalen.",
+    "type_aandoening": "Cardiovasculaire aandoening"
+  },
+  {
+    "naam": "Celiac Disease",
+    "beschrijving": "Een auto-immuunziekte waarbij de inname van gluten leidt tot beschadiging van de dunne darm.",
+    "type_aandoening": "Auto-immuunziekte"
+  },
+  {
+    "naam": "Alzheimer's Ziekte",
+    "beschrijving": "Een progressieve neurologische aandoening die geheugenverlies en cognitieve achteruitgang veroorzaakt.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Hartaandoeningen",
+    "beschrijving": "Verschillende aandoeningen die het hart aantasten, waaronder coronaire hartziekte en hartfalen.",
+    "type_aandoening": "Cardiovasculaire aandoening"
+  },
+  {
+    "naam": "Migraine",
+    "beschrijving": "Een ernstige vorm van hoofdpijn die gepaard gaat met misselijkheid en gevoeligheid voor licht.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Leukemie",
+    "beschrijving": "Een type kanker dat het bloed en het beenmerg aantast.",
+    "type_aandoening": "Oncologische aandoening"
+  },
+  {
+    "naam": "Schizofrenie",
+    "beschrijving": "Een ernstige mentale stoornis die denken, voelen en gedrag verstoort.",
+    "type_aandoening": "Psychiatrische aandoening"
+  },
+  {
+    "naam": "COPD (Chronische Obstructieve Longziekte)",
+    "beschrijving": "Een groep longziekten die ademhaling bemoeilijkt, waaronder emfyseem en chronische bronchitis.",
+    "type_aandoening": "Longziekte"
+  },
+  {
+    "naam": "Hepatitis C",
+    "beschrijving": "Een virale infectie die de lever aantast en kan leiden tot ernstige leverziekten.",
+    "type_aandoening": "Infectieziekte"
+  },
+  {
+    "naam": "Epilepsie",
+    "beschrijving": "Een neurologische aandoening gekenmerkt door terugkerende aanvallen.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Multiple Sclerose",
+    "beschrijving": "Een auto-immuunziekte die de zenuwvezels in de hersenen en het ruggenmerg aantast.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Hartaanval",
+    "beschrijving": "Een plotselinge blokkade van de bloedtoevoer naar het hart, wat schade aan de hartspier veroorzaakt.",
+    "type_aandoening": "Cardiovasculaire aandoening"
+  },
+  {
+    "naam": "Borstkanker",
+    "beschrijving": "Een type kanker dat begint in de cellen van de borst.",
+    "type_aandoening": "Oncologische aandoening"
+  },
+  {
+    "naam": "Prostaatkanker",
+    "beschrijving": "Een type kanker dat voorkomt in de prostaat, een klier bij mannen.",
+    "type_aandoening": "Oncologische aandoening"
+  },
+  {
+    "naam": "Depressie",
+    "beschrijving": "Een mentale gezondheidsstoornis gekenmerkt door aanhoudende gevoelens van verdriet en verlies van interesse.",
+    "type_aandoening": "Psychiatrische aandoening"
+  },
+  {
+    "naam": "Angina Pectoris",
+    "beschrijving": "Pijn of ongemak in de borst veroorzaakt door verminderde bloedtoevoer naar het hart.",
+    "type_aandoening": "Cardiovasculaire aandoening"
+  },
+  {
+    "naam": "Leptomeningeomen",
+    "beschrijving": "Goedaardige tumoren die de hersenvliezen aantasten.",
+    "type_aandoening": "Oncologische aandoening"
+  },
+  {
+    "naam": "Schildklierkanker",
+    "beschrijving": "Een type kanker dat begint in de schildklier, een klier in de hals.",
+    "type_aandoening": "Oncologische aandoening"
+  },
+  {
+    "naam": "Amyotrofische Laterale Sclerose (ALS)",
+    "beschrijving": "Een progressieve neurodegeneratieve ziekte die zenuwcellen in de hersenen en het ruggenmerg aantast.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Hartaandoeningen",
+    "beschrijving": "Verschillende aandoeningen die het hart aantasten, waaronder coronaire hartziekte en hartfalen.",
+    "type_aandoening": "Cardiovasculaire aandoening"
+  },
+  {
+    "naam": "Systemische Lupus Erythematosus (SLE)",
+    "beschrijving": "Een auto-immuunziekte die verschillende delen van het lichaam kan aantasten, waaronder huid, gewrichten en organen.",
+    "type_aandoening": "Auto-immuunziekte"
+  },
+  {
+    "naam": "Downsyndroom",
+    "beschrijving": "Een genetische aandoening veroorzaakt door een extra chromosoom 21, gekenmerkt door fysieke en mentale ontwikkelingsachterstanden.",
+    "type_aandoening": "Genetische aandoening"
+  },
+  {
+    "naam": "Cerebrale Parese",
+    "beschrijving": "Een groep van stoornissen die beweging en spierspanning beïnvloeden, veroorzaakt door hersenbeschadiging.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Ebola",
+    "beschrijving": "Een ernstige virusinfectie die koorts, bloedingen en orgaanfalen veroorzaakt.",
+    "type_aandoening": "Infectieziekte"
+  },
+  {
+    "naam": "Ziekte van Huntington",
+    "beschrijving": "Een erfelijke aandoening die de hersenen aantast en leidt tot ongecontroleerde bewegingen en mentale achteruitgang.",
+    "type_aandoening": "Genetische aandoening"
+  },
+  {
+    "naam": "Schizofrenie",
+    "beschrijving": "Een ernstige mentale stoornis die denken, voelen en gedrag verstoort.",
+    "type_aandoening": "Psychiatrische aandoening"
+  },
+  {
+    "naam": "Leptomeningeomen",
+    "beschrijving": "Goedaardige tumoren die de hersenvliezen aantasten.",
+    "type_aandoening": "Oncologische aandoening"
+  },
+  {
+    "naam": "Rheumatoïde Artritis",
+    "beschrijving": "Een auto-immuunziekte die gewrichten ontstoken en pijnlijk maakt.",
+    "type_aandoening": "Auto-immuunziekte"
+  },
+  {
+    "naam": "Hepatitis A",
+    "beschrijving": "Een leverontsteking veroorzaakt door het hepatitis A-virus, meestal via besmet voedsel of water.",
+    "type_aandoening": "Infectieziekte"
+  },
+  {
+    "naam": "Hepatitis B",
+    "beschrijving": "Een infectieziekte die de lever aantast, veroorzaakt door het hepatitis B-virus.",
+    "type_aandoening": "Infectieziekte"
+  },
+  {
+    "naam": "Hepatitis C",
+    "beschrijving": "Een virale infectie die de lever aantast en kan leiden tot ernstige leverziekten.",
+    "type_aandoening": "Infectieziekte"
+  },
+  {
+    "naam": "Eczema",
+    "beschrijving": "Een ontstekingsaandoening van de huid die roodheid, jeuk en irritatie veroorzaakt.",
+    "type_aandoening": "Huidziekte"
+  },
+  {
+    "naam": "Astma",
+    "beschrijving": "Een chronische ontstekingsziekte van de luchtwegen die ademhaling bemoeilijkt.",
+    "type_aandoening": "Longziekte"
+  },
+  {
+    "naam": "Bronchitis",
+    "beschrijving": "Ontsteking van de bronchiën in de longen, wat leidt tot hoesten en ademhalingsproblemen.",
+    "type_aandoening": "Longziekte"
+  },
+  {
+    "naam": "Pneumonie",
+    "beschrijving": "Een infectie van de longen die koorts, hoesten en ademhalingsmoeilijkheden veroorzaakt.",
+    "type_aandoening": "Longziekte"
+  },
+  {
+    "naam": "Tuberculose",
+    "beschrijving": "Een bacteriële infectie die meestal de longen aantast.",
+    "type_aandoening": "Infectieziekte"
+  },
+  {
+    "naam": "Gastritis",
+    "beschrijving": "Een ontsteking van het maagslijmvlies die maagpijn en spijsverteringsproblemen veroorzaakt.",
+    "type_aandoening": "Spijsverteringsziekte"
+  },
+  {
+    "naam": "Endometriose",
+    "beschrijving": "Een aandoening waarbij weefsel dat lijkt op baarmoederslijmvlies buiten de baarmoeder groeit.",
+    "type_aandoening": "Gynaecologische aandoening"
+  },
+  {
+    "naam": "Nierstenen",
+    "beschrijving": "Hard mineralen en zoutafzettingen die zich in de nieren vormen en hevige pijn veroorzaken.",
+    "type_aandoening": "Nierziekte"
+  },
+  {
+    "naam": "Leukemie",
+    "beschrijving": "Een type kanker dat het bloed en het beenmerg aantast.",
+    "type_aandoening": "Oncologische aandoening"
+  },
+  {
+    "naam": "Ziekte van Parkinson",
+    "beschrijving": "Een neurodegeneratieve aandoening die beweging en coördinatie beïnvloedt.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Cystic Fibrosis",
+    "beschrijving": "Een erfelijke aandoening die longen en het spijsverteringsstelsel aantast.",
+    "type_aandoening": "Genetische aandoening"
+  },
+  {
+    "naam": "Multiple Sclerose",
+    "beschrijving": "Een auto-immuunziekte die de zenuwvezels in de hersenen en het ruggenmerg aantast.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "HIV/AIDS",
+    "beschrijving": "Een virusinfectie die het immuunsysteem verzwakt en leidt tot AIDS.",
+    "type_aandoening": "Infectieziekte"
+  },
+  {
+    "naam": "Schizofrenie",
+    "beschrijving": "Een ernstige mentale stoornis die denken, voelen en gedrag verstoort.",
+    "type_aandoening": "Psychiatrische aandoening"
+  },
+  {
+    "naam": "Leptomeningeomen",
+    "beschrijving": "Goedaardige tumoren die de hersenvliezen aantasten.",
+    "type_aandoening": "Oncologische aandoening"
+  },
+  {
+    "naam": "Hartaandoeningen",
+    "beschrijving": "Verschillende aandoeningen die het hart aantasten, waaronder coronaire hartziekte en hartfalen.",
+    "type_aandoening": "Cardiovasculaire aandoening"
+  },
+  {
+    "naam": "Reumatoïde Artritis",
+    "beschrijving": "Een auto-immuunziekte die gewrichten ontstoken en pijnlijk maakt.",
+    "type_aandoening": "Auto-immuunziekte"
+  },
+  {
+    "naam": "Alzheimer",
+    "beschrijving": "Een progressieve neurologische aandoening die geheugenverlies en cognitieve achteruitgang veroorzaakt.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Bipolaire Stoornis",
+    "beschrijving": "Een mentale aandoening gekenmerkt door extreme stemmingswisselingen tussen manie en depressie.",
+    "type_aandoening": "Psychiatrische aandoening"
+  },
+  {
+    "naam": "COPD (Chronische Obstructieve Longziekte)",
+    "beschrijving": "Een groep longziekten die ademhaling bemoeilijkt, waaronder emfyseem en chronische bronchitis.",
+    "type_aandoening": "Longziekte"
+  },
+  {
+    "naam": "Systemische Lupus Erythematosus (SLE)",
+    "beschrijving": "Een auto-immuunziekte die verschillende delen van het lichaam kan aantasten, waaronder huid, gewrichten en organen.",
+    "type_aandoening": "Auto-immuunziekte"
+  },
+  {
+    "naam": "Cerebrale Parese",
+    "beschrijving": "Een groep van stoornissen die beweging en spierspanning beïnvloeden, veroorzaakt door hersenbeschadiging.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Amyotrofische Laterale Sclerose (ALS)",
+    "beschrijving": "Een progressieve neurodegeneratieve ziekte die zenuwcellen in de hersenen en het ruggenmerg aantast.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Eczema",
+    "beschrijving": "Een ontstekingsaandoening van de huid die roodheid, jeuk en irritatie veroorzaakt.",
+    "type_aandoening": "Huidziekte"
+  },
+  {
+    "naam": "Endometriose",
+    "beschrijving": "Een aandoening waarbij weefsel dat lijkt op baarmoederslijmvlies buiten de baarmoeder groeit.",
+    "type_aandoening": "Gynaecologische aandoening"
+  },
+  {
+    "naam": "Leukemie",
+    "beschrijving": "Een type kanker dat het bloed en het beenmerg aantast.",
+    "type_aandoening": "Oncologische aandoening"
+  },
+  {
+    "naam": "Diabetes Type 1",
+    "beschrijving": "Een auto-immuunziekte waarbij het lichaam insuline produceert niet kan produceren.",
+    "type_aandoening": "Metabole aandoening"
+  },
+  {
+    "naam": "Diabetes Type 2",
+    "beschrijving": "Een metabole aandoening waarbij het lichaam insuline niet effectief gebruikt.",
+    "type_aandoening": "Metabole aandoening"
+  },
+  {
+    "naam": "Kanker van de Dikke Darm",
+    "beschrijving": "Een type kanker dat begint in de dikke darm of endeldarm.",
+    "type_aandoening": "Oncologische aandoening"
+  },
+  {
+    "naam": "Hartaandoeningen",
+    "beschrijving": "Verschillende aandoeningen die het hart aantasten, waaronder coronaire hartziekte en hartfalen.",
+    "type_aandoening": "Cardiovasculaire aandoening"
+  },
+  {
+    "naam": "Hepatitis B",
+    "beschrijving": "Een infectieziekte die de lever aantast, veroorzaakt door het hepatitis B-virus.",
+    "type_aandoening": "Infectieziekte"
+  },
+  {
+    "naam": "Hepatitis C",
+    "beschrijving": "Een virale infectie die de lever aantast en kan leiden tot ernstige leverziekten.",
+    "type_aandoening": "Infectieziekte"
+  },
+  {
+    "naam": "Rheumatoïde Artritis",
+    "beschrijving": "Een auto-immuunziekte die gewrichten ontstoken en pijnlijk maakt.",
+    "type_aandoening": "Auto-immuunziekte"
+  },
+  {
+    "naam": "Migrane",
+    "beschrijving": "Een ernstige vorm van hoofdpijn die gepaard gaat met misselijkheid en gevoeligheid voor licht.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Schizofrenie",
+    "beschrijving": "Een ernstige mentale stoornis die denken, voelen en gedrag verstoort.",
+    "type_aandoening": "Psychiatrische aandoening"
+  },
+  {
+    "naam": "Cystic Fibrosis",
+    "beschrijving": "Een erfelijke aandoening die longen en het spijsverteringsstelsel aantast.",
+    "type_aandoening": "Genetische aandoening"
+  },
+  {
+    "naam": "Multiple Sclerose",
+    "beschrijving": "Een auto-immuunziekte die de zenuwvezels in de hersenen en het ruggenmerg aantast.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "HIV/AIDS",
+    "beschrijving": "Een virusinfectie die het immuunsysteem verzwakt en leidt tot AIDS.",
+    "type_aandoening": "Infectieziekte"
+  },
+  {
+    "naam": "Leptomeningeomen",
+    "beschrijving": "Goedaardige tumoren die de hersenvliezen aantasten.",
+    "type_aandoening": "Oncologische aandoening"
+  },
+  {
+    "naam": "Amyotrofische Laterale Sclerose (ALS)",
+    "beschrijving": "Een progressieve neurodegeneratieve ziekte die zenuwcellen in de hersenen en het ruggenmerg aantast.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Schildklierkanker",
+    "beschrijving": "Een type kanker dat begint in de schildklier, een klier in de hals.",
+    "type_aandoening": "Oncologische aandoening"
+  },
+  {
+    "naam": "Endometriose",
+    "beschrijving": "Een aandoening waarbij weefsel dat lijkt op baarmoederslijmvlies buiten de baarmoeder groeit.",
+    "type_aandoening": "Gynaecologische aandoening"
+  },
+  {
+    "naam": "Ziekte van Parkinson",
+    "beschrijving": "Een neurodegeneratieve aandoening die beweging en coördinatie beïnvloedt.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "COPD (Chronische Obstructieve Longziekte)",
+    "beschrijving": "Een groep longziekten die ademhaling bemoeilijkt, waaronder emfyseem en chronische bronchitis.",
+    "type_aandoening": "Longziekte"
+  },
+  {
+    "naam": "Depressie",
+    "beschrijving": "Een mentale gezondheidsstoornis gekenmerkt door aanhoudende gevoelens van verdriet en verlies van interesse.",
+    "type_aandoening": "Psychiatrische aandoening"
+  },
+  {
+    "naam": "Hypertensie",
+    "beschrijving": "Een aandoening waarbij de bloeddruk in de slagaders chronisch verhoogd is.",
+    "type_aandoening": "Cardiovasculaire aandoening"
+  },
+  {
+    "naam": "Diabetes Mellitus",
+    "beschrijving": "Een chronische aandoening die de manier waarop het lichaam glucose gebruikt beïnvloedt.",
+    "type_aandoening": "Metabole aandoening"
+  },
+  {
+    "naam": "Alzheimer's Ziekte",
+    "beschrijving": "Een progressieve neurologische aandoening die geheugenverlies en cognitieve achteruitgang veroorzaakt.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Osteoporose",
+    "beschrijving": "Een aandoening die de botdichtheid vermindert en het risico op breuken verhoogt.",
+    "type_aandoening": "Botziekte"
+  },
+  {
+    "naam": "Ebola",
+    "beschrijving": "Een ernstige virusinfectie die koorts, bloedingen en orgaanfalen veroorzaakt.",
+    "type_aandoening": "Infectieziekte"
+  },
+  {
+    "naam": "Fibromyalgie",
+    "beschrijving": "Een chronische aandoening gekenmerkt door wijdverspreide pijn en vermoeidheid.",
+    "type_aandoening": "Chronische pijn aandoening"
+  },
+  {
+    "naam": "Celiac Disease",
+    "beschrijving": "Een auto-immuunziekte waarbij de inname van gluten leidt tot beschadiging van de dunne darm.",
+    "type_aandoening": "Auto-immuunziekte"
+  },
+  {
+    "naam": "Cholesterol Metabolisme Storing",
+    "beschrijving": "Een aandoening waarbij het lichaam cholesterol niet goed kan verwerken, leidend tot hoge cholesterolwaarden.",
+    "type_aandoening": "Metabole aandoening"
+  },
+  {
+    "naam": "Borstkanker",
+    "beschrijving": "Een type kanker dat begint in de cellen van de borst.",
+    "type_aandoening": "Oncologische aandoening"
+  },
+  {
+    "naam": "Prostaatkanker",
+    "beschrijving": "Een type kanker dat voorkomt in de prostaat, een klier bij mannen.",
+    "type_aandoening": "Oncologische aandoening"
+  },
+  {
+    "naam": "Migraine",
+    "beschrijving": "Een ernstige vorm van hoofdpijn die gepaard gaat met misselijkheid en gevoeligheid voor licht.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Rheumatoïde Artritis",
+    "beschrijving": "Een auto-immuunziekte die gewrichten ontstoken en pijnlijk maakt.",
+    "type_aandoening": "Auto-immuunziekte"
+  },
+  {
+    "naam": "Schizofrenie",
+    "beschrijving": "Een ernstige mentale stoornis die denken, voelen en gedrag verstoort.",
+    "type_aandoening": "Psychiatrische aandoening"
+  },
+  {
+    "naam": "Hepatitis A",
+    "beschrijving": "Een leverontsteking veroorzaakt door het hepatitis A-virus, meestal via besmet voedsel of water.",
+    "type_aandoening": "Infectieziekte"
+  },
+  {
+    "naam": "Hepatitis B",
+    "beschrijving": "Een infectieziekte die de lever aantast, veroorzaakt door het hepatitis B-virus.",
+    "type_aandoening": "Infectieziekte"
+  },
+  {
+    "naam": "Hepatitis C",
+    "beschrijving": "Een virale infectie die de lever aantast en kan leiden tot ernstige leverziekten.",
+    "type_aandoening": "Infectieziekte"
+  },
+  {
+    "naam": "Anemie",
+    "beschrijving": "Een aandoening waarbij er een tekort is aan rode bloedcellen of hemoglobine.",
+    "type_aandoening": "Bloedziekte"
+  },
+  {
+    "naam": "Systemische Lupus Erythematosus (SLE)",
+    "beschrijving": "Een auto-immuunziekte die verschillende delen van het lichaam kan aantasten, waaronder huid, gewrichten en organen.",
+    "type_aandoening": "Auto-immuunziekte"
+  },
+  {
+    "naam": "Cerebrale Parese",
+    "beschrijving": "Een groep van stoornissen die beweging en spierspanning beïnvloeden, veroorzaakt door hersenbeschadiging.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Parkinson",
+    "beschrijving": "Een neurodegeneratieve aandoening die beweging en coördinatie beïnvloedt.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Gastritis",
+    "beschrijving": "Een ontsteking van het maagslijmvlies die maagpijn en spijsverteringsproblemen veroorzaakt.",
+    "type_aandoening": "Spijsverteringsziekte"
+  },
+  {
+    "naam": "Schildklierkanker",
+    "beschrijving": "Een type kanker dat begint in de schildklier, een klier in de hals.",
+    "type_aandoening": "Oncologische aandoening"
+  },
+  {
+    "naam": "Cystic Fibrosis",
+    "beschrijving": "Een erfelijke aandoening die longen en het spijsverteringsstelsel aantast.",
+    "type_aandoening": "Genetische aandoening"
+  },
+  {
+    "naam": "Eczema",
+    "beschrijving": "Een ontstekingsaandoening van de huid die roodheid, jeuk en irritatie veroorzaakt.",
+    "type_aandoening": "Huidziekte"
+  },
+  {
+    "naam": "Hypertensie",
+    "beschrijving": "Een aandoening waarbij de bloeddruk in de slagaders chronisch verhoogd is.",
+    "type_aandoening": "Cardiovasculaire aandoening"
+  },
+  {
+    "naam": "Leukemie",
+    "beschrijving": "Een type kanker dat het bloed en het beenmerg aantast.",
+    "type_aandoening": "Oncologische aandoening"
+  },
+  {
+    "naam": "Diabetes Type 1",
+    "beschrijving": "Een auto-immuunziekte waarbij het lichaam insuline produceert niet kan produceren.",
+    "type_aandoening": "Metabole aandoening"
+  },
+  {
+    "naam": "Diabetes Type 2",
+    "beschrijving": "Een metabole aandoening waarbij het lichaam insuline niet effectief gebruikt.",
+    "type_aandoening": "Metabole aandoening"
+  },
+  {
+    "naam": "Hartaandoeningen",
+    "beschrijving": "Verschillende aandoeningen die het hart aantasten, waaronder coronaire hartziekte en hartfalen.",
+    "type_aandoening": "Cardiovasculaire aandoening"
+  },
+  {
+    "naam": "Borstkanker",
+    "beschrijving": "Een type kanker dat begint in de cellen van de borst.",
+    "type_aandoening": "Oncologische aandoening"
+  },
+  {
+    "naam": "Prostaatkanker",
+    "beschrijving": "Een type kanker dat voorkomt in de prostaat, een klier bij mannen.",
+    "type_aandoening": "Oncologische aandoening"
+  },
+  {
+    "naam": "Leukemie",
+    "beschrijving": "Een type kanker dat het bloed en het beenmerg aantast.",
+    "type_aandoening": "Oncologische aandoening"
+  },
+  {
+    "naam": "Rheumatoïde Artritis",
+    "beschrijving": "Een auto-immuunziekte die gewrichten ontstoken en pijnlijk maakt.",
+    "type_aandoening": "Auto-immuunziekte"
+  },
+  {
+    "naam": "Schizofrenie",
+    "beschrijving": "Een ernstige mentale stoornis die denken, voelen en gedrag verstoort.",
+    "type_aandoening": "Psychiatrische aandoening"
+  },
+  {
+    "naam": "Cerebrale Parese",
+    "beschrijving": "Een groep van stoornissen die beweging en spierspanning beïnvloeden, veroorzaakt door hersenbeschadiging.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Parkinson",
+    "beschrijving": "Een neurodegeneratieve aandoening die beweging en coördinatie beïnvloedt.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Amyotrofische Laterale Sclerose (ALS)",
+    "beschrijving": "Een progressieve neurodegeneratieve ziekte die zenuwcellen in de hersenen en het ruggenmerg aantast.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Ziekte van Huntington",
+    "beschrijving": "Een erfelijke aandoening die de hersenen aantast en leidt tot ongecontroleerde bewegingen en mentale achteruitgang.",
+    "type_aandoening": "Genetische aandoening"
+  },
+  {
+    "naam": "Multiple Sclerose",
+    "beschrijving": "Een auto-immuunziekte die de zenuwvezels in de hersenen en het ruggenmerg aantast.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Cystic Fibrosis",
+    "beschrijving": "Een erfelijke aandoening die longen en het spijsverteringsstelsel aantast.",
+    "type_aandoening": "Genetische aandoening"
+  },
+  {
+    "naam": "Leukemie",
+    "beschrijving": "Een type kanker dat het bloed en het beenmerg aantast.",
+    "type_aandoening": "Oncologische aandoening"
+  },
+  {
+    "naam": "Hypertensie",
+    "beschrijving": "Een aandoening waarbij de bloeddruk in de slagaders chronisch verhoogd is.",
+    "type_aandoening": "Cardiovasculaire aandoening"
+  },
+  {
+    "naam": "Diabetes Mellitus",
+    "beschrijving": "Een chronische aandoening die de manier waarop het lichaam glucose gebruikt beïnvloedt.",
+    "type_aandoening": "Metabole aandoening"
+  },
+  {
+    "naam": "Endometriose",
+    "beschrijving": "Een aandoening waarbij weefsel dat lijkt op baarmoederslijmvlies buiten de baarmoeder groeit.",
+    "type_aandoening": "Gynaecologische aandoening"
+  },
+  {
+    "naam": "Astma",
+    "beschrijving": "Een chronische ontstekingsziekte van de luchtwegen die ademhaling bemoeilijkt.",
+    "type_aandoening": "Longziekte"
+  },
+  {
+    "naam": "Leptomeningeomen",
+    "beschrijving": "Goedaardige tumoren die de hersenvliezen aantasten.",
+    "type_aandoening": "Oncologische aandoening"
+  },
+  {
+    "naam": "Hartaandoeningen",
+    "beschrijving": "Verschillende aandoeningen die het hart aantasten, waaronder coronaire hartziekte en hartfalen.",
+    "type_aandoening": "Cardiovasculaire aandoening"
+  },
+  {
+    "naam": "Schizofrenie",
+    "beschrijving": "Een ernstige mentale stoornis die denken, voelen en gedrag verstoort.",
+    "type_aandoening": "Psychiatrische aandoening"
+  },
+  {
+    "naam": "HIV/AIDS",
+    "beschrijving": "Een virusinfectie die het immuunsysteem verzwakt en leidt tot AIDS.",
+    "type_aandoening": "Infectieziekte"
+  },
+  {
+    "naam": "Multiple Sclerose",
+    "beschrijving": "Een auto-immuunziekte die de zenuwvezels in de hersenen en het ruggenmerg aantast.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Diabetes Type 1",
+    "beschrijving": "Een auto-immuunziekte waarbij het lichaam insuline produceert niet kan produceren.",
+    "type_aandoening": "Metabole aandoening"
+  },
+  {
+    "naam": "Diabetes Type 2",
+    "beschrijving": "Een metabole aandoening waarbij het lichaam insuline niet effectief gebruikt.",
+    "type_aandoening": "Metabole aandoening"
+  },
+  {
+    "naam": "Cystic Fibrosis",
+    "beschrijving": "Een erfelijke aandoening die longen en het spijsverteringsstelsel aantast.",
+    "type_aandoening": "Genetische aandoening"
+  },
+  {
+    "naam": "Prostaatkanker",
+    "beschrijving": "Een type kanker dat voorkomt in de prostaat, een klier bij mannen.",
+    "type_aandoening": "Oncologische aandoening"
+  },
+  {
+    "naam": "Leukemie",
+    "beschrijving": "Een type kanker dat het bloed en het beenmerg aantast.",
+    "type_aandoening": "Oncologische aandoening"
+  },
+  {
+    "naam": "Parkinson",
+    "beschrijving": "Een neurodegeneratieve aandoening die beweging en coördinatie beïnvloedt.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Hepatitis B",
+    "beschrijving": "Een infectieziekte die de lever aantast, veroorzaakt door het hepatitis B-virus.",
+    "type_aandoening": "Infectieziekte"
+  },
+  {
+    "naam": "Rheumatoïde Artritis",
+    "beschrijving": "Een auto-immuunziekte die gewrichten ontstoken en pijnlijk maakt.",
+    "type_aandoening": "Auto-immuunziekte"
+  },
+  {
+    "naam": "Hepatitis C",
+    "beschrijving": "Een virale infectie die de lever aantast en kan leiden tot ernstige leverziekten.",
+    "type_aandoening": "Infectieziekte"
+  },
+  {
+    "naam": "Ebola",
+    "beschrijving": "Een ernstige virusinfectie die koorts, bloedingen en orgaanfalen veroorzaakt.",
+    "type_aandoening": "Infectieziekte"
+  },
+  {
+    "naam": "Multiple Sclerose",
+    "beschrijving": "Een auto-immuunziekte die de zenuwvezels in de hersenen en het ruggenmerg aantast.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Alzheimer's Ziekte",
+    "beschrijving": "Een progressieve neurologische aandoening die geheugenverlies en cognitieve achteruitgang veroorzaakt.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Systemische Lupus Erythematosus (SLE)",
+    "beschrijving": "Een auto-immuunziekte die verschillende delen van het lichaam kan aantasten, waaronder huid, gewrichten en organen.",
+    "type_aandoening": "Auto-immuunziekte"
+  },
+  {
+    "naam": "Hartaandoeningen",
+    "beschrijving": "Verschillende aandoeningen die het hart aantasten, waaronder coronaire hartziekte en hartfalen.",
+    "type_aandoening": "Cardiovasculaire aandoening"
+  },
+  {
+    "naam": "Parkinson",
+    "beschrijving": "Een neurodegeneratieve aandoening die beweging en coördinatie beïnvloedt.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Fibromyalgie",
+    "beschrijving": "Een chronische aandoening gekenmerkt door wijdverspreide pijn en vermoeidheid.",
+    "type_aandoening": "Chronische pijn aandoening"
+  },
+  {
+    "naam": "Cystic Fibrosis",
+    "beschrijving": "Een erfelijke aandoening die longen en het spijsverteringsstelsel aantast.",
+    "type_aandoening": "Genetische aandoening"
+  },
+  {
+    "naam": "Cerebrale Parese",
+    "beschrijving": "Een groep van stoornissen die beweging en spierspanning beïnvloeden, veroorzaakt door hersenbeschadiging.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "HIV/AIDS",
+    "beschrijving": "Een virusinfectie die het immuunsysteem verzwakt en leidt tot AIDS.",
+    "type_aandoening": "Infectieziekte"
+  },
+  {
+    "naam": "Schizofrenie",
+    "beschrijving": "Een ernstige mentale stoornis die denken, voelen en gedrag verstoort.",
+    "type_aandoening": "Psychiatrische aandoening"
+  },
+  {
+    "naam": "Ziekte van Huntington",
+    "beschrijving": "Een erfelijke aandoening die de hersenen aantast en leidt tot ongecontroleerde bewegingen en mentale achteruitgang.",
+    "type_aandoening": "Genetische aandoening"
+  },
+  {
+    "naam": "Epilepsie",
+    "beschrijving": "Een neurologische aandoening gekenmerkt door terugkerende aanvallen.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Hartaandoeningen",
+    "beschrijving": "Verschillende aandoeningen die het hart aantasten, waaronder coronaire hartziekte en hartfalen.",
+    "type_aandoening": "Cardiovasculaire aandoening"
+  },
+  {
+    "naam": "Bronchitis",
+    "beschrijving": "Ontsteking van de bronchiën in de longen, wat leidt tot hoesten en ademhalingsproblemen.",
+    "type_aandoening": "Longziekte"
+  },
+  {
+    "naam": "Pneumonie",
+    "beschrijving": "Een infectie van de longen die koorts, hoesten en ademhalingsmoeilijkheden veroorzaakt.",
+    "type_aandoening": "Longziekte"
+  },
+  {
+    "naam": "Osteoporose",
+    "beschrijving": "Een aandoening die de botdichtheid vermindert en het risico op breuken verhoogt.",
+    "type_aandoening": "Botziekte"
+  },
+  {
+    "naam": "Hepatitis A",
+    "beschrijving": "Een leverontsteking veroorzaakt door het hepatitis A-virus, meestal via besmet voedsel of water.",
+    "type_aandoening": "Infectieziekte"
+  },
+  {
+    "naam": "Nierstenen",
+    "beschrijving": "Hard mineralen en zoutafzettingen die zich in de nieren vormen en hevige pijn veroorzaken.",
+    "type_aandoening": "Nierziekte"
+  },
+  {
+    "naam": "Endometriose",
+    "beschrijving": "Een aandoening waarbij weefsel dat lijkt op baarmoederslijmvlies buiten de baarmoeder groeit.",
+    "type_aandoening": "Gynaecologische aandoening"
+  },
+  {
+    "naam": "Schildklierkanker",
+    "beschrijving": "Een type kanker dat begint in de schildklier, een klier in de hals.",
+    "type_aandoening": "Oncologische aandoening"
+  },
+  {
+    "naam": "Rheumatoïde Artritis",
+    "beschrijving": "Een auto-immuunziekte die gewrichten ontstoken en pijnlijk maakt.",
+    "type_aandoening": "Auto-immuunziekte"
+  },
+  {
+    "naam": "Diabetes Type 1",
+    "beschrijving": "Een auto-immuunziekte waarbij het lichaam insuline produceert niet kan produceren.",
+    "type_aandoening": "Metabole aandoening"
+  },
+  {
+    "naam": "Diabetes Type 2",
+    "beschrijving": "Een metabole aandoening waarbij het lichaam insuline niet effectief gebruikt.",
+    "type_aandoening": "Metabole aandoening"
+  },
+  {
+    "naam": "Leukemie",
+    "beschrijving": "Een type kanker dat het bloed en het beenmerg aantast.",
+    "type_aandoening": "Oncologische aandoening"
+  },
+  {
+    "naam": "Hartaandoeningen",
+    "beschrijving": "Verschillende aandoeningen die het hart aantasten, waaronder coronaire hartziekte en hartfalen.",
+    "type_aandoening": "Cardiovasculaire aandoening"
+  },
+  {
+    "naam": "Migraine",
+    "beschrijving": "Een ernstige vorm van hoofdpijn die gepaard gaat met misselijkheid en gevoeligheid voor licht.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Multiple Sclerose",
+    "beschrijving": "Een auto-immuunziekte die de zenuwvezels in de hersenen en het ruggenmerg aantast.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Cerebrale Parese",
+    "beschrijving": "Een groep van stoornissen die beweging en spierspanning beïnvloeden, veroorzaakt door hersenbeschadiging.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Schizofrenie",
+    "beschrijving": "Een ernstige mentale stoornis die denken, voelen en gedrag verstoort.",
+    "type_aandoening": "Psychiatrische aandoening"
+  },
+  {
+    "naam": "Schildklierfunctiestoornis",
+    "beschrijving": "Aandoeningen waarbij de schildklier te veel of te weinig hormonen produceert.",
+    "type_aandoening": "Endocriene aandoening"
+  },
+  {
+    "naam": "Cystic Fibrosis",
+    "beschrijving": "Een erfelijke aandoening die longen en het spijsverteringsstelsel aantast.",
+    "type_aandoening": "Genetische aandoening"
+  },
+  {
+    "naam": "HIV/AIDS",
+    "beschrijving": "Een virusinfectie die het immuunsysteem verzwakt en leidt tot AIDS.",
+    "type_aandoening": "Infectieziekte"
+  },
+  {
+    "naam": "Alzheimer's Ziekte",
+    "beschrijving": "Een progressieve neurologische aandoening die geheugenverlies en cognitieve achteruitgang veroorzaakt.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Bronchitis",
+    "beschrijving": "Ontsteking van de bronchiën in de longen, wat leidt tot hoesten en ademhalingsproblemen.",
+    "type_aandoening": "Longziekte"
+  },
+  {
+    "naam": "Pneumonie",
+    "beschrijving": "Een infectie van de longen die koorts, hoesten en ademhalingsmoeilijkheden veroorzaakt.",
+    "type_aandoening": "Longziekte"
+  },
+  {
+    "naam": "Endometriose",
+    "beschrijving": "Een aandoening waarbij weefsel dat lijkt op baarmoederslijmvlies buiten de baarmoeder groeit.",
+    "type_aandoening": "Gynaecologische aandoening"
+  },
+  {
+    "naam": "Hepatitis B",
+    "beschrijving": "Een infectieziekte die de lever aantast, veroorzaakt door het hepatitis B-virus.",
+    "type_aandoening": "Infectieziekte"
+  },
+  {
+    "naam": "Hepatitis C",
+    "beschrijving": "Een virale infectie die de lever aantast en kan leiden tot ernstige leverziekten.",
+    "type_aandoening": "Infectieziekte"
+  },
+  {
+    "naam": "Ziekte van Huntington",
+    "beschrijving": "Een erfelijke aandoening die de hersenen aantast en leidt tot ongecontroleerde bewegingen en mentale achteruitgang.",
+    "type_aandoening": "Genetische aandoening"
+  },
+  {
+    "naam": "Systemische Lupus Erythematosus (SLE)",
+    "beschrijving": "Een auto-immuunziekte die verschillende delen van het lichaam kan aantasten, waaronder huid, gewrichten en organen.",
+    "type_aandoening": "Auto-immuunziekte"
+  },
+  {
+    "naam": "Cystic Fibrosis",
+    "beschrijving": "Een erfelijke aandoening die longen en het spijsverteringsstelsel aantast.",
+    "type_aandoening": "Genetische aandoening"
+  },
+  {
+    "naam": "Epilepsie",
+    "beschrijving": "Een neurologische aandoening gekenmerkt door terugkerende aanvallen.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Rheumatoïde Artritis",
+    "beschrijving": "Een auto-immuunziekte die gewrichten ontstoken en pijnlijk maakt.",
+    "type_aandoening": "Auto-immuunziekte"
+  },
+  {
+    "naam": "Fibromyalgie",
+    "beschrijving": "Een chronische aandoening gekenmerkt door wijdverspreide pijn en vermoeidheid.",
+    "type_aandoening": "Chronische pijn aandoening"
+  },
+  {
+    "naam": "Ziekte van Parkinson",
+    "beschrijving": "Een neurodegeneratieve aandoening die beweging en coördinatie beïnvloedt.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Hartaandoeningen",
+    "beschrijving": "Verschillende aandoeningen die het hart aantasten, waaronder coronaire hartziekte en hartfalen.",
+    "type_aandoening": "Cardiovasculaire aandoening"
+  },
+  {
+    "naam": "Multiple Sclerose",
+    "beschrijving": "Een auto-immuunziekte die de zenuwvezels in de hersenen en het ruggenmerg aantast.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Anemie",
+    "beschrijving": "Een aandoening waarbij er een tekort is aan rode bloedcellen of hemoglobine.",
+    "type_aandoening": "Bloedziekte"
+  },
+  {
+    "naam": "Hypertensie",
+    "beschrijving": "Een aandoening waarbij de bloeddruk in de slagaders chronisch verhoogd is.",
+    "type_aandoening": "Cardiovasculaire aandoening"
+  },
+  {
+    "naam": "Bipolaire Stoornis",
+    "beschrijving": "Een mentale aandoening gekenmerkt door extreme stemmingswisselingen tussen manie en depressie.",
+    "type_aandoening": "Psychiatrische aandoening"
+  },
+  {
+    "naam": "Cerebrale Parese",
+    "beschrijving": "Een groep van stoornissen die beweging en spierspanning beïnvloeden, veroorzaakt door hersenbeschadiging.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Osteoporose",
+    "beschrijving": "Een aandoening die de botdichtheid vermindert en het risico op breuken verhoogt.",
+    "type_aandoening": "Botziekte"
+  },
+  {
+    "naam": "Hepatitis A",
+    "beschrijving": "Een leverontsteking veroorzaakt door het hepatitis A-virus, meestal via besmet voedsel of water.",
+    "type_aandoening": "Infectieziekte"
+  },
+  {
+    "naam": "Ebola",
+    "beschrijving": "Een ernstige virusinfectie die koorts, bloedingen en orgaanfalen veroorzaakt.",
+    "type_aandoening": "Infectieziekte"
+  },
+  {
+    "naam": "HIV/AIDS",
+    "beschrijving": "Een virusinfectie die het immuunsysteem verzwakt en leidt tot AIDS.",
+    "type_aandoening": "Infectieziekte"
+  },
+  {
+    "naam": "Thyreoïditis",
+    "beschrijving": "Ontsteking van de schildklier, wat leidt tot hormonale disbalans.",
+    "type_aandoening": "Endocriene aandoening"
+  },
+  {
+    "naam": "Cystic Fibrosis",
+    "beschrijving": "Een erfelijke aandoening die longen en het spijsverteringsstelsel aantast.",
+    "type_aandoening": "Genetische aandoening"
+  },
+  {
+    "naam": "Leukemie",
+    "beschrijving": "Een type kanker dat het bloed en het beenmerg aantast.",
+    "type_aandoening": "Oncologische aandoening"
+  },
+  {
+    "naam": "Diabetes Mellitus",
+    "beschrijving": "Een chronische aandoening die de manier waarop het lichaam glucose gebruikt beïnvloedt.",
+    "type_aandoening": "Metabole aandoening"
+  },
+  {
+    "naam": "Hartaandoeningen",
+    "beschrijving": "Verschillende aandoeningen die het hart aantasten, waaronder coronaire hartziekte en hartfalen.",
+    "type_aandoening": "Cardiovasculaire aandoening"
+  },
+  {
+    "naam": "Rheumatoïde Artritis",
+    "beschrijving": "Een auto-immuunziekte die gewrichten ontstoken en pijnlijk maakt.",
+    "type_aandoening": "Auto-immuunziekte"
+  },
+  {
+    "naam": "Prostaatkanker",
+    "beschrijving": "Een type kanker dat voorkomt in de prostaat, een klier bij mannen.",
+    "type_aandoening": "Oncologische aandoening"
+  },
+  {
+    "naam": "Migrane",
+    "beschrijving": "Een ernstige vorm van hoofdpijn die gepaard gaat met misselijkheid en gevoeligheid voor licht.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Cystic Fibrosis",
+    "beschrijving": "Een erfelijke aandoening die longen en het spijsverteringsstelsel aantast.",
+    "type_aandoening": "Genetische aandoening"
+  },
+  {
+    "naam": "Multiple Sclerose",
+    "beschrijving": "Een auto-immuunziekte die de zenuwvezels in de hersenen en het ruggenmerg aantast.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Hypertensie",
+    "beschrijving": "Een aandoening waarbij de bloeddruk in de slagaders chronisch verhoogd is.",
+    "type_aandoening": "Cardiovasculaire aandoening"
+  },
+  {
+    "naam": "Schizofrenie",
+    "beschrijving": "Een ernstige mentale stoornis die denken, voelen en gedrag verstoort.",
+    "type_aandoening": "Psychiatrische aandoening"
+  },
+  {
+    "naam": "Systemische Lupus Erythematosus (SLE)",
+    "beschrijving": "Een auto-immuunziekte die verschillende delen van het lichaam kan aantasten, waaronder huid, gewrichten en organen.",
+    "type_aandoening": "Auto-immuunziekte"
+  },
+  {
+    "naam": "Hepatitis B",
+    "beschrijving": "Een infectieziekte die de lever aantast, veroorzaakt door het hepatitis B-virus.",
+    "type_aandoening": "Infectieziekte"
+  },
+  {
+    "naam": "Alzheimer's Ziekte",
+    "beschrijving": "Een progressieve neurologische aandoening die geheugenverlies en cognitieve achteruitgang veroorzaakt.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Leukemie",
+    "beschrijving": "Een type kanker dat het bloed en het beenmerg aantast.",
+    "type_aandoening": "Oncologische aandoening"
+  },
+  {
+    "naam": "Ebola",
+    "beschrijving": "Een ernstige virusinfectie die koorts, bloedingen en orgaanfalen veroorzaakt.",
+    "type_aandoening": "Infectieziekte"
+  },
+  {
+    "naam": "Diabetes Type 1",
+    "beschrijving": "Een auto-immuunziekte waarbij het lichaam insuline produceert niet kan produceren.",
+    "type_aandoening": "Metabole aandoening"
+  },
+  {
+    "naam": "Diabetes Type 2",
+    "beschrijving": "Een metabole aandoening waarbij het lichaam insuline niet effectief gebruikt.",
+    "type_aandoening": "Metabole aandoening"
+  },
+  {
+    "naam": "Cystic Fibrosis",
+    "beschrijving": "Een erfelijke aandoening die longen en het spijsverteringsstelsel aantast.",
+    "type_aandoening": "Genetische aandoening"
+  },
+  {
+    "naam": "Parkinson",
+    "beschrijving": "Een neurodegeneratieve aandoening die beweging en coördinatie beïnvloedt.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Bronchitis",
+    "beschrijving": "Ontsteking van de bronchiën in de longen, wat leidt tot hoesten en ademhalingsproblemen.",
+    "type_aandoening": "Longziekte"
+  },
+  {
+    "naam": "Rheumatoïde Artritis",
+    "beschrijving": "Een auto-immuunziekte die gewrichten ontstoken en pijnlijk maakt.",
+    "type_aandoening": "Auto-immuunziekte"
+  },
+  {
+    "naam": "Hepatitis C",
+    "beschrijving": "Een virale infectie die de lever aantast en kan leiden tot ernstige leverziekten.",
+    "type_aandoening": "Infectieziekte"
+  },
+  {
+    "naam": "Schizofrenie",
+    "beschrijving": "Een ernstige mentale stoornis die denken, voelen en gedrag verstoort.",
+    "type_aandoening": "Psychiatrische aandoening"
+  },
+  {
+    "naam": "Hypertensie",
+    "beschrijving": "Een aandoening waarbij de bloeddruk in de slagaders chronisch verhoogd is.",
+    "type_aandoening": "Cardiovasculaire aandoening"
+  },
+  {
+    "naam": "Multiple Sclerose",
+    "beschrijving": "Een auto-immuunziekte die de zenuwvezels in de hersenen en het ruggenmerg aantast.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Hepatitis B",
+    "beschrijving": "Een infectieziekte die de lever aantast, veroorzaakt door het hepatitis B-virus.",
+    "type_aandoening": "Infectieziekte"
+  },
+  {
+    "naam": "Leukemie",
+    "beschrijving": "Een type kanker dat het bloed en het beenmerg aantast.",
+    "type_aandoening": "Oncologische aandoening"
+  },
+  {
+    "naam": "Endometriose",
+    "beschrijving": "Een aandoening waarbij weefsel dat lijkt op baarmoederslijmvlies buiten de baarmoeder groeit.",
+    "type_aandoening": "Gynaecologische aandoening"
+  },
+  {
+    "naam": "Diabetes Mellitus",
+    "beschrijving": "Een chronische aandoening die de manier waarop het lichaam glucose gebruikt beïnvloedt.",
+    "type_aandoening": "Metabole aandoening"
+  },
+  {
+    "naam": "Osteoporose",
+    "beschrijving": "Een aandoening die de botdichtheid vermindert en het risico op breuken verhoogt.",
+    "type_aandoening": "Botziekte"
+  },
+  {
+    "naam": "Cerebrale Parese",
+    "beschrijving": "Een groep van stoornissen die beweging en spierspanning beïnvloeden, veroorzaakt door hersenbeschadiging.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "HIV/AIDS",
+    "beschrijving": "Een virusinfectie die het immuunsysteem verzwakt en leidt tot AIDS.",
+    "type_aandoening": "Infectieziekte"
+  },
+  {
+    "naam": "Systemische Lupus Erythematosus (SLE)",
+    "beschrijving": "Een auto-immuunziekte die verschillende delen van het lichaam kan aantasten, waaronder huid, gewrichten en organen.",
+    "type_aandoening": "Auto-immuunziekte"
+  },
+  {
+    "naam": "Hartaandoeningen",
+    "beschrijving": "Verschillende aandoeningen die het hart aantasten, waaronder coronaire hartziekte en hartfalen.",
+    "type_aandoening": "Cardiovasculaire aandoening"
+  },
+  {
+    "naam": "Migrane",
+    "beschrijving": "Een ernstige vorm van hoofdpijn die gepaard gaat met misselijkheid en gevoeligheid voor licht.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Schizofrenie",
+    "beschrijving": "Een ernstige mentale stoornis die denken, voelen en gedrag verstoort.",
+    "type_aandoening": "Psychiatrische aandoening"
+  },
+  {
+    "naam": "Cystic Fibrosis",
+    "beschrijving": "Een erfelijke aandoening die longen en het spijsverteringsstelsel aantast.",
+    "type_aandoening": "Genetische aandoening"
+  },
+  {
+    "naam": "Leukemie",
+    "beschrijving": "Een type kanker dat het bloed en het beenmerg aantast.",
+    "type_aandoening": "Oncologische aandoening"
+  },
+  {
+    "naam": "Parkinson",
+    "beschrijving": "Een neurodegeneratieve aandoening die beweging en coördinatie beïnvloedt.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Hepatitis A",
+    "beschrijving": "Een leverontsteking veroorzaakt door het hepatitis A-virus, meestal via besmet voedsel of water.",
+    "type_aandoening": "Infectieziekte"
+  },
+  {
+    "naam": "Hepatitis B",
+    "beschrijving": "Een infectieziekte die de lever aantast, veroorzaakt door het hepatitis B-virus.",
+    "type_aandoening": "Infectieziekte"
+  },
+  {
+    "naam": "Hepatitis C",
+    "beschrijving": "Een virale infectie die de lever aantast en kan leiden tot ernstige leverziekten.",
+    "type_aandoening": "Infectieziekte"
+  },
+  {
+    "naam": "Hypertensie",
+    "beschrijving": "Een aandoening waarbij de bloeddruk in de slagaders chronisch verhoogd is.",
+    "type_aandoening": "Cardiovasculaire aandoening"
+  },
+  {
+    "naam": "Diabetes Mellitus",
+    "beschrijving": "Een chronische aandoening die de manier waarop het lichaam glucose gebruikt beïnvloedt.",
+    "type_aandoening": "Metabole aandoening"
+  },
+  {
+    "naam": "Leukemie",
+    "beschrijving": "Een type kanker dat het bloed en het beenmerg aantast.",
+    "type_aandoening": "Oncologische aandoening"
+  },
+  {
+    "naam": "Rheumatoïde Artritis",
+    "beschrijving": "Een auto-immuunziekte die gewrichten ontstoken en pijnlijk maakt.",
+    "type_aandoening": "Auto-immuunziekte"
+  },
+  {
+    "naam": "Schizofrenie",
+    "beschrijving": "Een ernstige mentale stoornis die denken, voelen en gedrag verstoort.",
+    "type_aandoening": "Psychiatrische aandoening"
+  },
+  {
+    "naam": "Systemische Lupus Erythematosus (SLE)",
+    "beschrijving": "Een auto-immuunziekte die verschillende delen van het lichaam kan aantasten, waaronder huid, gewrichten en organen.",
+    "type_aandoening": "Auto-immuunziekte"
+  },
+  {
+    "naam": "Parkinson",
+    "beschrijving": "Een neurodegeneratieve aandoening die beweging en coördinatie beïnvloedt.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Cystic Fibrosis",
+    "beschrijving": "Een erfelijke aandoening die longen en het spijsverteringsstelsel aantast.",
+    "type_aandoening": "Genetische aandoening"
+  },
+  {
+    "naam": "Hiv/AIDS",
+    "beschrijving": "Een virusinfectie die het immuunsysteem verzwakt en leidt tot AIDS.",
+    "type_aandoening": "Infectieziekte"
+  },
+  {
+    "naam": "Hartaandoeningen",
+    "beschrijving": "Verschillende aandoeningen die het hart aantasten, waaronder coronaire hartziekte en hartfalen.",
+    "type_aandoening": "Cardiovasculaire aandoening"
+  },
+  {
+    "naam": "Migraine",
+    "beschrijving": "Een ernstige vorm van hoofdpijn die gepaard gaat met misselijkheid en gevoeligheid voor licht.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Anemie",
+    "beschrijving": "Een aandoening waarbij er een tekort is aan rode bloedcellen of hemoglobine.",
+    "type_aandoening": "Bloedziekte"
+  },
+  {
+    "naam": "Leukemie",
+    "beschrijving": "Een type kanker dat het bloed en het beenmerg aantast.",
+    "type_aandoening": "Oncologische aandoening"
+  },
+  {
+    "naam": "Hypertensie",
+    "beschrijving": "Een aandoening waarbij de bloeddruk in de slagaders chronisch verhoogd is.",
+    "type_aandoening": "Cardiovasculaire aandoening"
+  },
+  {
+    "naam": "Systemische Lupus Erythematosus (SLE)",
+    "beschrijving": "Een auto-immuunziekte die verschillende delen van het lichaam kan aantasten, waaronder huid, gewrichten en organen.",
+    "type_aandoening": "Auto-immuunziekte"
+  },
+  {
+    "naam": "Schizofrenie",
+    "beschrijving": "Een ernstige mentale stoornis die denken, voelen en gedrag verstoort.",
+    "type_aandoening": "Psychiatrische aandoening"
+  },
+  {
+    "naam": "Epilepsie",
+    "beschrijving": "Een neurologische aandoening gekenmerkt door terugkerende aanvallen.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Multiple Sclerose",
+    "beschrijving": "Een auto-immuunziekte die de zenuwvezels in de hersenen en het ruggenmerg aantast.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Cerebrale Parese",
+    "beschrijving": "Een groep van stoornissen die beweging en spierspanning beïnvloeden, veroorzaakt door hersenbeschadiging.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Hepatitis B",
+    "beschrijving": "Een infectieziekte die de lever aantast, veroorzaakt door het hepatitis B-virus.",
+    "type_aandoening": "Infectieziekte"
+  },
+  {
+    "naam": "Cystic Fibrosis",
+    "beschrijving": "Een erfelijke aandoening die longen en het spijsverteringsstelsel aantast.",
+    "type_aandoening": "Genetische aandoening"
+  },
+  {
+    "naam": "Endometriose",
+    "beschrijving": "Een aandoening waarbij weefsel dat lijkt op baarmoederslijmvlies buiten de baarmoeder groeit.",
+    "type_aandoening": "Gynaecologische aandoening"
+  },
+  {
+    "naam": "Hiv/AIDS",
+    "beschrijving": "Een virusinfectie die het immuunsysteem verzwakt en leidt tot AIDS.",
+    "type_aandoening": "Infectieziekte"
+  },
+  {
+    "naam": "Hypertensie",
+    "beschrijving": "Een aandoening waarbij de bloeddruk in de slagaders chronisch verhoogd is.",
+    "type_aandoening": "Cardiovasculaire aandoening"
+  },
+  {
+    "naam": "Leukemie",
+    "beschrijving": "Een type kanker dat het bloed en het beenmerg aantast.",
+    "type_aandoening": "Oncologische aandoening"
+  },
+  {
+    "naam": "Diabetes Type 1",
+    "beschrijving": "Een auto-immuunziekte waarbij het lichaam insuline produceert niet kan produceren.",
+    "type_aandoening": "Metabole aandoening"
+  },
+  {
+    "naam": "Diabetes Type 2",
+    "beschrijving": "Een metabole aandoening waarbij het lichaam insuline niet effectief gebruikt.",
+    "type_aandoening": "Metabole aandoening"
+  },
+  {
+    "naam": "Parkinson",
+    "beschrijving": "Een neurodegeneratieve aandoening die beweging en coördinatie beïnvloedt.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Multiple Sclerose",
+    "beschrijving": "Een auto-immuunziekte die de zenuwvezels in de hersenen en het ruggenmerg aantast.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Hepatitis C",
+    "beschrijving": "Een virale infectie die de lever aantast en kan leiden tot ernstige leverziekten.",
+    "type_aandoening": "Infectieziekte"
+  },
+  {
+    "naam": "Leukemie",
+    "beschrijving": "Een type kanker dat het bloed en het beenmerg aantast.",
+    "type_aandoening": "Oncologische aandoening"
+  },
+  {
+    "naam": "Rheumatoïde Artritis",
+    "beschrijving": "Een auto-immuunziekte die gewrichten ontstoken en pijnlijk maakt.",
+    "type_aandoening": "Auto-immuunziekte"
+  },
+  {
+    "naam": "Schizofrenie",
+    "beschrijving": "Een ernstige mentale stoornis die denken, voelen en gedrag verstoort.",
+    "type_aandoening": "Psychiatrische aandoening"
+  },
+  {
+    "naam": "Hartaandoeningen",
+    "beschrijving": "Verschillende aandoeningen die het hart aantasten, waaronder coronaire hartziekte en hartfalen.",
+    "type_aandoening": "Cardiovasculaire aandoening"
+  },
+  {
+    "naam": "Hepatitis A",
+    "beschrijving": "Een leverontsteking veroorzaakt door het hepatitis A-virus, meestal via besmet voedsel of water.",
+    "type_aandoening": "Infectieziekte"
+  },
+  {
+    "naam": "Alzheimer's Ziekte",
+    "beschrijving": "Een progressieve neurologische aandoening die geheugenverlies en cognitieve achteruitgang veroorzaakt.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Endometriose",
+    "beschrijving": "Een aandoening waarbij weefsel dat lijkt op baarmoederslijmvlies buiten de baarmoeder groeit.",
+    "type_aandoening": "Gynaecologische aandoening"
+  },
+  {
+    "naam": "Diabetes Mellitus",
+    "beschrijving": "Een chronische aandoening die de manier waarop het lichaam glucose gebruikt beïnvloedt.",
+    "type_aandoening": "Metabole aandoening"
+  },
+  {
+    "naam": "Hypertensie",
+    "beschrijving": "Een aandoening waarbij de bloeddruk in de slagaders chronisch verhoogd is.",
+    "type_aandoening": "Cardiovasculaire aandoening"
+  },
+  {
+    "naam": "Rheumatoïde Artritis",
+    "beschrijving": "Een auto-immuunziekte die gewrichten ontstoken en pijnlijk maakt.",
+    "type_aandoening": "Auto-immuunziekte"
+  },
+  {
+    "naam": "Hepatitis B",
+    "beschrijving": "Een infectieziekte die de lever aantast, veroorzaakt door het hepatitis B-virus.",
+    "type_aandoening": "Infectieziekte"
+  },
+  {
+    "naam": "Schizofrenie",
+    "beschrijving": "Een ernstige mentale stoornis die denken, voelen en gedrag verstoort.",
+    "type_aandoening": "Psychiatrische aandoening"
+  },
+  {
+    "naam": "Leukemie",
+    "beschrijving": "Een type kanker dat het bloed en het beenmerg aantast.",
+    "type_aandoening": "Oncologische aandoening"
+  },
+  {
+    "naam": "Systemische Lupus Erythematosus (SLE)",
+    "beschrijving": "Een auto-immuunziekte die verschillende delen van het lichaam kan aantasten, waaronder huid, gewrichten en organen.",
+    "type_aandoening": "Auto-immuunziekte"
+  },
+  {
+    "naam": "Multiple Sclerose",
+    "beschrijving": "Een auto-immuunziekte die de zenuwvezels in de hersenen en het ruggenmerg aantast.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Cerebrale Parese",
+    "beschrijving": "Een groep van stoornissen die beweging en spierspanning beïnvloeden, veroorzaakt door hersenbeschadiging.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Diabetes Type 1",
+    "beschrijving": "Een auto-immuunziekte waarbij het lichaam insuline produceert niet kan produceren.",
+    "type_aandoening": "Metabole aandoening"
+  },
+  {
+    "naam": "Diabetes Type 2",
+    "beschrijving": "Een metabole aandoening waarbij het lichaam insuline niet effectief gebruikt.",
+    "type_aandoening": "Metabole aandoening"
+  },
+  {
+    "naam": "Cystic Fibrosis",
+    "beschrijving": "Een erfelijke aandoening die longen en het spijsverteringsstelsel aantast.",
+    "type_aandoening": "Genetische aandoening"
+  },
+  {
+    "naam": "Hartaandoeningen",
+    "beschrijving": "Verschillende aandoeningen die het hart aantasten, waaronder coronaire hartziekte en hartfalen.",
+    "type_aandoening": "Cardiovasculaire aandoening"
+  },
+  {
+    "naam": "Leukemie",
+    "beschrijving": "Een type kanker dat het bloed en het beenmerg aantast.",
+    "type_aandoening": "Oncologische aandoening"
+  },
+  {
+    "naam": "Parkinson",
+    "beschrijving": "Een neurodegeneratieve aandoening die beweging en coördinatie beïnvloedt.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Schizofrenie",
+    "beschrijving": "Een ernstige mentale stoornis die denken, voelen en gedrag verstoort.",
+    "type_aandoening": "Psychiatrische aandoening"
+  },
+  {
+    "naam": "Hepatitis C",
+    "beschrijving": "Een virale infectie die de lever aantast en kan leiden tot ernstige leverziekten.",
+    "type_aandoening": "Infectieziekte"
+  },
+  {
+    "naam": "Rheumatoïde Artritis",
+    "beschrijving": "Een auto-immuunziekte die gewrichten ontstoken en pijnlijk maakt.",
+    "type_aandoening": "Auto-immuunziekte"
+  },
+  {
+    "naam": "Hepatitis B",
+    "beschrijving": "Een infectieziekte die de lever aantast, veroorzaakt door het hepatitis B-virus.",
+    "type_aandoening": "Infectieziekte"
+  },
+  {
+    "naam": "Systemische Lupus Erythematosus (SLE)",
+    "beschrijving": "Een auto-immuunziekte die verschillende delen van het lichaam kan aantasten, waaronder huid, gewrichten en organen.",
+    "type_aandoening": "Auto-immuunziekte"
+  },
+  {
+    "naam": "Hypertensie",
+    "beschrijving": "Een aandoening waarbij de bloeddruk in de slagaders chronisch verhoogd is.",
+    "type_aandoening": "Cardiovasculaire aandoening"
+  },
+  {
+    "naam": "Cerebrale Parese",
+    "beschrijving": "Een groep van stoornissen die beweging en spierspanning beïnvloeden, veroorzaakt door hersenbeschadiging.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Diabetes Mellitus",
+    "beschrijving": "Een chronische aandoening die de manier waarop het lichaam glucose gebruikt beïnvloedt.",
+    "type_aandoening": "Metabole aandoening"
+  },
+  {
+    "naam": "Prostaatkanker",
+    "beschrijving": "Een type kanker dat voorkomt in de prostaat, een klier bij mannen.",
+    "type_aandoening": "Oncologische aandoening"
+  },
+  {
+    "naam": "Migraine",
+    "beschrijving": "Een ernstige vorm van hoofdpijn die gepaard gaat met misselijkheid en gevoeligheid voor licht.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Leukemie",
+    "beschrijving": "Een type kanker dat het bloed en het beenmerg aantast.",
+    "type_aandoening": "Oncologische aandoening"
+  },
+  {
+    "naam": "Alzheimer's Ziekte",
+    "beschrijving": "Een progressieve neurologische aandoening die geheugenverlies en cognitieve achteruitgang veroorzaakt.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Epilepsie",
+    "beschrijving": "Een neurologische aandoening gekenmerkt door terugkerende aanvallen.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Systemische Lupus Erythematosus (SLE)",
+    "beschrijving": "Een auto-immuunziekte die verschillende delen van het lichaam kan aantasten, waaronder huid, gewrichten en organen.",
+    "type_aandoening": "Auto-immuunziekte"
+  },
+  {
+    "naam": "Hiv/AIDS",
+    "beschrijving": "Een virusinfectie die het immuunsysteem verzwakt en leidt tot AIDS.",
+    "type_aandoening": "Infectieziekte"
+  },
+  {
+    "naam": "Hartaandoeningen",
+    "beschrijving": "Verschillende aandoeningen die het hart aantasten, waaronder coronaire hartziekte en hartfalen.",
+    "type_aandoening": "Cardiovasculaire aandoening"
+  },
+  {
+    "naam": "Rheumatoïde Artritis",
+    "beschrijving": "Een auto-immuunziekte die gewrichten ontstoken en pijnlijk maakt.",
+    "type_aandoening": "Auto-immuunziekte"
+  },
+  {
+    "naam": "Cystic Fibrosis",
+    "beschrijving": "Een erfelijke aandoening die longen en het spijsverteringsstelsel aantast.",
+    "type_aandoening": "Genetische aandoening"
+  },
+  {
+    "naam": "Hypertensie",
+    "beschrijving": "Een aandoening waarbij de bloeddruk in de slagaders chronisch verhoogd is.",
+    "type_aandoening": "Cardiovasculaire aandoening"
+  },
+  {
+    "naam": "Fibromyalgie",
+    "beschrijving": "Een chronische aandoening gekenmerkt door wijdverspreide pijn en vermoeidheid.",
+    "type_aandoening": "Chronische pijn aandoening"
+  },
+  {
+    "naam": "Prostaatkanker",
+    "beschrijving": "Een type kanker dat voorkomt in de prostaat, een klier bij mannen.",
+    "type_aandoening": "Oncologische aandoening"
+  },
+  {
+    "naam": "Leukemie",
+    "beschrijving": "Een type kanker dat het bloed en het beenmerg aantast.",
+    "type_aandoening": "Oncologische aandoening"
+  },
+  {
+    "naam": "Hepatitis B",
+    "beschrijving": "Een infectieziekte die de lever aantast, veroorzaakt door het hepatitis B-virus.",
+    "type_aandoening": "Infectieziekte"
+  },
+  {
+    "naam": "Schizofrenie",
+    "beschrijving": "Een ernstige mentale stoornis die denken, voelen en gedrag verstoort.",
+    "type_aandoening": "Psychiatrische aandoening"
+  },
+  {
+    "naam": "Alzheimer's Ziekte",
+    "beschrijving": "Een progressieve neurologische aandoening die geheugenverlies en cognitieve achteruitgang veroorzaakt.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Epilepsie",
+    "beschrijving": "Een neurologische aandoening gekenmerkt door terugkerende aanvallen.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Endometriose",
+    "beschrijving": "Een aandoening waarbij weefsel dat lijkt op baarmoederslijmvlies buiten de baarmoeder groeit.",
+    "type_aandoening": "Gynaecologische aandoening"
+  },
+  {
+    "naam": "Parkinson",
+    "beschrijving": "Een neurodegeneratieve aandoening die beweging en coördinatie beïnvloedt.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Systemische Lupus Erythematosus (SLE)",
+    "beschrijving": "Een auto-immuunziekte die verschillende delen van het lichaam kan aantasten, waaronder huid, gewrichten en organen.",
+    "type_aandoening": "Auto-immuunziekte"
+  },
+  {
+    "naam": "Multiple Sclerose",
+    "beschrijving": "Een auto-immuunziekte die de zenuwvezels in de hersenen en het ruggenmerg aantast.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Hiv/AIDS",
+    "beschrijving": "Een virusinfectie die het immuunsysteem verzwakt en leidt tot AIDS.",
+    "type_aandoening": "Infectieziekte"
+  },
+  {
+    "naam": "Leukemie",
+    "beschrijving": "Een type kanker dat het bloed en het beenmerg aantast.",
+    "type_aandoening": "Oncologische aandoening"
+  },
+  {
+    "naam": "Hypertensie",
+    "beschrijving": "Een aandoening waarbij de bloeddruk in de slagaders chronisch verhoogd is.",
+    "type_aandoening": "Cardiovasculaire aandoening"
+  },
+  {
+    "naam": "Rheumatoïde Artritis",
+    "beschrijving": "Een auto-immuunziekte die gewrichten ontstoken en pijnlijk maakt.",
+    "type_aandoening": "Auto-immuunziekte"
+  },
+  {
+    "naam": "Cerebrale Parese",
+    "beschrijving": "Een groep van stoornissen die beweging en spierspanning beïnvloeden, veroorzaakt door hersenbeschadiging.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Diabetes Mellitus",
+    "beschrijving": "Een chronische aandoening die de manier waarop het lichaam glucose gebruikt beïnvloedt.",
+    "type_aandoening": "Metabole aandoening"
+  },
+  {
+    "naam": "Schizofrenie",
+    "beschrijving": "Een ernstige mentale stoornis die denken, voelen en gedrag verstoort.",
+    "type_aandoening": "Psychiatrische aandoening"
+  },
+  {
+    "naam": "Systemische Lupus Erythematosus (SLE)",
+    "beschrijving": "Een auto-immuunziekte die verschillende delen van het lichaam kan aantasten, waaronder huid, gewrichten en organen.",
+    "type_aandoening": "Auto-immuunziekte"
+  },
+  {
+    "naam": "Prostaatkanker",
+    "beschrijving": "Een type kanker dat voorkomt in de prostaat, een klier bij mannen.",
+    "type_aandoening": "Oncologische aandoening"
+  },
+  {
+    "naam": "Hiv/AIDS",
+    "beschrijving": "Een virusinfectie die het immuunsysteem verzwakt en leidt tot AIDS.",
+    "type_aandoening": "Infectieziekte"
+  },
+  {
+    "naam": "Parkinson",
+    "beschrijving": "Een neurodegeneratieve aandoening die beweging en coördinatie beïnvloedt.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Hypertensie",
+    "beschrijving": "Een aandoening waarbij de bloeddruk in de slagaders chronisch verhoogd is.",
+    "type_aandoening": "Cardiovasculaire aandoening"
+  },
+  {
+    "naam": "Cystic Fibrosis",
+    "beschrijving": "Een erfelijke aandoening die longen en het spijsverteringsstelsel aantast.",
+    "type_aandoening": "Genetische aandoening"
+  },
+  {
+    "naam": "Leukemie",
+    "beschrijving": "Een type kanker dat het bloed en het beenmerg aantast.",
+    "type_aandoening": "Oncologische aandoening"
+  },
+  {
+    "naam": "Endometriose",
+    "beschrijving": "Een aandoening waarbij weefsel dat lijkt op baarmoederslijmvlies buiten de baarmoeder groeit.",
+    "type_aandoening": "Gynaecologische aandoening"
+  },
+  {
+    "naam": "Epilepsie",
+    "beschrijving": "Een neurologische aandoening gekenmerkt door terugkerende aanvallen.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Fibromyalgie",
+    "beschrijving": "Een chronische aandoening gekenmerkt door wijdverspreide pijn en vermoeidheid.",
+    "type_aandoening": "Chronische pijn aandoening"
+  },
+  {
+    "naam": "Hartaandoeningen",
+    "beschrijving": "Verschillende aandoeningen die het hart aantasten, waaronder coronaire hartziekte en hartfalen.",
+    "type_aandoening": "Cardiovasculaire aandoening"
+  },
+  {
+    "naam": "Rheumatoïde Artritis",
+    "beschrijving": "Een auto-immuunziekte die gewrichten ontstoken en pijnlijk maakt.",
+    "type_aandoening": "Auto-immuunziekte"
+  },
+  {
+    "naam": "Prostaatkanker",
+    "beschrijving": "Een type kanker dat voorkomt in de prostaat, een klier bij mannen.",
+    "type_aandoening": "Oncologische aandoening"
+  },
+  {
+    "naam": "Diabetes Mellitus",
+    "beschrijving": "Een chronische aandoening die de manier waarop het lichaam glucose gebruikt beïnvloedt.",
+    "type_aandoening": "Metabole aandoening"
+  },
+  {
+    "naam": "Systemische Lupus Erythematosus (SLE)",
+    "beschrijving": "Een auto-immuunziekte die verschillende delen van het lichaam kan aantasten, waaronder huid, gewrichten en organen.",
+    "type_aandoening": "Auto-immuunziekte"
+  },
+  {
+    "naam": "Hiv/AIDS",
+    "beschrijving": "Een virusinfectie die het immuunsysteem verzwakt en leidt tot AIDS.",
+    "type_aandoening": "Infectieziekte"
+  },
+  {
+    "naam": "Hepatitis A",
+    "beschrijving": "Een leverontsteking veroorzaakt door het hepatitis A-virus, meestal via besmet voedsel of water.",
+    "type_aandoening": "Infectieziekte"
+  },
+  {
+    "naam": "Hypertensie",
+    "beschrijving": "Een aandoening waarbij de bloeddruk in de slagaders chronisch verhoogd is.",
+    "type_aandoening": "Cardiovasculaire aandoening"
+  },
+  {
+    "naam": "Alzheimer's Ziekte",
+    "beschrijving": "Een progressieve neurologische aandoening die geheugenverlies en cognitieve achteruitgang veroorzaakt.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Cystic Fibrosis",
+    "beschrijving": "Een erfelijke aandoening die longen en het spijsverteringsstelsel aantast.",
+    "type_aandoening": "Genetische aandoening"
+  },
+  {
+    "naam": "Osteoporose",
+    "beschrijving": "Een aandoening die de botdichtheid vermindert en het risico op breuken verhoogt.",
+    "type_aandoening": "Botziekte"
+  },
+  {
+    "naam": "Systemische Lupus Erythematosus (SLE)",
+    "beschrijving": "Een auto-immuunziekte die verschillende delen van het lichaam kan aantasten, waaronder huid, gewrichten en organen.",
+    "type_aandoening": "Auto-immuunziekte"
+  },
+  {
+    "naam": "Diabetes Type 1",
+    "beschrijving": "Een auto-immuunziekte waarbij het lichaam insuline produceert niet kan produceren.",
+    "type_aandoening": "Metabole aandoening"
+  },
+  {
+    "naam": "Diabetes Type 2",
+    "beschrijving": "Een metabole aandoening waarbij het lichaam insuline niet effectief gebruikt.",
+    "type_aandoening": "Metabole aandoening"
+  },
+  {
+    "naam": "Parkinson",
+    "beschrijving": "Een neurodegeneratieve aandoening die beweging en coördinatie beïnvloedt.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Cerebrale Parese",
+    "beschrijving": "Een groep van stoornissen die beweging en spierspanning beïnvloeden, veroorzaakt door hersenbeschadiging.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Epilepsie",
+    "beschrijving": "Een neurologische aandoening gekenmerkt door terugkerende aanvallen.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Fibromyalgie",
+    "beschrijving": "Een chronische aandoening gekenmerkt door wijdverspreide pijn en vermoeidheid.",
+    "type_aandoening": "Chronische pijn aandoening"
+  },
+  {
+    "naam": "Leukemie",
+    "beschrijving": "Een type kanker dat het bloed en het beenmerg aantast.",
+    "type_aandoening": "Oncologische aandoening"
+  },
+  {
+    "naam": "Hartaandoeningen",
+    "beschrijving": "Verschillende aandoeningen die het hart aantasten, waaronder coronaire hartziekte en hartfalen.",
+    "type_aandoening": "Cardiovasculaire aandoening"
+  },
+  {
+    "naam": "Systemische Lupus Erythematosus (SLE)",
+    "beschrijving": "Een auto-immuunziekte die verschillende delen van het lichaam kan aantasten, waaronder huid, gewrichten en organen.",
+    "type_aandoening": "Auto-immuunziekte"
+  },
+  {
+    "naam": "Schizofrenie",
+    "beschrijving": "Een ernstige mentale stoornis die denken, voelen en gedrag verstoort.",
+    "type_aandoening": "Psychiatrische aandoening"
+  },
+  {
+    "naam": "Rheumatoïde Artritis",
+    "beschrijving": "Een auto-immuunziekte die gewrichten ontstoken en pijnlijk maakt.",
+    "type_aandoening": "Auto-immuunziekte"
+  },
+  {
+    "naam": "Parkinson",
+    "beschrijving": "Een neurodegeneratieve aandoening die beweging en coördinatie beïnvloedt.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Endometriose",
+    "beschrijving": "Een aandoening waarbij weefsel dat lijkt op baarmoederslijmvlies buiten de baarmoeder groeit.",
+    "type_aandoening": "Gynaecologische aandoening"
+  },
+  {
+    "naam": "Cystic Fibrosis",
+    "beschrijving": "Een erfelijke aandoening die longen en het spijsverteringsstelsel aantast.",
+    "type_aandoening": "Genetische aandoening"
+  },
+  {
+    "naam": "Multiple Sclerose",
+    "beschrijving": "Een auto-immuunziekte die de zenuwvezels in de hersenen en het ruggenmerg aantast.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Hiv/AIDS",
+    "beschrijving": "Een virusinfectie die het immuunsysteem verzwakt en leidt tot AIDS.",
+    "type_aandoening": "Infectieziekte"
+  },
+  {
+    "naam": "Diabetes Mellitus",
+    "beschrijving": "Een chronische aandoening die de manier waarop het lichaam glucose gebruikt beïnvloedt.",
+    "type_aandoening": "Metabole aandoening"
+  },
+  {
+    "naam": "Schizofrenie",
+    "beschrijving": "Een ernstige mentale stoornis die denken, voelen en gedrag verstoort.",
+    "type_aandoening": "Psychiatrische aandoening"
+  },
+  {
+    "naam": "Systemische Lupus Erythematosus (SLE)",
+    "beschrijving": "Een auto-immuunziekte die verschillende delen van het lichaam kan aantasten, waaronder huid, gewrichten en organen.",
+    "type_aandoening": "Auto-immuunziekte"
+  },
+  {
+    "naam": "Hepatitis B",
+    "beschrijving": "Een infectieziekte die de lever aantast, veroorzaakt door het hepatitis B-virus.",
+    "type_aandoening": "Infectieziekte"
+  },
+  {
+    "naam": "Hepatitis C",
+    "beschrijving": "Een virale infectie die de lever aantast en kan leiden tot ernstige leverziekten.",
+    "type_aandoening": "Infectieziekte"
+  },
+  {
+    "naam": "Epilepsie",
+    "beschrijving": "Een neurologische aandoening gekenmerkt door terugkerende aanvallen.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Cerebrale Parese",
+    "beschrijving": "Een groep van stoornissen die beweging en spierspanning beïnvloeden, veroorzaakt door hersenbeschadiging.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Bipolaire Stoornis",
+    "beschrijving": "Een mentale aandoening gekenmerkt door extreme stemmingswisselingen tussen manie en depressie.",
+    "type_aandoening": "Psychiatrische aandoening"
+  },
+  {
+    "naam": "Migrane",
+    "beschrijving": "Een ernstige vorm van hoofdpijn die gepaard gaat met misselijkheid en gevoeligheid voor licht.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Rheumatoïde Artritis",
+    "beschrijving": "Een auto-immuunziekte die gewrichten ontstoken en pijnlijk maakt.",
+    "type_aandoening": "Auto-immuunziekte"
+  },
+  {
+    "naam": "Prostaatkanker",
+    "beschrijving": "Een type kanker dat voorkomt in de prostaat, een klier bij mannen.",
+    "type_aandoening": "Oncologische aandoening"
+  },
+  {
+    "naam": "Multiple Sclerose",
+    "beschrijving": "Een auto-immuunziekte die de zenuwvezels in de hersenen en het ruggenmerg aantast.",
+    "type_aandoening": "Neurologische aandoening"
+  },
+  {
+    "naam": "Leukemie",
+    "beschrijving": "Een type kanker dat het bloed en het beenmerg aantast.",
+    "type_aandoening": "Oncologische aandoening"
+  },
+  {
+    "naam": "Hypertensie",
+    "beschrijving": "Een aandoening waarbij de bloeddruk in de slagaders chronisch verhoogd is.",
+    "type_aandoening": "Cardiovasculaire aandoening"
+  },
+  {
+    "naam": "Hartaandoeningen",
+    "beschrijving": "Verschillende aandoeningen die het hart aantasten, waaronder coronaire hartziekte en hartfalen.",
+    "type_aandoening": "Cardiovasculaire aandoening"
+  }
+]
+
+geneeswijzen = [
+    {
+        "naam": "Cognitieve Gedragstherapie (CGT)",
+        "beschrijving": "Een psychotherapeutische behandeling gericht op het veranderen van negatieve gedachten en gedragingen."
+    },
+    {
+        "naam": "Chemotherapie",
+        "beschrijving": "Gebruik van medicijnen om kankercellen te doden of hun groei te stoppen."
+    },
+    {
+        "naam": "Radiotherapie",
+        "beschrijving": "Gebruik van ioniserende straling om kankercellen te vernietigen of te beschadigen."
+    },
+    {
+        "naam": "Chirurgie",
+        "beschrijving": "Operationele ingrepen om ziek weefsel, zoals tumoren, te verwijderen of te repareren."
+    },
+    {
+        "naam": "Fysiotherapie",
+        "beschrijving": "Behandeling gericht op het herstellen van mobiliteit en het verminderen van pijn door beweging en oefeningen."
+    },
+    {
+        "naam": "Occupational Therapy (Ergotherapie)",
+        "beschrijving": "Therapie gericht op het verbeteren van dagelijkse vaardigheden en zelfstandigheid bij patiënten."
+    },
+    {
+        "naam": "Dialyse",
+        "beschrijving": "Medische procedure die de functies van de nieren overneemt bij nierfalen."
+    },
+    {
+        "naam": "Insulinetherapie",
+        "beschrijving": "Toediening van insuline om de bloedsuikerspiegel bij diabetespatiënten te reguleren."
+    },
+    {
+        "naam": "Antidepressiva",
+        "beschrijving": "Medicijnen gebruikt om symptomen van depressie te verlichten door het beïnvloeden van neurotransmitters."
+    },
+    {
+        "naam": "Antipsychotica",
+        "beschrijving": "Medicijnen gebruikt voor de behandeling van psychotische stoornissen zoals schizofrenie."
+    },
+    {
+        "naam": "Hormoontherapie",
+        "beschrijving": "Behandeling met hormonen of hormoonblokkers, vaak gebruikt bij kanker of hormonale stoornissen."
+    },
+    {
+        "naam": "Immunotherapie",
+        "beschrijving": "Behandeling die het immuunsysteem stimuleert om kankercellen te bestrijden."
+    },
+    {
+        "naam": "Transfusie",
+        "beschrijving": "Toediening van bloed of bloedproducten aan patiënten met bloedarmoede of bloedverlies."
+    },
+    {
+        "naam": "Vaccinatie",
+        "beschrijving": "Toediening van een vaccin om het immuunsysteem te trainen tegen specifieke infecties."
+    },
+    {
+        "naam": "Dialyse",
+        "beschrijving": "Een procedure die de functie van de nieren overneemt bij nierfalen, door het filteren van het bloed."
+    },
+    {
+        "naam": "Biologische therapie",
+        "beschrijving": "Behandeling die gebruikmaakt van biologische stoffen om ziekten zoals kanker te bestrijden."
+    },
+    {
+        "naam": "Psychotherapie",
+        "beschrijving": "Behandeling van mentale gezondheidsproblemen door middel van gesprekken en technieken."
+    },
+    {
+        "naam": "Logopedie",
+        "beschrijving": "Therapie gericht op het verbeteren van spraak- en taalvaardigheden."
+    },
+    {
+        "naam": "Chiropractie",
+        "beschrijving": "Handmatige behandeling van het bewegingsapparaat, vooral de wervelkolom."
+    },
+    {
+        "naam": "Acupunctuur",
+        "beschrijving": "Traditionele Chinese therapie waarbij naalden op specifieke punten in het lichaam worden geplaatst."
+    },
+    {
+        "naam": "Massage Therapie",
+        "beschrijving": "Handmatige manipulatie van spieren en zachte weefsels om pijn te verlichten en ontspanning te bevorderen."
+    },
+    {
+        "naam": "Logopedie",
+        "beschrijving": "Therapie gericht op het verbeteren van spraak- en taalvaardigheden bij patiënten met communicatieproblemen."
+    },
+    {
+        "naam": "Dialyse",
+        "beschrijving": "Een medische procedure die de functie van de nieren overneemt bij nierfalen, door het bloed te filteren."
+    },
+    {
+        "naam": "Antiretrovirale therapie (ART)",
+        "beschrijving": "Medicamenteuze behandeling voor HIV-infectie die de replicatie van het virus onderdrukt."
+    },
+    {
+        "naam": "Fysiotherapie",
+        "beschrijving": "Behandeling gericht op het herstellen van mobiliteit en het verminderen van pijn door beweging en oefeningen."
+    },
+    {
+        "naam": "Occupational Therapy (Ergotherapie)",
+        "beschrijving": "Therapie gericht op het verbeteren van dagelijkse vaardigheden en zelfstandigheid bij patiënten."
+    },
+    {
+        "naam": "Dialyse",
+        "beschrijving": "Een procedure die de functie van de nieren overneemt bij nierfalen, door het bloed te filteren."
+    },
+    {
+        "naam": "Insulinetherapie",
+        "beschrijving": "Toediening van insuline om de bloedsuikerspiegel bij diabetespatiënten te reguleren."
+    },
+    {
+        "naam": "Antidepressiva",
+        "beschrijving": "Medicijnen gebruikt om symptomen van depressie te verlichten door het beïnvloeden van neurotransmitters."
+    },
+    {
+        "naam": "Antipsychotica",
+        "beschrijving": "Medicijnen gebruikt voor de behandeling van psychotische stoornissen zoals schizofrenie."
+    },
+    {
+        "naam": "Hormoontherapie",
+        "beschrijving": "Behandeling met hormonen of hormoonblokkers, vaak gebruikt bij kanker of hormonale stoornissen."
+    },
+    {
+        "naam": "Immunotherapie",
+        "beschrijving": "Behandeling die het immuunsysteem stimuleert om kankercellen te bestrijden."
+    },
+    {
+        "naam": "Transfusie",
+        "beschrijving": "Toediening van bloed of bloedproducten aan patiënten met bloedarmoede of bloedverlies."
+    },
+    {
+        "naam": "Vaccinatie",
+        "beschrijving": "Toediening van een vaccin om het immuunsysteem te trainen tegen specifieke infecties."
+    },
+    {
+        "naam": "Dialyse",
+        "beschrijving": "Een procedure die de functie van de nieren overneemt bij nierfalen, door het bloed te filteren."
+    },
+    {
+        "naam": "Biologische therapie",
+        "beschrijving": "Behandeling die gebruikmaakt van biologische stoffen om ziekten zoals kanker te bestrijden."
+    },
+    {
+        "naam": "Psychotherapie",
+        "beschrijving": "Behandeling van mentale gezondheidsproblemen door middel van gesprekken en technieken."
+    },
+    {
+        "naam": "Logopedie",
+        "beschrijving": "Therapie gericht op het verbeteren van spraak- en taalvaardigheden."
+    },
+    {
+        "naam": "Chiropractie",
+        "beschrijving": "Handmatige behandeling van het bewegingsapparaat, vooral de wervelkolom."
+    },
+    {
+        "naam": "Acupunctuur",
+        "beschrijving": "Traditionele Chinese therapie waarbij naalden op specifieke punten in het lichaam worden geplaatst."
+    },
+    {
+        "naam": "Massage Therapie",
+        "beschrijving": "Handmatige manipulatie van spieren en zachte weefsels om pijn te verlichten en ontspanning te bevorderen."
+    },
+    {
+        "naam": "Hydrotherapie",
+        "beschrijving": "Gebruik van watertherapieën voor herstel en pijnverlichting."
+    },
+    {
+        "naam": "Revalidatie",
+        "beschrijving": "Behandeling gericht op het herstellen van fysieke functies na ziekte of letsel."
+    },
+    {
+        "naam": "Dialyse",
+        "beschrijving": "Een medische procedure die de functie van de nieren overneemt bij nierfalen, door het bloed te filteren."
+    },
+    {
+        "naam": "Nutritional Therapy (Voedingsadvies)",
+        "beschrijving": "Behandeling gericht op het verbeteren van de gezondheid door middel van dieet en voeding."
+    },
+    {
+        "naam": "Cognitieve Gedragstherapie (CGT)",
+        "beschrijving": "Een psychotherapeutische behandeling gericht op het veranderen van negatieve gedachten en gedragingen."
+    },
+    {
+        "naam": "Cardiovasculaire Rehabilitatie",
+        "beschrijving": "Behandeling gericht op het herstellen van hartfunctie na hartziekten of -operaties."
+    },
+    {
+        "naam": "Radiotherapie",
+        "beschrijving": "Gebruik van ioniserende straling om kankercellen te vernietigen of te beschadigen."
+    },
+    {
+        "naam": "Endoscopie",
+        "beschrijving": "Minimaal invasieve procedure om het inwendige van het lichaam te bekijken met een endoscoop."
+    },
+    {
+        "naam": "Dialyse",
+        "beschrijving": "Een procedure die de functie van de nieren overneemt bij nierfalen, door het bloed te filteren."
+    },
+    {
+        "naam": "Fysiotherapie",
+        "beschrijving": "Behandeling gericht op het herstellen van mobiliteit en het verminderen van pijn door beweging en oefeningen."
+    },
+    {
+        "naam": "Transplantatie",
+        "beschrijving": "Vervanging van een beschadigd orgaan door een gezond orgaan van een donor."
+    },
+    {
+        "naam": "Systeemtherapie",
+        "beschrijving": "Therapie die gericht is op het verbeteren van de interacties binnen een gezin of ander systeem."
+    },
+    {
+        "naam": "Dialyse",
+        "beschrijving": "Een medische procedure die de functie van de nieren overneemt bij nierfalen, door het bloed te filteren."
+    },
+    {
+        "naam": "Genezeologische Therapie",
+        "beschrijving": "Therapeutische benadering die zich richt op de onderliggende oorzaken van fysieke en emotionele problemen."
+    },
+    {
+        "naam": "Stemtherapie",
+        "beschrijving": "Behandeling gericht op het verbeteren van stemgebruik en vocale gezondheid."
+    },
+    {
+        "naam": "Slaaptherapie",
+        "beschrijving": "Behandeling gericht op het verbeteren van slaapkwaliteit en het aanpakken van slaapstoornissen."
+    },
+    {
+        "naam": "Ergotherapie",
+        "beschrijving": "Therapie gericht op het verbeteren van dagelijkse vaardigheden en zelfstandigheid bij patiënten."
+    },
+    {
+        "naam": "Arthroscopie",
+        "beschrijving": "Minimaal invasieve chirurgische procedure om gewrichten te bekijken en te behandelen."
+    },
+    {
+        "naam": "Dialyse",
+        "beschrijving": "Een procedure die de functie van de nieren overneemt bij nierfalen, door het bloed te filteren."
+    },
+    {
+        "naam": "Hormoontherapie",
+        "beschrijving": "Behandeling met hormonen of hormoonblokkers, vaak gebruikt bij kanker of hormonale stoornissen."
+    },
+    {
+        "naam": "Immunotherapie",
+        "beschrijving": "Behandeling die het immuunsysteem stimuleert om kankercellen te bestrijden."
+    },
+    {
+        "naam": "Dialyse",
+        "beschrijving": "Een medische procedure die de functie van de nieren overneemt bij nierfalen, door het bloed te filteren."
+    },
+    {
+        "naam": "Cognitieve Gedragstherapie (CGT)",
+        "beschrijving": "Een psychotherapeutische behandeling gericht op het veranderen van negatieve gedachten en gedragingen."
+    },
+    {
+        "naam": "Endoscopie",
+        "beschrijving": "Minimaal invasieve procedure om het inwendige van het lichaam te bekijken met een endoscoop."
+    },
+    {
+        "naam": "Fysiotherapie",
+        "beschrijving": "Behandeling gericht op het herstellen van mobiliteit en het verminderen van pijn door beweging en oefeningen."
+    },
+    {
+        "naam": "Biologische therapie",
+        "beschrijving": "Behandeling die gebruikmaakt van biologische stoffen om ziekten zoals kanker te bestrijden."
+    },
+    {
+        "naam": "Psychotherapie",
+        "beschrijving": "Behandeling van mentale gezondheidsproblemen door middel van gesprekken en technieken."
+    },
+    {
+        "naam": "Chirurgie",
+        "beschrijving": "Operationele ingrepen om ziek weefsel, zoals tumoren, te verwijderen of te repareren."
+    },
+    {
+        "naam": "Radiotherapie",
+        "beschrijving": "Gebruik van ioniserende straling om kankercellen te vernietigen of te beschadigen."
+    },
+    {
+        "naam": "Chemotherapie",
+        "beschrijving": "Gebruik van medicijnen om kankercellen te doden of hun groei te stoppen."
+    },
+    {
+        "naam": "Dialyse",
+        "beschrijving": "Een procedure die de functie van de nieren overneemt bij nierfalen, door het bloed te filteren."
+    },
+    {
+        "naam": "Fysiotherapie",
+        "beschrijving": "Behandeling gericht op het herstellen van mobiliteit en het verminderen van pijn door beweging en oefeningen."
+    },
+    {
+        "naam": "Psychotherapie",
+        "beschrijving": "Behandeling van mentale gezondheidsproblemen door middel van gesprekken en technieken."
+    },
+    {
+        "naam": "Occupational Therapy (Ergotherapie)",
+        "beschrijving": "Therapie gericht op het verbeteren van dagelijkse vaardigheden en zelfstandigheid bij patiënten."
+    },
+    {
+        "naam": "Logopedie",
+        "beschrijving": "Therapie gericht op het verbeteren van spraak- en taalvaardigheden."
+    },
+    {
+        "naam": "Chiropractie",
+        "beschrijving": "Handmatige behandeling van het bewegingsapparaat, vooral de wervelkolom."
+    },
+    {
+        "naam": "Acupunctuur",
+        "beschrijving": "Traditionele Chinese therapie waarbij naalden op specifieke punten in het lichaam worden geplaatst."
+    },
+    {
+        "naam": "Massage Therapie",
+        "beschrijving": "Handmatige manipulatie van spieren en zachte weefsels om pijn te verlichten en ontspanning te bevorderen."
+    },
+    {
+        "naam": "Hydrotherapie",
+        "beschrijving": "Gebruik van watertherapieën voor herstel en pijnverlichting."
+    },
+    {
+        "naam": "Revalidatie",
+        "beschrijving": "Behandeling gericht op het herstellen van fysieke functies na ziekte of letsel."
+    },
+    {
+        "naam": "Nutritional Therapy (Voedingsadvies)",
+        "beschrijving": "Behandeling gericht op het verbeteren van de gezondheid door middel van dieet en voeding."
+    },
+    {
+        "naam": "Cognitieve Gedragstherapie (CGT)",
+        "beschrijving": "Een psychotherapeutische behandeling gericht op het veranderen van negatieve gedachten en gedragingen."
+    },
+    {
+        "naam": "Cardiovasculaire Rehabilitatie",
+        "beschrijving": "Behandeling gericht op het herstellen van hartfunctie na hartziekten of -operaties."
+    },
+    {
+        "naam": "Endoscopie",
+        "beschrijving": "Minimaal invasieve procedure om het inwendige van het lichaam te bekijken met een endoscoop."
+    },
+    {
+        "naam": "Transfusie",
+        "beschrijving": "Toediening van bloed of bloedproducten aan patiënten met bloedarmoede of bloedverlies."
+    },
+    {
+        "naam": "Vaccinatie",
+        "beschrijving": "Toediening van een vaccin om het immuunsysteem te trainen tegen specifieke infecties."
+    },
+    {
+        "naam": "Dialyse",
+        "beschrijving": "Een medische procedure die de functie van de nieren overneemt bij nierfalen, door het bloed te filteren."
+    },
+    {
+        "naam": "Antiretrovirale therapie (ART)",
+        "beschrijving": "Medicamenteuze behandeling voor HIV-infectie die de replicatie van het virus onderdrukt."
+    },
+    {
+        "naam": "Transplantatie",
+        "beschrijving": "Vervanging van een beschadigd orgaan door een gezond orgaan van een donor."
+    },
+    {
+        "naam": "Genezeologische Therapie",
+        "beschrijving": "Therapeutische benadering die zich richt op de onderliggende oorzaken van fysieke en emotionele problemen."
+    },
+    {
+        "naam": "Stemtherapie",
+        "beschrijving": "Behandeling gericht op het verbeteren van stemgebruik en vocale gezondheid."
+    },
+    {
+        "naam": "Slaaptherapie",
+        "beschrijving": "Behandeling gericht op het verbeteren van slaapkwaliteit en het aanpakken van slaapstoornissen."
+    },
+    {
+        "naam": "Arthroscopie",
+        "beschrijving": "Minimaal invasieve chirurgische procedure om gewrichten te bekijken en te behandelen."
+    },
+    {
+        "naam": "Reconstructieve Chirurgie",
+        "beschrijving": "Chirurgische ingrepen gericht op het herstellen van lichaamsstructuren na trauma of ziekte."
+    },
+    {
+        "naam": "Endocriene Therapie",
+        "beschrijving": "Behandeling gericht op het reguleren van hormonen bij hormonale stoornissen."
+    },
+    {
+        "naam": "Dialyse",
+        "beschrijving": "Een procedure die de functie van de nieren overneemt bij nierfalen, door het bloed te filteren."
+    },
+    {
+        "naam": "Homeopathie",
+        "beschrijving": "Alternatieve geneeswijze gebaseerd op het principe dat het lichaam zichzelf kan genezen met verdunde stoffen."
+    },
+    {
+        "naam": "Naturopathie",
+        "beschrijving": "Holistische benadering van genezing die natuurlijke methoden en levensstijlveranderingen gebruikt."
+    },
+    {
+        "naam": "Aromatherapie",
+        "beschrijving": "Gebruik van essentiële oliën om fysieke en emotionele welzijn te bevorderen."
+    },
+    {
+        "naam": "Ayurveda",
+        "beschrijving": "Traditionele Indiase geneeswijze die balans in lichaam en geest nastreeft met kruiden, dieet en levensstijl."
+    },
+    {
+        "naam": "Tai Chi",
+        "beschrijving": "Langzame, gecontroleerde bewegingen en ademhalingstechnieken voor fysieke en mentale balans."
+    },
+    {
+        "naam": "Yoga",
+        "beschrijving": "Fysieke en mentale oefeningen die flexibiliteit, kracht en ontspanning bevorderen."
+    },
+    {
+        "naam": "Reiki",
+        "beschrijving": "Energetische genezingstechniek waarbij de behandelaar energie overbrengt naar de patiënt."
+    },
+    {
+        "naam": "Hypnotherapie",
+        "beschrijving": "Gebruik van hypnose om gedragsveranderingen en emotionele genezing te bevorderen."
+    },
+    {
+        "naam": "Biofeedback",
+        "beschrijving": "Techniek waarbij patiënten leren om fysiologische functies te controleren door middel van feedback van apparaten."
+    },
+    {
+        "naam": "Meditatie",
+        "beschrijving": "Praktijk van het richten van de geest om ontspanning en mentale helderheid te bevorderen."
+    },
+    {
+        "naam": "Acu-needle",
+        "beschrijving": "Integratie van acupunctuur en naaldtechnieken voor pijnverlichting en genezing."
+    },
+    {
+        "naam": "Kinesiotaping",
+        "beschrijving": "Gebruik van elastische tapes om ondersteuning te bieden aan spieren en gewrichten zonder beweging te beperken."
+    },
+    {
+        "naam": "Hyperbare zuurstoftherapie",
+        "beschrijving": "Behandeling waarbij patiënten ademen in pure zuurstof in een hogedrukkamer om weefselschade te herstellen."
+    },
+    {
+        "naam": "Stemcell therapie",
+        "beschrijving": "Gebruik van stamcellen om beschadigd weefsel te herstellen of te vervangen."
+    },
+    {
+        "naam": "Cryotherapie",
+        "beschrijving": "Behandeling waarbij extreem koude temperaturen worden gebruikt voor pijnverlichting en ontstekingsremming."
+    },
+    {
+        "naam": "Lasertherapie",
+        "beschrijving": "Gebruik van geconcentreerde lichtstralen voor pijnverlichting, wondgenezing en behandeling van huidproblemen."
+    },
+    {
+        "naam": "Elektrotherapie",
+        "beschrijving": "Gebruik van elektrische stroom voor pijnverlichting en spierstimulatie."
+    },
+    {
+        "naam": "Ultrasound Therapie",
+        "beschrijving": "Gebruik van geluidsgolven om diepe weefsels te verwarmen en pijn te verminderen."
+    },
+    {
+        "naam": "Biochimische therapie",
+        "beschrijving": "Behandeling met stoffen die het lichaam helpen zich zelf te genezen door biochemische processen te beïnvloeden."
+    },
+    {
+        "naam": "Nerve block",
+        "beschrijving": "Injectie van medicijnen om zenuwen te blokkeren en pijn te verlichten."
+    },
+    {
+        "naam": "TENS (Transcutane Elektrische Zenuwstimulatie)",
+        "beschrijving": "Gebruik van elektrische pulsen om pijn te verminderen door zenuwen te stimuleren."
+    },
+    {
+        "naam": "Chelattherapie",
+        "beschrijving": "Behandeling waarbij chelatiemiddelen worden gebruikt om zware metalen uit het lichaam te verwijderen."
+    },
+    {
+        "naam": "Leefstijlinterventie",
+        "beschrijving": "Aanpassingen in dieet, lichaamsbeweging en gedrag om gezondheid te verbeteren en ziektes te voorkomen."
+    },
+    {
+        "naam": "Slaaptherapie",
+        "beschrijving": "Behandeling gericht op het verbeteren van slaapkwaliteit en het aanpakken van slaapstoornissen."
+    },
+    {
+        "naam": "Praktijk voor natuurlijke geneeswijzen",
+        "beschrijving": "Integratie van natuurlijke remedies en holistische benaderingen voor gezondheid en welzijn."
+    },
+    {
+        "naam": "Antibiotica therapie",
+        "beschrijving": "Gebruik van antibiotica om bacteriële infecties te behandelen."
+    },
+    {
+        "naam": "Antivirale therapie",
+        "beschrijving": "Gebruik van antivirale medicijnen om virale infecties te behandelen."
+    },
+    {
+        "naam": "Antifungale therapie",
+        "beschrijving": "Gebruik van antifungale medicijnen om schimmelinfecties te behandelen."
+    },
+    {
+        "naam": "Steroid therapie",
+        "beschrijving": "Gebruik van corticosteroïden om ontstekingen en immuunreacties te verminderen."
+    },
+    {
+        "naam": "Pain Management",
+        "beschrijving": "Behandelingsstrategieën gericht op het verlichten van chronische en acute pijn."
+    },
+    {
+        "naam": "Behavioral Therapy",
+        "beschrijving": "Psychotherapeutische benadering gericht op het veranderen van schadelijke gedragspatronen."
+    },
+    {
+        "naam": "Art Therapie",
+        "beschrijving": "Gebruik van creatieve kunstvormen om emotionele expressie en genezing te bevorderen."
+    },
+    {
+        "naam": "Music Therapie",
+        "beschrijving": "Gebruik van muziek en muzikale activiteiten om emotionele en fysieke gezondheid te verbeteren."
+    },
+    {
+        "naam": "Dance Therapie",
+        "beschrijving": "Gebruik van dans en beweging om fysieke en emotionele welzijn te bevorderen."
+    },
+    {
+        "naam": "Reiki",
+        "beschrijving": "Energetische genezingstechniek waarbij de behandelaar energie overbrengt naar de patiënt."
+    },
+    {
+        "naam": "Hypnotherapie",
+        "beschrijving": "Gebruik van hypnose om gedragsveranderingen en emotionele genezing te bevorderen."
+    },
+    {
+        "naam": "Biofeedback",
+        "beschrijving": "Techniek waarbij patiënten leren om fysiologische functies te controleren door middel van feedback van apparaten."
+    },
+    {
+        "naam": "Meditatie",
+        "beschrijving": "Praktijk van het richten van de geest om ontspanning en mentale helderheid te bevorderen."
+    },
+    {
+        "naam": "Acu-needle",
+        "beschrijving": "Integratie van acupunctuur en naaldtechnieken voor pijnverlichting en genezing."
+    },
+    {
+        "naam": "Kinesiotaping",
+        "beschrijving": "Gebruik van elastische tapes om ondersteuning te bieden aan spieren en gewrichten zonder beweging te beperken."
+    },
+    {
+        "naam": "Hyperbare zuurstoftherapie",
+        "beschrijving": "Behandeling waarbij patiënten ademen in pure zuurstof in een hogedrukkamer om weefselschade te herstellen."
+    },
+    {
+        "naam": "Stemcell therapie",
+        "beschrijving": "Gebruik van stamcellen om beschadigd weefsel te herstellen of te vervangen."
+    },
+    {
+        "naam": "Cryotherapie",
+        "beschrijving": "Behandeling waarbij extreem koude temperaturen worden gebruikt voor pijnverlichting en ontstekingsremming."
+    },
+    {
+        "naam": "Lasertherapie",
+        "beschrijving": "Gebruik van geconcentreerde lichtstralen voor pijnverlichting, wondgenezing en behandeling van huidproblemen."
+    },
+    {
+        "naam": "Elektrotherapie",
+        "beschrijving": "Gebruik van elektrische stroom voor pijnverlichting en spierstimulatie."
+    },
+    {
+        "naam": "Ultrasound Therapie",
+        "beschrijving": "Gebruik van geluidsgolven om diepe weefsels te verwarmen en pijn te verminderen."
+    },
+    {
+        "naam": "Biochimische therapie",
+        "beschrijving": "Behandeling met stoffen die het lichaam helpen zich zelf te genezen door biochemische processen te beïnvloeden."
+    },
+    {
+        "naam": "Nerve block",
+        "beschrijving": "Injectie van medicijnen om zenuwen te blokkeren en pijn te verlichten."
+    },
+    {
+        "naam": "TENS (Transcutane Elektrische Zenuwstimulatie)",
+        "beschrijving": "Gebruik van elektrische pulsen om pijn te verminderen door zenuwen te stimuleren."
+    },
+    {
+        "naam": "Chelattherapie",
+        "beschrijving": "Behandeling waarbij chelatiemiddelen worden gebruikt om zware metalen uit het lichaam te verwijderen."
+    },
+    {
+        "naam": "Leefstijlinterventie",
+        "beschrijving": "Aanpassingen in dieet, lichaamsbeweging en gedrag om gezondheid te verbeteren en ziektes te voorkomen."
+    },
+    {
+        "naam": "Slaaptherapie",
+        "beschrijving": "Behandeling gericht op het verbeteren van slaapkwaliteit en het aanpakken van slaapstoornissen."
+    },
+    {
+        "naam": "Praktijk voor natuurlijke geneeswijzen",
+        "beschrijving": "Integratie van natuurlijke remedies en holistische benaderingen voor gezondheid en welzijn."
+    },
+    {
+        "naam": "Antibiotica therapie",
+        "beschrijving": "Gebruik van antibiotica om bacteriële infecties te behandelen."
+    },
+    {
+        "naam": "Antivirale therapie",
+        "beschrijving": "Gebruik van antivirale medicijnen om virale infecties te behandelen."
+    },
+    {
+        "naam": "Antifungale therapie",
+        "beschrijving": "Gebruik van antifungale medicijnen om schimmelinfecties te behandelen."
+    },
+    {
+        "naam": "Steroid therapie",
+        "beschrijving": "Gebruik van corticosteroïden om ontstekingen en immuunreacties te verminderen."
+    },
+    {
+        "naam": "Pain Management",
+        "beschrijving": "Behandelingsstrategieën gericht op het verlichten van chronische en acute pijn."
+    },
+    {
+        "naam": "Behavioral Therapy",
+        "beschrijving": "Psychotherapeutische benadering gericht op het veranderen van schadelijke gedragspatronen."
+    },
+    {
+        "naam": "Art Therapie",
+        "beschrijving": "Gebruik van creatieve kunstvormen om emotionele expressie en genezing te bevorderen."
+    },
+    {
+        "naam": "Music Therapie",
+        "beschrijving": "Gebruik van muziek en muzikale activiteiten om emotionele en fysieke gezondheid te verbeteren."
+    },
+    {
+        "naam": "Dance Therapie",
+        "beschrijving": "Gebruik van dans en beweging om fysieke en emotionele welzijn te bevorderen."
+    },
+    {
+        "naam": "Reiki",
+        "beschrijving": "Energetische genezingstechniek waarbij de behandelaar energie overbrengt naar de patiënt."
+    },
+    {
+        "naam": "Hypnotherapie",
+        "beschrijving": "Gebruik van hypnose om gedragsveranderingen en emotionele genezing te bevorderen."
+    },
+    {
+        "naam": "Biofeedback",
+        "beschrijving": "Techniek waarbij patiënten leren om fysiologische functies te controleren door middel van feedback van apparaten."
+    },
+    {
+        "naam": "Meditatie",
+        "beschrijving": "Praktijk van het richten van de geest om ontspanning en mentale helderheid te bevorderen."
+    },
+    {
+        "naam": "Acu-needle",
+        "beschrijving": "Integratie van acupunctuur en naaldtechnieken voor pijnverlichting en genezing."
+    },
+    {
+        "naam": "Kinesiotaping",
+        "beschrijving": "Gebruik van elastische tapes om ondersteuning te bieden aan spieren en gewrichten zonder beweging te beperken."
+    },
+    {
+        "naam": "Hyperbare zuurstoftherapie",
+        "beschrijving": "Behandeling waarbij patiënten ademen in pure zuurstof in een hogedrukkamer om weefselschade te herstellen."
+    },
+    {
+        "naam": "Stemcell therapie",
+        "beschrijving": "Gebruik van stamcellen om beschadigd weefsel te herstellen of te vervangen."
+    },
+    {
+        "naam": "Cryotherapie",
+        "beschrijving": "Behandeling waarbij extreem koude temperaturen worden gebruikt voor pijnverlichting en ontstekingsremming."
+    },
+    {
+        "naam": "Lasertherapie",
+        "beschrijving": "Gebruik van geconcentreerde lichtstralen voor pijnverlichting, wondgenezing en behandeling van huidproblemen."
+    },
+    {
+        "naam": "Elektrotherapie",
+        "beschrijving": "Gebruik van elektrische stroom voor pijnverlichting en spierstimulatie."
+    },
+    {
+        "naam": "Ultrasound Therapie",
+        "beschrijving": "Gebruik van geluidsgolven om diepe weefsels te verwarmen en pijn te verminderen."
+    },
+    {
+        "naam": "Biochimische therapie",
+        "beschrijving": "Behandeling met stoffen die het lichaam helpen zich zelf te genezen door biochemische processen te beïnvloeden."
+    },
+    {
+        "naam": "Nerve block",
+        "beschrijving": "Injectie van medicijnen om zenuwen te blokkeren en pijn te verlichten."
+    },
+    {
+        "naam": "TENS (Transcutane Elektrische Zenuwstimulatie)",
+        "beschrijving": "Gebruik van elektrische pulsen om pijn te verminderen door zenuwen te stimuleren."
+    },
+    {
+        "naam": "Chelattherapie",
+        "beschrijving": "Behandeling waarbij chelatiemiddelen worden gebruikt om zware metalen uit het lichaam te verwijderen."
+    },
+    {
+        "naam": "Leefstijlinterventie",
+        "beschrijving": "Aanpassingen in dieet, lichaamsbeweging en gedrag om gezondheid te verbeteren en ziektes te voorkomen."
+    },
+    {
+        "naam": "Slaaptherapie",
+        "beschrijving": "Behandeling gericht op het verbeteren van slaapkwaliteit en het aanpakken van slaapstoornissen."
+    },
+    {
+        "naam": "Praktijk voor natuurlijke geneeswijzen",
+        "beschrijving": "Integratie van natuurlijke remedies en holistische benaderingen voor gezondheid en welzijn."
+    },
+    {
+        "naam": "Antibiotica therapie",
+        "beschrijving": "Gebruik van antibiotica om bacteriële infecties te behandelen."
+    },
+    {
+        "naam": "Antivirale therapie",
+        "beschrijving": "Gebruik van antivirale medicijnen om virale infecties te behandelen."
+    },
+    {
+        "naam": "Antifungale therapie",
+        "beschrijving": "Gebruik van antifungale medicijnen om schimmelinfecties te behandelen."
+    },
+    {
+        "naam": "Steroid therapie",
+        "beschrijving": "Gebruik van corticosteroïden om ontstekingen en immuunreacties te verminderen."
+    },
+    {
+        "naam": "Pain Management",
+        "beschrijving": "Behandelingsstrategieën gericht op het verlichten van chronische en acute pijn."
+    },
+    {
+        "naam": "Behavioral Therapy",
+        "beschrijving": "Psychotherapeutische benadering gericht op het veranderen van schadelijke gedragspatronen."
+    },
+    {
+        "naam": "Art Therapie",
+        "beschrijving": "Gebruik van creatieve kunstvormen om emotionele expressie en genezing te bevorderen."
+    },
+    {
+        "naam": "Music Therapie",
+        "beschrijving": "Gebruik van muziek en muzikale activiteiten om emotionele en fysieke gezondheid te verbeteren."
+    },
+    {
+        "naam": "Dance Therapie",
+        "beschrijving": "Gebruik van dans en beweging om fysieke en emotionele welzijn te bevorderen."
+    },
+    {
+        "naam": "Reiki",
+        "beschrijving": "Energetische genezingstechniek waarbij de behandelaar energie overbrengt naar de patiënt."
+    },
+    {
+        "naam": "Hypnotherapie",
+        "beschrijving": "Gebruik van hypnose om gedragsveranderingen en emotionele genezing te bevorderen."
+    },
+    {
+        "naam": "Biofeedback",
+        "beschrijving": "Techniek waarbij patiënten leren om fysiologische functies te controleren door middel van feedback van apparaten."
+    },
+    {
+        "naam": "Meditatie",
+        "beschrijving": "Praktijk van het richten van de geest om ontspanning en mentale helderheid te bevorderen."
+    },
+    {
+        "naam": "Acu-needle",
+        "beschrijving": "Integratie van acupunctuur en naaldtechnieken voor pijnverlichting en genezing."
+    },
+    {
+        "naam": "Kinesiotaping",
+        "beschrijving": "Gebruik van elastische tapes om ondersteuning te bieden aan spieren en gewrichten zonder beweging te beperken."
+    },
+    {
+        "naam": "Hyperbare zuurstoftherapie",
+        "beschrijving": "Behandeling waarbij patiënten ademen in pure zuurstof in een hogedrukkamer om weefselschade te herstellen."
+    },
+    {
+        "naam": "Stemcell therapie",
+        "beschrijving": "Gebruik van stamcellen om beschadigd weefsel te herstellen of te vervangen."
+    },
+    {
+        "naam": "Cryotherapie",
+        "beschrijving": "Behandeling waarbij extreem koude temperaturen worden gebruikt voor pijnverlichting en ontstekingsremming."
+    },
+    {
+        "naam": "Lasertherapie",
+        "beschrijving": "Gebruik van geconcentreerde lichtstralen voor pijnverlichting, wondgenezing en behandeling van huidproblemen."
+    },
+    {
+        "naam": "Elektrotherapie",
+        "beschrijving": "Gebruik van elektrische stroom voor pijnverlichting en spierstimulatie."
+    },
+    {
+        "naam": "Ultrasound Therapie",
+        "beschrijving": "Gebruik van geluidsgolven om diepe weefsels te verwarmen en pijn te verminderen."
+    },
+    {
+        "naam": "Biochimische therapie",
+        "beschrijving": "Behandeling met stoffen die het lichaam helpen zich zelf te genezen door biochemische processen te beïnvloeden."
+    },
+    {
+        "naam": "Nerve block",
+        "beschrijving": "Injectie van medicijnen om zenuwen te blokkeren en pijn te verlichten."
+    },
+    {
+        "naam": "TENS (Transcutane Elektrische Zenuwstimulatie)",
+        "beschrijving": "Gebruik van elektrische pulsen om pijn te verminderen door zenuwen te stimuleren."
+    },
+    {
+        "naam": "Chelattherapie",
+        "beschrijving": "Behandeling waarbij chelatiemiddelen worden gebruikt om zware metalen uit het lichaam te verwijderen."
+    },
+    {
+        "naam": "Leefstijlinterventie",
+        "beschrijving": "Aanpassingen in dieet, lichaamsbeweging en gedrag om gezondheid te verbeteren en ziektes te voorkomen."
+    },
+    {
+        "naam": "Slaaptherapie",
+        "beschrijving": "Behandeling gericht op het verbeteren van slaapkwaliteit en het aanpakken van slaapstoornissen."
+    },
+    {
+        "naam": "Praktijk voor natuurlijke geneeswijzen",
+        "beschrijving": "Integratie van natuurlijke remedies en holistische benaderingen voor gezondheid en welzijn."
+    },
+    {
+        "naam": "Antibiotica therapie",
+        "beschrijving": "Gebruik van antibiotica om bacteriële infecties te behandelen."
+    },
+    {
+        "naam": "Antivirale therapie",
+        "beschrijving": "Gebruik van antivirale medicijnen om virale infecties te behandelen."
+    },
+    {
+        "naam": "Antifungale therapie",
+        "beschrijving": "Gebruik van antifungale medicijnen om schimmelinfecties te behandelen."
+    },
+    {
+        "naam": "Steroid therapie",
+        "beschrijving": "Gebruik van corticosteroïden om ontstekingen en immuunreacties te verminderen."
+    },
+    {
+        "naam": "Pain Management",
+        "beschrijving": "Behandelingsstrategieën gericht op het verlichten van chronische en acute pijn."
+    },
+    {
+        "naam": "Behavioral Therapy",
+        "beschrijving": "Psychotherapeutische benadering gericht op het veranderen van schadelijke gedragspatronen."
+    },
+    {
+        "naam": "Art Therapie",
+        "beschrijving": "Gebruik van creatieve kunstvormen om emotionele expressie en genezing te bevorderen."
+    },
+    {
+        "naam": "Music Therapie",
+        "beschrijving": "Gebruik van muziek en muzikale activiteiten om emotionele en fysieke gezondheid te verbeteren."
+    },
+    {
+        "naam": "Dance Therapie",
+        "beschrijving": "Gebruik van dans en beweging om fysieke en emotionele welzijn te bevorderen."
+    },
+    {
+        "naam": "Reiki",
+        "beschrijving": "Energetische genezingstechniek waarbij de behandelaar energie overbrengt naar de patiënt."
+    },
+    {
+        "naam": "Hypnotherapie",
+        "beschrijving": "Gebruik van hypnose om gedragsveranderingen en emotionele genezing te bevorderen."
+    },
+    {
+        "naam": "Biofeedback",
+        "beschrijving": "Techniek waarbij patiënten leren om fysiologische functies te controleren door middel van feedback van apparaten."
+    },
+    {
+        "naam": "Meditatie",
+        "beschrijving": "Praktijk van het richten van de geest om ontspanning en mentale helderheid te bevorderen."
+    },
+    {
+        "naam": "Acu-needle",
+        "beschrijving": "Integratie van acupunctuur en naaldtechnieken voor pijnverlichting en genezing."
+    },
+    {
+        "naam": "Kinesiotaping",
+        "beschrijving": "Gebruik van elastische tapes om ondersteuning te bieden aan spieren en gewrichten zonder beweging te beperken."
+    },
+    {
+        "naam": "Hyperbare zuurstoftherapie",
+        "beschrijving": "Behandeling waarbij patiënten ademen in pure zuurstof in een hogedrukkamer om weefselschade te herstellen."
+    },
+    {
+        "naam": "Stemcell therapie",
+        "beschrijving": "Gebruik van stamcellen om beschadigd weefsel te herstellen of te vervangen."
+    },
+    {
+        "naam": "Cryotherapie",
+        "beschrijving": "Behandeling waarbij extreem koude temperaturen worden gebruikt voor pijnverlichting en ontstekingsremming."
+    },
+    {
+        "naam": "Lasertherapie",
+        "beschrijving": "Gebruik van geconcentreerde lichtstralen voor pijnverlichting, wondgenezing en behandeling van huidproblemen."
+    },
+    {
+        "naam": "Elektrotherapie",
+        "beschrijving": "Gebruik van elektrische stroom voor pijnverlichting en spierstimulatie."
+    },
+    {
+        "naam": "Ultrasound Therapie",
+        "beschrijving": "Gebruik van geluidsgolven om diepe weefsels te verwarmen en pijn te verminderen."
+    },
+    {
+        "naam": "Biochimische therapie",
+        "beschrijving": "Behandeling met stoffen die het lichaam helpen zich zelf te genezen door biochemische processen te beïnvloeden."
+    },
+    {
+        "naam": "Nerve block",
+        "beschrijving": "Injectie van medicijnen om zenuwen te blokkeren en pijn te verlichten."
+    },
+    {
+        "naam": "TENS (Transcutane Elektrische Zenuwstimulatie)",
+        "beschrijving": "Gebruik van elektrische pulsen om pijn te verminderen door zenuwen te stimuleren."
+    },
+    {
+        "naam": "Chelattherapie",
+        "beschrijving": "Behandeling waarbij chelatiemiddelen worden gebruikt om zware metalen uit het lichaam te verwijderen."
+    },
+    {
+        "naam": "Leefstijlinterventie",
+        "beschrijving": "Aanpassingen in dieet, lichaamsbeweging en gedrag om gezondheid te verbeteren en ziektes te voorkomen."
+    },
+    {
+        "naam": "Slaaptherapie",
+        "beschrijving": "Behandeling gericht op het verbeteren van slaapkwaliteit en het aanpakken van slaapstoornissen."
+    },
+    {
+        "naam": "Praktijk voor natuurlijke geneeswijzen",
+        "beschrijving": "Integratie van natuurlijke remedies en holistische benaderingen voor gezondheid en welzijn."
+    },
+    {
+        "naam": "Antibiotica therapie",
+        "beschrijving": "Gebruik van antibiotica om bacteriële infecties te behandelen."
+    },
+    {
+        "naam": "Antivirale therapie",
+        "beschrijving": "Gebruik van antivirale medicijnen om virale infecties te behandelen."
+    },
+    {
+        "naam": "Antifungale therapie",
+        "beschrijving": "Gebruik van antifungale medicijnen om schimmelinfecties te behandelen."
+    },
+    {
+        "naam": "Steroid therapie",
+        "beschrijving": "Gebruik van corticosteroïden om ontstekingen en immuunreacties te verminderen."
+    },
+    {
+        "naam": "Pain Management",
+        "beschrijving": "Behandelingsstrategieën gericht op het verlichten van chronische en acute pijn."
+    },
+    {
+        "naam": "Behavioral Therapy",
+        "beschrijving": "Psychotherapeutische benadering gericht op het veranderen van schadelijke gedragspatronen."
+    },
+    {
+        "naam": "Art Therapie",
+        "beschrijving": "Gebruik van creatieve kunstvormen om emotionele expressie en genezing te bevorderen."
+    },
+    {
+        "naam": "Music Therapie",
+        "beschrijving": "Gebruik van muziek en muzikale activiteiten om emotionele en fysieke gezondheid te verbeteren."
+    },
+    {
+        "naam": "Dance Therapie",
+        "beschrijving": "Gebruik van dans en beweging om fysieke en emotionele welzijn te bevorderen."
+    },
+    {
+        "naam": "Reiki",
+        "beschrijving": "Energetische genezingstechniek waarbij de behandelaar energie overbrengt naar de patiënt."
+    },
+    {
+        "naam": "Hypnotherapie",
+        "beschrijving": "Gebruik van hypnose om gedragsveranderingen en emotionele genezing te bevorderen."
+    },
+    {
+        "naam": "Biofeedback",
+        "beschrijving": "Techniek waarbij patiënten leren om fysiologische functies te controleren door middel van feedback van apparaten."
+    },
+    {
+        "naam": "Meditatie",
+        "beschrijving": "Praktijk van het richten van de geest om ontspanning en mentale helderheid te bevorderen."
+    },
+    {
+        "naam": "Acu-needle",
+        "beschrijving": "Integratie van acupunctuur en naaldtechnieken voor pijnverlichting en genezing."
+    },
+    {
+        "naam": "Kinesiotaping",
+        "beschrijving": "Gebruik van elastische tapes om ondersteuning te bieden aan spieren en gewrichten zonder beweging te beperken."
+    },
+    {
+        "naam": "Hyperbare zuurstoftherapie",
+        "beschrijving": "Behandeling waarbij patiënten ademen in pure zuurstof in een hogedrukkamer om weefselschade te herstellen."
+    },
+    {
+        "naam": "Stemcell therapie",
+        "beschrijving": "Gebruik van stamcellen om beschadigd weefsel te herstellen of te vervangen."
+    },
+    {
+        "naam": "Cryotherapie",
+        "beschrijving": "Behandeling waarbij extreem koude temperaturen worden gebruikt voor pijnverlichting en ontstekingsremming."
+    },
+    {
+        "naam": "Lasertherapie",
+        "beschrijving": "Gebruik van geconcentreerde lichtstralen voor pijnverlichting, wondgenezing en behandeling van huidproblemen."
+    },
+    {
+        "naam": "Elektrotherapie",
+        "beschrijving": "Gebruik van elektrische stroom voor pijnverlichting en spierstimulatie."
+    },
+    {
+        "naam": "Ultrasound Therapie",
+        "beschrijving": "Gebruik van geluidsgolven om diepe weefsels te verwarmen en pijn te verminderen."
+    },
+    {
+        "naam": "Biochimische therapie",
+        "beschrijving": "Behandeling met stoffen die het lichaam helpen zich zelf te genezen door biochemische processen te beïnvloeden."
+    },
+    {
+        "naam": "Nerve block",
+        "beschrijving": "Injectie van medicijnen om zenuwen te blokkeren en pijn te verlichten."
+    },
+    {
+        "naam": "TENS (Transcutane Elektrische Zenuwstimulatie)",
+        "beschrijving": "Gebruik van elektrische pulsen om pijn te verminderen door zenuwen te stimuleren."
+    },
+    {
+        "naam": "Chelattherapie",
+        "beschrijving": "Behandeling waarbij chelatiemiddelen worden gebruikt om zware metalen uit het lichaam te verwijderen."
+    },
+    {
+        "naam": "Leefstijlinterventie",
+        "beschrijving": "Aanpassingen in dieet, lichaamsbeweging en gedrag om gezondheid te verbeteren en ziektes te voorkomen."
+    },
+    {
+        "naam": "Slaaptherapie",
+        "beschrijving": "Behandeling gericht op het verbeteren van slaapkwaliteit en het aanpakken van slaapstoornissen."
+    },
+    {
+        "naam": "Praktijk voor natuurlijke geneeswijzen",
+        "beschrijving": "Integratie van natuurlijke remedies en holistische benaderingen voor gezondheid en welzijn."
+    },
+    {
+        "naam": "Antibiotica therapie",
+        "beschrijving": "Gebruik van antibiotica om bacteriële infecties te behandelen."
+    },
+    {
+        "naam": "Antivirale therapie",
+        "beschrijving": "Gebruik van antivirale medicijnen om virale infecties te behandelen."
+    },
+    {
+        "naam": "Antifungale therapie",
+        "beschrijving": "Gebruik van antifungale medicijnen om schimmelinfecties te behandelen."
+    },
+    {
+        "naam": "Steroid therapie",
+        "beschrijving": "Gebruik van corticosteroïden om ontstekingen en immuunreacties te verminderen."
+    },
+    {
+        "naam": "Pain Management",
+        "beschrijving": "Behandelingsstrategieën gericht op het verlichten van chronische en acute pijn."
+    },
+    {
+        "naam": "Behavioral Therapy",
+        "beschrijving": "Psychotherapeutische benadering gericht op het veranderen van schadelijke gedragspatronen."
+    },
+    {
+        "naam": "Art Therapie",
+        "beschrijving": "Gebruik van creatieve kunstvormen om emotionele expressie en genezing te bevorderen."
+    },
+    {
+        "naam": "Music Therapie",
+        "beschrijving": "Gebruik van muziek en muzikale activiteiten om emotionele en fysieke gezondheid te verbeteren."
+    },
+    {
+        "naam": "Dance Therapie",
+        "beschrijving": "Gebruik van dans en beweging om fysieke en emotionele welzijn te bevorderen."
+    },
+    {
+        "naam": "Reiki",
+        "beschrijving": "Energetische genezingstechniek waarbij de behandelaar energie overbrengt naar de patiënt."
+    },
+    {
+        "naam": "Hypnotherapie",
+        "beschrijving": "Gebruik van hypnose om gedragsveranderingen en emotionele genezing te bevorderen."
+    },
+    {
+        "naam": "Biofeedback",
+        "beschrijving": "Techniek waarbij patiënten leren om fysiologische functies te controleren door middel van feedback van apparaten."
+    },
+    {
+        "naam": "Meditatie",
+        "beschrijving": "Praktijk van het richten van de geest om ontspanning en mentale helderheid te bevorderen."
+    },
+    {
+        "naam": "Acu-needle",
+        "beschrijving": "Integratie van acupunctuur en naaldtechnieken voor pijnverlichting en genezing."
+    },
+    {
+        "naam": "Kinesiotaping",
+        "beschrijving": "Gebruik van elastische tapes om ondersteuning te bieden aan spieren en gewrichten zonder beweging te beperken."
+    },
+    {
+        "naam": "Hyperbare zuurstoftherapie",
+        "beschrijving": "Behandeling waarbij patiënten ademen in pure zuurstof in een hogedrukkamer om weefselschade te herstellen."
+    },
+    {
+        "naam": "Stemcell therapie",
+        "beschrijving": "Gebruik van stamcellen om beschadigd weefsel te herstellen of te vervangen."
+    },
+    {
+        "naam": "Cryotherapie",
+        "beschrijving": "Behandeling waarbij extreem koude temperaturen worden gebruikt voor pijnverlichting en ontstekingsremming."
+    },
+    {
+        "naam": "Lasertherapie",
+        "beschrijving": "Gebruik van geconcentreerde lichtstralen voor pijnverlichting, wondgenezing en behandeling van huidproblemen."
+    },
+    {
+        "naam": "Elektrotherapie",
+        "beschrijving": "Gebruik van elektrische stroom voor pijnverlichting en spierstimulatie."
+    },
+    {
+        "naam": "Ultrasound Therapie",
+        "beschrijving": "Gebruik van geluidsgolven om diepe weefsels te verwarmen en pijn te verminderen."
+    },
+    {
+        "naam": "Biochimische therapie",
+        "beschrijving": "Behandeling met stoffen die het lichaam helpen zich zelf te genezen door biochemische processen te beïnvloeden."
+    },
+    {
+        "naam": "Nerve block",
+        "beschrijving": "Injectie van medicijnen om zenuwen te blokkeren en pijn te verlichten."
+    },
+    {
+        "naam": "TENS (Transcutane Elektrische Zenuwstimulatie)",
+        "beschrijving": "Gebruik van elektrische pulsen om pijn te verminderen door zenuwen te stimuleren."
+    },
+    {
+        "naam": "Chelattherapie",
+        "beschrijving": "Behandeling waarbij chelatiemiddelen worden gebruikt om zware metalen uit het lichaam te verwijderen."
+    },
+    {
+        "naam": "Leefstijlinterventie",
+        "beschrijving": "Aanpassingen in dieet, lichaamsbeweging en gedrag om gezondheid te verbeteren en ziektes te voorkomen."
+    },
+    {
+        "naam": "Slaaptherapie",
+        "beschrijving": "Behandeling gericht op het verbeteren van slaapkwaliteit en het aanpakken van slaapstoornissen."
+    },
+    {
+        "naam": "Praktijk voor natuurlijke geneeswijzen",
+        "beschrijving": "Integratie van natuurlijke remedies en holistische benaderingen voor gezondheid en welzijn."
+    },
+    {
+        "naam": "Antibiotica therapie",
+        "beschrijving": "Gebruik van antibiotica om bacteriële infecties te behandelen."
+    },
+    {
+        "naam": "Antivirale therapie",
+        "beschrijving": "Gebruik van antivirale medicijnen om virale infecties te behandelen."
+    },
+    {
+        "naam": "Antifungale therapie",
+        "beschrijving": "Gebruik van antifungale medicijnen om schimmelinfecties te behandelen."
+    },
+    {
+        "naam": "Steroid therapie",
+        "beschrijving": "Gebruik van corticosteroïden om ontstekingen en immuunreacties te verminderen."
+    },
+    {
+        "naam": "Pain Management",
+        "beschrijving": "Behandelingsstrategieën gericht op het verlichten van chronische en acute pijn."
+    },
+    {
+        "naam": "Behavioral Therapy",
+        "beschrijving": "Psychotherapeutische benadering gericht op het veranderen van schadelijke gedragspatronen."
+    },
+    {
+        "naam": "Art Therapie",
+        "beschrijving": "Gebruik van creatieve kunstvormen om emotionele expressie en genezing te bevorderen."
+    },
+    {
+        "naam": "Music Therapie",
+        "beschrijving": "Gebruik van muziek en muzikale activiteiten om emotionele en fysieke gezondheid te verbeteren."
+    },
+    {
+        "naam": "Dance Therapie",
+        "beschrijving": "Gebruik van dans en beweging om fysieke en emotionele welzijn te bevorderen."
+    },
+    {
+        "naam": "Reiki",
+        "beschrijving": "Energetische genezingstechniek waarbij de behandelaar energie overbrengt naar de patiënt."
+    },
+    {
+        "naam": "Hypnotherapie",
+        "beschrijving": "Gebruik van hypnose om gedragsveranderingen en emotionele genezing te bevorderen."
+    },
+    {
+        "naam": "Biofeedback",
+        "beschrijving": "Techniek waarbij patiënten leren om fysiologische functies te controleren door middel van feedback van apparaten."
+    },
+    {
+        "naam": "Meditatie",
+        "beschrijving": "Praktijk van het richten van de geest om ontspanning en mentale helderheid te bevorderen."
+    },
+    {
+        "naam": "Acu-needle",
+        "beschrijving": "Integratie van acupunctuur en naaldtechnieken voor pijnverlichting en genezing."
+    },
+    {
+        "naam": "Kinesiotaping",
+        "beschrijving": "Gebruik van elastische tapes om ondersteuning te bieden aan spieren en gewrichten zonder beweging te beperken."
+    },
+    {
+        "naam": "Hyperbare zuurstoftherapie",
+        "beschrijving": "Behandeling waarbij patiënten ademen in pure zuurstof in een hogedrukkamer om weefselschade te herstellen."
+    },
+    {
+        "naam": "Stemcell therapie",
+        "beschrijving": "Gebruik van stamcellen om beschadigd weefsel te herstellen of te vervangen."
+    },
+    {
+        "naam": "Cryotherapie",
+        "beschrijving": "Behandeling waarbij extreem koude temperaturen worden gebruikt voor pijnverlichting en ontstekingsremming."
+    },
+    {
+        "naam": "Lasertherapie",
+        "beschrijving": "Gebruik van geconcentreerde lichtstralen voor pijnverlichting, wondgenezing en behandeling van huidproblemen."
+    },
+    {
+        "naam": "Elektrotherapie",
+        "beschrijving": "Gebruik van elektrische stroom voor pijnverlichting en spierstimulatie."
+    },
+    {
+        "naam": "Ultrasound Therapie",
+        "beschrijving": "Gebruik van geluidsgolven om diepe weefsels te verwarmen en pijn te verminderen."
+    },
+    {
+        "naam": "Biochimische therapie",
+        "beschrijving": "Behandeling met stoffen die het lichaam helpen zich zelf te genezen door biochemische processen te beïnvloeden."
+    },
+    {
+        "naam": "Nerve block",
+        "beschrijving": "Injectie van medicijnen om zenuwen te blokkeren en pijn te verlichten."
+    },
+    {
+        "naam": "TENS (Transcutane Elektrische Zenuwstimulatie)",
+        "beschrijving": "Gebruik van elektrische pulsen om pijn te verminderen door zenuwen te stimuleren."
+    },
+    {
+        "naam": "Chelattherapie",
+        "beschrijving": "Behandeling waarbij chelatiemiddelen worden gebruikt om zware metalen uit het lichaam te verwijderen."
+    },
+    {
+        "naam": "Leefstijlinterventie",
+        "beschrijving": "Aanpassingen in dieet, lichaamsbeweging en gedrag om gezondheid te verbeteren en ziektes te voorkomen."
+    },
+    {
+        "naam": "Slaaptherapie",
+        "beschrijving": "Behandeling gericht op het verbeteren van slaapkwaliteit en het aanpakken van slaapstoornissen."
+    },
+    {
+        "naam": "Praktijk voor natuurlijke geneeswijzen",
+        "beschrijving": "Integratie van natuurlijke remedies en holistische benaderingen voor gezondheid en welzijn."
+    },
+    {
+        "naam": "Antibiotica therapie",
+        "beschrijving": "Gebruik van antibiotica om bacteriële infecties te behandelen."
+    },
+    {
+        "naam": "Antivirale therapie",
+        "beschrijving": "Gebruik van antivirale medicijnen om virale infecties te behandelen."
+    },
+    {
+        "naam": "Antifungale therapie",
+        "beschrijving": "Gebruik van antifungale medicijnen om schimmelinfecties te behandelen."
+    },
+    {
+        "naam": "Steroid therapie",
+        "beschrijving": "Gebruik van corticosteroïden om ontstekingen en immuunreacties te verminderen."
+    },
+    {
+        "naam": "Pain Management",
+        "beschrijving": "Behandelingsstrategieën gericht op het verlichten van chronische en acute pijn."
+    },
+    {
+        "naam": "Behavioral Therapy",
+        "beschrijving": "Psychotherapeutische benadering gericht op het veranderen van schadelijke gedragspatronen."
+    },
+    {
+        "naam": "Art Therapie",
+        "beschrijving": "Gebruik van creatieve kunstvormen om emotionele expressie en genezing te bevorderen."
+    },
+    {
+        "naam": "Music Therapie",
+        "beschrijving": "Gebruik van muziek en muzikale activiteiten om emotionele en fysieke gezondheid te verbeteren."
+    },
+    {
+        "naam": "Dance Therapie",
+        "beschrijving": "Gebruik van dans en beweging om fysieke en emotionele welzijn te bevorderen."
+    },
+    {
+        "naam": "Reiki",
+        "beschrijving": "Energetische genezingstechniek waarbij de behandelaar energie overbrengt naar de patiënt."
+    },
+    {
+        "naam": "Hypnotherapie",
+        "beschrijving": "Gebruik van hypnose om gedragsveranderingen en emotionele genezing te bevorderen."
+    },
+    {
+        "naam": "Biofeedback",
+        "beschrijving": "Techniek waarbij patiënten leren om fysiologische functies te controleren door middel van feedback van apparaten."
+    },
+    {
+        "naam": "Meditatie",
+        "beschrijving": "Praktijk van het richten van de geest om ontspanning en mentale helderheid te bevorderen."
+    },
+    {
+        "naam": "Acu-needle",
+        "beschrijving": "Integratie van acupunctuur en naaldtechnieken voor pijnverlichting en genezing."
+    },
+    {
+        "naam": "Kinesiotaping",
+        "beschrijving": "Gebruik van elastische tapes om ondersteuning te bieden aan spieren en gewrichten zonder beweging te beperken."
+    },
+    {
+        "naam": "Hyperbare zuurstoftherapie",
+        "beschrijving": "Behandeling waarbij patiënten ademen in pure zuurstof in een hogedrukkamer om weefselschade te herstellen."
+    },
+    {
+        "naam": "Stemcell therapie",
+        "beschrijving": "Gebruik van stamcellen om beschadigd weefsel te herstellen of te vervangen."
+    },
+    {
+        "naam": "Cryotherapie",
+        "beschrijving": "Behandeling waarbij extreem koude temperaturen worden gebruikt voor pijnverlichting en ontstekingsremming."
+    },
+    {
+        "naam": "Lasertherapie",
+        "beschrijving": "Gebruik van geconcentreerde lichtstralen voor pijnverlichting, wondgenezing en behandeling van huidproblemen."
+    },
+    {
+        "naam": "Elektrotherapie",
+        "beschrijving": "Gebruik van elektrische stroom voor pijnverlichting en spierstimulatie."
+    },
+    {
+        "naam": "Ultrasound Therapie",
+        "beschrijving": "Gebruik van geluidsgolven om diepe weefsels te verwarmen en pijn te verminderen."
+    },
+    {
+        "naam": "Biochimische therapie",
+        "beschrijving": "Behandeling met stoffen die het lichaam helpen zich zelf te genezen door biochemische processen te beïnvloeden."
+    },
+    {
+        "naam": "Nerve block",
+        "beschrijving": "Injectie van medicijnen om zenuwen te blokkeren en pijn te verlichten."
+    },
+    {
+        "naam": "TENS (Transcutane Elektrische Zenuwstimulatie)",
+        "beschrijving": "Gebruik van elektrische pulsen om pijn te verminderen door zenuwen te stimuleren."
+    },
+    {
+        "naam": "Chelattherapie",
+        "beschrijving": "Behandeling waarbij chelatiemiddelen worden gebruikt om zware metalen uit het lichaam te verwijderen."
+    },
+    {
+        "naam": "Leefstijlinterventie",
+        "beschrijving": "Aanpassingen in dieet, lichaamsbeweging en gedrag om gezondheid te verbeteren en ziektes te voorkomen."
+    },
+    {
+        "naam": "Slaaptherapie",
+        "beschrijving": "Behandeling gericht op het verbeteren van slaapkwaliteit en het aanpakken van slaapstoornissen."
+    },
+    {
+        "naam": "Praktijk voor natuurlijke geneeswijzen",
+        "beschrijving": "Integratie van natuurlijke remedies en holistische benaderingen voor gezondheid en welzijn."
+    },
+    {
+        "naam": "Antibiotica therapie",
+        "beschrijving": "Gebruik van antibiotica om bacteriële infecties te behandelen."
+    },
+    {
+        "naam": "Antivirale therapie",
+        "beschrijving": "Gebruik van antivirale medicijnen om virale infecties te behandelen."
+    },
+    {
+        "naam": "Antifungale therapie",
+        "beschrijving": "Gebruik van antifungale medicijnen om schimmelinfecties te behandelen."
+    },
+    {
+        "naam": "Steroid therapie",
+        "beschrijving": "Gebruik van corticosteroïden om ontstekingen en immuunreacties te verminderen."
+    },
+    {
+        "naam": "Pain Management",
+        "beschrijving": "Behandelingsstrategieën gericht op het verlichten van chronische en acute pijn."
+    },
+    {
+        "naam": "Behavioral Therapy",
+        "beschrijving": "Psychotherapeutische benadering gericht op het veranderen van schadelijke gedragspatronen."
+    },
+    {
+        "naam": "Art Therapie",
+        "beschrijving": "Gebruik van creatieve kunstvormen om emotionele expressie en genezing te bevorderen."
+    },
+    {
+        "naam": "Music Therapie",
+        "beschrijving": "Gebruik van muziek en muzikale activiteiten om emotionele en fysieke gezondheid te verbeteren."
+    },
+    {
+        "naam": "Dance Therapie",
+        "beschrijving": "Gebruik van dans en beweging om fysieke en emotionele welzijn te bevorderen."
+    },
+    {
+        "naam": "Reiki",
+        "beschrijving": "Energetische genezingstechniek waarbij de behandelaar energie overbrengt naar de patiënt."
+    },
+    {
+        "naam": "Hypnotherapie",
+        "beschrijving": "Gebruik van hypnose om gedragsveranderingen en emotionele genezing te bevorderen."
+    },
+    {
+        "naam": "Biofeedback",
+        "beschrijving": "Techniek waarbij patiënten leren om fysiologische functies te controleren door middel van feedback van apparaten."
+    },
+    {
+        "naam": "Meditatie",
+        "beschrijving": "Praktijk van het richten van de geest om ontspanning en mentale helderheid te bevorderen."
+    },
+    {
+        "naam": "Acu-needle",
+        "beschrijving": "Integratie van acupunctuur en naaldtechnieken voor pijnverlichting en genezing."
+    },
+    {
+        "naam": "Kinesiotaping",
+        "beschrijving": "Gebruik van elastische tapes om ondersteuning te bieden aan spieren en gewrichten zonder beweging te beperken."
+    },
+    {
+        "naam": "Hyperbare zuurstoftherapie",
+        "beschrijving": "Behandeling waarbij patiënten ademen in pure zuurstof in een hogedrukkamer om weefselschade te herstellen."
+    },
+    {
+        "naam": "Stemcell therapie",
+        "beschrijving": "Gebruik van stamcellen om beschadigd weefsel te herstellen of te vervangen."
+    },
+    {
+        "naam": "Cryotherapie",
+        "beschrijving": "Behandeling waarbij extreem koude temperaturen worden gebruikt voor pijnverlichting en ontstekingsremming."
+    },
+    {
+        "naam": "Lasertherapie",
+        "beschrijving": "Gebruik van geconcentreerde lichtstralen voor pijnverlichting, wondgenezing en behandeling van huidproblemen."
+    },
+    {
+        "naam": "Elektrotherapie",
+        "beschrijving": "Gebruik van elektrische stroom voor pijnverlichting en spierstimulatie."
+    },
+    {
+        "naam": "Ultrasound Therapie",
+        "beschrijving": "Gebruik van geluidsgolven om diepe weefsels te verwarmen en pijn te verminderen."
+    },
+    {
+        "naam": "Biochimische therapie",
+        "beschrijving": "Behandeling met stoffen die het lichaam helpen zich zelf te genezen door biochemische processen te beïnvloeden."
+    },
+    {
+        "naam": "Nerve block",
+        "beschrijving": "Injectie van medicijnen om zenuwen te blokkeren en pijn te verlichten."
+    },
+    {
+        "naam": "TENS (Transcutane Elektrische Zenuwstimulatie)",
+        "beschrijving": "Gebruik van elektrische pulsen om pijn te verminderen door zenuwen te stimuleren."
+    },
+    {
+        "naam": "Chelattherapie",
+        "beschrijving": "Behandeling waarbij chelatiemiddelen worden gebruikt om zware metalen uit het lichaam te verwijderen."
+    },
+    {
+        "naam": "Leefstijlinterventie",
+        "beschrijving": "Aanpassingen in dieet, lichaamsbeweging en gedrag om gezondheid te verbeteren en ziektes te voorkomen."
+    },
+    {
+        "naam": "Slaaptherapie",
+        "beschrijving": "Behandeling gericht op het verbeteren van slaapkwaliteit en het aanpakken van slaapstoornissen."
+    },
+    {
+        "naam": "Praktijk voor natuurlijke geneeswijzen",
+        "beschrijving": "Integratie van natuurlijke remedies en holistische benaderingen voor gezondheid en welzijn."
+    }
+]
+
+diagnoses = [
+    {
+        "naam": "Hypertensie",
+        "beschrijving": "Een chronische aandoening waarbij de bloeddruk in de slagaders verhoogd is, wat kan leiden tot hartziekten, nierproblemen en beroertes."
+    },
+    {
+        "naam": "Diabetes Mellitus Type 2",
+        "beschrijving": "Een stofwisselingsziekte waarbij het lichaam weerstand heeft tegen insuline of onvoldoende insuline produceert, resulterend in verhoogde bloedsuikerspiegels."
+    },
+    {
+        "naam": "Astma",
+        "beschrijving": "Een chronische ontstekingsziekte van de luchtwegen die leidt tot piepende ademhaling, kortademigheid, benauwdheid op de borst en hoesten."
+    },
+    {
+        "naam": "Depressie",
+        "beschrijving": "Een stemmingsstoornis gekenmerkt door aanhoudende gevoelens van verdriet, verlies van interesse in dagelijkse activiteiten en verminderde energie."
+    },
+    {
+        "naam": "Osteoarthritis",
+        "beschrijving": "Een degeneratieve gewrichtsaandoening waarbij het kraakbeen in de gewrichten slijt, wat leidt tot pijn, stijfheid en verminderde mobiliteit."
+    },
+    {
+        "naam": "Coronair Hartziekte",
+        "beschrijving": "Een aandoening waarbij de kransslagaders vernauwd of geblokkeerd zijn door plaque-opbouw, wat kan leiden tot angina pectoris of hartaanvallen."
+    },
+    {
+        "naam": "Chronische Obstructieve Longziekte (COPD)",
+        "beschrijving": "Een progressieve longaandoening die de luchtstroom belemmert en ademnood veroorzaakt, vaak veroorzaakt door langdurige blootstelling aan irriterende stoffen zoals sigarettenrook."
+    },
+    {
+        "naam": "Migraine",
+        "beschrijving": "Een type hoofdpijn gekenmerkt door intense, pulserende pijn, vaak aan één kant van het hoofd, en kan gepaard gaan met misselijkheid, braken en gevoeligheid voor licht en geluid."
+    },
+    {
+        "naam": "Reumatoïde Artritis",
+        "beschrijving": "Een auto-immuunziekte die ontsteking van de gewrichten veroorzaakt, wat leidt tot pijn, zwelling, stijfheid en uiteindelijk gewrichtsdeformatie."
+    },
+    {
+        "naam": "Gastro-oesofageale Refluxziekte (GERD)",
+        "beschrijving": "Een spijsverteringsstoornis waarbij maagzuur terugvloeit naar de slokdarm, wat brandend maagzuur en andere ongemakken veroorzaakt."
+    },
+    {
+        "naam": "Hypothyreoïdie",
+        "beschrijving": "Een aandoening waarbij de schildklier niet genoeg schildklierhormonen produceert, wat kan leiden tot vermoeidheid, gewichtstoename, koude intolerantie en depressie."
+    },
+    {
+        "naam": "Alzheimer",
+        "beschrijving": "Een progressieve neurologische aandoening die geheugenverlies, verwarring en veranderingen in gedrag en persoonlijkheid veroorzaakt."
+    },
+    {
+        "naam": "Anemie",
+        "beschrijving": "Een bloedziekte waarbij het aantal rode bloedcellen of het hemoglobinegehalte laag is, wat leidt tot vermoeidheid, zwakte en bleekheid."
+    },
+    {
+        "naam": "Psoriasis",
+        "beschrijving": "Een chronische auto-immuunziekte die de huidcellen versnelt, wat resulteert in dikke, rode, schilferige plekken op de huid."
+    },
+    {
+        "naam": "Hartfalen",
+        "beschrijving": "Een ernstige aandoening waarbij het hart niet in staat is voldoende bloed te pompen om aan de behoeften van het lichaam te voldoen."
+    },
+    {
+        "naam": "Influenza (Griep)",
+        "beschrijving": "Een virale infectie van de luchtwegen die koorts, hoesten, keelpijn, spierpijn en vermoeidheid veroorzaakt."
+    },
+    {
+        "naam": "Bacteriële Pneumonie",
+        "beschrijving": "Een longinfectie veroorzaakt door bacteriën, gekenmerkt door koorts, hoesten, kortademigheid en pijn op de borst."
+    },
+    {
+        "naam": "Schildklierkanker",
+        "beschrijving": "Een vorm van kanker die ontstaat in de schildklier, vaak gepaard gaand met knobbels in de hals, moeite met slikken en veranderingen in stem."
+    },
+    {
+        "naam": "Eczema (Atopisch Eczeem)",
+        "beschrijving": "Een huidziekte die jeukende, ontstoken en rode plekken veroorzaakt, vaak geassocieerd met een familiegeschiedenis van allergieën."
+    },
+    {
+        "naam": "Kanker van de Dikke Darm",
+        "beschrijving": "Een vorm van kanker die begint in de dikke darm of endeldarm, vaak gekenmerkt door veranderingen in stoelgang, bloed in de ontlasting en buikpijn."
+    },
+    {
+        "naam": "Multiple Sclerose (MS)",
+        "beschrijving": "Een auto-immuunziekte waarbij het immuunsysteem de beschermende myelineschede rond zenuwvezels in de hersenen en het ruggenmerg aanvalt, wat leidt tot spierzwakte, coördinatieproblemen en andere neurologische symptomen."
+    },
+    {
+        "naam": "Bipolaire Stoornis",
+        "beschrijving": "Een stemmingsstoornis gekenmerkt door afwisselende periodes van manie (extreem hoge stemming) en depressie."
+    },
+    {
+        "naam": "Epilepsie",
+        "beschrijving": "Een neurologische aandoening die wordt gekenmerkt door terugkerende epileptische aanvallen, veroorzaakt door abnormale elektrische activiteit in de hersenen."
+    },
+    {
+        "naam": "Chronic Kidney Disease (CKD)",
+        "beschrijving": "Een progressieve afname van de nierfunctie, wat kan leiden tot ophoping van afvalstoffen in het lichaam en uiteindelijk nierfalen."
+    },
+    {
+        "naam": "Hepatitis C",
+        "beschrijving": "Een virale infectie die de lever aantast en kan leiden tot leverontsteking, cirrose en leverkanker."
+    },
+    {
+        "naam": "Parkinson",
+        "beschrijving": "Een progressieve neurologische aandoening die beweging coördineert, gekenmerkt door tremoren, stijfheid, traagheid van beweging en balansproblemen."
+    },
+    {
+        "naam": "Lupus (Systemische Lupus Erythematosus)",
+        "beschrijving": "Een auto-immuunziekte waarbij het immuunsysteem de eigen weefsels en organen aanvalt, wat kan leiden tot ontstekingen en schade aan de huid, gewrichten, nieren, hersenen en andere organen."
+    },
+    {
+        "naam": "Schizofrenie",
+        "beschrijving": "Een ernstige psychische stoornis die wordt gekenmerkt door vervormde gedachten, wanen, hallucinaties en verminderd functioneren in het dagelijks leven."
+    },
+    {
+        "naam": "Cystic Fibrosis",
+        "beschrijving": "Een erfelijke aandoening die de longen en het spijsverteringsstelsel aantast, gekenmerkt door dikke slijmen die luchtwegen en organen kunnen verstoppen."
+    },
+    {
+        "naam": "HIV/AIDS",
+        "beschrijving": "Een virale infectie die het immuunsysteem aantast, waardoor het lichaam vatbaarder wordt voor opportunistische infecties en bepaalde vormen van kanker."
+    },
+    {
+        "naam": "Graves' Disease",
+        "beschrijving": "Een auto-immuunziekte die hyperthyreoïdie veroorzaakt, wat leidt tot symptomen zoals gewichtsverlies, snelle hartslag, zweten en nervositeit."
+    },
+    {
+        "naam": "Meniscusletsel",
+        "beschrijving": "Een scheur in de meniscus van de knie, vaak veroorzaakt door draaibewegingen of plotselinge belasting, resulterend in pijn, zwelling en beperkte beweging."
+    },
+    {
+        "naam": "Fibromyalgie",
+        "beschrijving": "Een chronische aandoening gekenmerkt door wijdverspreide pijn in spieren en bindweefsel, evenals vermoeidheid, slaapstoornissen en cognitieve problemen."
+    },
+    {
+        "naam": "Gout (Jicht)",
+        "beschrijving": "Een vorm van artritis veroorzaakt door de ophoping van urinezuurkristallen in de gewrichten, wat leidt tot plotselinge, hevige pijn, roodheid en zwelling."
+    },
+    {
+        "naam": "Cirrhose",
+        "beschrijving": "Een ernstige leveraandoening waarbij gezond leverweefsel wordt vervangen door littekenweefsel, wat de leverfunctie belemmert en kan leiden tot leverfalen."
+    },
+    {
+        "naam": "Pancreatitis",
+        "beschrijving": "Ontsteking van de alvleesklier, vaak veroorzaakt door galstenen of overmatig alcoholgebruik, wat leidt tot buikpijn, misselijkheid en braken."
+    },
+    {
+        "naam": "Bipolair II",
+        "beschrijving": "Een subtype van de bipolaire stoornis gekenmerkt door afwisselende perioden van depressie en hypomanie (minder ernstige manische episodes)."
+    },
+    {
+        "naam": "Narcolepsie",
+        "beschrijving": "Een chronische slaapstoornis die plotselinge en oncontroleerbare episodes van slaap uitlokken, vaak vergezeld van kataplexie (plotseling verlies van spiercontrole)."
+    },
+    {
+        "naam": "Schildklierknobbels",
+        "beschrijving": "Goedaardige of kwaadaardige gezwellen in de schildklier, die kunnen leiden tot veranderingen in de schildklierfunctie en soms zichtbaar zijn als een knobbel in de hals."
+    },
+    {
+        "naam": "Pneumothorax",
+        "beschrijving": "Een aandoening waarbij lucht zich ophoopt in de pleuraholte, waardoor het long gedeeltelijk of volledig kan samenvallen, wat leidt tot ademnood en pijn op de borst."
+    },
+    {
+        "naam": "Endometriose",
+        "beschrijving": "Een chronische aandoening waarbij weefsel dat lijkt op het baarmoederslijmvlies buiten de baarmoeder groeit, wat pijn, onregelmatige menstruatie en vruchtbaarheidsproblemen kan veroorzaken."
+    },
+    {
+        "naam": "Leukemie",
+        "beschrijving": "Een type kanker van de bloedcellen die begint in het beenmerg en zich verspreidt naar het bloed, wat leidt tot symptomen zoals vermoeidheid, infecties en bloedingsneigingen."
+    },
+    {
+        "naam": "Acuut Myocardinfarct",
+        "beschrijving": "Een hartaanval die ontstaat door een plotselinge blokkade van een kransslagader, wat leidt tot beschadiging van de hartspier door zuurstoftekort."
+    },
+    {
+        "naam": "Celiac Disease (Coeliakie)",
+        "beschrijving": "Een auto-immuunziekte waarbij de inname van gluten leidt tot schade aan de dunne darm, resulterend in malabsorptie van voedingsstoffen."
+    },
+    {
+        "naam": "Hemofilie",
+        "beschrijving": "Een erfelijke bloedziekte die de bloedstolling belemmert, wat leidt tot overmatige bloedingen bij verwondingen of zelfs spontane bloedingen."
+    },
+    {
+        "naam": "Pneumoconiose",
+        "beschrijving": "Een groep longaandoeningen veroorzaakt door langdurige blootstelling aan stofdeeltjes, wat leidt tot littekenvorming in de longen en ademnood."
+    },
+    {
+        "naam": "Sjogren's Syndroom",
+        "beschrijving": "Een auto-immuunziekte die voornamelijk de speeksel- en traanklieren aantast, wat leidt tot droge mond en droge ogen."
+    },
+    {
+        "naam": "Hernia (Hernia Lumbaris)",
+        "beschrijving": "Een aandoening waarbij een deel van een orgaan of weefsel uitpuilt door een verzwakte plek in de omliggende spieren, vaak leidend tot pijn en ongemak."
+    },
+    {
+        "naam": "Acute Lymfoblastaire Leukemie (ALL)",
+        "beschrijving": "Een snel voortschrijdende vorm van leukemie die voornamelijk kinderen treft, gekenmerkt door de overproductie van abnormale lymfoblasten."
+    },
+    {
+        "naam": "Multiple Myeloom",
+        "beschrijving": "Een type kanker van de plasmacellen in het beenmerg, wat leidt tot botpijn, verhoogd calciumgehalte en nierproblemen."
+    },
+    {
+        "naam": "Polymyalgia Rheumatica",
+        "beschrijving": "Een ontstekingsaandoening die spierpijn en stijfheid veroorzaakt, vooral in de schouders en heupen, vaak geassocieerd met reumatoïde artritis."
+    },
+    {
+        "naam": "Systemische Sclerosis (Sclerodermie)",
+        "beschrijving": "Een auto-immuunziekte die leidt tot verharding en verstrakking van de huid en bindweefsel, wat de interne organen kan aantasten."
+    },
+    {
+        "naam": "Pernicieuze Anemie",
+        "beschrijving": "Een vorm van anemie veroorzaakt door een tekort aan vitamine B12, wat leidt tot vermoeidheid, zwakte en neurologische symptomen."
+    },
+    {
+        "naam": "Myasthenia Gravis",
+        "beschrijving": "Een auto-immuunziekte die de signaaloverdracht tussen zenuwen en spieren verstoort, resulterend in spierzwakte en vermoeidheid."
+    },
+    {
+        "naam": "Kanker van de Alvleesklier",
+        "beschrijving": "Een agressieve vorm van kanker die in de alvleesklier ontstaat, vaak laat gediagnosticeerd en geassocieerd met buikpijn, gewichtsverlies en geelzucht."
+    },
+    {
+        "naam": "Beroerte (CVA)",
+        "beschrijving": "Een plotselinge onderbreking van de bloedtoevoer naar de hersenen, wat leidt tot hersenbeschadiging, verlamming en cognitieve stoornissen."
+    },
+    {
+        "naam": "Hartaandoeningen",
+        "beschrijving": "Een breed scala aan aandoeningen die het hart betreffen, waaronder hartaanvallen, hartfalen en hartritmestoornissen."
+    },
+    {
+        "naam": "Polycysteus Ovarium Syndroom (PCOS)",
+        "beschrijving": "Een hormonale aandoening bij vrouwen die wordt gekenmerkt door onregelmatige menstruatie, overmatige haargroei en cysten in de eierstokken."
+    },
+    {
+        "naam": "Autisme Spectrum Stoornis (ASS)",
+        "beschrijving": "Een ontwikkelingsstoornis die sociale interactie, communicatie en gedrag beïnvloedt, vaak met repetitieve gedragingen en beperkte interesses."
+    },
+    {
+        "naam": "Longfibrose",
+        "beschrijving": "Een aandoening waarbij littekenweefsel zich in de longen vormt, wat leidt tot verminderde longfunctie en ademnood."
+    },
+    {
+        "naam": "Achalasie",
+        "beschrijving": "Een zeldzame slokdarmstoornis waarbij de onderste slokdarmsfincter niet goed ontspant, wat leidt tot moeite met slikken en voedselophoping in de slokdarm."
+    },
+    {
+        "naam": "Borstkanker",
+        "beschrijving": "Een vorm van kanker die begint in de borstweefsels, vaak gekenmerkt door een knobbel, veranderingen in de borstvorm of huid en afscheiding uit de tepel."
+    },
+    {
+        "naam": "Cushing Syndroom",
+        "beschrijving": "Een hormonale aandoening veroorzaakt door langdurige blootstelling aan hoge niveaus van cortisol, wat leidt tot gewichtstoename, dunne huid en hoge bloeddruk."
+    },
+    {
+        "naam": "Endocriene Hygiëne (Cushing's Disease)",
+        "beschrijving": "Een specifieke vorm van het Cushing syndroom veroorzaakt door een tumor in de hypofyse die overmatige productie van ACTH stimuleert."
+    },
+    {
+        "naam": "Schildkliervergroting (Struma)",
+        "beschrijving": "Een vergroting van de schildklier, die kan worden veroorzaakt door jodiumtekort, auto-immuunziekten of schildklierkanker."
+    },
+    {
+        "naam": "Epiglottitis",
+        "beschrijving": "Een ontsteking van de epiglottis, vaak veroorzaakt door een bacteriële infectie, wat kan leiden tot ademhalingsproblemen en vereist onmiddellijke medische aandacht."
+    },
+    {
+        "naam": "Pericarditis",
+        "beschrijving": "Ontsteking van het pericardium (de buitenste laag van het hart), wat pijn op de borst en koorts kan veroorzaken."
+    },
+    {
+        "naam": "Chondrose",
+        "beschrijving": "Degeneratie van het kraakbeen in de tussenwervelschijven van de wervelkolom, wat leidt tot rugpijn en bewegingsbeperkingen."
+    },
+    {
+        "naam": "Lyme Disease (Ziekte van Lyme)",
+        "beschrijving": "Een bacteriële infectie overgedragen door tekenbeten, gekenmerkt door huiduitslag, koorts, hoofdpijn en gewrichtspijn."
+    },
+    {
+        "naam": "Tendinitis",
+        "beschrijving": "Ontsteking van een pees, vaak veroorzaakt door overbelasting, wat leidt tot pijn en beperkte beweging in het getroffen gebied."
+    },
+    {
+        "naam": "Obstructieve Slaapapneu",
+        "beschrijving": "Een slaapstoornis waarbij de luchtwegen herhaaldelijk worden geblokkeerd tijdens de slaap, wat leidt tot ademstilstanden en vermoeidheid overdag."
+    },
+    {
+        "naam": "Hemorroïden",
+        "beschrijving": "Vergrote en ontstoken aderen in het onderste deel van de dikke darm en anus, wat pijn, jeuk en bloedingen kan veroorzaken."
+    },
+    {
+        "naam": "Osteoporose",
+        "beschrijving": "Een aandoening waarbij de botdichtheid vermindert, waardoor de botten broos en breekbaar worden, wat het risico op fracturen verhoogt."
+    },
+    {
+        "naam": "Diverticulitis",
+        "beschrijving": "Ontsteking of infectie van divertikels in de dikke darm, wat leidt tot buikpijn, koorts en veranderingen in de stoelgang."
+    },
+    {
+        "naam": "Menstruatiestoornissen",
+        "beschrijving": "Abnormale patronen in de menstruatiecyclus, zoals onregelmatige menstruatie, hevige bloedingen of het uitblijven van menstruatie."
+    },
+    {
+        "naam": "Prostaatkanker",
+        "beschrijving": "Een vorm van kanker die ontstaat in de prostaat, een klier die deel uitmaakt van het mannelijk voortplantingssysteem, vaak gekenmerkt door moeite met plassen en bloed in de urine."
+    },
+    {
+        "naam": "Dermatitis",
+        "beschrijving": "Ontsteking van de huid die roodheid, jeuk, zwelling en blaarvorming kan veroorzaken, vaak veroorzaakt door allergieën of irritanten."
+    },
+    {
+        "naam": "Borstpijn (Angina Pectoris)",
+        "beschrijving": "Pijn of ongemak op de borst veroorzaakt door onvoldoende bloedtoevoer naar het hart, vaak een symptoom van coronair hartziekte."
+    },
+    {
+        "naam": "Schildklieritis",
+        "beschrijving": "Ontsteking van de schildklier, wat kan leiden tot tijdelijke veranderingen in de schildklierfunctie en symptomen zoals pijn in de hals en koorts."
+    },
+    {
+        "naam": "Bursitis",
+        "beschrijving": "Ontsteking van een slijmbeurs (bursa), meestal in een gewricht, wat leidt tot pijn en beperkte beweging."
+    },
+    {
+        "naam": "Pancreasinsufficiëntie",
+        "beschrijving": "Een aandoening waarbij de alvleesklier niet genoeg enzymen produceert om voedsel goed te verteren, wat leidt tot gewichtsverlies en malabsorptie."
+    },
+    {
+        "naam": "Migraine zonder Aura",
+        "beschrijving": "Een type migraine waarbij de hoofdpijn niet voorafgegaan wordt door neurologische symptomen zoals visuele verstoringen."
+    },
+    {
+        "naam": "Spina Bifida",
+        "beschrijving": "Een aangeboren defect waarbij de wervelkolom en het ruggenmerg zich niet volledig ontwikkelen, wat kan leiden tot fysieke en neurologische complicaties."
+    },
+    {
+        "naam": "Aangeboren Hartafwijking",
+        "beschrijving": "Een structurele afwijking van het hart die aanwezig is bij de geboorte, wat kan variëren van mild tot levensbedreigend."
+    },
+    {
+        "naam": "Glaucoom",
+        "beschrijving": "Een oogziekte die schade toebrengt aan de oogzenuw, vaak geassocieerd met verhoogde oogdruk, wat kan leiden tot verlies van gezichtsvermogen."
+    },
+    {
+        "naam": "Cystitis",
+        "beschrijving": "Een ontsteking van de blaas, meestal veroorzaakt door een bacteriële infectie, wat leidt tot pijn bij het plassen en frequente aandrang om te plassen."
+    },
+    {
+        "naam": "Spierziekten",
+        "beschrijving": "Een groep aandoeningen die de spieren aantasten, wat leidt tot spierzwakte, spasticiteit en verminderde spierfunctie."
+    },
+    {
+        "naam": "Migraine met Aura",
+        "beschrijving": "Een type migraine waarbij de hoofdpijn voorafgegaan wordt door neurologische symptomen zoals visuele verstoringen, tintelingen of spraakproblemen."
+    },
+    {
+        "naam": "Morbus Crohn",
+        "beschrijving": "Een chronische inflammatoire darmziekte die elke laag van het maagdarmkanaal kan aantasten, wat leidt tot buikpijn, diarree en gewichtsverlies."
+    },
+    {
+        "naam": "Cushing's Disease",
+        "beschrijving": "Een specifieke vorm van het Cushing-syndroom veroorzaakt door een tumor in de hypofyse die overmatige productie van ACTH stimuleert."
+    },
+    {
+        "naam": "Gastritis",
+        "beschrijving": "Ontsteking van het maagslijmvlies, vaak veroorzaakt door infecties, overmatig alcoholgebruik of langdurig gebruik van NSAID's, wat leidt tot maagpijn en misselijkheid."
+    },
+    {
+        "naam": "Diverticulose",
+        "beschrijving": "De aanwezigheid van divertikels (kleine uitstulpingen) in de dikke darm zonder ontsteking, vaak asymptomatisch maar kan leiden tot diverticulitis."
+    },
+    {
+        "naam": "Hartklepaandoeningen",
+        "beschrijving": "Aandoeningen die de hartkleppen aantasten, wat kan leiden tot problemen zoals lekkende of vernauwde kleppen en verminderde hartfunctie."
+    },
+    {
+        "naam": "Spina Ventosa",
+        "beschrijving": "Een vorm van tuberculose die de botten aantast, vaak leidend tot zwelling en vervorming van de aangetaste botten."
+    },
+    {
+        "naam": "Genu Valgum (Knock-Knees)",
+        "beschrijving": "Een standafwijking van de knieën waarbij de knieën naar elkaar toe buigen en de enkels uit elkaar staan."
+    },
+    {
+        "naam": "Hyperlipidemie",
+        "beschrijving": "Een aandoening gekenmerkt door verhoogde niveaus van lipiden (zoals cholesterol en triglyceriden) in het bloed, wat het risico op hartziekten verhoogt."
+    },
+    {
+        "naam": "Epilepsie (Absence Seizures)",
+        "beschrijving": "Een subtype van epilepsie gekenmerkt door korte periodes van bewusteloosheid of 'afwezigheid', vaak zonder convulsies."
+    },
+    {
+        "naam": "Acuut Renale Insufficiëntie",
+        "beschrijving": "Een plotselinge daling van de nierfunctie, wat leidt tot ophoping van afvalstoffen en vocht in het lichaam."
+    },
+    {
+        "naam": "Cholesterol Gallstones",
+        "beschrijving": "Stenen die zich vormen in de galblaas uit cholesterol, wat kan leiden tot pijn, infecties en obstructie van de galwegen."
+    },
+    {
+        "naam": "Vasculitis",
+        "beschrijving": "Ontsteking van bloedvaten, wat kan leiden tot beschadiging van de vaatwanden en verminderde bloedstroom naar organen en weefsels."
+    },
+    {
+        "naam": "Periode pijn (Dysmenorroe)",
+        "beschrijving": "Pijn en krampen in de onderbuik voorafgaand aan of tijdens de menstruatie, variërend van mild tot ernstig."
+    },
+    {
+        "naam": "Appendicitis",
+        "beschrijving": "Ontsteking van de appendix, wat leidt tot acute buikpijn, meestal vereist het chirurgisch verwijderen van de appendix."
+    },
+    {
+        "naam": "Ziekte van Huntington",
+        "beschrijving": "Een erfelijke neurodegeneratieve aandoening die leidt tot progressieve motorische, cognitieve en psychiatrische symptomen."
+    },
+    {
+        "naam": "Herniated Disc",
+        "beschrijving": "Een aandoening waarbij de gelachtige kern van een tussenwervelschijf door de buitenste vezelring breekt, wat druk kan uitoefenen op zenuwen en pijn veroorzaakt."
+    },
+    {
+        "naam": "Acuut Pancreasinsufficiëntie",
+        "beschrijving": "Een plotselinge vermindering van de alvleesklierfunctie, wat leidt tot problemen met de spijsvertering en absorptie van voedingsstoffen."
+    },
+    {
+        "naam": "Cystitis Interstitialis",
+        "beschrijving": "Een chronische ontsteking van de blaaswand zonder infectie, wat leidt tot frequente en pijnlijke aandrang om te plassen."
+    },
+    {
+        "naam": "Narcolepsie met Kataplexie",
+        "beschrijving": "Een type narcolepsie waarbij episodes van spierzwakte of -verlamming optreden als reactie op sterke emoties."
+    },
+    {
+        "naam": "Herpes Simplex",
+        "beschrijving": "Een virale infectie die huid- en slijmvlieslaesies veroorzaakt, vaak rond de mond of geslachtsdelen."
+    },
+    {
+        "naam": "Anorexia Nervosa",
+        "beschrijving": "Een eetstoornis gekenmerkt door een intense angst om aan te komen, wat leidt tot extreme gewichtsverlies en gevaarlijke gewoonten om gewicht te verliezen."
+    },
+    {
+        "naam": "Bulimia Nervosa",
+        "beschrijving": "Een eetstoornis gekenmerkt door herhaalde episodes van eetbuien gevolgd door compensatoire gedragingen zoals braken, vasten of overmatige lichaamsbeweging."
+    },
+    {
+        "naam": "Bronchiolitis",
+        "beschrijving": "Een ontsteking van de kleine luchtwegen in de longen, vaak veroorzaakt door virale infecties, wat leidt tot hoesten, piepende ademhaling en ademhalingsmoeilijkheden."
+    },
+    {
+        "naam": "Hernia Diaphragma",
+        "beschrijving": "Een aandoening waarbij een deel van de maag of andere organen omhoog schuiven naar de borstholte door een opening in het middenrif."
+    },
+    {
+        "naam": "Chondrosarcoom",
+        "beschrijving": "Een type botkanker dat ontstaat in het kraakbeen, wat leidt tot pijn en zwelling in het aangetaste gebied."
+    },
+    {
+        "naam": "Discus Hernia",
+        "beschrijving": "Een aandoening waarbij de tussenwervelschijf uitpuilt en druk uitoefent op zenuwen, wat leidt tot rugpijn en mogelijk uitstralende pijn naar de ledematen."
+    },
+    {
+        "naam": "Leber's Hereditary Optic Neuropathy",
+        "beschrijving": "Een mitochondriale aandoening die leidt tot plotseling verlies van centrale visie door schade aan de oogzenuw."
+    },
+    {
+        "naam": "Osteomyelitis",
+        "beschrijving": "Een botinfectie die kan leiden tot pijn, zwelling, roodheid en soms koorts, vaak veroorzaakt door bacteriën."
+    },
+    {
+        "naam": "Amyotrofische Laterale Sclerose (ALS)",
+        "beschrijving": "Een progressieve neurodegeneratieve ziekte die de zenuwcellen in de hersenen en het ruggenmerg aantast, wat leidt tot spierzwakte en verlamming."
+    },
+    {
+        "naam": "Chronic Fatigue Syndrome (CFS)",
+        "beschrijving": "Een complexe aandoening gekenmerkt door extreme vermoeidheid die niet verbetert met rust en die verergert bij fysieke of mentale activiteit."
+    },
+    {
+        "naam": "Idiopathische Longfibrose",
+        "beschrijving": "Een progressieve longaandoening zonder bekende oorzaak, gekenmerkt door littekenvorming in de longen en ademnood."
+    },
+    {
+        "naam": "Acute Bronchitis",
+        "beschrijving": "Een tijdelijke ontsteking van de luchtwegen in de longen, vaak veroorzaakt door virale infecties, wat leidt tot hoesten en ademhalingsproblemen."
+    },
+    {
+        "naam": "Vitiligo",
+        "beschrijving": "Een huidziekte waarbij pigmentcellen worden vernietigd, wat leidt tot witte vlekken op de huid."
+    },
+    {
+        "naam": "Lymfomen",
+        "beschrijving": "Een groep van bloedkankers die ontstaan in het lymfestelsel, wat leidt tot symptomen zoals gezwollen lymfeklieren, koorts en gewichtsverlies."
+    },
+    {
+        "naam": "Chondromalacie Patellae",
+        "beschrijving": "Verslapping of beschadiging van het kraakbeen onder de knieschijf, wat leidt tot kniepijn en knarsende geluiden bij beweging."
+    },
+    {
+        "naam": "Kataract",
+        "beschrijving": "Een vertroebeling van de ooglens, wat leidt tot verminderde gezichtshelderheid en, indien niet behandeld, blindheid."
+    },
+    {
+        "naam": "Endocarditis",
+        "beschrijving": "Een infectie van het binnenste membraan van het hart (endocardium), vaak veroorzaakt door bacteriën, wat leidt tot koorts, hartgeruis en vermoeidheid."
+    },
+    {
+        "naam": "Pneumothorax Spontaan",
+        "beschrijving": "Een plotselinge inzakking van de long zonder duidelijke oorzaak, wat leidt tot ademhalingsproblemen en pijn op de borst."
+    },
+    {
+        "naam": "Schildklierectomie Complicaties",
+        "beschrijving": "Complicaties na chirurgische verwijdering van de schildklier, zoals hypocalciëmie, schade aan de stembanden en infecties."
+    },
+    {
+        "naam": "Dermatofytose (Ringworm)",
+        "beschrijving": "Een schimmelinfectie van de huid, haar of nagels, gekenmerkt door ronde, jeukende, rode plekken."
+    },
+    {
+        "naam": "Incontinentie Urinair",
+        "beschrijving": "Onvrijwillig verlies van urine, wat kan variëren van subtiele lekkages tot volledige controleverlies over de blaas."
+    },
+    {
+        "naam": "Systemische Aspergillose",
+        "beschrijving": "Een ernstige schimmelinfectie die verschillende organen kan aantasten, vaak bij mensen met een verzwakt immuunsysteem."
+    },
+    {
+        "naam": "Tourette Syndroom",
+        "beschrijving": "Een neurologische aandoening gekenmerkt door onvrijwillige bewegingen en vocalisaties, bekend als tics."
+    },
+    {
+        "naam": "Hartaandoeningen bij Sporters",
+        "beschrijving": "Aandoeningen zoals hypertrofische cardiomyopathie die risico's met zich meebrengen bij fysieke inspanning."
+    },
+    {
+        "naam": "Cervicale Spondylose",
+        "beschrijving": "Degeneratieve veranderingen in de nekwervels en tussenwervelschijven, wat leidt tot nekpijn en soms zenuwcompressie."
+    },
+    {
+        "naam": "Cervicitis",
+        "beschrijving": "Ontsteking van de baarmoederhals, vaak veroorzaakt door infecties zoals chlamydia of gonorroe."
+    },
+    {
+        "naam": "Laryngitis",
+        "beschrijving": "Ontsteking van het strottenhoofd, wat leidt tot heesheid, verlies van stem en keelpijn."
+    },
+    {
+        "naam": "Cholecystitis",
+        "beschrijving": "Ontsteking van de galblaas, vaak veroorzaakt door galstenen, wat leidt tot buikpijn, koorts en misselijkheid."
+    },
+    {
+        "naam": "Hemolytische Anemie",
+        "beschrijving": "Een type anemie waarbij rode bloedcellen sneller worden afgebroken dan ze worden aangemaakt, wat leidt tot vermoeidheid en bleekheid."
+    },
+    {
+        "naam": "Bronchiectasis",
+        "beschrijving": "Een aandoening waarbij de luchtwegen permanent verwijden en ontstoken raken, wat leidt tot chronische hoest en sputumproductie."
+    },
+    {
+        "naam": "Acuut Lymfatisch Leukemie",
+        "beschrijving": "Een snelle vorm van leukemie die zich ontwikkelt vanuit onrijpe lymfocyten, vaak bij kinderen."
+    },
+    {
+        "naam": "Hypoglykemie",
+        "beschrijving": "Een aandoening waarbij de bloedglucosewaarden te laag zijn, wat leidt tot symptomen zoals zweten, beven, verwarring en in ernstige gevallen bewusteloosheid."
+    },
+    {
+        "naam": "Chondroepifysitis",
+        "beschrijving": "Ontsteking van de groeischijven in de botten, vaak voorkomend bij adolescenten en leidend tot pijn en groei-gerelateerde klachten."
+    },
+    {
+        "naam": "Cervicale Radiculopathie",
+        "beschrijving": "Compressie of irritatie van een zenuwwortel in de nek, wat leidt tot pijn, gevoelloosheid of zwakte in de armen."
+    },
+    {
+        "naam": "Kanker van de Luchtpijp",
+        "beschrijving": "Een zeldzame vorm van kanker die ontstaat in de luchtpijp, gekenmerkt door hoesten, ademnood en gewichtsverlies."
+    },
+    {
+        "naam": "Multiple Endocrine Neoplasia",
+        "beschrijving": "Een groep erfelijke aandoeningen die leiden tot tumoren in verschillende endocriene klieren, zoals de schildklier, bijnieren en alvleesklier."
+    },
+    {
+        "naam": "Pancreaskanker",
+        "beschrijving": "Een agressieve vorm van kanker die in de alvleesklier ontstaat, vaak laat gediagnosticeerd en geassocieerd met buikpijn, gewichtsverlies en geelzucht."
+    },
+    {
+        "naam": "Rectale Prolaps",
+        "beschrijving": "Een aandoening waarbij het rectum uit de anus uitpuilt, wat leidt tot ongemak, pijn en mogelijke incontinentie."
+    },
+    {
+        "naam": "Spina Bifida",
+        "beschrijving": "Een aangeboren defect waarbij de wervelkolom en het ruggenmerg zich niet volledig ontwikkelen, wat kan leiden tot fysieke en neurologische complicaties."
+    },
+    {
+        "naam": "Morbus Parkinson",
+        "beschrijving": "Een progressieve neurologische aandoening die beweging coördineert, gekenmerkt door tremoren, stijfheid, traagheid van beweging en balansproblemen."
+    },
+    {
+        "naam": "Hypogonadisme",
+        "beschrijving": "Een aandoening waarbij de geslachtsklieren niet voldoende geslachtshormonen produceren, wat leidt tot verminderde seksuele functie en ontwikkeling."
+    },
+    {
+        "naam": "Retinitis Pigmentosa",
+        "beschrijving": "Een groep erfelijke oogziekten die leiden tot degeneratie van het netvlies, wat resulteert in geleidelijk verlies van gezichtsvermogen."
+    },
+    {
+        "naam": "Cervicale Myelopathie",
+        "beschrijving": "Compressie van het ruggenmerg in de nek, wat leidt tot symptomen zoals zwakte, gevoelloosheid en verminderde coördinatie in de ledematen."
+    },
+    {
+        "naam": "Adrenocorticotropin (ACTH) Overproductie",
+        "beschrijving": "Een hormonale aandoening waarbij de hypofyse te veel ACTH produceert, wat kan leiden tot Cushing-syndroom."
+    },
+    {
+        "naam": "Acuut Gynaecologische Infecties",
+        "beschrijving": "Snelle ontwikkeling van infecties in het vrouwelijke voortplantingssysteem, wat leidt tot pijn, koorts en andere systemische symptomen."
+    },
+    {
+        "naam": "Postpartum Depressie",
+        "beschrijving": "Een ernstige vorm van depressie die optreedt na de bevalling, gekenmerkt door intense verdriet, angst en verminderde functionaliteit."
+    },
+    {
+        "naam": "Hypopituitarisme",
+        "beschrijving": "Een aandoening waarbij de hypofyse niet genoeg van één of meer van haar hormonen produceert, wat leidt tot diverse hormonale tekorten."
+    },
+    {
+        "naam": "Atopische Dermatitis",
+        "beschrijving": "Een vorm van eczeem die wordt gekenmerkt door chronische, jeukende, ontstoken huiduitslag, vaak geassocieerd met allergieën."
+    },
+    {
+        "naam": "Myocarditis",
+        "beschrijving": "Ontsteking van de hartspier, vaak veroorzaakt door virale infecties, wat kan leiden tot hartfalen en hartritmestoornissen."
+    },
+    {
+        "naam": "Scoliose",
+        "beschrijving": "Een abnormale kromming van de wervelkolom, wat kan leiden tot rugpijn, verminderde longfunctie en esthetische veranderingen."
+    },
+    {
+        "naam": "Kanker van de Lever",
+        "beschrijving": "Een vorm van kanker die begint in de lever, vaak geassocieerd met levercirrose en hepatitis-infecties."
+    },
+    {
+        "naam": "Interstitiële Longziekte",
+        "beschrijving": "Een groep longaandoeningen die het interstitium van de longen aantasten, wat leidt tot littekenvorming en ademnood."
+    },
+    {
+        "naam": "Acuut Gastro-enteritis",
+        "beschrijving": "Een plotselinge ontsteking van de maag en darmen, meestal veroorzaakt door virale of bacteriële infecties, wat leidt tot braken en diarree."
+    },
+    {
+        "naam": "Hemochromatose",
+        "beschrijving": "Een erfelijke aandoening waarbij het lichaam te veel ijzer absorbeert, wat leidt tot ijzeroverbelasting en schade aan organen zoals de lever en het hart."
+    },
+    {
+        "naam": "Sjogren's Syndrome",
+        "beschrijving": "Een auto-immuunziekte die voornamelijk de speeksel- en traanklieren aantast, wat leidt tot droge mond en droge ogen."
+    },
+    {
+        "naam": "Bursitis Olecrani",
+        "beschrijving": "Ontsteking van de slijmbeurs bij de elleboog, wat leidt tot pijn en zwelling aan de achterkant van de elleboog."
+    },
+    {
+        "naam": "Cervicale Hernia",
+        "beschrijving": "Een aandoening waarbij een tussenwervelschijf in de nek uitpuilt, wat kan leiden tot pijn, gevoelloosheid en zwakte in de armen."
+    },
+    {
+        "naam": "Anterieure Meningitis",
+        "beschrijving": "Ontsteking van de hersenvliezen aan de voorkant, vaak veroorzaakt door bacteriële infecties, wat leidt tot hoofdpijn, koorts en nekstijfheid."
+    },
+    {
+        "naam": "Spleenfunctiestoornis",
+        "beschrijving": "Een aandoening waarbij de milt niet goed functioneert, wat kan leiden tot verhoogde vatbaarheid voor infecties en bloedafwijkingen."
+    },
+    {
+        "naam": "Acuut Otitis Media",
+        "beschrijving": "Een plotselinge ontsteking van het middenoor, vaak veroorzaakt door bacteriële infecties, wat leidt tot oorpijn en soms koorts."
+    },
+    {
+        "naam": "Disautonomia",
+        "beschrijving": "Een groep aandoeningen waarbij het autonome zenuwstelsel niet goed functioneert, wat leidt tot problemen met hartslag, bloeddruk en spijsvertering."
+    },
+    {
+        "naam": "Cushing's Syndrome",
+        "beschrijving": "Een hormonale aandoening veroorzaakt door langdurige blootstelling aan hoge niveaus van cortisol, wat leidt tot symptomen zoals gewichtstoename, dunne huid en hoge bloeddruk."
+    },
+    {
+        "naam": "Hyperthyreoïdie",
+        "beschrijving": "Een aandoening waarbij de schildklier te veel schildklierhormonen produceert, wat leidt tot symptomen zoals gewichtsverlies, snelle hartslag, zweten en nervositeit."
+    },
+    {
+        "naam": "Periostitis",
+        "beschrijving": "Ontsteking van het periost (het bindweefsel rond botten), vaak veroorzaakt door overbelasting of infectie, wat leidt tot pijn en zwelling."
+    },
+    {
+        "naam": "Amyloïdose",
+        "beschrijving": "Een zeldzame aandoening waarbij abnormale eiwitafzettingen (amyloïden) zich ophopen in organen en weefsels, wat hun functie belemmert."
+    },
+    {
+        "naam": "Chondritis",
+        "beschrijving": "Ontsteking van het kraakbeen, wat leidt tot pijn, zwelling en stijfheid in de aangetaste gebieden."
+    },
+    {
+        "naam": "Hypogammaglobulinemie",
+        "beschrijving": "Een aandoening waarbij het lichaam niet genoeg antilichamen produceert, wat leidt tot verhoogde vatbaarheid voor infecties."
+    },
+    {
+        "naam": "Hyperlipidemie",
+        "beschrijving": "Een aandoening gekenmerkt door verhoogde niveaus van lipiden (zoals cholesterol en triglyceriden) in het bloed, wat het risico op hartziekten verhoogt."
+    },
+    {
+        "naam": "Rheumatoïde Artritis",
+        "beschrijving": "Een auto-immuunziekte die ontsteking van de gewrichten veroorzaakt, wat leidt tot pijn, zwelling, stijfheid en uiteindelijk gewrichtsdeformatie."
+    },
+    {
+        "naam": "Nephrotisch Syndroom",
+        "beschrijving": "Een groep symptomen die optreden als gevolg van schade aan de glomeruli in de nieren, wat leidt tot eiwitverlies in de urine, vochtretentie en hoge cholesterolwaarden."
+    },
+    {
+        "naam": "Polycysteus Nier Syndroom",
+        "beschrijving": "Een erfelijke aandoening waarbij zich meerdere cysten vormen in de nieren, wat leidt tot nierfunctiestoornissen en hoge bloeddruk."
+    },
+    {
+        "naam": "Hemorragische Diathese",
+        "beschrijving": "Een aandoening die de bloedstolling belemmert, wat leidt tot overmatige bloedingen bij verwondingen of spontaan."
+    },
+    {
+        "naam": "Acuut Renal Failure",
+        "beschrijving": "Een plotselinge vermindering van de nierfunctie, wat leidt tot ophoping van afvalstoffen en vocht in het lichaam."
+    },
+    {
+        "naam": "Hypertensieve Hartziekte",
+        "beschrijving": "Hartziekten veroorzaakt door langdurige hoge bloeddruk, wat kan leiden tot hartfalen, coronaire hartziekte en andere complicaties."
+    },
+    {
+        "naam": "Chondrosarcoom",
+        "beschrijving": "Een type botkanker dat ontstaat in het kraakbeen, wat leidt tot pijn en zwelling in het aangetaste gebied."
+    },
+    {
+        "naam": "Endometrioom",
+        "beschrijving": "Een type cyste dat zich vormt in de eierstokken als gevolg van endometriose, wat kan leiden tot pijn en onvruchtbaarheid."
+    },
+    {
+        "naam": "Kanker van de Maag",
+        "beschrijving": "Een vorm van kanker die ontstaat in de maagwand, vaak geassocieerd met symptomen zoals buikpijn, misselijkheid en gewichtsverlies."
+    },
+    {
+        "naam": "Rhabdomyolyse",
+        "beschrijving": "Een aandoening waarbij beschadigde spierweefsels hun inhoud afgeven in de bloedbaan, wat kan leiden tot nierbeschadiging en andere complicaties."
+    },
+    {
+        "naam": "Torticollis",
+        "beschrijving": "Een aandoening waarbij de nek zijwaarts draait en omhoog of omlaag buigt, wat leidt tot pijn en beperkte bewegingsvrijheid."
+    },
+    {
+        "naam": "Adrenomedullair Tumor",
+        "beschrijving": "Een zeldzame tumor die ontstaat in het bijniermerg, wat leidt tot overproductie van hormonen zoals adrenaline."
+    },
+    {
+        "naam": "Pneumonia",
+        "beschrijving": "Een longinfectie die de alveoli (longblaasjes) vult met vocht of pus, wat leidt tot hoesten, koorts en ademhalingsmoeilijkheden."
+    },
+    {
+        "naam": "Otitis Externa",
+        "beschrijving": "Een ontsteking van de gehoorgang, vaak veroorzaakt door bacteriële infecties of irritatie, wat leidt tot oorpijn en jeuk."
+    },
+    {
+        "naam": "Sinusitis",
+        "beschrijving": "Ontsteking van de sinussen, vaak veroorzaakt door infecties, wat leidt tot hoofdpijn, drukgevoel in het gezicht en verstopte neus."
+    },
+    {
+        "naam": "Lymfangitis",
+        "beschrijving": "Ontsteking van de lymfevaten, vaak veroorzaakt door bacteriële infecties, wat leidt tot roodheid, zwelling en pijn langs de lymfebanen."
+    },
+    {
+        "naam": "Rhabdomyolysis",
+        "beschrijving": "Een ernstige aandoening waarbij spierweefsel beschadigd raakt en myoglobine in het bloed vrijkomt, wat kan leiden tot nierfalen."
+    },
+    {
+        "naam": "Pancreas Insufficiency",
+        "beschrijving": "Een aandoening waarbij de alvleesklier niet genoeg enzymen produceert om voedsel goed te verteren, wat leidt tot gewichtsverlies en malabsorptie."
+    },
+    {
+        "naam": "Meningitis",
+        "beschrijving": "Ontsteking van de hersenvliezen, vaak veroorzaakt door bacteriële of virale infecties, wat leidt tot hoofdpijn, koorts en nekstijfheid."
+    },
+    {
+        "naam": "Glaucoma",
+        "beschrijving": "Een oogziekte die schade toebrengt aan de oogzenuw, vaak geassocieerd met verhoogde oogdruk, wat kan leiden tot verlies van gezichtsvermogen."
+    },
+    {
+        "naam": "Ventricular Tachycardia",
+        "beschrijving": "Een snelle hartritmeafwijking die ontstaat in de ventrikels, wat kan leiden tot hartkloppingen, duizeligheid en in ernstige gevallen hartstilstand."
+    },
+    {
+        "naam": "Paget's Disease of Bone",
+        "beschrijving": "Een chronische aandoening die de normale cyclus van botafbraak en -opbouw verstoort, wat leidt tot verzwakking en vervorming van de botten."
+    },
+    {
+        "naam": "Hepatische Encefalopathie",
+        "beschrijving": "Een aandoening waarbij de lever niet goed functioneert, waardoor toxines zich ophopen in de hersenen en leiden tot verwardheid, slaperigheid en coma."
+    },
+    {
+        "naam": "Ankylosing Spondylitis",
+        "beschrijving": "Een chronische ontstekingsziekte die voornamelijk de wervelkolom en de heupgewrichten aantast, wat leidt tot pijn en stijfheid."
+    },
+    {
+        "naam": "Sjogren's Syndrome",
+        "beschrijving": "Een auto-immuunziekte die voornamelijk de speeksel- en traanklieren aantast, wat leidt tot droge mond en droge ogen."
+    },
+    {
+        "naam": "Acuut Myocarditis",
+        "beschrijving": "Ontsteking van de hartspier, vaak veroorzaakt door virale infecties, wat kan leiden tot hartfalen en hartritmestoornissen."
+    },
+    {
+        "naam": "Spondylolisthesis",
+        "beschrijving": "Een aandoening waarbij een wervel in de wervelkolom verschuift ten opzichte van de aangrenzende wervels, wat leidt tot rugpijn en zenuwcompressie."
+    },
+    {
+        "naam": "Preeclampsie",
+        "beschrijving": "Een complicatie tijdens de zwangerschap gekenmerkt door hoge bloeddruk en tekenen van schade aan andere organen, vaak de nieren."
+    },
+    {
+        "naam": "Hypersensitiviteit Reactions",
+        "beschrijving": "Overgevoeligheidsreacties van het immuunsysteem op allergenen, wat kan leiden tot symptomen zoals jeuk, zwelling en ademhalingsproblemen."
+    },
+    {
+        "naam": "HIV-assozieerde Kaposi Sarcoom",
+        "beschrijving": "Een type kanker dat vaak voorkomt bij mensen met een verzwakt immuunsysteem door HIV-infectie, gekenmerkt door bruine of paarse huidlaesies."
+    },
+    {
+        "naam": "Endocriene Neoplasma",
+        "beschrijving": "Tumoren die ontstaan in endocriene klieren, wat leidt tot overproductie van hormonen en diverse hormonale symptomen."
+    },
+    {
+        "naam": "Acuut Dialyse",
+        "beschrijving": "Een noodprocedure waarbij de nierfunctie tijdelijk wordt vervangen bij acuut nierfalen, wat helpt bij het verwijderen van afvalstoffen en overtollig vocht."
+    },
+    {
+        "naam": "Vascular Dementia",
+        "beschrijving": "Een vorm van dementie veroorzaakt door verminderde bloedtoevoer naar de hersenen, wat leidt tot cognitieve achteruitgang en geheugenverlies."
+    },
+    {
+        "naam": "Necrotizing Fasciitis",
+        "beschrijving": "Een ernstige bacteriële infectie die snel het bindweefsel en de huid aantast, wat leidt tot ernstige weefselvernietiging en vereist onmiddellijke medische interventie."
+    },
+    {
+        "naam": "Obstructieve Hartaandoeningen",
+        "beschrijving": "Aandoeningen waarbij de bloedstroom naar het hart wordt belemmerd, wat kan leiden tot angina pectoris en hartaanvallen."
+    },
+    {
+        "naam": "Basocellulair Carcinoom",
+        "beschrijving": "Een veelvoorkomende vorm van huidkanker die ontstaat in de basale cellen van de huid, gekenmerkt door langzaam groeiende, onschadelijke tumoren."
+    },
+    {
+        "naam": "Contact Dermatitis",
+        "beschrijving": "Een huidontsteking veroorzaakt door direct contact met een irriterende stof of allergeen, wat leidt tot roodheid, jeuk en zwelling."
+    },
+    {
+        "naam": "Legg-Calvé-Perthes Disease",
+        "beschrijving": "Een aandoening bij kinderen waarbij de bloedtoevoer naar het dijbeen (femur) tijdelijk wordt onderbroken, wat leidt tot botafbraak en vervorming."
+    },
+    {
+        "naam": "Cystische Fibrose",
+        "beschrijving": "Een erfelijke aandoening die de longen en het spijsverteringsstelsel aantast, gekenmerkt door dikke slijmen die luchtwegen en organen kunnen verstoppen."
+    },
+    {
+        "naam": "Glomerulonefritis",
+        "beschrijving": "Ontsteking van de glomeruli in de nieren, wat leidt tot bloed in de urine, eiwitverlies en verminderde nierfunctie."
+    },
+    {
+        "naam": "Staphylococcal Infections",
+        "beschrijving": "Infecties veroorzaakt door Staphylococcus-bacteriën, wat kan leiden tot huidinfecties, bloedvergiftiging en longontsteking."
+    },
+    {
+        "naam": "Hypogonadotrof Hypogonadisme",
+        "beschrijving": "Een aandoening waarbij de hypofyse niet genoeg gonadotroop hormonen produceert, wat leidt tot verminderde geslachtshormoonproductie."
+    },
+    {
+        "naam": "Varices",
+        "beschrijving": "Uitgezette en gezwollen aderen, vaak in de benen, wat kan leiden tot pijn, zwelling en huidproblemen."
+    },
+    {
+        "naam": "Kanker van de Alvleesklier",
+        "beschrijving": "Een agressieve vorm van kanker die in de alvleesklier ontstaat, vaak laat gediagnosticeerd en geassocieerd met buikpijn, gewichtsverlies en geelzucht."
+    },
+    {
+        "naam": "Mastitis",
+        "beschrijving": "Ontsteking van het borstweefsel, vaak veroorzaakt door een infectie, wat leidt tot pijn, roodheid en zwelling in de borst."
+    },
+    {
+        "naam": "Eosinofiele Astma",
+        "beschrijving": "Een subtype van astma gekenmerkt door een hoge concentratie eosinofielen (een type witte bloedcellen) in de luchtwegen, wat leidt tot ontsteking en ademhalingsproblemen."
+    },
+    {
+        "naam": "Acuut Myocarditis",
+        "beschrijving": "Ontsteking van de hartspier, vaak veroorzaakt door virale infecties, wat kan leiden tot hartfalen en hartritmestoornissen."
+    },
+    {
+        "naam": "Hyperaldosteronisme",
+        "beschrijving": "Een aandoening waarbij de bijnieren te veel aldosteron produceren, wat leidt tot hoge bloeddruk en een verstoorde elektrolytenbalans."
+    },
+    {
+        "naam": "Mastocytose",
+        "beschrijving": "Een zeldzame aandoening waarbij het lichaam te veel mestcellen produceert, wat kan leiden tot anafylactische reacties, huiduitslag en buikpijn."
+    },
+    {
+        "naam": "Sjogren's Syndrome",
+        "beschrijving": "Een auto-immuunziekte die voornamelijk de speeksel- en traanklieren aantast, wat leidt tot droge mond en droge ogen."
+    },
+    {
+        "naam": "Leukocytose",
+        "beschrijving": "Een verhoogd aantal witte bloedcellen in het bloed, wat kan wijzen op infecties, ontstekingen of andere medische aandoeningen."
+    },
+    {
+        "naam": "Cervicitis",
+        "beschrijving": "Ontsteking van de baarmoederhals, vaak veroorzaakt door infecties zoals chlamydia of gonorroe."
+    },
+    {
+        "naam": "Neurofibromatose",
+        "beschrijving": "Een genetische aandoening die tumoren op de zenuwen veroorzaakt, wat kan leiden tot huidveranderingen, botafwijkingen en neurologische symptomen."
+    },
+    {
+        "naam": "Acute Glomerulonefritis",
+        "beschrijving": "Een plotselinge ontsteking van de glomeruli in de nieren, wat leidt tot bloed in de urine, eiwitverlies en verminderde nierfunctie."
+    },
+    {
+        "naam": "Cervicale Hernia",
+        "beschrijving": "Een aandoening waarbij een tussenwervelschijf in de nek uitpuilt, wat kan leiden tot pijn, gevoelloosheid en zwakte in de armen."
+    },
+    {
+        "naam": "Acuut Pancreatitis",
+        "beschrijving": "Ontsteking van de alvleesklier, vaak veroorzaakt door galstenen of overmatig alcoholgebruik, wat leidt tot buikpijn, misselijkheid en braken."
+    },
+    {
+        "naam": "Cataract (Kataract)",
+        "beschrijving": "Een vertroebeling van de ooglens, wat leidt tot verminderde gezichtshelderheid en, indien niet behandeld, blindheid."
+    },
+    {
+        "naam": "Urticaria (Netelroos)",
+        "beschrijving": "Een huidreactie gekenmerkt door jeukende, rode bulten of plaques, vaak veroorzaakt door allergische reacties of irriterende stoffen."
+    },
+    {
+        "naam": "Myocardinfarct",
+        "beschrijving": "Een hartaanval veroorzaakt door een plotselinge blokkade van een kransslagader, wat leidt tot beschadiging van de hartspier door zuurstoftekort."
+    },
+    {
+        "naam": "Gastro-enteritis",
+        "beschrijving": "Een ontsteking van de maag en darmen, vaak veroorzaakt door infecties, wat leidt tot braken, diarree en buikpijn."
+    },
+    {
+        "naam": "Cirrhose",
+        "beschrijving": "Een ernstige leveraandoening waarbij gezond leverweefsel wordt vervangen door littekenweefsel, wat de leverfunctie belemmert en kan leiden tot leverfalen."
+    },
+    {
+        "naam": "Spina Bifida",
+        "beschrijving": "Een aangeboren defect waarbij de wervelkolom en het ruggenmerg zich niet volledig ontwikkelen, wat kan leiden tot fysieke en neurologische complicaties."
+    },
+    {
+        "naam": "Cystitis",
+        "beschrijving": "Een ontsteking van de blaas, meestal veroorzaakt door een bacteriële infectie, wat leidt tot pijn bij het plassen en frequente aandrang om te plassen."
+    },
+    {
+        "naam": "Hyperthyreoïdie",
+        "beschrijving": "Een aandoening waarbij de schildklier te veel schildklierhormonen produceert, wat leidt tot symptomen zoals gewichtsverlies, snelle hartslag, zweten en nervositeit."
+    },
+    {
+        "naam": "Cerebrale Parese",
+        "beschrijving": "Een groep neurologische aandoeningen die de spiercoördinatie en beweging beïnvloeden, vaak veroorzaakt door schade aan de hersenen tijdens de zwangerschap of geboorte."
+    },
+    {
+        "naam": "Cervicale Spondylose",
+        "beschrijving": "Degeneratieve veranderingen in de nekwervels en tussenwervelschijven, wat leidt tot nekpijn en soms zenuwcompressie."
+    },
+    {
+        "naam": "Tardive Dyskinesie",
+        "beschrijving": "Een bewegingsstoornis gekenmerkt door onvrijwillige, repetitieve bewegingen, vaak veroorzaakt door langdurig gebruik van bepaalde antipsychotische medicijnen."
+    },
+    {
+        "naam": "Hyperparathyreoïdie",
+        "beschrijving": "Een aandoening waarbij de bijschildklieren te veel parathyroïdhormoon produceren, wat leidt tot verhoogde calciumspiegels in het bloed."
+    },
+    {
+        "naam": "Osteomyelitis",
+        "beschrijving": "Een botinfectie die kan leiden tot pijn, zwelling, roodheid en soms koorts, vaak veroorzaakt door bacteriën."
+    },
+    {
+        "naam": "Astma Bronchiale",
+        "beschrijving": "Een chronische ontstekingsziekte van de luchtwegen die leidt tot piepende ademhaling, kortademigheid, benauwdheid op de borst en hoesten."
+    },
+    {
+        "naam": "Hepatitis B",
+        "beschrijving": "Een virale infectie die de lever aantast, wat kan leiden tot leverontsteking, cirrose en leverkanker."
+    },
+    {
+        "naam": "Acuut Otitis Media",
+        "beschrijving": "Een plotselinge ontsteking van het middenoor, vaak veroorzaakt door bacteriële infecties, wat leidt tot oorpijn en soms koorts."
+    },
+    {
+        "naam": "Acuut Pericarditis",
+        "beschrijving": "Ontsteking van het pericardium (de buitenste laag van het hart), wat pijn op de borst en koorts kan veroorzaken."
+    },
+    {
+        "naam": "Laryngitis",
+        "beschrijving": "Ontsteking van het strottenhoofd, wat leidt tot heesheid, verlies van stem en keelpijn."
+    },
+    {
+        "naam": "Bursitis",
+        "beschrijving": "Ontsteking van een slijmbeurs (bursa), meestal in een gewricht, wat leidt tot pijn en beperkte beweging."
+    },
+    {
+        "naam": "Chondrodystrophie",
+        "beschrijving": "Een groep erfelijke aandoeningen die de ontwikkeling van kraakbeen en bot beïnvloeden, wat leidt tot groeivertraging en skeletafwijkingen."
+    },
+    {
+        "naam": "Phlebitis",
+        "beschrijving": "Ontsteking van een ader, vaak gepaard met pijn, roodheid en zwelling, meestal veroorzaakt door een bloedstolsel of infectie."
+    },
+    {
+        "naam": "Retinitis Pigmentosa",
+        "beschrijving": "Een groep erfelijke oogziekten die leiden tot degeneratie van het netvlies, wat resulteert in geleidelijk verlies van gezichtsvermogen."
+    },
+    {
+        "naam": "Hypoglykemie",
+        "beschrijving": "Een aandoening waarbij de bloedglucosewaarden te laag zijn, wat leidt tot symptomen zoals zweten, beven, verwarring en in ernstige gevallen bewusteloosheid."
+    },
+    {
+        "naam": "Renale Cell Carcinoom",
+        "beschrijving": "Een vorm van nierkanker die begint in de cellen van de nier, vaak geassocieerd met symptomen zoals bloed in de urine, flankpijn en gewichtsverlies."
+    },
+    {
+        "naam": "Serebrovasculair Accident (Stroke)",
+        "beschrijving": "Een plotselinge onderbreking van de bloedtoevoer naar de hersenen, wat leidt tot hersenbeschadiging, verlamming en cognitieve stoornissen."
+    },
+    {
+        "naam": "Dislipidemie",
+        "beschrijving": "Een aandoening waarbij er afwijkingen zijn in de niveaus van lipiden in het bloed, zoals verhoogd cholesterol en triglyceriden, wat het risico op hartziekten verhoogt."
+    },
+    {
+        "naam": "Cystitis",
+        "beschrijving": "Een ontsteking van de blaas, meestal veroorzaakt door een bacteriële infectie, wat leidt tot pijn bij het plassen en frequente aandrang om te plassen."
+    },
+    {
+        "naam": "Hepatitis A",
+        "beschrijving": "Een virale infectie die de lever aantast, vaak veroorzaakt door consumptie van besmet voedsel of water, wat leidt tot leverontsteking, misselijkheid en geelzucht."
+    },
+    {
+        "naam": "Hepatitis B",
+        "beschrijving": "Een virale infectie die de lever aantast, wat kan leiden tot leverontsteking, cirrose en leverkanker."
+    },
+    {
+        "naam": "Hypopituitarisme",
+        "beschrijving": "Een aandoening waarbij de hypofyse niet genoeg van één of meer van haar hormonen produceert, wat leidt tot diverse hormonale tekorten."
+    },
+    {
+        "naam": "Hyperparathyreoïdie",
+        "beschrijving": "Een aandoening waarbij de bijschildklieren te veel parathyroïdhormoon produceren, wat leidt tot verhoogde calciumspiegels in het bloed."
+    },
+    {
+        "naam": "Hypertensieve Hartziekte",
+        "beschrijving": "Hartziekten veroorzaakt door langdurige hoge bloeddruk, wat kan leiden tot hartfalen, coronaire hartziekte en andere complicaties."
+    },
+    {
+        "naam": "Pneumothorax",
+        "beschrijving": "Een aandoening waarbij lucht zich ophoopt in de pleuraholte, waardoor het long gedeeltelijk of volledig kan samenvallen, wat leidt tot ademnood en pijn op de borst."
+    },
+    {
+        "naam": "Cholecystitis",
+        "beschrijving": "Ontsteking van de galblaas, vaak veroorzaakt door galstenen, wat leidt tot buikpijn, koorts en misselijkheid."
+    },
+    {
+        "naam": "Kataract",
+        "beschrijving": "Een vertroebeling van de ooglens, wat leidt tot verminderde gezichtshelderheid en, indien niet behandeld, blindheid."
+    },
+    {
+        "naam": "Meningitis",
+        "beschrijving": "Ontsteking van de hersenvliezen, vaak veroorzaakt door bacteriële of virale infecties, wat leidt tot hoofdpijn, koorts en nekstijfheid."
+    },
+    {
+        "naam": "Chronic Kidney Disease (CKD)",
+        "beschrijving": "Een progressieve afname van de nierfunctie, wat kan leiden tot ophoping van afvalstoffen in het lichaam en uiteindelijk nierfalen."
+    },
+    {
+        "naam": "Pancreatitis",
+        "beschrijving": "Ontsteking van de alvleesklier, vaak veroorzaakt door galstenen of overmatig alcoholgebruik, wat leidt tot buikpijn, misselijkheid en braken."
+    },
+    {
+        "naam": "Endometriose",
+        "beschrijving": "Een chronische aandoening waarbij weefsel dat lijkt op het baarmoederslijmvlies buiten de baarmoeder groeit, wat pijn, onregelmatige menstruatie en vruchtbaarheidsproblemen kan veroorzaken."
+    },
+    {
+        "naam": "Hereditary Hemochromatosis",
+        "beschrijving": "Een erfelijke aandoening waarbij het lichaam te veel ijzer absorbeert, wat leidt tot ijzeroverbelasting en schade aan organen zoals de lever en het hart."
+    },
+    {
+        "naam": "Fibromyalgie",
+        "beschrijving": "Een chronische aandoening gekenmerkt door wijdverspreide pijn in spieren en bindweefsel, evenals vermoeidheid, slaapstoornissen en cognitieve problemen."
+    },
+    {
+        "naam": "Cholesterol Gallstones",
+        "beschrijving": "Stenen die zich vormen in de galblaas uit cholesterol, wat kan leiden tot pijn, infecties en obstructie van de galwegen."
+    },
+    {
+        "naam": "Chondromalacie Patellae",
+        "beschrijving": "Verslapping of beschadiging van het kraakbeen onder de knieschijf, wat leidt tot kniepijn en knarsende geluiden bij beweging."
+    },
+    {
+        "naam": "Lymfangitis",
+        "beschrijving": "Ontsteking van de lymfevaten, vaak veroorzaakt door bacteriële infecties, wat leidt tot roodheid, zwelling en pijn langs de lymfebanen."
+    },
+    {
+        "naam": "Idiopathische Pulmonale Fibrose",
+        "beschrijving": "Een progressieve longaandoening zonder bekende oorzaak, gekenmerkt door littekenvorming in de longen en ademnood."
+    },
+    {
+        "naam": "Acuut Bronchitis",
+        "beschrijving": "Een tijdelijke ontsteking van de luchtwegen in de longen, vaak veroorzaakt door virale infecties, wat leidt tot hoesten en ademhalingsproblemen."
+    },
+    {
+        "naam": "Nephrotisch Syndroom",
+        "beschrijving": "Een groep symptomen die optreden als gevolg van schade aan de glomeruli in de nieren, wat leidt tot eiwitverlies in de urine, vochtretentie en hoge cholesterolwaarden."
+    },
+    {
+        "naam": "Renale Cell Carcinoom",
+        "beschrijving": "Een vorm van nierkanker die begint in de cellen van de nier, vaak geassocieerd met symptomen zoals bloed in de urine, flankpijn en gewichtsverlies."
+    },
+    {
+        "naam": "Hypoglykemie",
+        "beschrijving": "Een aandoening waarbij de bloedglucosewaarden te laag zijn, wat leidt tot symptomen zoals zweten, beven, verwarring en in ernstige gevallen bewusteloosheid."
+    },
+    {
+        "naam": "Autisme Spectrum Stoornis (ASS)",
+        "beschrijving": "Een ontwikkelingsstoornis die sociale interactie, communicatie en gedrag beïnvloedt, vaak met repetitieve gedragingen en beperkte interesses."
+    },
+    {
+        "naam": "Spina Ventosa",
+        "beschrijving": "Een vorm van tuberculose die de botten aantast, vaak leidend tot zwelling en vervorming van de aangetaste botten."
+    },
+    {
+        "naam": "Hemophilia",
+        "beschrijving": "Een erfelijke bloedziekte die de bloedstolling belemmert, wat leidt tot overmatige bloedingen bij verwondingen of zelfs spontane bloedingen."
+    },
+    {
+        "naam": "Polycysteus Ovarium Syndroom (PCOS)",
+        "beschrijving": "Een hormonale aandoening bij vrouwen die wordt gekenmerkt door onregelmatige menstruatie, overmatige haargroei en cysten in de eierstokken."
+    },
+    {
+        "naam": "Hepatische Encefalopathie",
+        "beschrijving": "Een aandoening waarbij de lever niet goed functioneert, waardoor toxines zich ophopen in de hersenen en leiden tot verwardheid, slaperigheid en coma."
+    },
+    {
+        "naam": "Endocriene Hygiëne (Cushing's Disease)",
+        "beschrijving": "Een specifieke vorm van het Cushing-syndroom veroorzaakt door een tumor in de hypofyse die overmatige productie van ACTH stimuleert."
+    },
+    {
+        "naam": "Acuut Myocarditis",
+        "beschrijving": "Ontsteking van de hartspier, vaak veroorzaakt door virale infecties, wat kan leiden tot hartfalen en hartritmestoornissen."
+    },
+    {
+        "naam": "Hypopituitarisme",
+        "beschrijving": "Een aandoening waarbij de hypofyse niet genoeg van één of meer van haar hormonen produceert, wat leidt tot diverse hormonale tekorten."
+    },
+    {
+        "naam": "Spondylolisthesis",
+        "beschrijving": "Een aandoening waarbij een wervel in de wervelkolom verschuift ten opzichte van de aangrenzende wervels, wat leidt tot rugpijn en zenuwcompressie."
+    },
+    {
+        "naam": "Hernia Diaphragma",
+        "beschrijving": "Een aandoening waarbij een deel van de maag of andere organen omhoog schuiven naar de borstholte door een opening in het middenrif."
+    },
+    {
+        "naam": "Hyperaldosteronisme",
+        "beschrijving": "Een aandoening waarbij de bijnieren te veel aldosteron produceren, wat leidt tot hoge bloeddruk en een verstoorde elektrolytenbalans."
+    },
+    {
+        "naam": "Vitiligo",
+        "beschrijving": "Een huidziekte waarbij pigmentcellen worden vernietigd, wat leidt tot witte vlekken op de huid."
+    },
+    {
+        "naam": "Pneumonia",
+        "beschrijving": "Een longinfectie die de alveoli (longblaasjes) vult met vocht of pus, wat leidt tot hoesten, koorts en ademhalingsmoeilijkheden."
+    },
+    {
+        "naam": "Systemische Lupus Erythematosus",
+        "beschrijving": "Een auto-immuunziekte waarbij het immuunsysteem de eigen weefsels en organen aanvalt, wat kan leiden tot ontstekingen en schade aan de huid, gewrichten, nieren, hersenen en andere organen."
+    },
+    {
+        "naam": "Acuut Bronchitis",
+        "beschrijving": "Een tijdelijke ontsteking van de luchtwegen in de longen, vaak veroorzaakt door virale infecties, wat leidt tot hoesten en ademhalingsproblemen."
+    },
+    {
+        "naam": "Acuut Renal Failure",
+        "beschrijving": "Een plotselinge vermindering van de nierfunctie, wat leidt tot ophoping van afvalstoffen en vocht in het lichaam."
+    },
+    {
+        "naam": "Hernia Lumbaris",
+        "beschrijving": "Een aandoening waarbij een tussenwervelschijf in de onderrug uitpuilt, wat kan leiden tot pijn, gevoelloosheid en zwakte in de benen."
+    },
+    {
+        "naam": "Meningitis",
+        "beschrijving": "Ontsteking van de hersenvliezen, vaak veroorzaakt door bacteriële of virale infecties, wat leidt tot hoofdpijn, koorts en nekstijfheid."
+    },
+    {
+        "naam": "Pericarditis",
+        "beschrijving": "Ontsteking van het pericardium (de buitenste laag van het hart), wat pijn op de borst en koorts kan veroorzaken."
+    },
+    {
+        "naam": "Acuut Otitis Media",
+        "beschrijving": "Een plotselinge ontsteking van het middenoor, vaak veroorzaakt door bacteriële infecties, wat leidt tot oorpijn en soms koorts."
+    },
+    {
+        "naam": "Hepatitis C",
+        "beschrijving": "Een virale infectie die de lever aantast en kan leiden tot leverontsteking, cirrose en leverkanker."
+    },
+    {
+        "naam": "Chronic Obstructive Pulmonary Disease (COPD)",
+        "beschrijving": "Een progressieve longaandoening die de luchtstroom belemmert en ademnood veroorzaakt, vaak veroorzaakt door langdurige blootstelling aan irriterende stoffen zoals sigarettenrook."
+    },
+    {
+        "naam": "Amyotrofische Laterale Sclerose (ALS)",
+        "beschrijving": "Een progressieve neurodegeneratieve ziekte die de zenuwcellen in de hersenen en het ruggenmerg aantast, wat leidt tot spierzwakte en verlamming."
+    },
+    {
+        "naam": "Hyperlipidemie",
+        "beschrijving": "Een aandoening gekenmerkt door verhoogde niveaus van lipiden (zoals cholesterol en triglyceriden) in het bloed, wat het risico op hartziekten verhoogt."
+    },
+    {
+        "naam": "Polycysteus Nier Syndroom",
+        "beschrijving": "Een erfelijke aandoening waarbij zich meerdere cysten vormen in de nieren, wat leidt tot nierfunctiestoornissen en hoge bloeddruk."
+    },
+    {
+        "naam": "Schildklierkanker",
+        "beschrijving": "Een vorm van kanker die ontstaat in de schildklier, vaak gepaard gaand met knobbels in de hals, moeite met slikken en veranderingen in stem."
+    },
+    {
+        "naam": "Chondrodystrophie",
+        "beschrijving": "Een groep erfelijke aandoeningen die de ontwikkeling van kraakbeen en bot beïnvloeden, wat leidt tot groeivertraging en skeletafwijkingen."
+    },
+    {
+        "naam": "Lymfomen",
+        "beschrijving": "Een groep van bloedkankers die ontstaan in het lymfestelsel, wat leidt tot symptomen zoals gezwollen lymfeklieren, koorts en gewichtsverlies."
+    },
+    {
+        "naam": "Cervicale Myelopathie",
+        "beschrijving": "Compressie van het ruggenmerg in de nek, wat leidt tot symptomen zoals zwakte, gevoelloosheid en verminderde coördinatie in de ledematen."
+    },
+    {
+        "naam": "Acute Pancreatitis",
+        "beschrijving": "Ontsteking van de alvleesklier, vaak veroorzaakt door galstenen of overmatig alcoholgebruik, wat leidt tot buikpijn, misselijkheid en braken."
+    },
+    {
+        "naam": "Retinitis Pigmentosa",
+        "beschrijving": "Een groep erfelijke oogziekten die leiden tot degeneratie van het netvlies, wat resulteert in geleidelijk verlies van gezichtsvermogen."
+    },
+    {
+        "naam": "Kanker van de Alvleesklier",
+        "beschrijving": "Een agressieve vorm van kanker die in de alvleesklier ontstaat, vaak laat gediagnosticeerd en geassocieerd met buikpijn, gewichtsverlies en geelzucht."
+    }
+]
+
+
+# Definieer de lijsten
+frequenties = [
+    "één keer per dag",
+    "twee keer per dag",
+    "drie keer per dag",
+    "vier keer per dag",
+    "elke 6 uur",
+    "elke 8 uur",
+    "elke 12 uur",
+    "één keer per week",
+    "één keer per maand",
+    "elke 2 weken",
+    "elke 3 uur",
+    "één keer per nacht"
+]
+
+doseringen = [
+    "5 mg",
+    "10 mg",
+    "15 mg",
+    "20 mg",
+    "25 mg",
+    "50 mg",
+    "75 mg",
+    "100 mg",
+    "150 mg",
+    "200 mg",
+    "250 mg",
+    "500 mg"
+]
+
+toedieningswijzen = [
+    "orale inname (tablet/capsule)",
+    "injectie",
+    "transdermale patch",
+    "sublinguale inname",
+    "rectale toediening (suppositorium)",
+    "inhalatie",
+    "nasale spray",
+    "topische crème/gel",
+    "oculaire (oogdruppels)",
+    "otische (oordruppels)",
+    "intravenous (IV) infusie",
+    "intramusculaire (IM) injectie"
+]
+
+type_voorschriften = [
+    "receptvrij",
+    "receptplichtig",
+    "apotheekrecept",
+    "huisartsenrecept",
+    "specialistrecept",
+    "tandartsrecept",
+    "veeartsenrecept",
+    "recept met herhaalbaarheid",
+    "recept voor beperkt gebruik",
+    "elektronisch recept",
+    "papieren recept",
+    "tijdelijk voorschrift"
+]
+
 
 zorgverzekeraars = [
     "Zilveren Kruis",

@@ -441,21 +441,21 @@ CREATE TABLE Vaccin_heeft_Bijwerking(
 );
 
 CREATE TABLE Ziekte(
+	ziekte_id INT NOT NULL AUTO_INCREMENT,
 	naam VARCHAR(200) NOT NULL,
 	beschrijving LONGTEXT NULL,
-	type_aandoening ENUM("Ziekte", "Letsel") NULL,
-	PRIMARY KEY (naam)
+	PRIMARY KEY (ziekte_id)
 );
 
 CREATE TABLE Ziekte_heeft_Geneeswijze(
 	Geneeswijze_naam VARCHAR(150) NOT NULL,
-	Ziekte_naam VARCHAR(200) NOT NULL,
-	PRIMARY KEY (Geneeswijze_naam, Ziekte_naam),
-	INDEX fk_Geneeswijze_heeft_Ziekte_Ziekte1_idx (Ziekte_naam ASC) VISIBLE,
+	Ziekte_ziekte_id INT NOT NULL,
+	PRIMARY KEY (Geneeswijze_naam, Ziekte_ziekte_id),
+	INDEX fk_Geneeswijze_heeft_Ziekte_Ziekte1_idx (Ziekte_ziekte_id ASC) VISIBLE,
 	INDEX fk_Geneeswijze_heeft_Ziekte_Geneeswijze1_idx (Geneeswijze_naam ASC) VISIBLE,
 	CONSTRAINT fk_Ziekte_heeft_Geneeswijze_Ziekte
-		FOREIGN KEY (Ziekte_naam)
-		REFERENCES Ziekte(naam)
+		FOREIGN KEY (Ziekte_ziekte_id)
+		REFERENCES Ziekte(ziekte_id)
 		ON DELETE RESTRICT
 		ON UPDATE NO ACTION,
 	CONSTRAINT fk_Ziekte_heeft_Geneeswijze_Geneeswijze
@@ -531,7 +531,7 @@ CREATE TABLE Diagnose(
 	diagnose_datum DATE NULL,
 	diagnose_beschrijving LONGTEXT NULL,
 	opmerkingen TINYTEXT NULL,
-	diagnose_status ENUM("in afwachting", "voorlopig", "bevestigd", "uitgesloten", "chronisch", "herstellend", "onbekend") NULL,
+	diagnose_status ENUM("in afwachting", "voorlopig", "bevestigd", "uitgesloten", "chronisch", "herstellend") NULL,
 	Medischedossier_md_nummer INT NOT NULL,
 	Arts_arts_code INT NOT NULL,
     PRIMARY KEY (diagnose_code, Medischedossier_md_nummer, Arts_arts_code),
@@ -568,14 +568,14 @@ CREATE TABLE Onderzoek_heeft_Diagnose(
 );
 
 CREATE TABLE Diagnose_heeft_Ziekte(
-	Ziekte_naam VARCHAR(200) NOT NULL,
+	Ziekte_ziekte_id INT NOT NULL,
 	Diagnose_diagnose_code INT NOT NULL,
-	PRIMARY KEY (Ziekte_naam, Diagnose_diagnose_code),
-	INDEX fk_Diagnose_heeft_Ziekte_Ziekte1_idx (Ziekte_naam ASC) VISIBLE,
+	PRIMARY KEY (Ziekte_ziekte_id, Diagnose_diagnose_code),
+	INDEX fk_Diagnose_heeft_Ziekte_Ziekte1_idx (Ziekte_ziekte_id ASC) VISIBLE,
 	INDEX fk_Diagnose_heeft_Ziekte_Diagnose1_idx (Diagnose_diagnose_code ASC) VISIBLE,
 	CONSTRAINT fk_Diagnose_heeft_Ziekte_Ziekte
-		FOREIGN KEY (Ziekte_naam)
-		REFERENCES Ziekte(naam)
+		FOREIGN KEY (Ziekte_ziekte_id)
+		REFERENCES Ziekte(ziekte_id)
 		ON DELETE RESTRICT
 		ON UPDATE NO ACTION,
 	CONSTRAINT fk_Diagnose_heeft_Ziekte_Diagnose
@@ -585,4 +585,26 @@ CREATE TABLE Diagnose_heeft_Ziekte(
 		ON UPDATE NO ACTION
 );
 
+CREATE TABLE Type_aandoening(
+	type_id INT NOT NULL,
+	naam VARCHAR(200) NULL,
+	PRIMARY KEY (type_id)
+);
 
+CREATE TABLE Ziekte_heeft_Type_aandoening(
+	Ziekte_ziekte_id INT NOT NULL,
+	Type_aandoening_type_id INT NOT NULL,
+	PRIMARY KEY (Ziekte_ziekte_id, Type_aandoening_type_id),
+	INDEX fk_Ziekte_heeft_Type_aandoening_Type_aandoening1_idx (Type_aandoening_type_id ASC) VISIBLE,
+	INDEX fk_Ziekte_heeft_Type_aandoening_Ziekte_Ziekte1_idx (Ziekte_ziekte_id ASC) VISIBLE,
+	CONSTRAINT fk_Ziekte_heeft_Type_aandoening_Ziekte
+		FOREIGN KEY (Ziekte_ziekte_id)
+		REFERENCES Ziekte(ziekte_id)
+		ON DELETE RESTRICT
+		ON UPDATE NO ACTION,
+	CONSTRAINT fk_Ziekte_heeft_Type_aandoening_Type_aandoening
+		FOREIGN KEY (Type_aandoening_type_id)
+		REFERENCES Type_aandoening(type_id)
+		ON DELETE RESTRICT 
+		ON UPDATE NO ACTION
+);
