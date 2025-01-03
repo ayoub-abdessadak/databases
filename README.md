@@ -59,7 +59,7 @@ SELECT * FROM Bewoner_heeft_Zorgverlener WHERE Bewoner_code=4573;
 
 ## Stored procedures
 
-De voglende opgeslagen procedure zorgt ervoor dat een diagnose gelijk gekoppeld wordt aan een onderzoek en ziekte. De regel is dat elke diagnose 1 of meer onderzoeken heeft en 1 of meer ziektes.
+De voglende opgeslagen procedure zorgt ervoor dat een diagnose gelijk gekoppeld wordt aan een onderzoek en ziekte. De regel is dat elke diagnose 1 of meer onderzoeken en 1 of meer ziektes heeft.
 **SQL Stored Procedure**
 ```sql
 DROP PROCEDURE IF EXISTS add_diagnose;
