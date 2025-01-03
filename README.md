@@ -1,4 +1,4 @@
-# SQL Queries Verzorgingcentrum
+# SQL Verzorgingcentrum
 
 
 ## Triggers
