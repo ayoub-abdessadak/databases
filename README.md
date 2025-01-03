@@ -151,8 +151,43 @@ SELECT frequentie, toediening_wijze, convert_mg_g(dosering) AS DOSERING_IN_G FRO
 10 rows in set (0,00 sec)
 ```
 
+**Nog meer stored functions**
+
+De volgende opgeslagen functie zet een tijdsduur opgeslagen als string om naar een integer. Wat het nummer in minuten is.
+```sql
+DROP FUNCTION IF EXISTS tijdsduur_in_min;
+
+DELIMITER $$
+
+CREATE FUNCTION tijdsduur_in_min(minuten VARCHAR(100))
+RETURNS INT 
+DETERMINISTIC
+BEGIN
+	DECLARE _min INT;
+    SET _min = CAST(LEFT(minuten, LOCATE(' ', minuten) - 1) AS SIGNED);
+	RETURN _min;
+END $$
+DELIMITER ;
+```
+
+De volgende opgeslagen functie berekent de leeftijd, gegeven een geboorte datum. En de huidige datum. 
+```sql
+DROP FUNCTION IF EXISTS leeftijd; 
+
+DELIMITER $$
+
+CREATE FUNCTION leeftijd(dob DATE)
+RETURNS INT
+DETERMINISTIC 
+BEGIN
+     return TIMESTAMPDIFF(YEAR, dob, CURDATE());
+END $$
+
+DELIMITER ;
+```
+
 ## Views
-De volgende view brengt zorgt voor een volledige basis profiel van een Bewoner
+De volgende view zorgt voor een volledige basis profiel van een Bewoner. De view bestaat uit 2 right joins vanuit de tabel Persoon naar Bewoner en van Bewoner naar Medischedossier. De tabbellen die worden toegevoegd zijn Bewoner (aanvullende BRP gegevens) en Medischedossier (medische gegevens). 
 ```sql
 CREATE VIEW Bewoner_Details AS 
 SELECT Persoon.voornaam, Persoon.achternaam, Persoon.geboortedatum, Persoon.geslacht, Bewoner.geboorteland, Bewoner.BSN,
@@ -186,12 +221,22 @@ SELECT * FROM Bewoner_Details LIMIT 10;
 10 rows in set (0,00 sec)
 ```
 
+**View voor junction tabel (meer op meer relatie)**
+
+```sql
+CREATE VIEW Activiteiten_View AS
+SELECT bv.code, bv.voornaam, bv.achternaam, bv.geboortedatum, acc.activiteit_naam, acc.datum, acc.locatie, acc.categorie, acc.duur FROM Bewoner_bezoekt_Activiteit ac
+LEFT JOIN Bewoner_View bv ON bv.code = ac.Bewoner_code
+LEFT JOIN Activiteit acc ON (acc.activiteit_naam, acc.datum, acc.
+locatie) = (ac.Activiteit_activiteit_naam, ac.Activiteit_datum, ac.Activiteit_locatie);
+```
+
 ## 10 SQL Queries
 
 ### Query 1
 
 **Beschrijving**
-De voglende Query selecteert de geboortenaam, bloedgroep en rookgedragingen van elke Bewoner. 
+De voglende Query selecteert de geboortenaam, bloedgroep en rookgedragingen van elke Bewoner en limiteeert de resultaten tot 5 rijen. 
 
 **Technisch**
 De query haalt maximaal vijf rijen op uit de view `Bewoner_View` en selecteert daarbij de kolommen `geboortedatum`, `bloedgroep`, en `rookgedrag`. Een view is een virtuele tabel die is gebaseerd op een onderliggende query en wordt gebruikt om data uit een of meerdere tabellen te presenteren. De `LIMIT 5`-clausule beperkt het resultaat tot vijf rijen. De database voert eerst de query van de view uit, selecteert de opgegeven kolommen en past vervolgens de rijbeperking toe.
@@ -220,13 +265,13 @@ SELECT geboortedatum, bloedgroep, rookgedrag FROM Bewoner_View LIMIT 5;
 ### Query 2
 
 **Beschrijving**
-De volgendde query haalt de frequentie, toediening_wijze en dosering (in gram) uit de tabel Medicijngebruik op. 
+De volgendde query haalt de frequentie, toediening_wijze en dosering (in gram) op uit de tabel Medicijngebruik. 
 
 **Technisch**
 De query selecteert maximaal tien rijen uit de tabel `Medicijngebruik` en haalt daarbij de kolommen `frequentie` en `toediening_wijze` op, samen met een geconverteerde waarde van de kolom `dosering` via de functie `convert_mg_g()`. Deze functie, converteert de dosering van milligram (mg) naar gram (g), en het resultaat wordt weergegeven met een alias `DOSERING_IN_G`. De `LIMIT 10`-clausule beperkt de uitvoer tot maximaal tien rijen. De database verwerkt de query door de tabel `Medicijngebruik` te lezen, de transformatie met `convert_mg_g()` toe te passen op elke rij, en vervolgens alleen de eerste tien resultaten terug te geven.
 
 **Kennis**
-De toegepaste kennis is het gebruik van de basis statements, keywords en clausules in SQL in MySQL en het gebruik van een Stored function in query.
+De toegepaste kennis is het gebruik van de basis statements, keywords en clausules in SQL in MySQL en het gebruik van een Stored function in een query.
 
 **SQL Query**
 ```sql
@@ -254,33 +299,54 @@ SELECT frequentie, toediening_wijze, convert_mg_g(dosering) AS DOSERING_IN_G FRO
 ### Query 3
 
 **Beschrijving**
-De volgendde query haalt de frequentie, toediening_wijze en dosering (in gram) uit de tabel Medicijngebruik op. 
+De volgende query berekent de gemiddelde leeftijd van bewoners die activiteiten bezoeken met een tijdsduur langer dan 60 minuten.
 
 **Technisch**
-De query selecteert maximaal tien rijen uit de tabel `Medicijngebruik` en haalt daarbij de kolommen `frequentie` en `toediening_wijze` op, samen met een geconverteerde waarde van de kolom `dosering` via de functie `convert_mg_g()`. Deze functie, converteert de dosering van milligram (mg) naar gram (g), en het resultaat wordt weergegeven met een alias `DOSERING_IN_G`. De `LIMIT 10`-clausule beperkt de uitvoer tot maximaal tien rijen. De database verwerkt de query door de tabel `Medicijngebruik` te lezen, de transformatie met `convert_mg_g()` toe te passen op elke rij, en vervolgens alleen de eerste tien resultaten terug te geven.
+De query haalt alle rijen op uit de virtuele tabel `Activiteiten_View`, die is opgebouwd via twee left joins op de junction-tabel `Bewoner_bezoekt_Activiteit`. Deze junction-tabel wordt aangevuld met gegevens uit de tabellen `Activiteit` en de virtuele tabel `Bewoner_View`. De geselecteerde kolommen zijn: `code`, `voornaam`, `achternaam`, `geboortedatum`, `activiteit_naam`, `datum`, `locatie`, `categorie`, en `duur`. Daarnaast maakt de query gebruik van zowel ingebouwde SQL-functies als stored functions. Zo wordt de gemiddelde leeftijd berekend met de functie `AVG` in combinatie met de stored function `leeftijd`, die de leeftijd bepaalt op basis van een opgegeven datum en de huidige dag. Ook wordt de stored function `tijdsduur_in_min` gebruikt om tijdsduren, die als strings zijn opgeslagen, om te zetten naar gehele getallen voor verdere berekeningen. De query maakt gebruik van de `SELECT`-clausule om de gemiddelde leeftijd te berekenen en bevat een `WHERE`-clausule met een "groter dan of gelijk aan"-operator om te filteren op activiteiten met een tijdsduur van 60 minuten of meer. Verder wordt er in de view tabel gebruik gemaakt van de indexes `fk_Bewoner_bezoekt_Activiteit_Bewoner1_idx` en `fk_Medischedossier_Bewoner1_idx`.
 
 **Kennis**
-De toegepaste kennis is het gebruik van de basis statements, keywords en clausules in SQL in MySQL en het gebruik van een Stored function in query.
+De toegepaste kennis is het gebruik van de basis statements, keywords en clausules in SQL in MySQL en het gebruik van een Stored function in een query.
 
 **SQL Query**
 ```sql
-SELECT frequentie, toediening_wijze, convert_mg_g(dosering) AS DOSERING_IN_G FROM Medicijngebruik LIMIT 10;
+SELECT AVG(leeftijd(geboortedatum)) as leeftijd FROM Activiteiten_View WHERE tijdsduur_in_min(duur) >= 60;
 ```
 **SQL Returns**
 ```bash
-+----------------------+-------------------------------+---------------+
-| frequentie           | toediening_wijze              | DOSERING_IN_G |
-+----------------------+-------------------------------+---------------+
-| één keer per maand   | injectie                      |           0.1 |
-| elke 12 uur          | topische crème/gel            |          0.25 |
-| één keer per dag     | intramusculaire (IM) injectie |          0.25 |
-| elke 2 weken         | orale inname (tablet/capsule) |          0.15 |
-| één keer per nacht   | orale inname (tablet/capsule) |         0.025 |
-| elke 2 weken         | topische crème/gel            |           0.1 |
-| één keer per week    | intramusculaire (IM) injectie |          0.02 |
-| drie keer per dag    | oculaire (oogdruppels)        |         0.025 |
-| één keer per maand   | transdermale patch            |          0.02 |
-| elke 3 uur           | nasale spray                  |          0.05 |
-+----------------------+-------------------------------+---------------+
-10 rows in set (0,00 sec)
++----------+
+| leeftijd |
++----------+
+| 62.0962  |
++----------+
+1 row in set (0,01 sec)
 ```
+De EXPLAIN statement voor de bovenstaande query vertoont het gebruik van de indexes in de View tabel.
+
+```sql
+EXPLAIN SELECT AVG(leeftijd(geboortedatum)) as leeftijd FROM Activiteiten_View WHERE tijdsduur_in_min(duur) >= 60;
+```
+De tabel ac is Activiteit en md is Medischedossier.
+```sql
++----+-------------+---------+------------+--------+---------------------------------+--------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------+------+----------+-------------+
+| id | select_type | table   | partitions | type   | possible_keys                   | key                                        | key_len | ref                                                                                                                           | rows | filtered | Extra       |
++----+-------------+---------+------------+--------+---------------------------------+--------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------+------+----------+-------------+
+|  1 | SIMPLE      | ac      | NULL       | index  | NULL                            | fk_Bewoner_bezoekt_Activiteit_Bewoner1_idx | 4       | NULL                                                                                                                          |  466 |   100.00 | Using index |
+|  1 | SIMPLE      | md      | NULL       | ref    | fk_Medischedossier_Bewoner1_idx | fk_Medischedossier_Bewoner1_idx            | 4       | Verzorgingcentrum.ac.Bewoner_code                                                                                             |    1 |   100.00 | Using index |
+|  1 | SIMPLE      | Bewoner | NULL       | eq_ref | PRIMARY                         | PRIMARY                                    | 4       | Verzorgingcentrum.ac.Bewoner_code                                                                                             |    1 |   100.00 | NULL        |
+|  1 | SIMPLE      | Persoon | NULL       | eq_ref | PRIMARY                         | PRIMARY                                    | 4       | Verzorgingcentrum.Bewoner.Persoon_persoon_nummer                                                                              |    1 |   100.00 | NULL        |
+|  1 | SIMPLE      | acc     | NULL       | eq_ref | PRIMARY                         | PRIMARY                                    | 1007    | Verzorgingcentrum.ac.Activiteit_activiteit_naam,Verzorgingcentrum.ac.Activiteit_datum,Verzorgingcentrum.ac.Activiteit_locatie |    1 |   100.00 | Using where |
++----+-------------+---------+------------+--------+---------------------------------+--------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------+------+----------+-------------+
+5 rows in set, 1 warning (0,00 sec)
+```
+
+### SQL query 4	
+
+**Beschrijving**
+
+**Technisch**
+
+**Kennis**
+
+**SQL query**
+
+**SQL returns**

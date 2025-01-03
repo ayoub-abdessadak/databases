@@ -1,0 +1,13 @@
+DROP FUNCTION IF EXISTS tijdsduur_in_min;
+
+DELIMITER $$
+
+CREATE FUNCTION tijdsduur_in_min(minuten VARCHAR(100))
+RETURNS INT 
+DETERMINISTIC
+BEGIN
+	DECLARE _min INT;
+    SET _min = CAST(LEFT(minuten, LOCATE(' ', minuten) - 1) AS SIGNED);
+	RETURN _min;
+END $$
+DELIMITER ;

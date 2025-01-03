@@ -1,3 +1,6 @@
+/* SET values  */
+
+/* Setting chracterset and db engine */
 
 DROP DATABASE Verzorgingcentrum;
 CREATE DATABASE Verzorgingcentrum;
