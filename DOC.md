@@ -1,9 +1,13 @@
-# Mark
+# SQL Queries Verzorgingcentrum
 
+
+Deze query doet iets, de query werkt als volgt, de query vertoont
+
+**SQL query**
 ```sql
-SELECT * Medicijn WHERE medicijn_nummer = 1;
+DESCRIBE Medicijn;
 ```
-> The output lorem ipsums the output of the other output
+**MySQL Returns**
 ```bash
 +-----------------+--------------+------+-----+---------+-------+
 | Field           | Type         | Null | Key | Default | Extra |
@@ -15,3 +19,7 @@ SELECT * Medicijn WHERE medicijn_nummer = 1;
 | fabrikant       | varchar(100) | YES  |     | NULL    |       |
 +-----------------+--------------+------+-----+---------+-------+
 5 rows in set (0,00 sec)
+```
+
+
+
