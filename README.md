@@ -216,3 +216,71 @@ SELECT geboortedatum, bloedgroep, rookgedrag FROM Bewoner_View LIMIT 5;
 | 1932-01-16    | A-         | Intermitterend roken |
 +---------------+------------+----------------------+
 ```
+
+### Query 2
+
+**Beschrijving**
+De volgendde query haalt de frequentie, toediening_wijze en dosering (in gram) uit de tabel Medicijngebruik op. 
+
+**Technisch**
+De query selecteert maximaal tien rijen uit de tabel `Medicijngebruik` en haalt daarbij de kolommen `frequentie` en `toediening_wijze` op, samen met een geconverteerde waarde van de kolom `dosering` via de functie `convert_mg_g()`. Deze functie, converteert de dosering van milligram (mg) naar gram (g), en het resultaat wordt weergegeven met een alias `DOSERING_IN_G`. De `LIMIT 10`-clausule beperkt de uitvoer tot maximaal tien rijen. De database verwerkt de query door de tabel `Medicijngebruik` te lezen, de transformatie met `convert_mg_g()` toe te passen op elke rij, en vervolgens alleen de eerste tien resultaten terug te geven.
+
+**Kennis**
+De toegepaste kennis is het gebruik van de basis statements, keywords en clausules in SQL in MySQL en het gebruik van een Stored function in query.
+
+**SQL Query**
+```sql
+SELECT frequentie, toediening_wijze, convert_mg_g(dosering) AS DOSERING_IN_G FROM Medicijngebruik LIMIT 10;
+```
+**SQL Returns**
+```bash
++----------------------+-------------------------------+---------------+
+| frequentie           | toediening_wijze              | DOSERING_IN_G |
++----------------------+-------------------------------+---------------+
+| één keer per maand   | injectie                      |           0.1 |
+| elke 12 uur          | topische crème/gel            |          0.25 |
+| één keer per dag     | intramusculaire (IM) injectie |          0.25 |
+| elke 2 weken         | orale inname (tablet/capsule) |          0.15 |
+| één keer per nacht   | orale inname (tablet/capsule) |         0.025 |
+| elke 2 weken         | topische crème/gel            |           0.1 |
+| één keer per week    | intramusculaire (IM) injectie |          0.02 |
+| drie keer per dag    | oculaire (oogdruppels)        |         0.025 |
+| één keer per maand   | transdermale patch            |          0.02 |
+| elke 3 uur           | nasale spray                  |          0.05 |
++----------------------+-------------------------------+---------------+
+10 rows in set (0,00 sec)
+```
+
+### Query 3
+
+**Beschrijving**
+De volgendde query haalt de frequentie, toediening_wijze en dosering (in gram) uit de tabel Medicijngebruik op. 
+
+**Technisch**
+De query selecteert maximaal tien rijen uit de tabel `Medicijngebruik` en haalt daarbij de kolommen `frequentie` en `toediening_wijze` op, samen met een geconverteerde waarde van de kolom `dosering` via de functie `convert_mg_g()`. Deze functie, converteert de dosering van milligram (mg) naar gram (g), en het resultaat wordt weergegeven met een alias `DOSERING_IN_G`. De `LIMIT 10`-clausule beperkt de uitvoer tot maximaal tien rijen. De database verwerkt de query door de tabel `Medicijngebruik` te lezen, de transformatie met `convert_mg_g()` toe te passen op elke rij, en vervolgens alleen de eerste tien resultaten terug te geven.
+
+**Kennis**
+De toegepaste kennis is het gebruik van de basis statements, keywords en clausules in SQL in MySQL en het gebruik van een Stored function in query.
+
+**SQL Query**
+```sql
+SELECT frequentie, toediening_wijze, convert_mg_g(dosering) AS DOSERING_IN_G FROM Medicijngebruik LIMIT 10;
+```
+**SQL Returns**
+```bash
++----------------------+-------------------------------+---------------+
+| frequentie           | toediening_wijze              | DOSERING_IN_G |
++----------------------+-------------------------------+---------------+
+| één keer per maand   | injectie                      |           0.1 |
+| elke 12 uur          | topische crème/gel            |          0.25 |
+| één keer per dag     | intramusculaire (IM) injectie |          0.25 |
+| elke 2 weken         | orale inname (tablet/capsule) |          0.15 |
+| één keer per nacht   | orale inname (tablet/capsule) |         0.025 |
+| elke 2 weken         | topische crème/gel            |           0.1 |
+| één keer per week    | intramusculaire (IM) injectie |          0.02 |
+| drie keer per dag    | oculaire (oogdruppels)        |         0.025 |
+| één keer per maand   | transdermale patch            |          0.02 |
+| elke 3 uur           | nasale spray                  |          0.05 |
++----------------------+-------------------------------+---------------+
+10 rows in set (0,00 sec)
+```
