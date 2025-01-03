@@ -305,7 +305,7 @@ De volgende query berekent de gemiddelde leeftijd van bewoners die activiteiten 
 De query haalt alle rijen op uit de virtuele tabel `Activiteiten_View`, die is opgebouwd via twee left joins op de junction-tabel `Bewoner_bezoekt_Activiteit`. Deze junction-tabel wordt aangevuld met gegevens uit de tabellen `Activiteit` en de virtuele tabel `Bewoner_View`. De geselecteerde kolommen zijn: `code`, `voornaam`, `achternaam`, `geboortedatum`, `activiteit_naam`, `datum`, `locatie`, `categorie`, en `duur`. Daarnaast maakt de query gebruik van zowel ingebouwde SQL-functies als stored functions. Zo wordt de gemiddelde leeftijd berekend met de functie `AVG` in combinatie met de stored function `leeftijd`, die de leeftijd bepaalt op basis van een opgegeven datum en de huidige dag. Ook wordt de stored function `tijdsduur_in_min` gebruikt om tijdsduren, die als strings zijn opgeslagen, om te zetten naar gehele getallen voor verdere berekeningen. De query maakt gebruik van de `SELECT`-clausule om de gemiddelde leeftijd te berekenen en bevat een `WHERE`-clausule met een "groter dan of gelijk aan"-operator om te filteren op activiteiten met een tijdsduur van 60 minuten of meer. Verder wordt er in de view tabel gebruik gemaakt van de indexes `fk_Bewoner_bezoekt_Activiteit_Bewoner1_idx` en `fk_Medischedossier_Bewoner1_idx`.
 
 **Kennis**
-De toegepaste kennis is het gebruik van de basis statements, keywords en clausules in SQL in MySQL en het gebruik van een Stored function in een query.
+De toegepaste kennis is het gebruik van de basis statements, keywords en clausules in SQL in MySQL en het gebruik van een opgeslagen functie in een query.
 
 **SQL Query**
 ```sql
@@ -341,12 +341,36 @@ De tabel ac is Activiteit en md is Medischedossier.
 
 ### SQL query 4	
 
+
 **Beschrijving**
+De volgende query maakt gebruik van 2 subqueries waarbij de medicijn gebruik beter wordt gerepresenteerd aan de hand van relaties naar medicijn gebruik. In deze query wordt de `voornaam`, `toediening_wijze`, `dosering` en `medicijn` opgehaald. 
 
 **Technisch**
+De gegeven MySQL-query haalt gegevens op uit de tabel Medicijngebruik (mg) en gebruikt geneste subqueries (scalar subqueries) binnen de SELECT-clausule. De eerste subquery haalt de voornaam op uit de Bewoner_View-view door te controleren of de kolom md_nummer overeenkomt met mg.Medischedossier_md_nummer van de hoofdquery. De tweede subquery haalt de naam van het medicijn op uit de tabel Medicijn door te filteren op medicijn_nummer dat overeenkomt met mg.Medicijn_medicijn_nummer. De directe kolommen toediening_wijze en dosering worden rechtstreeks uit Medicijngebruik geselecteerd. De query beperkt de uitvoer tot de eerste vijf rijen (LIMIT 5).
 
 **Kennis**
+De toegepaste kennis is het gebruik van de basis statements, keywords en clausules in SQL in MySQL. Ook worden er subqueries gebruikt, gedefinieerd in tussenhaken.
 
 **SQL query**
+```sql
+SELECT (SELECT voornaam, FROM Bewoner_View bv WHERE bv.md_nummer = mg.Medischedossier_md_nummer) AS voornaam, 
+toediening_wijze, 
+dosering, 
+(SELECT naam FROM Medicijn WHERE medicijn_nummer=mg.Medicijn_medicijn_nummer) as medicijn
+FROM Medicijngebruik mg
+LIMIT 5;
+```
 
 **SQL returns**
+```bash
++-------------+-------------------------------+----------+--------------+
+| voornaam    | toediening_wijze              | dosering | medicijn     |
++-------------+-------------------------------+----------+--------------+
+| Tlachinolli | injectie                      | 100 mg   | Benzonatate  |
+| Bo          | topische crème/gel            | 250 mg   | Fluticasone  |
+| Evi         | intramusculaire (IM) injectie | 250 mg   | Alprazolam   |
+| Amakhar     | orale inname (tablet/capsule) | 150 mg   | Sildenafil   |
+| Youssef     | orale inname (tablet/capsule) | 25 mg    | Amoxicilline |
++-------------+-------------------------------+----------+--------------+
+5 rows in set (0,00 sec)
+```
