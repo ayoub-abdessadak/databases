@@ -493,7 +493,7 @@ SELECT naam, beschrijving FROM Ziekte WHERE naam LIKE "%kanker%";
 ### Query 7
 
 **Beschrijving**
-De query haalt alle soorten ziektes geassocieerd met kanker op.
+De query haalt alle beschrijvingen met het woord verlies daarin.
 
 **Technisch**
 De SQL-query `SELECT naam, beschrijving FROM Ziekte WHERE naam LIKE "%kanker%";` haalt gegevens op uit de tabel `Ziekte`. Specifiek selecteert de query de kolommen `naam` en `beschrijving`. De `WHERE`-clausule beperkt de resultaten tot rijen waarbij de kolom `naam` een tekenreeks bevat die overeenkomt met het woord "kanker" op een willekeurige positie in de tekst. Het percentage-teken (`%`) is een wildcard in SQL, wat betekent dat er vóór en na het woord "kanker" elk aantal tekens (inclusief geen) kan staan. Dit maakt de zoekopdracht een patroonzoekopdracht (case-insensitive in de meeste databases, afhankelijk van de collation). Het resultaat bevat alle ziekten waarvan de naam het woord "kanker" bevat, samen met hun bijbehorende beschrijving.
@@ -503,14 +503,25 @@ De toegepaste kennis is het gebruik van de basis statements, keywords en clausul
 
 **SQL query**
 ```sql
-
+SELECT soort, beschrijving_bijwerking FROM Bijwerking
+WHERE beschrijving_bijwerking REGEXP '(?i)verlies';
 ```
 
 **SQL returns**
 ```bash
-
++-----------------------------+--------------------------------------------------------------+
+| soort                       | beschrijving_bijwerking                                      |
++-----------------------------+--------------------------------------------------------------+
+| Gewichtsverlies             | Kan leiden tot ongewenst gewichtsverlies.                    |
+| Gewichtstoename             | Kan leiden tot ongewenst gewichtsverlies of -toename.        |
+| Verminderde Appetiet        | Kan leiden tot gewichtsverlies of verminderde eetlust.       |
+| Gewichtsverandering         | Kan leiden tot gewichtsverlies of -toename.                  |
+| Verlies van Water en Zouten | Kan leiden tot uitdroging en verlies van essentiële zouten.  |
+| Verminderde Eetlust         | Kan leiden tot gewichtsverlies of verminderde eetlust.       |
+| Flauwvallen                 | Kan leiden tot flauwvallen of bewustzijnsverlies.            |
++-----------------------------+--------------------------------------------------------------+
+7 rows in set (0,00 sec)
 ```
-
 
 ### Query 8
 
