@@ -459,3 +459,132 @@ LEFT JOIN Persoon ps ON zr.Persoon_persoon_nummer = ps.persoon_nummer LIMIT 10;
 +----+-------------+-------+------------+--------+---------------+---------+---------+---------------------------------------------+------+----------+-------+
 2 rows in set, 1 warning (0,01 sec)
 ```
+
+### Query 6
+
+**Beschrijving**
+De query haalt alle soorten ziektes geassocieerd met kanker op.
+
+**Technisch**
+De SQL-query `SELECT naam, beschrijving FROM Ziekte WHERE naam LIKE "%kanker%";` haalt gegevens op uit de tabel `Ziekte`. Specifiek selecteert de query de kolommen `naam` en `beschrijving`. De `WHERE`-clausule beperkt de resultaten tot rijen waarbij de kolom `naam` een tekenreeks bevat die overeenkomt met het woord "kanker" op een willekeurige positie in de tekst. Het percentage-teken (`%`) is een wildcard in SQL, wat betekent dat er vóór en na het woord "kanker" elk aantal tekens (inclusief geen) kan staan. Dit maakt de zoekopdracht een patroonzoekopdracht (case-insensitive in de meeste databases, afhankelijk van de collation). Het resultaat bevat alle ziekten waarvan de naam het woord "kanker" bevat, samen met hun bijbehorende beschrijving.
+
+**Kennis**
+De toegepaste kennis is het gebruik van de basis statements, keywords en clausules in SQL in MySQL. Verder wordt er gebruik gemaakt van pattern matching.
+
+**SQL query**
+```sql
+SELECT naam, beschrijving FROM Ziekte WHERE naam LIKE "%kanker%";
+```
+
+**SQL returns**
+```bash
++--------------------------+----------------------------------------------------------------------------------+
+| naam                     | beschrijving                                                                     |
++--------------------------+----------------------------------------------------------------------------------+
+| Kanker                   | Een groep van ziekten gekenmerkt door oncontroleerbare celgroei en verspreiding. |
+| Borstkanker              | Een type kanker dat begint in de cellen van de borst.                            |
+| Prostaatkanker           | Een type kanker dat voorkomt in de prostaat, een klier bij mannen.               |
+| Schildklierkanker        | Een type kanker dat begint in de schildklier, een klier in de hals.              |
+| Kanker van de Dikke Darm | Een type kanker dat begint in de dikke darm of endeldarm.                        |
++--------------------------+----------------------------------------------------------------------------------+
+5 rows in set (0,00 sec)
+```
+
+### Query 7
+
+**Beschrijving**
+De query haalt alle soorten ziektes geassocieerd met kanker op.
+
+**Technisch**
+De SQL-query `SELECT naam, beschrijving FROM Ziekte WHERE naam LIKE "%kanker%";` haalt gegevens op uit de tabel `Ziekte`. Specifiek selecteert de query de kolommen `naam` en `beschrijving`. De `WHERE`-clausule beperkt de resultaten tot rijen waarbij de kolom `naam` een tekenreeks bevat die overeenkomt met het woord "kanker" op een willekeurige positie in de tekst. Het percentage-teken (`%`) is een wildcard in SQL, wat betekent dat er vóór en na het woord "kanker" elk aantal tekens (inclusief geen) kan staan. Dit maakt de zoekopdracht een patroonzoekopdracht (case-insensitive in de meeste databases, afhankelijk van de collation). Het resultaat bevat alle ziekten waarvan de naam het woord "kanker" bevat, samen met hun bijbehorende beschrijving.
+
+**Kennis**
+De toegepaste kennis is het gebruik van de basis statements, keywords en clausules in SQL in MySQL. Verder wordt er gebruik gemaakt van pattern matching.
+
+**SQL query**
+```sql
+
+```
+
+**SQL returns**
+```bash
+
+```
+
+
+### Query 8
+
+**Beschrijving**
+De query telt alle toegediende en niet toegediende vaccinaties op.
+
+**Technisch**
+De SQL-query haalt gegevens op uit de tabel `Vaccinatie`. De query selecteert de kolom `vaccinatie_status` en telt het aantal rijen (`COUNT(*)`) voor elke unieke waarde in deze kolom, waarbij alleen de statussen `"Toegediend"` en `"Niet Toegediend"` worden meegenomen. De `WHERE`-clausule filtert de gegevens zodat alleen records met deze twee vaccinatiestatussen worden geanalyseerd. De `GROUP BY`-clausule groepeert vervolgens de resultaten per unieke waarde van `vaccinatie_status`, zodat de telling (`COUNT(*)`) per groep wordt weergegeven. De kolom `aantal` wordt met een alias (`AS`) hernoemd, wat het resultaat overzichtelijker maakt. Het resultaat toont dus per vaccinatiestatus het totale aantal rijen dat aan de filtercriteria voldoet.
+
+**Kennis**
+De toegepaste kennis is het gebruik van de basis statements, keywords en clausules in SQL in MySQL. Verder wordt er gebruik gemaakt van de ingebouwde COUNT functie en de group by clausule.
+
+**SQL query**
+```sql
+SELECT 
+    vaccinatie_status, 
+    COUNT(*) AS aantal 
+FROM 
+    Vaccinatie 
+WHERE 
+    vaccinatie_status IN ("Toegediend", "Niet Toegediend")
+GROUP BY 
+    vaccinatie_status;
+```
+
+**SQL returns**
+```bash
++-------------------+--------+
+| vaccinatie_status | aantal |
++-------------------+--------+
+| Toegediend        |  29280 |
+| Niet toegediend   |  29673 |
++-------------------+--------+
+2 rows in set (0,05 sec)
+```
+
+### Query 9
+
+**Beschrijving**
+
+
+**Technisch**
+
+
+**Kennis**
+
+
+**SQL query**
+```sql
+
+```
+
+**SQL returns**
+```bash
+
+```
+
+### Query 10
+
+**Beschrijving**
+
+
+**Technisch**
+
+
+**Kennis**
+
+
+**SQL query**
+```sql
+
+```
+
+**SQL returns**
+```bash
+
+```
