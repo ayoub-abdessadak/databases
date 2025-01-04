@@ -568,15 +568,37 @@ GROUP BY
 
 **Kennis**
 
+Gebruiker aanmaken
+```sql
+CREATE USER IF NOT EXISTS
+"verzorger" IDENTIFIED BY "Welkom01";
+GRANT SELECT ON Persoon TO "verzorger";
+FLUSH PRIVILEGES;
+```
 
 **SQL query**
 ```sql
-
+SHOW tables;
 ```
 
 **SQL returns**
 ```bash
++-----------------------------+
+| Tables_in_Verzorgingcentrum |
++-----------------------------+
+| Persoon                     |
++-----------------------------+
+1 row in set (0,000000000000000000000000000000000000000000000000001 sec)
+```
 
+**Rijen ophalen uit een tabel waar de gebruiker zorgverlener geen rechten voor heeft**
+```sql
+SELECT email, telefoon_nummer FROM Aanmelding;
+```
+
+**Foutmelding**
+```bash
+ERROR 1142 (42000): SELECT command denied to user 'verzorger'@'localhost' for table 'Aanmelding'
 ```
 
 ### Query 10
