@@ -1,6 +1,5 @@
 # SQL Verzorgingcentrum
 
-
 ## Triggers
 
 De voglende Trigger voegt automatisch een Bewoner_heeft_Zorgverlener rij toe op het moment dat een Bewoner wordt toegevoegd. De toegewezen zorgverlener is de zorgverlener met de minste bewoners.
@@ -9,7 +8,7 @@ De voglende Trigger voegt automatisch een Bewoner_heeft_Zorgverlener rij toe op 
 
 ```sql
 DELIMITER $$
-CREATE TRIGGER trigger_bewoner_heeft_zorgverlener 
+CREATE TRIGGER trigger_bewoner_heeft_zorgverlener
 AFTER INSERT ON Bewoner
 FOR EACH ROW
 	BEGIN
@@ -20,7 +19,7 @@ FOR EACH ROW
 		GROUP BY lt.big_code
 		ORDER BY COUNT(jt.Zorgverlener_big_code) ASC
 		LIMIT 1;
-		
+
 		INSERT INTO Bewoner_heeft_Zorgverlener(Zorgverlener_big_code, Bewoner_code) VALUES(_zorgverlener_big_code, NEW.code);
 	END$$
 DELIMITER ;
@@ -28,10 +27,11 @@ DELIMITER ;
 
 Ik voeg vervolgens een Persoon en dan een Bewoner toe.
 **SQL Insertion**
+
 ```sql
 
 -- Persoon
-INSERT INTO Persoon(persoon_nummer, voornaam, achternaam, geboortedatum, geslacht) 
+INSERT INTO Persoon(persoon_nummer, voornaam, achternaam, geboortedatum, geslacht)
 VALUES (9154, "Ayoub", "ben Abdessadak", "1900-01-01", "man");
 
 -- Bewoner
@@ -43,11 +43,13 @@ VALUES
 
 Er is automatisch een rij voor het table Bewoner_heeft_Zorgverlener toegevoegd door de trigger.
 **SQL Query**
+
 ```sql
 SELECT * FROM Bewoner_heeft_Zorgverlener WHERE Bewoner_code=4573;
 ```
 
 **SQL returns**
+
 ```bash
 +-----------------------+--------------+
 | Zorgverlener_big_code | Bewoner_code |
@@ -61,6 +63,7 @@ SELECT * FROM Bewoner_heeft_Zorgverlener WHERE Bewoner_code=4573;
 
 De voglende opgeslagen procedure zorgt ervoor dat een diagnose gelijk gekoppeld wordt aan een onderzoek en ziekte. De regel is dat elke diagnose 1 of meer onderzoeken en 1 of meer ziektes heeft.
 **SQL Stored Procedure**
+
 ```sql
 DROP PROCEDURE IF EXISTS add_diagnose;
 DELIMITER $$
@@ -72,16 +75,21 @@ BEGIN
 END $$
 DELIMITER ;
 ```
+
 **Stored procedure aan roepen**
+
 ```sql
 CALL add_diagnose(315, "Griep", "2022-12-17", "Last van verkoudheid, verhoogde lichaamstempratuur, kort ademigheid", "in afwachting", 85, 220, 12);
 ```
+
 **SQL query**
+
 ```sql
 SELECT * FROM Onderzoek_heeft_Diagnose WHERE Diagnose_diagnose_code=315;
 ```
 
 **SQL returns**
+
 ```bash
 +------------------------+------------------------+
 | Onderzoek_onderzoek_id | Diagnose_diagnose_code |
@@ -90,12 +98,15 @@ SELECT * FROM Onderzoek_heeft_Diagnose WHERE Diagnose_diagnose_code=315;
 +------------------------+------------------------+
 1 row in set (0,00 sec)
 ```
+
 **SQL query**
+
 ```sql
 SELECT * FROM Diagnose_heeft_Ziekte WHERE Diagnose_diagnose_code=315;
 ```
 
 **SQL returns**
+
 ```bash
 +------------------+------------------------+
 | Ziekte_ziekte_id | Diagnose_diagnose_code |
@@ -106,7 +117,8 @@ SELECT * FROM Diagnose_heeft_Ziekte WHERE Diagnose_diagnose_code=315;
 ```
 
 ## Stored functions
-De volgende opgeslagen functie converteert de dosering die in mg wordt opgeslagen naar gram. 
+
+De volgende opgeslagen functie converteert de dosering die in mg wordt opgeslagen naar gram.
 
 ```sql
 DROP FUNCTION IF EXISTS convert_mg_g;
@@ -127,12 +139,16 @@ END $$
 DELIMITER ;
 
 ```
+
 De stored functie kan als volgt gebruikt worden in een SQL query
 **SQL Query**
+
 ```sql
 SELECT frequentie, toediening_wijze, convert_mg_g(dosering) AS DOSERING_IN_G FROM Medicijngebruik LIMIT 10;
 ```
+
 **SQL Returns**
+
 ```bash
 +----------------------+-------------------------------+---------------+
 | frequentie           | toediening_wijze              | DOSERING_IN_G |
@@ -154,13 +170,14 @@ SELECT frequentie, toediening_wijze, convert_mg_g(dosering) AS DOSERING_IN_G FRO
 **Nog meer stored functions**
 
 De volgende opgeslagen functie zet een tijdsduur opgeslagen als string om naar een integer. Wat het nummer in minuten is.
+
 ```sql
 DROP FUNCTION IF EXISTS tijdsduur_in_min;
 
 DELIMITER $$
 
 CREATE FUNCTION tijdsduur_in_min(minuten VARCHAR(100))
-RETURNS INT 
+RETURNS INT
 DETERMINISTIC
 BEGIN
 	DECLARE _min INT;
@@ -170,15 +187,16 @@ END $$
 DELIMITER ;
 ```
 
-De volgende opgeslagen functie berekent de leeftijd, gegeven een geboorte datum. En de huidige datum. 
+De volgende opgeslagen functie berekent de leeftijd, gegeven een geboorte datum. En de huidige datum.
+
 ```sql
-DROP FUNCTION IF EXISTS leeftijd; 
+DROP FUNCTION IF EXISTS leeftijd;
 
 DELIMITER $$
 
 CREATE FUNCTION leeftijd(dob DATE)
 RETURNS INT
-DETERMINISTIC 
+DETERMINISTIC
 BEGIN
      return TIMESTAMPDIFF(YEAR, dob, CURDATE());
 END $$
@@ -187,9 +205,11 @@ DELIMITER ;
 ```
 
 ## Views
-De volgende view zorgt voor een volledige basis profiel van een Bewoner. De view bestaat uit 2 right joins vanuit de tabel Persoon naar Bewoner en van Bewoner naar Medischedossier. De tabbellen die worden toegevoegd zijn Bewoner (aanvullende BRP gegevens) en Medischedossier (medische gegevens). 
+
+De volgende view zorgt voor een volledige basis profiel van een Bewoner. De view bestaat uit 2 right joins vanuit de tabel Persoon naar Bewoner en van Bewoner naar Medischedossier. De tabbellen die worden toegevoegd zijn Bewoner (aanvullende BRP gegevens) en Medischedossier (medische gegevens).
+
 ```sql
-CREATE VIEW Bewoner_Details AS 
+CREATE VIEW Bewoner_Details AS
 SELECT Persoon.voornaam, Persoon.achternaam, Persoon.geboortedatum, Persoon.geslacht, Bewoner.geboorteland, Bewoner.BSN,
 Bewoner.nationaliteit, Bewoner.overleden, Bewoner.kiesrecht, md.md_nummer, md.bloedgroep, md.verzekering_informatie, md.rookgedrag, md.alcoholgedrag, md.mentale_gezondheid
 FROM Persoon
@@ -198,11 +218,13 @@ RIGHT JOIN Medischedossier md ON md.Bewoner_code = Bewoner.code;
 ```
 
 **SQL Query**
+
 ```sql
 SELECT * FROM Bewoner_Details LIMIT 10;
 ```
 
 **SQL Returns**
+
 ```bash
 +-----------------+--------------+---------------+----------+---------------+----------+---------------+-----------+-----------+-----------+------------+------------------------+--------------------------+----------------------------+---------------------------------------+
 | voornaam        | achternaam   | geboortedatum | geslacht | geboorteland  | BSN      | nationaliteit | overleden | kiesrecht | md_nummer | bloedgroep | verzekering_informatie | rookgedrag               | alcoholgedrag              | mentale_gezondheid                    |
@@ -236,7 +258,7 @@ locatie) = (ac.Activiteit_activiteit_naam, ac.Activiteit_datum, ac.Activiteit_lo
 ### Query 1
 
 **Beschrijving**
-De voglende Query selecteert de geboortenaam, bloedgroep en rookgedragingen van elke Bewoner en limiteeert de resultaten tot 5 rijen. 
+De volgende Query selecteert de geboortenaam, bloedgroep en rookgedragingen van elke Bewoner en limiteeert de resultaten tot 5 rijen.
 
 **Technisch**
 De query haalt maximaal vijf rijen op uit de view `Bewoner_View` en selecteert daarbij de kolommen `geboortedatum`, `bloedgroep`, en `rookgedrag`. Een view is een virtuele tabel die is gebaseerd op een onderliggende query en wordt gebruikt om data uit een of meerdere tabellen te presenteren. De `LIMIT 5`-clausule beperkt het resultaat tot vijf rijen. De database voert eerst de query van de view uit, selecteert de opgegeven kolommen en past vervolgens de rijbeperking toe.
@@ -245,11 +267,13 @@ De query haalt maximaal vijf rijen op uit de view `Bewoner_View` en selecteert d
 De toegepaste kennis is het gebruik van de basis statements, keywords en clausules in SQL in MySQL en het gebruik van een View (Virtuele tabel).
 
 **SQL Query**
+
 ```sql
 SELECT geboortedatum, bloedgroep, rookgedrag FROM Bewoner_View LIMIT 5;
 ```
 
 **SQL Returns**
+
 ```bash
 +---------------+------------+----------------------+
 | geboortedatum | bloedgroep | rookgedrag           |
@@ -265,7 +289,7 @@ SELECT geboortedatum, bloedgroep, rookgedrag FROM Bewoner_View LIMIT 5;
 ### Query 2
 
 **Beschrijving**
-De volgendde query haalt de frequentie, toediening_wijze en dosering (in gram) op uit de tabel Medicijngebruik. 
+De volgendde query haalt de frequentie, toediening_wijze en dosering (in gram) op uit de tabel Medicijngebruik.
 
 **Technisch**
 De query selecteert maximaal tien rijen uit de tabel `Medicijngebruik` en haalt daarbij de kolommen `frequentie` en `toediening_wijze` op, samen met een geconverteerde waarde van de kolom `dosering` via de functie `convert_mg_g()`. Deze functie, converteert de dosering van milligram (mg) naar gram (g), en het resultaat wordt weergegeven met een alias `DOSERING_IN_G`. De `LIMIT 10`-clausule beperkt de uitvoer tot maximaal tien rijen. De database verwerkt de query door de tabel `Medicijngebruik` te lezen, de transformatie met `convert_mg_g()` toe te passen op elke rij, en vervolgens alleen de eerste tien resultaten terug te geven.
@@ -274,10 +298,13 @@ De query selecteert maximaal tien rijen uit de tabel `Medicijngebruik` en haalt 
 De toegepaste kennis is het gebruik van de basis statements, keywords en clausules in SQL in MySQL en het gebruik van een Stored function in een query.
 
 **SQL Query**
+
 ```sql
 SELECT frequentie, toediening_wijze, convert_mg_g(dosering) AS DOSERING_IN_G FROM Medicijngebruik LIMIT 10;
 ```
+
 **SQL Returns**
+
 ```bash
 +----------------------+-------------------------------+---------------+
 | frequentie           | toediening_wijze              | DOSERING_IN_G |
@@ -308,10 +335,13 @@ De query haalt alle rijen op uit de virtuele tabel `Activiteiten_View`, die is o
 De toegepaste kennis is het gebruik van de basis statements, keywords en clausules in SQL in MySQL en het gebruik van een opgeslagen functie in een query.
 
 **SQL Query**
+
 ```sql
 SELECT AVG(leeftijd(geboortedatum)) as leeftijd FROM Activiteiten_View WHERE tijdsduur_in_min(duur) >= 60;
 ```
+
 **SQL Returns**
+
 ```bash
 +----------+
 | leeftijd |
@@ -320,12 +350,15 @@ SELECT AVG(leeftijd(geboortedatum)) as leeftijd FROM Activiteiten_View WHERE tij
 +----------+
 1 row in set (0,01 sec)
 ```
+
 De EXPLAIN statement voor de bovenstaande query vertoont het gebruik van de indexes in de View tabel.
 
 ```sql
 EXPLAIN SELECT AVG(leeftijd(geboortedatum)) as leeftijd FROM Activiteiten_View WHERE tijdsduur_in_min(duur) >= 60;
 ```
+
 De tabel ac is Activiteit en md is Medischedossier.
+
 ```sql
 +----+-------------+---------+------------+--------+---------------------------------+--------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------+------+----------+-------------+
 | id | select_type | table   | partitions | type   | possible_keys                   | key                                        | key_len | ref                                                                                                                           | rows | filtered | Extra       |
@@ -339,11 +372,10 @@ De tabel ac is Activiteit en md is Medischedossier.
 5 rows in set, 1 warning (0,00 sec)
 ```
 
-### SQL query 4	
-
+### SQL query 4
 
 **Beschrijving**
-De volgende query maakt gebruik van 2 subqueries waarbij de medicijn gebruik beter wordt gerepresenteerd aan de hand van relaties naar medicijn gebruik. In deze query wordt de `voornaam`, `toediening_wijze`, `dosering` en `medicijn` opgehaald. 
+De volgende query maakt gebruik van 2 subqueries waarbij de medicijn gebruik beter wordt gerepresenteerd aan de hand van relaties naar medicijn gebruik. In deze query wordt de `voornaam`, `toediening_wijze`, `dosering` en `medicijn` opgehaald.
 
 **Technisch**
 De gegeven MySQL-query haalt gegevens op uit de tabel Medicijngebruik (mg) en gebruikt geneste subqueries (scalar subqueries) binnen de SELECT-clausule. De eerste subquery haalt de voornaam op uit de Bewoner_View-view door te controleren of de kolom md_nummer overeenkomt met mg.Medischedossier_md_nummer van de hoofdquery. De tweede subquery haalt de naam van het medicijn op uit de tabel Medicijn door te filteren op medicijn_nummer dat overeenkomt met mg.Medicijn_medicijn_nummer. De directe kolommen toediening_wijze en dosering worden rechtstreeks uit Medicijngebruik geselecteerd. De query beperkt de uitvoer tot de eerste vijf rijen (LIMIT 5).
@@ -352,16 +384,18 @@ De gegeven MySQL-query haalt gegevens op uit de tabel Medicijngebruik (mg) en ge
 De toegepaste kennis is het gebruik van de basis statements, keywords en clausules in SQL in MySQL. Ook worden er subqueries gebruikt, gedefinieerd in tussenhaken.
 
 **SQL query**
+
 ```sql
-SELECT (SELECT voornaam, FROM Bewoner_View bv WHERE bv.md_nummer = mg.Medischedossier_md_nummer) AS voornaam, 
-toediening_wijze, 
-dosering, 
+SELECT (SELECT voornaam, FROM Bewoner_View bv WHERE bv.md_nummer = mg.Medischedossier_md_nummer) AS voornaam,
+toediening_wijze,
+dosering,
 (SELECT naam FROM Medicijn WHERE medicijn_nummer=mg.Medicijn_medicijn_nummer) as medicijn
 FROM Medicijngebruik mg
 LIMIT 5;
 ```
 
 **SQL returns**
+
 ```bash
 +-------------+-------------------------------+----------+--------------+
 | voornaam    | toediening_wijze              | dosering | medicijn     |
@@ -373,4 +407,55 @@ LIMIT 5;
 | Youssef     | orale inname (tablet/capsule) | 25 mg    | Amoxicilline |
 +-------------+-------------------------------+----------+--------------+
 5 rows in set (0,00 sec)
+```
+
+### SQL Query 5
+
+**Beschrijving**
+De query haalt alle zorgverleners op. De zorgverleners hun `big_code`, `voornaam`,
+
+**Technisch**
+Deze SQL-query haalt gegevens op uit twee tabellen: `Zorgverlener` (alias `zr`) en `Persoon` (alias `ps`), waarbij `Zorgverlener` een subtypering is van `Persoon`. Dit betekent dat elke zorgverlener ook een persoon is, en dat de tabel `Zorgverlener` aanvullende gegevens bevat specifiek voor zorgverleners. De query maakt gebruik van een `LEFT JOIN`, wat ervoor zorgt dat alle rijen uit de tabel `Zorgverlener` worden weergegeven, zelfs als er geen overeenkomstige rij in de tabel `Persoon` bestaat, wat hoogst onwaarschijnlijk is. De koppeling gebeurt via de sleutel `zr.Persoon_persoon_nummer = ps.persoon_nummer`. De geselecteerde kolommen zijn: `big_code` uit `Zorgverlener`, `voornaam` en `achternaam` uit `Persoon`, de berekende kolom `leeftijd` (gebaseerd op de `geboortedatum` uit `Persoon` met een functie die de leeftijd berekent), `geslacht` uit `Persoon`, en `werkervaring`, `afdeling`, `dienstverband` en `start_datum` uit `Zorgverlener`. De `LIMIT 10`-clausule beperkt de uitvoer tot de eerste 10 rijen van het resultaat.
+
+**Kennis**
+De toegepaste kennis is het gebruik van de basis statements, keywords en clausules in SQL in MySQL. Verder wordt er een JOIN statements toegeapst.
+
+**SQL query**
+
+```sql
+SELECT zr.big_code, ps.voornaam, ps.achternaam, leeftijd(ps.geboortedatum) AS leeftijd, 
+ps.geslacht, zr.werkervaring, zr.afdeling, zr.dienstverband, zr.start_datum FROM Zorgverlener zr
+LEFT JOIN Persoon ps ON zr.Persoon_persoon_nummer = ps.persoon_nummer LIMIT 10; 
+```
+
+**SQL return**
+
+```bash
++----------------------+------------+-------------------+----------+----------+--------------+----------+---------------+-------------+
+| big_code             | voornaam   | achternaam        | leeftijd | geslacht | werkervaring | afdeling | dienstverband | start_datum |
++----------------------+------------+-------------------+----------+----------+--------------+----------+---------------+-------------+
+| 0017146e-92e1-48d6-a | Iris       | van Waas          |       68 | vrouw    | 6-10 jaar    | Overal   | Part-time     | 2000-10-16  |
+| 002862dd-77ce-4ba2-a | Kyan       | de Kok            |       36 | man      | 2-4 jaar     | Overal   | Fulltime      | 2000-10-16  |
+| 006bf766-7ef1-4299-a | Victoria   | Palman            |       56 | vrouw    | 2-4 jaar     | Overal   | Part-time     | 2000-10-16  |
+| 0077a49c-93e7-4239-b | Anders     | Wolfswinkel       |       72 | man      | 7-10 jaar    | Overal   | Part-time     | 2000-10-16  |
+| 00aef53d-9140-4246-8 | Aglæca     | van der Spaendonc |      102 | man      | 2-4 jaar     | Overal   | Part-time     | 2000-10-16  |
+| 00d67b49-12ef-4294-9 | Chanin     | Spanhaak          |      116 | man      | 2-4 jaar     | Overal   | Fulltime      | 2000-10-16  |
+| 00f976e5-e2f0-4d31-a | Hildebrand | Labado            |       95 | man      | 2-5 jaar     | Overal   | Part-time     | 2000-10-16  |
+| 018a67a7-a070-4032-9 | Tirza      | van Noordeloos    |      119 | vrouw    | 2-5 jaar     | Overal   | Part-time     | 2000-10-16  |
+| 0191061c-faf2-47af-8 | Lidan-gula | Serra             |      105 | man      | 10+ jaar     | Overal   | Nul uren      | 2000-10-16  |
+| 019ae22a-ca56-4b2c-a | Jayda      | Momberg           |       96 | vrouw    | 2-5 jaar     | Overal   | Part-time     | 2000-10-16  |
++----------------------+------------+-------------------+----------+----------+--------------+----------+---------------+-------------+
+10 rows in set (0,00 sec)
+```
+
+**Query explain**
+
+```bash
++----+-------------+-------+------------+--------+---------------+---------+---------+---------------------------------------------+------+----------+-------+
+| id | select_type | table | partitions | type   | possible_keys | key     | key_len | ref                                         | rows | filtered | Extra |
++----+-------------+-------+------------+--------+---------------+---------+---------+---------------------------------------------+------+----------+-------+
+|  1 | SIMPLE      | zr    | NULL       | ALL    | NULL          | NULL    | NULL    | NULL                                        | 2286 |   100.00 | NULL  |
+|  1 | SIMPLE      | ps    | NULL       | eq_ref | PRIMARY       | PRIMARY | 4       | Verzorgingcentrum.zr.Persoon_persoon_nummer |    1 |   100.00 | NULL  |
++----+-------------+-------+------------+--------+---------------+---------+---------+---------------------------------------------+------+----------+-------+
+2 rows in set, 1 warning (0,01 sec)
 ```
