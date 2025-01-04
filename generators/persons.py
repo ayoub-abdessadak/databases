@@ -107,7 +107,8 @@ for index, _bewoner in zip(range(len(prep_bewoners)), prep_bewoners):
     bsn = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
     random.shuffle(bsn)
     bsn = bsn[0:8]
-    line = f'({index}, "{random.choice(geboorteplaatsen)}", "{random.choice(migratie_achtergronden_nederland)}", "{''.join(bsn)}", "Nederlandse", 0, 1, {persoon[0]})'
+    bsn = ''.join(bsn)
+    line = f'({index}, "{random.choice(geboorteplaatsen)}", "{random.choice(migratie_achtergronden_nederland)}", "{bsn}", "Nederlandse", 0, 1, {persoon[0]})'
     write_line([insertion, bewoners], value=True, line=line, current_index=_, ending_index=aantal_bewoners)
     bewoners_in_memory.append(index)
     _ += 1
