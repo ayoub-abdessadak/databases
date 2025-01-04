@@ -607,20 +607,20 @@ ERROR 1142 (42000): SELECT command denied to user 'verzorger'@'localhost' for ta
 ### Query 10
 
 **Beschrijving**
-
+De query verwijdert een bewoner met de code 124 uit de tabel Bewoner
 
 **Technisch**
-
+De SQL-query `DELETE FROM Bewoner WHERE code = 124;` probeert een rij te verwijderen uit de tabel **`Bewoner`** waarin de kolom `code` gelijk is aan `124`. De foutmelding **`ERROR 1451 (23000)`** treedt op vanwege een schending van een **foreign key constraint**. De tabel **`Bewoner_bezoekt_Activiteit`** bevat een **foreign key** (`Bewoner_code`) die verwijst naar de kolom `code` in de tabel `Bewoner`. De foutmelding geeft aan dat er nog gekoppelde records bestaan in de tabel `Bewoner_bezoekt_Activiteit` waarin de waarde `124` voorkomt als referentie naar `Bewoner.code`. De constraint **`ON DELETE RESTRICT`** voorkomt het verwijderen van de rij in `Bewoner` zolang er afhankelijke records in `Bewoner_bezoekt_Activiteit` aanwezig zijn. Dit voorkomt het ontstaan van **verweesde records** en garandeert referentiële integriteit in de database. De oplossing zou zijn om eerst de gerelateerde records te verwijderen of de constraint aan te passen naar **`ON DELETE CASCADE`** als automatische verwijdering gewenst is.
 
 **Kennis**
-
+De toegepaste kennis is het gebruik van de basis statements, keywords en clausules in SQL in MySQL.
 
 **SQL query**
 ```sql
-
+DELETE FROM Bewoner WHERE code = 124;
 ```
 
 **SQL returns**
 ```bash
-
+ERROR 1451 (23000): Cannot delete or update a parent row: a foreign key constraint fails (`Verzorgingcentrum`.`Bewoner_bezoekt_Activiteit`, CONSTRAINT `fk_Bewoner_bezoekt_Activiteit_Bewoner` FOREIGN KEY (`Bewoner_code`) REFERENCES `Bewoner` (`code`) ON DELETE RESTRICT)
 ```
