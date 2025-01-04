@@ -561,12 +561,15 @@ GROUP BY
 ### Query 9
 
 **Beschrijving**
-
+De query vertoont de tabellen voor de gebruiker zorgverlener en selecteert 2 kollommen voor een tabel waar de gebruiker zorgverlener geen toegang tot heeft. 
 
 **Technisch**
+De query SHOW TABLES; in SQL wordt gebruikt om een lijst van alle tabellen in de huidig geselecteerde database weer te geven. Wanneer deze query wordt uitgevoerd, doorzoekt de database de datacatalogus van de actieve database (die met USE database_naam is geselecteerd) en retourneert een overzicht van de namen van alle tabellen binnen die database. Het resultaat toont enkel de tabellenstructuur, zonder de gegevens zelf weer te geven. Dit commando is vooral nuttig voor databasebeheerders of ontwikkelaars om snel inzicht te krijgen in de beschikbare tabellen binnen een specifieke database.
 
+De SQL-query SELECT email, telefoon_nummer FROM Aanmelding; haalt de gegevens op uit de tabel Aanmelding door specifiek de kolommen email en telefoon_nummer te selecteren. De SELECT-clausule bepaalt welke kolommen in de uitvoer worden opgenomen, terwijl de FROM-clausule aangeeft uit welke tabel de gegevens worden gehaald, in dit geval Aanmelding. De query retourneert alle rijen uit deze tabel en toont enkel de waarden uit de opgegeven kolommen, zonder filters of sorteringen. Dit commando wordt vaak gebruikt voor gegevensanalyse of om contactinformatie op te halen uit een database.
 
 **Kennis**
+De toegepaste kennis is het gebruik van de basis statements, keywords en clausules in SQL in MySQL.
 
 Gebruiker aanmaken
 ```sql
